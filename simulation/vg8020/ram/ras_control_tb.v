@@ -1,5 +1,7 @@
 `include "ras_control.v"
+
 `include "asserts.v"
+`include "clock.v"
 
 `timescale 1ns/100ps
 
@@ -8,11 +10,10 @@ module ras_control_tb;
     reg nmreq, nrfshd, nsltsl3;
     wire nras, mux;
 
-    reg clk = 1;
+    wire clk;
+    clock clock(clk);
 
     ras_control dut(nmreq, nrfshd, nsltsl3, nras, mux);
-
-    always #125 clk = !clk;
 
     initial
     begin
@@ -24,14 +25,14 @@ module ras_control_tb;
         /* Following the timewave at http://home.mit.bme.hu/~benes/oktatas/dig-jegyz_052/Z80-kivonat.pdf */
 
         // T1 start
-        @(negedge clk) #10;
+        `CLOCK_NEXT_HALF(clk, 10);
         `ASSERT(nras == 1); 
         `ASSERT(mux == 0);
         nmreq = 0; 
         nsltsl3 = 0;
 
         // T3 start
-        repeat(2) @(posedge clk) #10;
+        repeat(2) `CLOCK_NEXT(clk, 10);
         `ASSERT(nras == 0);
         `ASSERT(mux == 1);
         nmreq = 1; 
@@ -39,25 +40,25 @@ module ras_control_tb;
         nrfshd = 0;
 
         // T3, second semicycle
-        @(negedge clk) #10;
+        `CLOCK_NEXT_HALF(clk, 10);
         `ASSERT(nras == 1); 
         `ASSERT(mux == 0);
         nmreq = 0;
 
         // T4, second semicycle
-        @(negedge clk) #10;
+        `CLOCK_NEXT_HALF(clk, 10);
         `ASSERT(nras == 0); 
         `ASSERT(mux == 1);
         nmreq = 1;
 
         // T1 start
-        @(posedge clk) #10;
+        `CLOCK_NEXT(clk, 10);
         `ASSERT(nras == 1); 
         `ASSERT(mux == 0);
         nrfshd = 1;
 
         // T1, second semicycle
-        @(negedge clk) #10;
+        `CLOCK_NEXT_HALF(clk, 10);
         `ASSERT(nras == 1); 
         `ASSERT(mux == 0);
 

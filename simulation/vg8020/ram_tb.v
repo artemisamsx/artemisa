@@ -1,9 +1,9 @@
 `include "ram.v"
+
 `include "asserts.v"
+`include "clock.v"
 
 `timescale 1ns/100ps
-`define CLK_SPEED 3.58 // Mhz
-
 module ram_tb;
 
     reg nmreq, nrd, nrfsh;
@@ -13,12 +13,10 @@ module ram_tb;
 
     assign data = (nsltsl3 === 0 && nrd === 1) ? data_in : 8'bz;
 
-    reg nclk = 0;
-    wire clk, nmreqd, nrdd, nrfshd, nsltsl3;
+    wire clk, nclk, nmreqd, nrdd, nrfshd, nsltsl3;
 
+    clock clock(nclk);
     ram dut(nmreq, nmreqd, nrdd, nrfshd, nsltsl3, nclk, addr, data);
-
-    always #(1000/`CLK_SPEED/2) nclk = !nclk;
 
     assign #(15, 18) clk = !nclk;
     assign #15 nmreqd = nmreq;
@@ -43,12 +41,12 @@ module ram_tb;
         nrd = 1;
 
         // T1/negedge
-        @(negedge clk) #10;
+        `CLOCK_NEXT_HALF(clk, 10);
         nmreq = 0; 
         data_in = 8'h42;
 
         // T3/negedge
-        repeat(2) @(negedge clk) #10;
+        repeat(2) `CLOCK_NEXT_HALF(clk, 10);
         nmreq = 1;  
 
         /**
@@ -60,42 +58,17 @@ module ram_tb;
         data_in = 8'bz;
 
         // T1/negedge
-        @(negedge clk) #10;
+        `CLOCK_NEXT_HALF(clk, 10);
         `ASSERT(data === 8'bz); 
         nmreq = 0; 
         nrd = 0;
 
         // T3/negedge
-        repeat(2) @(negedge clk) #10;
+        repeat(2) `CLOCK_NEXT_HALF(clk, 10);
         `ASSERT(data === 8'h42);
         nmreq = 1; 
         nrd = 1;
 
-        /*
-        // T3, second semicycle
-        @(negedge clk) #10;
-        `ASSERT(nras == 1); 
-        `ASSERT(mux == 0);
-        nmreq = 0;
-
-        // T4, second semicycle
-        @(negedge clk) #10;
-        `ASSERT(nras == 0); 
-        `ASSERT(mux == 1);
-        nmreq = 1;
-
-        // T1 start
-        @(posedge clk) #10;
-        `ASSERT(nras == 1); 
-        `ASSERT(mux == 0);
-        nrfshd = 1;
-
-        // T1, second semicycle
-        @(negedge clk) #10;
-        `ASSERT(nras == 1); 
-        `ASSERT(mux == 0);
-        */
-
-        #125 $finish;
+        `CLOCK_NEXT(10) $finish;
     end
 endmodule
