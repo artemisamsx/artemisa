@@ -1,5 +1,6 @@
 MODULES=\
-	4164
+	4164 \
+	62256
 
 MODULES_SOURCES=$(addsuffix .v, $(MODULES))
 MODULES_VCDS=$(addsuffix .vcd, $(MODULES))
