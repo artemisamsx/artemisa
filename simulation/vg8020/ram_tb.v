@@ -33,7 +33,7 @@ module ram_tb;
 
         nmreq = 1; nrd = 1; nrfsh = 1;
 
-        /* Following the timewave at http://www.piclist.com/techref/mem/dram/slide4.html */
+        /* Following the timewave at http://home.mit.bme.hu/~benes/oktatas/dig-jegyz_052/Z80-kivonat.pdf */
 
         /**
          * Write some data at 0x1234

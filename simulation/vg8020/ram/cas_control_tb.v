@@ -20,7 +20,7 @@ module cas_control_tb;
         $dumpfile("ram/cas_control.vcd");
         $dumpvars;
 
-        /* Following the timewave at http://www.piclist.com/techref/mem/dram/slide4.html */
+        /* Following the timewave at http://home.mit.bme.hu/~benes/oktatas/dig-jegyz_052/Z80-kivonat.pdf */
 
         // T1/negedge
         @(negedge clk) #10;

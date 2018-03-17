@@ -21,7 +21,7 @@ module ras_control_tb;
 
         nmreq = 1; nrfshd = 1; nsltsl3 = 1;        
 
-        /* Following the timewave at http://www.piclist.com/techref/mem/dram/slide4.html */
+        /* Following the timewave at http://home.mit.bme.hu/~benes/oktatas/dig-jegyz_052/Z80-kivonat.pdf */
 
         // T1 start
         @(negedge clk) #10;
