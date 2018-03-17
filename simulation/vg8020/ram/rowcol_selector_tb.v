@@ -1,5 +1,6 @@
 `include "rowcol_selector.v"
-`include "asserts.v"
+
+`include "utils/asserts.v"
 
 `timescale 1ns/100ps
 
@@ -13,7 +14,7 @@ module rowcol_selector_tb;
 
     initial
     begin
-        $dumpfile("ram/rowcol_selector.vcd");
+        $dumpfile("rowcol_selector.vcd");
         $dumpvars;
 
         mux = 0;

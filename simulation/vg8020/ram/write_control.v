@@ -1,4 +1,4 @@
-`include "7402.v"
+`include "74xx/7402.v"
 
 `timescale 1ns/1ps
 

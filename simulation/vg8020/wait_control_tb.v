@@ -1,7 +1,7 @@
 `include "wait_control.v"
 
-`include "asserts.v"
-`include "clock.v"
+`include "utils/asserts.v"
+`include "utils/clock.v"
 
 `timescale 1ns/100ps
 

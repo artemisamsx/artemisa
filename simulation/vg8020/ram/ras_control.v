@@ -1,6 +1,6 @@
-`include "7408.v"
-`include "7432.v"
-`include "74368.v"
+`include "74xx/7408.v"
+`include "74xx/7432.v"
+`include "74xx/74368.v"
 
 `timescale 1ns/1ps
 

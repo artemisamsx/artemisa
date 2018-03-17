@@ -1,5 +1,6 @@
 `include "74368.v"
-`include "asserts.v"
+
+`include "utils/asserts.v"
 
 `timescale 1ns/1ps
 

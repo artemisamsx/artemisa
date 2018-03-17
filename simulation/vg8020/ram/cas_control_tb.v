@@ -1,7 +1,7 @@
 `include "cas_control.v"
 
-`include "asserts.v"
-`include "clock.v"
+`include "utils/asserts.v"
+`include "utils/clock.v"
 
 `timescale 1ns/100ps
 
@@ -18,7 +18,7 @@ module cas_control_tb;
 
     initial
     begin
-        $dumpfile("ram/cas_control.vcd");
+        $dumpfile("cas_control.vcd");
         $dumpvars;
 
         /* Following the timewave at http://home.mit.bme.hu/~benes/oktatas/dig-jegyz_052/Z80-kivonat.pdf */

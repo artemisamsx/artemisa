@@ -1,7 +1,7 @@
 `include "ram.v"
 
-`include "asserts.v"
-`include "clock.v"
+`include "utils/asserts.v"
+`include "utils/clock.v"
 
 `timescale 1ns/100ps
 module ram_tb;
@@ -69,6 +69,6 @@ module ram_tb;
         nmreq = 1; 
         nrd = 1;
 
-        `CLOCK_NEXT(10) $finish;
+        `CLOCK_NEXT(clk, 10) $finish;
     end
 endmodule

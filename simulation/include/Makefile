@@ -1,6 +1,6 @@
 TESTBENCHES = \
-	$(wildcard *_tb.v) \
-	$(wildcard ram/*_tb.v)
+	$(wildcard 74xx/*_tb.v) \
+	$(wildcard mem/*_tb.v)
 
 MODULES=$(patsubst %_tb.v,%,$(TESTBENCHES))
 MODULES_SOURCES=$(addsuffix .v, $(MODULES))
@@ -14,7 +14,7 @@ all: $(MODULES_VCDS)
 	cd $(<D) && vvp $(notdir $<)
 
 %.vvp: %_tb.v %.v
-	iverilog -o $@ -I../include -I$(<D) $(VFLAGS) $<
+	iverilog -o $@ -I$(<D) -I. $(VFLAGS) $<
 
 clean:
 	rm $(MODULES_VCDS)

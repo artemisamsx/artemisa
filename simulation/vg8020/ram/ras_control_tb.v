@@ -1,7 +1,7 @@
 `include "ras_control.v"
 
-`include "asserts.v"
-`include "clock.v"
+`include "utils/asserts.v"
+`include "utils/clock.v"
 
 `timescale 1ns/100ps
 
@@ -17,7 +17,7 @@ module ras_control_tb;
 
     initial
     begin
-        $dumpfile("ram/ras_control.vcd");
+        $dumpfile("ras_control.vcd");
         $dumpvars;
 
         nmreq = 1; nrfshd = 1; nsltsl3 = 1;        

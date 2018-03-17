@@ -1,4 +1,5 @@
-`include "74157.v"
+`include "74xx/74157.v"
+
 `timescale 1ns/1ps
 
 module rowcol_selector(input wire mux, input wire [15:0]addr, output wire [7:0] rowcol);

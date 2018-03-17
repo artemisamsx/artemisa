@@ -1,5 +1,6 @@
 `include "write_control.v"
-`include "asserts.v"
+
+`include "utils/asserts.v"
 
 `timescale 1ns/100ps
 
@@ -11,7 +12,7 @@ module write_control_tb;
 
     initial
     begin
-        $dumpfile("ram/write_control.vcd");
+        $dumpfile("write_control.vcd");
         $dumpvars;
 
         nrdd = 1;

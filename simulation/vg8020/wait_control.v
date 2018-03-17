@@ -1,4 +1,4 @@
-`include "7474.v"
+`include "74xx/7474.v"
 
 `timescale 1ns/1ps
 

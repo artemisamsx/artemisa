@@ -1,4 +1,4 @@
-`include "4164.v"
+`include "mem/4164.v"
 
 `timescale 1ns/1ps
 
