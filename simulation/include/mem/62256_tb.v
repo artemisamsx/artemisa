@@ -24,7 +24,7 @@ module ic62256_ram_tb;
         /***
          * Must write data at 0x1234
          */        
-        #20 addr = 14'h1234;
+        #20 addr = 15'h1234;
 
         `CLOCK_NEXT_HALF(clk, 20);
         ncs = 0;
@@ -43,7 +43,7 @@ module ic62256_ram_tb;
         /***
          * Must read data from 0x1234
          */
-        addr = 14'h1234;
+        addr = 15'h1234;
         `CLOCK_NEXT_HALF(clk, 20);
         `ASSERT(data === 8'bz);
         ncs = 0;
