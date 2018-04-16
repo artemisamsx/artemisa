@@ -36,7 +36,7 @@ EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 2
+Sheet 1 1
 Title ""
 Date ""
 Rev ""
@@ -46,16 +46,4 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Sheet
-S 1250 1150 1150 1350
-U 5AD4D0ED
-F0 "RAM" 60
-F1 "ram.sch" 60
-$EndSheet
-$Sheet
-S 2800 1150 1150 1350
-U 5AD4D7B1
-F0 "VDP" 60
-F1 "vdp.sch" 60
-$EndSheet
 $EndSCHEMATC
