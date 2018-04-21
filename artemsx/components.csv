@@ -1,0 +1,20 @@
+Ref | Type          | Sheet
+U1A	| 74HC32        | RAM
+U1B	| 74HC32	    | RAM
+U1C	| 74HC32	    | VDP
+U1D	| 74HC32	    | VDP
+U2A	| 74HC04        | VDP
+U2B	| 74HC04        | ---
+U2C	| 74HC04        | ---
+U2D	| 74HC04        | ---
+U2E	| 74HC04        | ---
+U2F	| 74HC04        | ---
+U3	| HM62256ALP-10 | RAM
+U4	| HM62256ALP-10 | RAM
+U5  | 74HCT04       | VDP
+U6  | 74HCT574      | VDP
+U7  | 74HCT574      | VDP
+U8  | 74HCT574      | VDP
+U9  | HM62256ALP-10 | VDP
+U10 | TMS99x8       | VDP
+
