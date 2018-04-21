@@ -1,4 +1,5 @@
 EESchema Schematic File Version 2
+LIBS:artemsx
 LIBS:power
 LIBS:device
 LIBS:switches
@@ -31,7 +32,6 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
-LIBS:artemsx
 LIBS:artemsx-cache
 EELAYER 25 0
 EELAYER END

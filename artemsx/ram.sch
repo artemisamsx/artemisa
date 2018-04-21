@@ -1,4 +1,5 @@
 EESchema Schematic File Version 2
+LIBS:artemsx
 LIBS:power
 LIBS:device
 LIBS:switches
@@ -31,7 +32,6 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
-LIBS:artemsx
 LIBS:artemsx-cache
 EELAYER 25 0
 EELAYER END
@@ -57,17 +57,6 @@ F 2 "DIP28" H 8150 2900 50  0001 C CIN
 F 3 "" H 8150 2900 50  0001 C CNN
 	1    8150 2900
 	1    0    0    -1  
-$EndComp
-$Comp
-L 74HCT04 U?
-U 1 1 5AD4D5C9
-P 2950 5700
-F 0 "U?" H 3100 5800 50  0000 C CNN
-F 1 "74HCT04" H 3150 5600 50  0000 C CNN
-F 2 "" H 2950 5700 50  0001 C CNN
-F 3 "" H 2950 5700 50  0001 C CNN
-	1    2950 5700
-	1    0    0    1   
 $EndComp
 Entry Wire Line
 	2250 4150 2350 4250
@@ -193,9 +182,9 @@ DATA7
 Wire Wire Line
 	2350 4250 2350 5700
 Wire Wire Line
-	3400 5700 3750 5700
+	3250 5700 3750 5700
 Wire Wire Line
-	2350 5700 2500 5700
+	2350 5700 2650 5700
 Wire Wire Line
 	1600 4700 3750 4700
 Wire Wire Line
@@ -476,6 +465,17 @@ F 1 "74HC32" H 4150 5400 50  0000 C CNN
 F 2 "" H 4150 5600 50  0001 C CNN
 F 3 "" H 4150 5600 50  0001 C CNN
 	2    4150 5600
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74HC04 U?
+U 1 1 5ADB187D
+P 2950 5700
+F 0 "U?" H 2950 5850 50  0000 C CNN
+F 1 "74HC04" H 2950 5550 50  0000 C CNN
+F 2 "" H 2950 5700 50  0001 C CNN
+F 3 "" H 2950 5700 50  0001 C CNN
+	1    2950 5700
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC
