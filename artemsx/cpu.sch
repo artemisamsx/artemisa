@@ -37,7 +37,7 @@ EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 4
+Sheet 4 4
 Title ""
 Date ""
 Rev ""
@@ -47,27 +47,15 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Sheet
-S 6300 1650 1150 1350
-U 5AD4D0ED
-F0 "RAM" 60
-F1 "ram.sch" 60
-F2 "ADDR[0..15]" I L 6300 1850 60 
-F3 "DATA[0..7]" B L 6300 2050 60 
-F4 "~WR" I L 6300 2300 60 
-F5 "~RD" I L 6300 2500 60 
-F6 "~SLTSEL3" I L 6300 2700 60 
-$EndSheet
-$Sheet
-S 6300 3450 1150 1350
-U 5AD4D7B1
-F0 "VDP" 60
-F1 "vdp.sch" 60
-$EndSheet
-$Sheet
-S 4050 1750 1300 1350
-U 5ADBC286
-F0 "CPU" 60
-F1 "cpu.sch" 60
-$EndSheet
+$Comp
+L Z84C00 U?
+U 1 1 5ADBCA58
+P 5800 2950
+F 0 "U?" H 5800 4350 60  0000 C CNN
+F 1 "Z84C00" H 5850 1550 60  0000 C CNN
+F 2 "" H 5800 2800 60  0001 C CNN
+F 3 "" H 5800 2800 60  0001 C CNN
+	1    5800 2950
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
