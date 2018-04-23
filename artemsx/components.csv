@@ -24,5 +24,18 @@ U12B| 74HCT244      | CPU
 U13 | 74HCT245      | CPU
 U14A| 74HCT244      | CPU
 U14B| 74HCT244      | CPU
+U15A| 74HCT74       | CPU
+U15B| 74HCT74       | CPU
+U16A| 74HCT08       | CPU
+U16B| 74HCT08       | CPU
+U16C| 74HCT08       | ---
+U16D| 74HCT08       | ---
+U16E| 74HCT08       | ---
+U16F| 74HCT08       | ---
+U17A| 74HCT32       | CPU
+U17B| 74HCT32       | ---
+U17C| 74HCT32       | ---
+U17D| 74HCT32       | ---
+U17E| 74HCT32       | ---
+U17F| 74HCT32       | ---
 Y1  | 10.7386       | VDP
-
