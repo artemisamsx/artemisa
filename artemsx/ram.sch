@@ -37,7 +37,7 @@ EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 2 5
+Sheet 2 6
 Title ""
 Date ""
 Rev ""
@@ -396,7 +396,7 @@ Text HLabel 2150 4350 0    60   Input ~ 0
 Connection ~ 5750 4250
 Connection ~ 5850 4350
 Text HLabel 2150 4900 0    60   Input ~ 0
-~SLTSEL3
+~SLTSL1
 Wire Wire Line
 	3250 4900 3250 5500
 Entry Bus Bus

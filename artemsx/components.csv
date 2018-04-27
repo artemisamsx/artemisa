@@ -4,8 +4,8 @@ U1B	| 74HC32	    | RAM
 U1C	| 74HC32	    | VDP
 U1D	| 74HC32	    | VDP
 U2A	| 74HC04        | VDP
-U2B	| 74HC04        | ---
-U2C	| 74HC04        | ---
+U2B	| 74HC04        | PPI
+U2C	| 74HC04        | PPI
 U2D	| 74HC04        | ---
 U2E	| 74HC04        | ---
 U2F	| 74HC04        | ---
@@ -26,18 +26,22 @@ U14A| 74HCT244      | CPU
 U14B| 74HCT244      | CPU
 U15A| 74HCT74       | CPU
 U15B| 74HCT74       | CPU
-U16A| 74HCT08       | CPU
-U16B| 74HCT08       | CPU
-U16C| 74HCT08       | ---
-U16D| 74HCT08       | ---
-U16E| 74HCT08       | ---
-U16F| 74HCT08       | ---
-U17A| 74HCT32       | CPU
-U17B| 74HCT32       | ---
-U17C| 74HCT32       | ---
-U17D| 74HCT32       | ---
-U17E| 74HCT32       | ---
-U17F| 74HCT32       | ---
+U16A| 74HC08        | CPU
+U16B| 74HC08        | CPU
+U16C| 74HC08        | PPI
+U16D| 74HC08        | ---
+U17A| 74HC32        | CPU
+U17B| 74HC32        | PPI
+U17C| 74HC32        | PPI
+U17D| 74HC32        | PPI
 U18 | Z84C006       | CPU
+U19 | 82C55A        | PPI
+U20 | 74HC153       | PPI
+U21A| 74HC139       | PPI 
+U21B| 74HC139       | PPI
+U22A| 74HC00        | PPI
+U22B| 74HC00        | PPI
+U22C| 74HC00        | ---
+U22D| 74HC00        | ---
 Y1  | 10.7386       | VDP
 R1  | 10K           | CPU

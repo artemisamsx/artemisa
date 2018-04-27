@@ -37,7 +37,7 @@ EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 5
+Sheet 1 6
 Title ""
 Date ""
 Rev ""
@@ -56,7 +56,7 @@ F2 "ADDR[0..15]" I L 6300 1850 60
 F3 "DATA[0..7]" B L 6300 2050 60 
 F4 "~WR" I L 6300 2300 60 
 F5 "~RD" I L 6300 2400 60 
-F6 "~SLTSEL3" I L 6300 2500 60 
+F6 "~SLTSL1" I L 6300 2500 60 
 $EndSheet
 $Sheet
 S 6300 3600 1150 1350
@@ -191,7 +191,7 @@ Text Label 5600 2300 0    60   ~ 0
 Text Label 5600 2400 0    60   ~ 0
 ~RD
 Text Label 5600 2500 0    60   ~ 0
-~SLTSEL3
+~SLTSL1
 Entry Bus Bus
 	2300 3450 2400 3550
 Entry Bus Bus
@@ -225,7 +225,7 @@ Entry Bus Bus
 Entry Bus Bus
 	5150 3850 5250 3950
 Wire Bus Line
-	5150 2650 5150 3850
+	5150 2650 5150 4000
 Wire Bus Line
 	5250 3950 6300 3950
 Text Label 6250 2050 2    60   ~ 0
@@ -286,7 +286,7 @@ $EndComp
 Entry Wire Line
 	2200 2450 2300 2550
 Text Label 2200 2450 2    60   ~ 0
-~SLTSEL3
+~IOSL5
 Wire Wire Line
 	1650 2350 1650 2950
 Wire Wire Line
@@ -327,17 +327,275 @@ Connection ~ 1650 2650
 Connection ~ 1650 2750
 Connection ~ 1650 2850
 Entry Wire Line
-	2200 3250 2300 3350
-Text Label 2200 3250 2    60   ~ 0
-~MREQ
+	2200 3800 2300 3900
+Text Label 2200 3800 2    60   ~ 0
+~CS1
 Wire Wire Line
-	2200 3250 1650 3250
-NoConn ~ 1650 3250
+	2200 3800 1650 3800
 Entry Wire Line
-	2200 3350 2300 3450
-Text Label 2200 3350 2    60   ~ 0
-~RFSH
+	2200 3900 2300 4000
+Text Label 2200 3900 2    60   ~ 0
+~CS2
 Wire Wire Line
-	2200 3350 1650 3350
-NoConn ~ 1650 3350
+	2200 3900 1650 3900
+$Sheet
+S 2750 3900 1300 1800
+U 5AE20302
+F0 "PPI" 60
+F1 "ppi.sch" 60
+F2 "DATA[0..7]" I R 4050 4100 60 
+F3 "A14" I R 4050 4300 60 
+F4 "A15" I R 4050 4400 60 
+F5 "~IOSL5" I L 2750 5550 60 
+F6 "~RD" I L 2750 4150 60 
+F7 "~WR" I L 2750 4250 60 
+F8 "~RESET" I L 2750 4050 60 
+F9 "~SLTSL0" O L 2750 4650 60 
+F10 "~SLTSL1" O L 2750 4750 60 
+F11 "~SLTSL2" O L 2750 4850 60 
+F12 "~SLTSL3" O L 2750 4950 60 
+F13 "~RFSH" I L 2750 4350 60 
+F14 "~MREQ" I L 2750 4450 60 
+F15 "~CS1" O L 2750 5150 60 
+F16 "~CS12" O L 2750 5350 60 
+F17 "~CS2" O L 2750 5250 60 
+F18 "KBCOL[0..7]" O R 4050 5350 60 
+F19 "KBROW[0..3]" O R 4050 5500 60 
+F20 "KBCLICK" O R 4050 4850 60 
+F21 "CASOUT" O R 4050 4950 60 
+$EndSheet
+Entry Bus Bus
+	4800 3850 4900 3750
+Wire Bus Line
+	4800 3850 4800 4500
+Entry Wire Line
+	4700 4400 4800 4300
+Entry Wire Line
+	4700 4300 4800 4200
+Wire Wire Line
+	4700 4300 4050 4300
+Wire Wire Line
+	4700 4400 4050 4400
+Text Label 4700 4300 2    60   ~ 0
+ADDR14
+Text Label 4700 4400 2    60   ~ 0
+ADDR15
+Entry Wire Line
+	2400 4450 2300 4350
+Entry Wire Line
+	2400 4350 2300 4250
+Entry Wire Line
+	2400 4250 2300 4150
+Entry Wire Line
+	2400 4150 2300 4050
+Entry Wire Line
+	2400 4050 2300 3950
+Entry Wire Line
+	2400 4950 2300 4850
+Entry Wire Line
+	2400 4850 2300 4750
+Entry Wire Line
+	2400 4750 2300 4650
+Entry Wire Line
+	2400 4650 2300 4550
+Entry Wire Line
+	2400 5150 2300 5050
+Entry Wire Line
+	2400 5250 2300 5150
+Entry Wire Line
+	2400 5350 2300 5250
+Entry Wire Line
+	2300 5450 2400 5550
+Entry Bus Bus
+	2300 3650 2400 3550
+Wire Bus Line
+	2300 3650 2300 5500
+Text Label 2400 4050 0    60   ~ 0
+~RESET
+Text Label 2400 4150 0    60   ~ 0
+~RD
+Text Label 2400 4250 0    60   ~ 0
+~WR
+Text Label 2400 4350 0    60   ~ 0
+~RFSH
+Text Label 2400 4450 0    60   ~ 0
+~MREQ
+Text Label 2400 4650 0    60   ~ 0
+~SLTSL0
+Text Label 2400 4750 0    60   ~ 0
+~SLTSL1
+Text Label 2400 4850 0    60   ~ 0
+~SLTSL2
+Text Label 2400 4950 0    60   ~ 0
+~SLTSL3
+Text Label 2400 5150 0    60   ~ 0
+~CS1
+Text Label 2400 5250 0    60   ~ 0
+~CS2
+Text Label 2400 5350 0    60   ~ 0
+~CS12
+Text Label 2400 5550 0    60   ~ 0
+~IOSL5
+Wire Wire Line
+	2400 4050 2750 4050
+Wire Wire Line
+	2400 4150 2750 4150
+Wire Wire Line
+	2750 4250 2400 4250
+Wire Wire Line
+	2400 4350 2750 4350
+Wire Wire Line
+	2750 4450 2400 4450
+Wire Wire Line
+	2400 4650 2750 4650
+Wire Wire Line
+	2750 4750 2400 4750
+Wire Wire Line
+	2400 4850 2750 4850
+Wire Wire Line
+	2750 4950 2400 4950
+Wire Wire Line
+	2400 5150 2750 5150
+Wire Wire Line
+	2750 5250 2400 5250
+Wire Wire Line
+	2400 5350 2750 5350
+Wire Wire Line
+	2750 5550 2400 5550
+Entry Wire Line
+	2200 4000 2300 4100
+Text Label 2200 4000 2    60   ~ 0
+~CS12
+Wire Wire Line
+	2200 4000 1650 4000
+NoConn ~ 1650 4000
+Entry Wire Line
+	2200 4200 2300 4300
+Text Label 2200 4200 2    60   ~ 0
+~SLTSL0
+Wire Wire Line
+	2200 4200 1650 4200
+NoConn ~ 1650 4200
+Entry Wire Line
+	2200 4300 2300 4400
+Text Label 2200 4300 2    60   ~ 0
+~SLTSL2
+Wire Wire Line
+	2200 4300 1650 4300
+NoConn ~ 1650 4300
+Entry Wire Line
+	2200 4400 2300 4500
+Text Label 2200 4400 2    60   ~ 0
+~SLTSL3
+Wire Wire Line
+	2200 4400 1650 4400
+NoConn ~ 1650 4400
+NoConn ~ 4050 4850
+NoConn ~ 4050 4950
+Entry Bus Bus
+	5050 4100 5150 4000
+Wire Bus Line
+	5050 4100 4050 4100
+Text Label 4150 4100 0    60   ~ 0
+DATA[0..7]
+Entry Wire Line
+	4750 6250 4850 6150
+Entry Wire Line
+	4750 6150 4850 6050
+Entry Wire Line
+	4750 6050 4850 5950
+Entry Wire Line
+	4750 5950 4850 5850
+Entry Bus Bus
+	4750 5500 4850 5600
+Entry Bus Bus
+	4850 5350 4950 5450
+Text Label 4100 5500 0    60   ~ 0
+KBROW[0..3]
+Text Label 4100 5350 0    60   ~ 0
+KBCOL[0..7]
+Entry Wire Line
+	4950 6250 5050 6350
+Entry Wire Line
+	4950 6350 5050 6450
+Entry Wire Line
+	4950 6450 5050 6550
+Entry Wire Line
+	4950 6550 5050 6650
+Entry Wire Line
+	4950 5850 5050 5950
+Entry Wire Line
+	4950 5950 5050 6050
+Entry Wire Line
+	4950 6050 5050 6150
+Entry Wire Line
+	4950 6150 5050 6250
+Wire Bus Line
+	4950 5450 4950 6600
+Wire Bus Line
+	4850 6200 4850 5600
+Wire Bus Line
+	4850 5350 4050 5350
+Wire Bus Line
+	4750 5500 4050 5500
+Text Label 4700 5950 2    60   ~ 0
+KBROW0
+Text Label 4700 6050 2    60   ~ 0
+KBROW1
+Text Label 4700 6150 2    60   ~ 0
+KBROW2
+Text Label 4700 6250 2    60   ~ 0
+KBROW3
+Text Label 5100 5950 0    60   ~ 0
+KBCOL0
+Text Label 5100 6050 0    60   ~ 0
+KBCOL1
+Text Label 5100 6150 0    60   ~ 0
+KBCOL2
+Text Label 5100 6250 0    60   ~ 0
+KBCOL3
+Text Label 5100 6350 0    60   ~ 0
+KBCOL4
+Text Label 5100 6450 0    60   ~ 0
+KBCOL5
+Text Label 5100 6550 0    60   ~ 0
+KBCOL6
+Text Label 5100 6650 0    60   ~ 0
+KBCOL7
+Wire Wire Line
+	4250 5950 4750 5950
+Wire Wire Line
+	4750 6050 4250 6050
+Wire Wire Line
+	4250 6150 4750 6150
+Wire Wire Line
+	4750 6250 4250 6250
+Wire Wire Line
+	5050 5950 5500 5950
+Wire Wire Line
+	5500 6050 5050 6050
+Wire Wire Line
+	5500 6150 5050 6150
+Wire Wire Line
+	5500 6250 5050 6250
+Wire Wire Line
+	5500 6350 5050 6350
+Wire Wire Line
+	5500 6450 5050 6450
+Wire Wire Line
+	5500 6550 5050 6550
+Wire Wire Line
+	5500 6650 5050 6650
+NoConn ~ 5500 6650
+NoConn ~ 5500 6550
+NoConn ~ 5500 6450
+NoConn ~ 5500 6350
+NoConn ~ 5500 6250
+NoConn ~ 5500 6150
+NoConn ~ 5500 6050
+NoConn ~ 5500 5950
+NoConn ~ 4250 5950
+NoConn ~ 4250 6050
+NoConn ~ 4250 6150
+NoConn ~ 4250 6250
 $EndSCHEMATC
