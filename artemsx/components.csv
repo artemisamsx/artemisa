@@ -6,7 +6,7 @@ U1D	| 74HC32	    | VDP
 U2A	| 74HC04        | VDP
 U2B	| 74HC04        | PPI
 U2C	| 74HC04        | PPI
-U2D	| 74HC04        | ---
+U2D	| 74HC04        | IO
 U2E	| 74HC04        | ---
 U2F	| 74HC04        | ---
 U3	| HM62256ALP-10 | RAM
@@ -43,5 +43,10 @@ U22A| 74HC00        | PPI
 U22B| 74HC00        | PPI
 U22C| 74HC00        | ---
 U22D| 74HC00        | ---
+U23 | 74HC138       | IO
+U24A| 74HC32        | IO
+U24B| 74HC32        | ---
+U24C| 74HC32        | ---
+U24D| 74HC32        | ---
 Y1  | 10.7386       | VDP
 R1  | 10K           | CPU
