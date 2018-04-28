@@ -37,7 +37,7 @@ EELAYER 25 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 1 7
+Sheet 1 8
 Title ""
 Date ""
 Rev ""
@@ -201,7 +201,7 @@ Wire Bus Line
 Wire Bus Line
 	5050 5550 8050 5550
 Wire Bus Line
-	8150 4300 8150 5450
+	8150 2350 8150 5450
 Wire Wire Line
 	8250 4300 8950 4300
 Wire Wire Line
@@ -444,16 +444,7 @@ Wire Wire Line
 	4850 6000 4300 6000
 NoConn ~ 4300 6000
 Entry Wire Line
-	4850 6200 4950 6300
-Text Label 4850 6200 2    60   ~ 0
-~SLTSL0
-Wire Wire Line
-	4850 6200 4300 6200
-NoConn ~ 4300 6200
-Entry Wire Line
 	4850 6300 4950 6400
-Text Label 4850 6300 2    60   ~ 0
-~SLTSL2
 Wire Wire Line
 	4850 6300 4300 6300
 NoConn ~ 4300 6300
@@ -591,8 +582,6 @@ F12 "~IOSL5" O L 5400 2800 60
 $EndSheet
 Entry Bus Bus
 	7450 3750 7550 3850
-Wire Bus Line
-	7450 3750 7450 2100
 Entry Wire Line
 	7350 2200 7450 2300
 Entry Wire Line
@@ -673,4 +662,57 @@ Text Label 4850 6700 2    60   ~ 0
 Wire Wire Line
 	4850 6700 4300 6700
 NoConn ~ 4300 6700
+$Sheet
+S 8950 2050 1150 1250
+U 5AE56078
+F0 "ROM" 60
+F1 "rom.sch" 60
+F2 "ADDR[0..15]" I L 8950 3200 60 
+F3 "DATA[0..7]" I L 8950 2850 60 
+F4 "~SLTSL0" I L 8950 2300 60 
+F5 "~MREQ" I L 8950 2400 60 
+F6 "~RD" I L 8950 2500 60 
+$EndSheet
+Entry Bus Bus
+	7550 3200 7450 3100
+Entry Bus Bus
+	7550 3200 7450 3300
+Wire Bus Line
+	7450 3300 7450 3750
+Wire Bus Line
+	7450 3100 7450 2200
+Wire Bus Line
+	7550 3200 8950 3200
+Text Label 8900 3200 2    60   ~ 0
+ADDR[0..15]
+Entry Bus Bus
+	7800 3950 7900 4050
+Entry Bus Bus
+	7800 2950 7900 2850
+Wire Bus Line
+	7900 2850 8950 2850
+Wire Bus Line
+	7800 2950 7800 3950
+Text Label 8900 2850 2    60   ~ 0
+DATA[0..7]
+Entry Wire Line
+	8250 2300 8150 2400
+Entry Wire Line
+	8250 2400 8150 2500
+Entry Wire Line
+	8250 2500 8150 2600
+Text Label 8250 2300 0    60   ~ 0
+~SLTSL0
+Text Label 8250 2400 0    60   ~ 0
+~MREQ
+Text Label 8250 2500 0    60   ~ 0
+~RD
+Wire Wire Line
+	8250 2300 8950 2300
+Wire Wire Line
+	8950 2400 8250 2400
+Wire Wire Line
+	8250 2500 8950 2500
+Text Label 4850 6300 2    60   ~ 0
+~SLTSL2
 $EndSCHEMATC
