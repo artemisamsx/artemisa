@@ -45,7 +45,7 @@ U22C| 74HC00        | ---
 U22D| 74HC00        | ---
 U23 | 74HC138       | IO
 U24A| 74HC32        | IO
-U24B| 74HC32        | ROM
+U24B| 74HC32        | ---
 U24C| 74HC32        | ---
 U24D| 74HC32        | ---
 U25 | SST39SF0x0    | ROM
