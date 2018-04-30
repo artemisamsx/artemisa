@@ -170,11 +170,7 @@ $EndComp
 Wire Wire Line
 	5000 3650 4800 3650
 Wire Wire Line
-	4800 3650 4800 3750
-Wire Wire Line
-	4800 3750 4800 3850
-Wire Wire Line
-	4800 3850 4800 4050
+	4800 3650 4800 4050
 Wire Wire Line
 	5000 3750 4800 3750
 Connection ~ 4800 3750
@@ -182,39 +178,7 @@ Wire Wire Line
 	5000 3850 4800 3850
 Connection ~ 4800 3850
 Wire Bus Line
-	4450 2100 4450 2150
-Wire Bus Line
-	4450 2150 4450 2250
-Wire Bus Line
-	4450 2250 4450 2350
-Wire Bus Line
-	4450 2350 4450 2450
-Wire Bus Line
-	4450 2450 4450 2550
-Wire Bus Line
-	4450 2550 4450 2650
-Wire Bus Line
-	4450 2650 4450 2750
-Wire Bus Line
-	4450 2750 4450 2850
-Wire Bus Line
-	4450 2850 4450 2950
-Wire Bus Line
-	4450 2950 4450 3050
-Wire Bus Line
-	4450 3050 4450 3150
-Wire Bus Line
-	4450 3150 4450 3250
-Wire Bus Line
-	4450 3250 4450 3350
-Wire Bus Line
-	4450 3350 4450 3450
-Wire Bus Line
-	4450 3450 4450 3550
-Wire Bus Line
-	4450 3550 4450 3650
-Wire Bus Line
-	4450 3650 4450 3700
+	4450 2100 4450 3700
 Entry Bus Bus
 	4350 2000 4450 2100
 Wire Bus Line
@@ -268,23 +232,7 @@ Wire Wire Line
 Text Label 6450 2750 2    60   ~ 0
 DATA7
 Wire Bus Line
-	6550 1800 6550 2150
-Wire Bus Line
-	6550 2150 6550 2250
-Wire Bus Line
-	6550 2250 6550 2350
-Wire Bus Line
-	6550 2350 6550 2450
-Wire Bus Line
-	6550 2450 6550 2550
-Wire Bus Line
-	6550 2550 6550 2650
-Wire Bus Line
-	6550 2650 6550 2750
-Wire Bus Line
-	6550 2750 6550 2850
-Wire Bus Line
-	6550 2850 6550 2900
+	6550 1800 6550 2900
 Entry Bus Bus
 	6450 1700 6550 1800
 Wire Bus Line
@@ -315,11 +263,9 @@ Wire Wire Line
 Text HLabel 3450 4400 0    60   Input ~ 0
 ~RD
 Wire Wire Line
-	3450 4400 4900 4400
+	3450 4400 6100 4400
 Wire Wire Line
-	6100 4400 4900 4400
-Wire Wire Line
-	6100 3050 6100 4400
+	6100 4400 6100 3050
 Wire Wire Line
 	6200 2950 6000 2950
 Wire Wire Line
