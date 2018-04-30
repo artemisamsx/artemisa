@@ -37,7 +37,7 @@ EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 6 8
+Sheet 6 9
 Title ""
 Date ""
 Rev ""
@@ -584,7 +584,7 @@ Wire Bus Line
 	6650 4600 6650 5400
 Entry Bus Bus
 	6650 4600 6750 4500
-Text HLabel 7900 4500 2    60   Output ~ 0
+Text HLabel 7900 4500 2    60   Input ~ 0
 KBCOL[0..7]
 Wire Bus Line
 	6750 4500 7900 4500

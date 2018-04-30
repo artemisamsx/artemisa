@@ -49,5 +49,23 @@ U24B| 74HC32        | ROM
 U24C| 74HC32        | ---
 U24D| 74HC32        | ---
 U25 | SST39SF0x0    | ROM
+U26 | ATMEGA328P    | KBD
+U27 | 74HC154       | KBD
+U28 | 74HC595       | KBD
+U29 | 74HC595       | KBD
+U30 | 74HC595       | KBD
+U31 | 74HC595       | KBD
+U32 | 74HC595       | KBD
+U33 | 74HC595       | KBD
+U34 | 74HC595       | KBD
+U35 | 74HC595       | KBD
+U36 | 74HC595       | KBD
+U37 | 74HC595       | KBD
 Y1  | 10.7386       | VDP
+Y2  | 16MHZ         | KBD
 R1  | 10K           | CPU
+J1  | PS2CONN       | KBD
+C1  | 27pF          | VDP
+C2  | 27pF          | VDP
+C3  | 22pF          | KBD
+C4  | 22pF          | KBD
