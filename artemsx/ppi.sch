@@ -58,7 +58,7 @@ F 3 "" H 5750 5750 60  0001 C CNN
 	1    5550 5200
 	1    0    0    -1  
 $EndComp
-Text HLabel 2650 3800 0    60   Input ~ 0
+Text HLabel 2650 3800 0    60   BiDi ~ 0
 DATA[0..7]
 Wire Bus Line
 	2650 3800 4400 3800

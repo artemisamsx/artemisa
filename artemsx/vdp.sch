@@ -645,7 +645,7 @@ Wire Wire Line
 	2750 2850 1850 2850
 Wire Bus Line
 	1750 1950 1750 2850
-Text HLabel 1300 1850 0    60   Input ~ 0
+Text HLabel 1300 1850 0    60   BiDi ~ 0
 DATA[0..7]
 Entry Bus Bus
 	1650 1850 1750 1950

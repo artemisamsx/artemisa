@@ -114,7 +114,7 @@ Wire Bus Line
 	3750 3100 3750 5300
 Wire Bus Line
 	2200 5400 9800 5400
-Text HLabel 2200 5750 0    60   Input ~ 0
+Text HLabel 2200 5750 0    60   BiDi ~ 0
 DATA[0..7]
 Entry Bus Bus
 	4000 5650 3900 5750

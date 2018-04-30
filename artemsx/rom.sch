@@ -237,7 +237,7 @@ Entry Bus Bus
 	6450 1700 6550 1800
 Wire Bus Line
 	6450 1700 3450 1700
-Text HLabel 3450 1700 0    60   Input ~ 0
+Text HLabel 3450 1700 0    60   Output ~ 0
 DATA[0..7]
 Text HLabel 3450 4500 0    60   Input ~ 0
 ~SLTSL0
