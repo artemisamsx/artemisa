@@ -63,8 +63,11 @@ U36 | 74HC595       | KBD
 U37 | 74HC595       | KBD
 Y1  | 10.7386       | VDP
 Y2  | 16MHZ         | KBD
-R1  | 10K           | CPU
+R1  | 10K           | SLOTS
+R2  | 10K           | SLOTS
 J1  | PS2CONN       | KBD
+J2  | MSXSLOT       | SLOTS
+J3  | MSXSLOT       | SLOTS
 C1  | 27pF          | VDP
 C2  | 27pF          | VDP
 C3  | 22pF          | KBD

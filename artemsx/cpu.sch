@@ -37,7 +37,7 @@ EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 4 9
+Sheet 4 10
 Title ""
 Date ""
 Rev ""
@@ -755,30 +755,6 @@ Text HLabel 1100 3200 0    60   Input ~ 0
 Text HLabel 1100 3300 0    60   Input ~ 0
 ~EXTINT
 $Comp
-L R R1
-U 1 1 5ADE6B89
-P 2650 1550
-F 0 "R1" V 2730 1550 50  0000 C CNN
-F 1 "10K" V 2650 1550 50  0000 C CNN
-F 2 "" V 2580 1550 50  0001 C CNN
-F 3 "" H 2650 1550 50  0001 C CNN
-	1    2650 1550
-	1    0    0    -1  
-$EndComp
-$Comp
-L VCC #PWR015
-U 1 1 5ADE6BD8
-P 2650 1350
-F 0 "#PWR015" H 2650 1200 50  0001 C CNN
-F 1 "VCC" H 2650 1500 50  0000 C CNN
-F 2 "" H 2650 1350 50  0001 C CNN
-F 3 "" H 2650 1350 50  0001 C CNN
-	1    2650 1350
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2650 1350 2650 1400
-$Comp
 L 74HC08 U16
 U 1 2 5ADE6F22
 P 3450 1900
@@ -791,9 +767,6 @@ F 3 "" H 3450 1900 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	2100 1800 3000 1800
-Wire Wire Line
-	2650 1700 2650 1800
-Connection ~ 2650 1800
 Wire Wire Line
 	2100 2000 3000 2000
 Wire Wire Line
