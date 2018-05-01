@@ -37,7 +37,7 @@ EELAYER 25 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 1 10
+Sheet 1 11
 Title ""
 Date ""
 Rev ""
@@ -270,7 +270,7 @@ F 3 "" H 4300 4350 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4300 4350 4300 4950
+	4300 4350 4300 4550
 Entry Wire Line
 	4850 4550 4950 4650
 Text Label 4850 4550 2    60   ~ 0
@@ -281,13 +281,6 @@ Entry Wire Line
 	4850 4650 4950 4750
 Entry Wire Line
 	4850 4750 4950 4850
-Entry Wire Line
-	4850 4950 4950 5050
-Text Label 4850 4950 2    60   ~ 0
-CLK
-Wire Wire Line
-	4300 4950 4850 4950
-Connection ~ 4300 4550
 $Sheet
 S 5400 5900 1300 1800
 U 5AE20302
