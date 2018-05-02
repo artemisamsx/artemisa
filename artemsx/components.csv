@@ -7,8 +7,8 @@ U2A	| 74HC04        | RAM
 U2B	| 74HC04        | PPI
 U2C	| 74HC04        | PPI
 U2D	| 74HC04        | IO
-U2E	| 74HC04        | CPU
-U2F	| 74HC04        | CPU
+U2E	| 74HC04        | ---
+U2F	| 74HC04        | ---
 U3	| HM62256ALP-10 | RAM
 U4	| HM62256ALP-10 | RAM
 U5A | 74HCT04       | VDP
@@ -66,6 +66,12 @@ U34 | 74HC595       | KBD
 U35 | 74HC595       | KBD
 U36 | 74HC595       | KBD
 U37 | 74HC595       | KBD
+U38A| 74HC04        | CPU
+U38B| 74HC04        | CPU
+U38C| 74HC04        | CPU
+U38D| 74HC04        | CPU
+U38E| 74HC04        | ---
+U38F| 74HC04        | ---
 Y1  | 10.7386       | VDP
 Y2  | 16MHZ         | KBD
 Y3  | 3.58MHZ       | CPU
@@ -73,6 +79,7 @@ R1  | 10K           | SLOTS
 R2  | 10K           | SLOTS
 R3  | 2.2M          | CPU
 R4  | 1K            | CPU
+R5  | 15K           | CPU
 J1  | PS2CONN       | KBD
 J2  | MSXSLOT       | SLOTS
 J3  | MSXSLOT       | SLOTS
@@ -82,3 +89,5 @@ C3  | 22pF          | KBD
 C4  | 22pF          | KBD
 C5  | 22pF          | CPU
 C6  | 22pF          | CPU
+C7  | 10uF          | CPU
+C8  | 22pF          | CPU
