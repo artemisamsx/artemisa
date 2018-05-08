@@ -46,13 +46,13 @@ U21A| 74HC139       | PPI
 U21B| 74HC139       | PPI
 U22A| 74HC00        | PPI
 U22B| 74HC00        | PPI
-U22C| 74HC00        | ---
+U22C| 74HC00        | PSG
 U22D| 74HC00        | ---
 U23 | 74HC138       | IO
 U24A| 74HC32        | IO
-U24B| 74HC32        | ---
-U24C| 74HC32        | ---
-U24D| 74HC32        | ---
+U24B| 74HC32        | PSG
+U24C| 74HC32        | PSG
+U24D| 74HC32        | PSG
 U25 | SST39SF0x0    | ROM
 U26 | ATMEGA328P    | KBD
 U27 | 74HC154       | KBD
@@ -70,8 +70,22 @@ U38A| 74HC04        | CPU
 U38B| 74HC04        | CPU
 U38C| 74HC04        | CPU
 U38D| 74HC04        | CPU
-U38E| 74HC04        | ---
-U38F| 74HC04        | ---
+U38E| 74HC04        | PSG
+U38F| 74HC04        | PSG
+U39A| 74HC07        | PSG
+U39B| 74HC07        | PSG
+U39C| 74HC07        | PSG
+U39D| 74HC07        | PSG
+U39E| 74HC07        | ---
+U39F| 74HC07        | ---
+U40 | 74HC74        | PSG
+U41 | AY-3-8910     | PSG
+U42 | 74HC157       | PSG
+U43 | 74HC157       | PSG
+U44A| 74HC32        | PSG
+U44B| 74HC32        | PSG
+U44C| 74HC32        | ---
+U44D| 74HC32        | ---
 Y1  | 10.7386       | VDP
 Y2  | 16MHZ         | KBD
 Y3  | 3.58MHZ       | CPU
@@ -80,9 +94,30 @@ R2  | 10K           | SLOTS
 R3  | 2.2M          | CPU
 R4  | 1K            | CPU
 R5  | 15K           | CPU
+R6  | 10K           | PSG
+R7  | 10K           | PSG
+R8  | 10K           | PSG
+R9  | 10K           | PSG
+R10 | 10K           | PSG
+R11 | 10K           | PSG
+R12 | 10K           | PSG
+R13 | 10K           | PSG
+R14 | 10K           | PSG
+R15 | 10K           | PSG
+R16 | 10K           | PSG
+R17 | 10K           | PSG
+R18 | 470           | PSG
+R19 | 20k           | PSG
+R20 | 4k7           | PSG
+R21 | 2k7           | PSG
+R22 | 10K           | PSG
+R23 | 10K           | PSG
+R24 | 10K           | PSG
 J1  | PS2CONN       | KBD
 J2  | MSXSLOT       | SLOTS
 J3  | MSXSLOT       | SLOTS
+J4  | JOYCONN       | PSG
+J5  | JOYCONN       | PSG
 C1  | 27pF          | VDP
 C2  | 27pF          | VDP
 C3  | 22pF          | KBD
@@ -91,3 +126,6 @@ C5  | 22pF          | CPU
 C6  | 22pF          | CPU
 C7  | 10uF          | CPU
 C8  | 22pF          | CPU
+C9  | 10uF          | PSG
+C10 | 10uF          | PSG
+C11 | 10uF          | PSG

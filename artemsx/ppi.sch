@@ -37,7 +37,7 @@ EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 6 10
+Sheet 6 11
 Title ""
 Date ""
 Rev ""
@@ -622,7 +622,7 @@ Wire Bus Line
 	7350 5450 7900 5450
 NoConn ~ 6150 6250
 Text HLabel 7950 6350 2    60   Output ~ 0
-KBCLICK
+BEEP
 NoConn ~ 6150 6050
 Text HLabel 7950 6150 2    60   Output ~ 0
 CASOUT
