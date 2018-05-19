@@ -86,6 +86,7 @@ U44A| 74HC32        | PSG
 U44B| 74HC32        | PSG
 U44C| 74HC32        | ---
 U44D| 74HC32        | ---
+U45 | 74HC595       | KBD
 Y1  | 10.7386       | VDP
 Y2  | 16MHZ         | KBD
 Y3  | 3.58MHZ       | CPU
