@@ -1,16 +1,16 @@
 Ref | Type          | Sheet
-U1A	| 74HC32        | RAM
-U1B	| 74HC32	    | RAM
-U1C	| 74HC32	    | VDP
-U1D	| 74HC32	    | VDP
-U2A	| 74HC04        | RAM
-U2B	| 74HC04        | PPI
-U2C	| 74HC04        | PPI
-U2D	| 74HC04        | IO
-U2E	| 74HC04        | ---
-U2F	| 74HC04        | ---
-U3	| HM62256ALP-10 | RAM
-U4	| HM62256ALP-10 | RAM
+U1A | 74HC32        | RAM
+U1B | 74HC32	    | RAM
+U1C | 74HC32	    | VDP
+U1D | 74HC32	    | VDP
+U2A | 74HC04        | RAM
+U2B | 74HC04        | PPI
+U2C | 74HC04        | PPI
+U2D | 74HC04        | IO
+U2E | 74HC04        | ---
+U2F | 74HC04        | ---
+U3  | HM62256ALP-10 | RAM
+U4  | HM62256ALP-10 | RAM
 U5A | 74HCT04       | VDP
 U5B | 74HCT04       | VDP
 U5C | 74HCT04       | VDP
@@ -66,12 +66,12 @@ U34 | 74HC595       | KBD
 U35 | 74HC595       | KBD
 U36 | 74HC595       | KBD
 U37 | 74HC595       | KBD
-U38A| 74HC04        | CPU
-U38B| 74HC04        | CPU
-U38C| 74HC04        | CPU
-U38D| 74HC04        | CPU
-U38E| 74HC04        | ---
-U38F| 74HC04        | ---
+U38A| 4069          | CPU
+U38B| 4069          | CPU
+U38C| 4069          | CPU
+U38D| 4069          | CPU
+U38E| 4069          | ---
+U38F| 4069          | ---
 Y1  | 10.7386       | VDP
 Y2  | 16MHZ         | KBD
 Y3  | 3.58MHZ       | CPU

@@ -32,7 +32,6 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
-LIBS:artemsx-cache
 EELAYER 25 0
 EELAYER END
 $Descr A3 16535 11693
