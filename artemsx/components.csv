@@ -77,9 +77,9 @@ Y2  | 16MHZ         | KBD
 Y3  | 3.58MHZ       | CPU
 R1  | 10K           | SLOTS
 R2  | 10K           | SLOTS
-R3  | 2.2M          | CPU
+R3  | 1M            | CPU
 R4  | 1K            | CPU
-R5  | 15K           | CPU
+R5  | 10K           | CPU
 J1  | PS2CONN       | KBD
 J2  | MSXSLOT       | SLOTS
 J3  | MSXSLOT       | SLOTS
@@ -89,5 +89,5 @@ C3  | 22pF          | KBD
 C4  | 22pF          | KBD
 C5  | 22pF          | CPU
 C6  | 22pF          | CPU
-C7  | 10uF          | CPU
+C7  | 1uF           | CPU
 C8  | 22pF          | CPU
