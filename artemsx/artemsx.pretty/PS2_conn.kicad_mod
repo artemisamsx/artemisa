@@ -23,7 +23,7 @@
   (pad "" thru_hole rect (at 0 -4.85 180) (size 3.5 1.5) (drill oval 3 1) (layers *.Cu *.Mask))
   (pad "" thru_hole rect (at -6.85 -5.5 270) (size 3.5 1.5) (drill oval 3 1) (layers *.Cu *.Mask))
   (pad "" thru_hole rect (at 6.85 -5.5 270) (size 3.5 1.5) (drill oval 3 1) (layers *.Cu *.Mask))
-  (model ${KIPRJMOD}/artemsx.3dmodels/ps2_conn.wrl
+  (model ${KIPRJMOD}/artemsx.3dshapes/PS2_conn.wrl
     (at (xyz 0 0.28 0))
     (scale (xyz 1.025 1.1 1.1))
     (rotate (xyz 0 0 0))
