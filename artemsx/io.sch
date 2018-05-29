@@ -89,8 +89,6 @@ Wire Wire Line
 	4600 3300 2750 3300
 Wire Wire Line
 	2750 3400 4600 3400
-Text HLabel 6450 2950 2    60   Output ~ 0
-~IOSL2
 Text HLabel 6450 3050 2    60   Output ~ 0
 ~IOSL3
 Text HLabel 6450 3150 2    60   Output ~ 0
@@ -98,11 +96,10 @@ Text HLabel 6450 3150 2    60   Output ~ 0
 Text HLabel 6450 3250 2    60   Output ~ 0
 ~IOSL5
 Wire Wire Line
-	6450 2950 5950 2950
-Wire Wire Line
 	5950 3050 6450 3050
 Wire Wire Line
 	6450 3150 5950 3150
 Wire Wire Line
 	5950 3250 6450 3250
+NoConn ~ 5950 2950
 $EndSCHEMATC
