@@ -687,9 +687,9 @@ Wire Wire Line
 Wire Wire Line
 	3850 4750 3250 4750
 Wire Wire Line
-	3250 5900 3250 4750
+	3250 4750 3250 5900
 Wire Wire Line
-	1800 5900 3250 5900
+	3250 5900 1800 5900
 Wire Wire Line
 	2650 5900 2650 5800
 Text HLabel 1100 2600 0    60   Input ~ 0
