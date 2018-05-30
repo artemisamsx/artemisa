@@ -236,7 +236,7 @@ Wire Wire Line
 	4850 4550 4350 4550
 Connection ~ 4350 4550
 Text Label 4100 2950 0    60   ~ 0
-~RESET
+~EXTRESET
 Text Label 4100 2850 0    60   ~ 0
 ~WR
 Text Label 4100 2750 0    60   ~ 0
@@ -583,7 +583,7 @@ Wire Wire Line
 	8300 4550 7800 4550
 Connection ~ 7800 4550
 Text Label 7550 2950 0    60   ~ 0
-~RESET
+~EXTRESET
 Text Label 7550 2850 0    60   ~ 0
 ~WR
 Text Label 7550 2750 0    60   ~ 0
@@ -728,22 +728,20 @@ Entry Bus Bus
 	3900 1650 4000 1750
 Wire Bus Line
 	3150 1650 9550 1650
-Text Label 2950 3250 2    60   ~ 0
-~RESET
+Text Label 2950 3450 2    60   ~ 0
+~EXTRESET
 Text Label 2950 2950 2    60   ~ 0
 ~WR
 Text Label 2950 2650 2    60   ~ 0
 ~IORQ
 Text Label 2950 2750 2    60   ~ 0
 ~M1
-Text Label 2950 5350 2    60   ~ 0
+Text Label 2950 5500 2    60   ~ 0
 ~EXTWAIT
 Text Label 2950 2350 2    60   ~ 0
 ~CS12
 Text Label 2950 2150 2    60   ~ 0
 ~CS1
-Wire Wire Line
-	2950 3250 1550 3250
 Wire Wire Line
 	1550 2950 2950 2950
 Wire Wire Line
@@ -751,13 +749,13 @@ Wire Wire Line
 Wire Wire Line
 	1550 2750 2950 2750
 Wire Wire Line
-	1550 5350 2950 5350
+	1550 5500 2950 5500
 Wire Wire Line
 	1550 2350 2950 2350
 Wire Wire Line
 	2950 2150 1550 2150
 Entry Wire Line
-	3050 3150 2950 3250
+	3050 3350 2950 3450
 Entry Wire Line
 	3050 2850 2950 2950
 Entry Wire Line
@@ -765,22 +763,22 @@ Entry Wire Line
 Entry Wire Line
 	3050 2650 2950 2750
 Entry Wire Line
-	3050 5250 2950 5350
+	3050 5400 2950 5500
 Entry Wire Line
 	3050 2250 2950 2350
 Entry Wire Line
 	3050 2050 2950 2150
-Text Label 2950 3950 2    60   ~ 0
+Text Label 2950 4350 2    60   ~ 0
 SOUND
 Wire Wire Line
-	2950 3950 1550 3950
+	2950 4350 1550 4350
 Entry Wire Line
-	3050 3850 2950 3950
+	3050 4250 2950 4350
 Text Label 2950 2850 2    60   ~ 0
 ~RD
 Text Label 2950 2550 2    60   ~ 0
 ~MREQ
-Text Label 2950 4600 2    60   ~ 0
+Text Label 2950 5000 2    60   ~ 0
 ~EXTINT
 Text Label 2950 3150 2    60   ~ 0
 ~RFSH
@@ -793,7 +791,7 @@ Wire Wire Line
 Wire Wire Line
 	1550 2550 2950 2550
 Wire Wire Line
-	1550 4600 2950 4600
+	1550 5000 2950 5000
 Wire Wire Line
 	2950 3150 1550 3150
 Wire Wire Line
@@ -805,17 +803,17 @@ Entry Wire Line
 Entry Wire Line
 	3050 2450 2950 2550
 Entry Wire Line
-	3050 4500 2950 4600
+	3050 4900 2950 5000
 Entry Wire Line
 	3050 3050 2950 3150
 Entry Wire Line
 	3050 1950 2950 2050
 Entry Wire Line
 	3050 2150 2950 2250
-Text Label 2950 3600 2    60   ~ 0
+Text Label 2950 4000 2    60   ~ 0
 EXTCLK
 Entry Wire Line
-	3050 3500 2950 3600
+	3050 3900 2950 4000
 Text Label 2950 1950 2    60   ~ 0
 ~SLTSL2
 Wire Wire Line
@@ -844,20 +842,20 @@ Text HLabel 1550 2950 0    60   Input ~ 0
 ~WR
 Text HLabel 1550 3150 0    60   Input ~ 0
 ~RFSH
-Text HLabel 1550 3250 0    60   Input ~ 0
+Text HLabel 1550 3350 0    60   Input ~ 0
 ~RESET
-Text HLabel 1550 5350 0    60   Output ~ 0
+Text HLabel 1550 5500 0    60   Output ~ 0
 ~EXTWAIT
-Text HLabel 1550 3500 0    60   Input ~ 0
+Text HLabel 1550 3900 0    60   Input ~ 0
 CLK
-Text HLabel 1550 4600 0    60   Output ~ 0
+Text HLabel 1550 5000 0    60   Output ~ 0
 ~EXITINT
-Text HLabel 1550 3950 0    60   Output ~ 0
+Text HLabel 1550 4350 0    60   Output ~ 0
 SOUND
 Entry Bus Bus
 	3150 1650 3050 1750
 Wire Bus Line
-	3050 1750 3050 5300
+	3050 1750 3050 5450
 Wire Bus Line
 	3050 3450 3050 3700
 Text Notes 4750 1600 0    60   ~ 0
@@ -869,75 +867,103 @@ NoConn ~ 8800 2650
 $Comp
 L R R1
 U 1 1 5AE95016
-P 2400 4400
-F 0 "R1" V 2480 4400 50  0000 C CNN
-F 1 "10K" V 2400 4400 50  0000 C CNN
-F 2 "artemsx:Axial_resistor" V 2330 4400 50  0001 C CNN
-F 3 "" H 2400 4400 50  0001 C CNN
-	1    2400 4400
-	1    0    0    -1  
+P 2050 4850
+F 0 "R1" V 2130 4850 50  0000 C CNN
+F 1 "10K" V 2050 4850 50  0000 C CNN
+F 2 "artemsx:Axial_resistor" V 1980 4850 50  0001 C CNN
+F 3 "" H 2050 4850 50  0001 C CNN
+	1    2050 4850
+	0    1    1    0   
 $EndComp
 $Comp
 L VCC #PWR054
 U 1 1 5AE95078
-P 2400 4200
-F 0 "#PWR054" H 2400 4050 50  0001 C CNN
-F 1 "VCC" H 2400 4350 50  0000 C CNN
-F 2 "" H 2400 4200 50  0001 C CNN
-F 3 "" H 2400 4200 50  0001 C CNN
-	1    2400 4200
+P 2400 4800
+F 0 "#PWR054" H 2400 4650 50  0001 C CNN
+F 1 "VCC" H 2400 4950 50  0000 C CNN
+F 2 "" H 2400 4800 50  0001 C CNN
+F 3 "" H 2400 4800 50  0001 C CNN
+	1    2400 4800
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	2400 4200 2400 4250
-Wire Wire Line
-	2400 4550 2400 4600
-Connection ~ 2400 4600
 $Comp
 L R R2
 U 1 1 5AE951FD
-P 2400 5150
-F 0 "R2" V 2480 5150 50  0000 C CNN
-F 1 "10K" V 2400 5150 50  0000 C CNN
-F 2 "artemsx:Axial_resistor" V 2330 5150 50  0001 C CNN
-F 3 "" H 2400 5150 50  0001 C CNN
-	1    2400 5150
-	1    0    0    -1  
+P 2050 5350
+F 0 "R2" V 2130 5350 50  0000 C CNN
+F 1 "10K" V 2050 5350 50  0000 C CNN
+F 2 "artemsx:Axial_resistor" V 1980 5350 50  0001 C CNN
+F 3 "" H 2050 5350 50  0001 C CNN
+	1    2050 5350
+	0    1    1    0   
 $EndComp
 $Comp
 L VCC #PWR055
 U 1 1 5AE95203
-P 2400 4950
-F 0 "#PWR055" H 2400 4800 50  0001 C CNN
-F 1 "VCC" H 2400 5100 50  0000 C CNN
-F 2 "" H 2400 4950 50  0001 C CNN
-F 3 "" H 2400 4950 50  0001 C CNN
-	1    2400 4950
+P 2400 5300
+F 0 "#PWR055" H 2400 5150 50  0001 C CNN
+F 1 "VCC" H 2400 5450 50  0000 C CNN
+F 2 "" H 2400 5300 50  0001 C CNN
+F 3 "" H 2400 5300 50  0001 C CNN
+	1    2400 5300
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	2400 4950 2400 5000
-Wire Wire Line
-	2400 5300 2400 5350
-Connection ~ 2400 5350
 $Comp
 L 74HC32 U44
 U 3 1 5B0EC8F3
-P 2150 3600
-F 0 "U44" H 2150 3800 50  0000 C CNN
-F 1 "74HC32" H 2150 3400 50  0000 C CNN
-F 2 "" H 2150 3600 50  0001 C CNN
-F 3 "" H 2150 3600 50  0001 C CNN
-	3    2150 3600
+P 2150 4000
+F 0 "U44" H 2150 4200 50  0000 C CNN
+F 1 "74HC32" H 2150 3800 50  0000 C CNN
+F 2 "" H 2150 4000 50  0001 C CNN
+F 3 "" H 2150 4000 50  0001 C CNN
+	3    2150 4000
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	1550 3500 1750 3500
+	1550 3900 1750 3900
 Wire Wire Line
-	1650 3500 1650 3700
+	1650 3900 1650 4100
 Wire Wire Line
-	1650 3700 1750 3700
-Connection ~ 1650 3500
+	1650 4100 1750 4100
+Connection ~ 1650 3900
 Wire Wire Line
-	2600 3600 2950 3600
+	2600 4000 2950 4000
+Wire Wire Line
+	1900 5350 1800 5350
+Wire Wire Line
+	1800 5350 1800 5500
+Connection ~ 1800 5500
+Wire Wire Line
+	2200 5350 2400 5350
+Wire Wire Line
+	2400 5350 2400 5300
+Wire Wire Line
+	2400 4800 2400 4850
+Wire Wire Line
+	2400 4850 2200 4850
+Wire Wire Line
+	1900 4850 1800 4850
+Wire Wire Line
+	1800 4850 1800 5000
+Connection ~ 1800 5000
+$Comp
+L 74HC32 U44
+U 4 1 5B0EDFF8
+P 2150 3450
+F 0 "U44" H 2150 3650 50  0000 C CNN
+F 1 "74HC32" H 2150 3250 50  0000 C CNN
+F 2 "" H 2150 3450 50  0001 C CNN
+F 3 "" H 2150 3450 50  0001 C CNN
+	4    2150 3450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2600 3450 2950 3450
+Wire Wire Line
+	1750 3350 1550 3350
+Wire Wire Line
+	1650 3350 1650 3550
+Wire Wire Line
+	1650 3550 1750 3550
+Connection ~ 1650 3350
 $EndSCHEMATC
