@@ -1,0 +1,9 @@
+The following 3D models are authored by W. Lain - kcswalter@member.fsf.org:
+
+- Axial_resistor
+- Crystal
+- Disc_capacitor
+- Radial_capacitor
+
+They can be obtained from his website http://smisioto.no-ip.org/elettronica/kicad/kicad-en.htm.
+
