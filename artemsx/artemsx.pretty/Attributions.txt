@@ -1,0 +1,7 @@
+The following footprints are authored by W. Lain - kcswalter@member.fsf.org:
+
+- Crystal
+- Joystick connector
+
+They can be obtained from his website http://smisioto.no-ip.org/elettronica/kicad/kicad-en.htm.
+
