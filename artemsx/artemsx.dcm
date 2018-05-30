@@ -1,0 +1,56 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP 74HC04
+D Hex Inverseur
+$ENDCMP
+#
+$CMP 74HC07
+D Hex Inverseur
+$ENDCMP
+#
+$CMP 74HC08
+D Quad And 2 inputs
+K CMOS And2
+F datasheets/74HC08.pdf
+$ENDCMP
+#
+$CMP 74HC154
+F https://assets.nexperia.com/documents/data-sheet/74HC_HCT154.pdf
+$ENDCMP
+#
+$CMP 74HC157
+F https://assets.nexperia.com/documents/data-sheet/74HC_HCT157.pdf
+$ENDCMP
+#
+$CMP 74HC32
+D Quad Or 2 inputs
+K CMOS Or2
+$ENDCMP
+#
+$CMP 74HC595
+F https://assets.nexperia.com/documents/data-sheet/74HC_HCT595.pdf
+$ENDCMP
+#
+$CMP AY-3-8910
+F http://map.grauw.nl/resources/sound/generalinstrument_ay-3-8910.pdf
+$ENDCMP
+#
+$CMP CP
+D Polarised capacitor
+K cap capacitor
+$ENDCMP
+#
+$CMP Crystal
+D Two pin crystal, small symbol
+K quartz ceramic resonator oscillator
+$ENDCMP
+#
+$CMP MSX_Slot
+F https://www.msx.org/wiki/MSX_Cartridge_slot
+$ENDCMP
+#
+$CMP PS2_CONN
+F https://en.wikipedia.org/wiki/PS/2
+$ENDCMP
+#
+#End Doc Library
