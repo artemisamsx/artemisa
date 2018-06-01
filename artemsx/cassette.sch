@@ -1,0 +1,159 @@
+EESchema Schematic File Version 2
+LIBS:artemsx
+LIBS:power
+LIBS:artemsx-cache
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 12 12
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Audio_conn J7
+U 1 1 5B118E45
+P 7400 2300
+F 0 "J7" H 7000 2500 60  0000 C CNN
+F 1 "Audio_conn" H 7000 2000 60  0000 C CNN
+F 2 "" H 7450 2150 60  0001 C CNN
+F 3 "" H 7450 2150 60  0001 C CNN
+	1    7400 2300
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Audio_conn J8
+U 1 1 5B118E67
+P 7400 3150
+F 0 "J8" H 7000 3350 60  0000 C CNN
+F 1 "Audio_conn" H 7000 2850 60  0000 C CNN
+F 2 "" H 7450 3000 60  0001 C CNN
+F 3 "" H 7450 3000 60  0001 C CNN
+	1    7400 3150
+	-1   0    0    -1  
+$EndComp
+$Comp
+L GND #PWR064
+U 1 1 5B1192C7
+P 6400 3550
+F 0 "#PWR064" H 6400 3300 50  0001 C CNN
+F 1 "GND" H 6400 3400 50  0000 C CNN
+F 2 "" H 6400 3550 50  0001 C CNN
+F 3 "" H 6400 3550 50  0001 C CNN
+	1    6400 3550
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	5600 2050 6950 2050
+Wire Wire Line
+	6400 2050 6400 3550
+Wire Wire Line
+	6950 2900 6400 2900
+Connection ~ 6400 2900
+Text Notes 8200 1950 2    60   ~ 0
+Cassette out (write)
+Text Notes 8200 2850 2    60   ~ 0
+Cassette in (read)
+$Comp
+L CP C?
+U 1 1 5B11A155
+P 4400 2050
+F 0 "C?" V 4500 2000 50  0000 L CNN
+F 1 "1uF" V 4300 2000 50  0000 L CNN
+F 2 "" H 4400 2050 50  0001 C CNN
+F 3 "" H 4400 2050 50  0001 C CNN
+	1    4400 2050
+	0    -1   -1   0   
+$EndComp
+Text HLabel 3700 2050 0    60   Input ~ 0
+CASOUT
+Wire Wire Line
+	3700 2050 4300 2050
+$Comp
+L R_Small R?
+U 1 1 5B11A1EA
+P 4800 2050
+F 0 "R?" V 4750 2150 50  0000 L CNN
+F 1 "4k7" V 4900 2000 50  0000 L CNN
+F 2 "" H 4800 2050 50  0001 C CNN
+F 3 "" H 4800 2050 50  0001 C CNN
+	1    4800 2050
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4500 2050 4700 2050
+$Comp
+L Cap C?
+U 1 1 5B11A2B9
+P 5150 2250
+F 0 "C?" H 5160 2320 50  0000 L CNN
+F 1 "22nF" H 5160 2170 50  0000 L CNN
+F 2 "" H 5150 2250 50  0001 C CNN
+F 3 "" H 5150 2250 50  0001 C CNN
+	1    5150 2250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4900 2050 5400 2050
+Wire Wire Line
+	5150 2050 5150 2150
+$Comp
+L GND #PWR?
+U 1 1 5B11A359
+P 5150 2500
+F 0 "#PWR?" H 5150 2250 50  0001 C CNN
+F 1 "GND" H 5150 2350 50  0000 C CNN
+F 2 "" H 5150 2500 50  0001 C CNN
+F 3 "" H 5150 2500 50  0001 C CNN
+	1    5150 2500
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	5150 2350 5150 2500
+$Comp
+L R_Small R?
+U 1 1 5B11A382
+P 5500 2050
+F 0 "R?" V 5450 2150 50  0000 L CNN
+F 1 "4k7" V 5600 2000 50  0000 L CNN
+F 2 "" H 5500 2050 50  0001 C CNN
+F 3 "" H 5500 2050 50  0001 C CNN
+	1    5500 2050
+	0    1    1    0   
+$EndComp
+Connection ~ 5150 2050
+$Comp
+L R_Small R?
+U 1 1 5B11A3CA
+P 5850 2250
+F 0 "R?" V 5800 2350 50  0000 L CNN
+F 1 "100" V 5950 2200 50  0000 L CNN
+F 2 "" H 5850 2250 50  0001 C CNN
+F 3 "" H 5850 2250 50  0001 C CNN
+	1    5850 2250
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	5850 2050 5850 2150
+$Comp
+L GND #PWR?
+U 1 1 5B11A412
+P 5850 2500
+F 0 "#PWR?" H 5850 2250 50  0001 C CNN
+F 1 "GND" H 5850 2350 50  0000 C CNN
+F 2 "" H 5850 2500 50  0001 C CNN
+F 3 "" H 5850 2500 50  0001 C CNN
+	1    5850 2500
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	5850 2350 5850 2500
+Connection ~ 6400 2050
+Connection ~ 5850 2050
+$EndSCHEMATC

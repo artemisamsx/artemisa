@@ -6,7 +6,7 @@ EELAYER 25 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 1 11
+Sheet 1 12
 Title ""
 Date ""
 Rev ""
@@ -347,7 +347,6 @@ Wire Wire Line
 	5050 7200 5400 7200
 Wire Wire Line
 	5400 7400 5050 7400
-NoConn ~ 5400 7700
 Entry Bus Bus
 	8800 5950 8900 5850
 Wire Bus Line
@@ -778,4 +777,23 @@ Text Label 5050 7600 0    60   ~ 0
 BEEP
 Wire Wire Line
 	5400 7600 5050 7600
+$Sheet
+S 2900 5200 1450 600 
+U 5B118A76
+F0 "CAS" 60
+F1 "cassette.sch" 60
+F2 "CASOUT" I R 4350 5350 60 
+$EndSheet
+Entry Wire Line
+	4850 5350 4950 5450
+Text Label 4850 5350 2    60   ~ 0
+CASOUT
+Wire Wire Line
+	4850 5350 4350 5350
+Entry Wire Line
+	5050 7700 4950 7600
+Text Label 5050 7700 0    60   ~ 0
+CASOUT
+Wire Wire Line
+	5050 7700 5400 7700
 $EndSCHEMATC
