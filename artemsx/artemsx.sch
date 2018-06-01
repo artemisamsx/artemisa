@@ -222,7 +222,7 @@ Wire Wire Line
 Wire Wire Line
 	12000 4700 12600 4700
 $Sheet
-S 9950 9950 1150 950 
+S 8000 8450 1150 950 
 U 5AE11EC9
 F0 "Power" 60
 F1 "power.sch" 60
