@@ -6,7 +6,7 @@ EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 5 11
+Sheet 5 12
 Title ""
 Date ""
 Rev ""
@@ -540,13 +540,13 @@ Wire Wire Line
 Wire Wire Line
 	2200 3350 2200 3550
 Wire Wire Line
-	2200 3350 9600 3350
+	2200 3350 9750 3350
 Wire Wire Line
 	2200 4750 2200 4800
 Wire Wire Line
 	2200 4800 3150 4800
 Wire Wire Line
-	2600 3950 9600 3950
+	2600 3950 9750 3950
 Connection ~ 3150 4800
 Connection ~ 3150 3350
 Connection ~ 3150 3950
@@ -806,4 +806,21 @@ Connection ~ 3300 3950
 Connection ~ 3450 3950
 Connection ~ 3600 3950
 Connection ~ 3750 3950
+$Comp
+L Cap C60
+U 1 1 5B13DFC4
+P 9750 3600
+F 0 "C60" V 9800 3650 50  0000 L CNN
+F 1 "22pF" V 9800 3350 50  0000 L CNN
+F 2 "artemsx:Disc_capacitor" H 9750 3600 50  0001 C CNN
+F 3 "" H 9750 3600 50  0001 C CNN
+	1    9750 3600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9750 3350 9750 3500
+Connection ~ 9600 3350
+Wire Wire Line
+	9750 3950 9750 3700
+Connection ~ 9600 3950
 $EndSCHEMATC
