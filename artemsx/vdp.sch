@@ -17,11 +17,11 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L TMS99x8 U10
+L TMS9928/9 U10
 U 1 1 5AD4E709
 P 3400 3400
 F 0 "U10" H 3400 4800 60  0000 C CNN
-F 1 "TMS99x8" H 3400 2350 60  0000 C CNN
+F 1 "TMS9928/9" H 3400 2300 60  0000 C CNN
 F 2 "artemsx:DIP-40_600" H 3400 3950 60  0001 C CNN
 F 3 "" H 3400 3950 60  0001 C CNN
 	1    3400 3400
@@ -922,7 +922,6 @@ Wire Wire Line
 Wire Wire Line
 	1850 4250 1650 4250
 Connection ~ 1650 4250
-NoConn ~ 2750 3600
 NoConn ~ 2750 3700
 Entry Bus Bus
 	10600 2900 10700 3000
@@ -958,4 +957,5 @@ Text Notes 1750 2700 1    60   ~ 0
 Data bus
 Text Notes 1600 2800 1    60   ~ 0
 Address bus
+NoConn ~ 4050 4400
 $EndSCHEMATC
