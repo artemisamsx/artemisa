@@ -120,6 +120,11 @@ D Polarised capacitor
 K cap capacitor
 $ENDCMP
 #
+$CMP CXA1645
+D RGB Encoder
+F https://gamesx.com/rgbadd/cxa1645.pdf
+$ENDCMP
+#
 $CMP Cap
 D Ceramic capacitor
 $ENDCMP
