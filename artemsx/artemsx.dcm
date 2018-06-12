@@ -139,6 +139,11 @@ D 32,768-word × 8-bit High Speed CMOS Static RAM
 F https://www.futurlec.com/Datasheet/Memory/62256ALP.pdf
 $ENDCMP
 #
+$CMP LM1881
+D Video Sync Separator
+F http://www.ti.com/lit/ds/symlink/lm1881.pdf
+$ENDCMP
+#
 $CMP MSX_Slot
 D MSX cartridge slot connector
 F https://www.msx.org/wiki/MSX_Cartridge_slot
