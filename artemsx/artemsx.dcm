@@ -110,6 +110,11 @@ D Programmable sound generator
 F http://map.grauw.nl/resources/sound/generalinstrument_ay-3-8910.pdf
 $ENDCMP
 #
+$CMP CD4066
+D CMOS Quad bilateral switch
+F http://www.ti.com/lit/ds/symlink/cd4066b.pdf
+$ENDCMP
+#
 $CMP CONN_JOY
 D MSX joystick connector
 F http://synpro.heimat.eu/docs/msx_mouse_principle.pdf
