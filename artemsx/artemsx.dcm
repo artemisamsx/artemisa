@@ -1,5 +1,9 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP 1N4448
+D Diode
+$ENDCMP
+#
 $CMP 4069
 D CMOS hex inverter
 F http://www.ti.com/lit/ds/symlink/cd4069ub.pdf
