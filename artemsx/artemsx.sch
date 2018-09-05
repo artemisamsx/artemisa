@@ -6,7 +6,7 @@ EELAYER 25 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 1 12
+Sheet 1 13
 Title ""
 Date ""
 Rev ""
@@ -810,4 +810,10 @@ Text Label 12600 8150 2    60   ~ 0
 CASIN
 Wire Wire Line
 	12600 8150 12000 8150
+$Sheet
+S 2950 6300 1400 850 
+U 5B1ECD5D
+F0 "VOUT" 60
+F1 "vout.sch" 60
+$EndSheet
 $EndSCHEMATC

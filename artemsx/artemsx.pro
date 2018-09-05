@@ -1,4 +1,4 @@
-update=29/05/2018 9:41:31
+update=21/06/2018 9:27:00
 version=1
 last_client=kicad
 [pcbnew]
@@ -31,3 +31,13 @@ LibDir=
 [eeschema/libraries]
 LibName1=artemsx
 LibName2=power
+[schematic_editor]
+version=1
+PageLayoutDescrFile=
+PlotDirectoryName=
+SubpartIdSeparator=0
+SubpartFirstId=65
+NetFmtName=
+SpiceForceRefPrefix=0
+SpiceUseNetNumbers=0
+LabSize=60

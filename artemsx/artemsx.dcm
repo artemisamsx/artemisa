@@ -163,6 +163,10 @@ D PS2 keyboard connector
 F https://en.wikipedia.org/wiki/PS/2
 $ENDCMP
 #
+$CMP Pot
+D Potentiometer
+$ENDCMP
+#
 $CMP SST39SF0x0
 D 1 Mbit / 2 Mbit / 4 Mbit (x8) Multi-Purpose Flash
 F https://cdn.sos.sk/productdata/e8/3d/e6946b0f/sst39sf010a-70-4i-nhe.pdf
