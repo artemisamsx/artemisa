@@ -172,7 +172,7 @@ D 1 Mbit / 2 Mbit / 4 Mbit (x8) Multi-Purpose Flash
 F https://cdn.sos.sk/productdata/e8/3d/e6946b0f/sst39sf010a-70-4i-nhe.pdf
 $ENDCMP
 #
-$CMP TMS9928/9
+$CMP TMS9928_9
 D Video Display Processor
 F http://www.colecovision.dk/PDF/TMS9918.a.pdf
 $ENDCMP

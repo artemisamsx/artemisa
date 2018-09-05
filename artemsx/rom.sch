@@ -1,8 +1,6 @@
-EESchema Schematic File Version 2
-LIBS:artemsx
-LIBS:power
+EESchema Schematic File Version 4
 LIBS:artemsx-cache
-EELAYER 25 0
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -17,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L SST39SF0x0 U25
+L artemsx:SST39SF0x0 U25
 U 1 1 5AE56AE3
 P 5500 2750
 F 0 "U25" H 5500 3600 60  0000 C CNN
@@ -126,7 +124,7 @@ Wire Wire Line
 Text Label 4550 3550 0    60   ~ 0
 ADDR15
 $Comp
-L GND #PWR022
+L power:GND #PWR022
 U 1 1 5AE56BD1
 P 4800 4050
 F 0 "#PWR022" H 4800 3800 50  0001 C CNN
@@ -211,7 +209,7 @@ DATA[0..7]
 Text HLabel 3450 4500 0    60   Input ~ 0
 ~SLTSL0
 $Comp
-L VCC #PWR023
+L power:VCC #PWR023
 U 1 1 5AE57532
 P 7000 2900
 F 0 "#PWR023" H 7000 2750 50  0001 C CNN

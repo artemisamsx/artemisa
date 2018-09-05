@@ -1,8 +1,6 @@
-EESchema Schematic File Version 2
-LIBS:artemsx
-LIBS:power
+EESchema Schematic File Version 4
 LIBS:artemsx-cache
-EELAYER 25 0
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -17,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Z84C00 U18
+L artemsx:Z84C00 U18
 U 1 1 5ADBCA58
 P 5850 3700
 F 0 "U18" H 5850 5100 60  0000 C CNN
@@ -28,7 +26,7 @@ F 3 "" H 5850 3550 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L 74HCT244 U11
+L artemsx:74HCT244 U11
 U 1 1 5ADBD2B3
 P 8300 1000
 F 0 "U11" H 8550 1300 60  0000 C CNN
@@ -39,7 +37,7 @@ F 3 "" H 8300 600 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L 74HCT244 U11
+L artemsx:74HCT244 U11
 U 2 1 5ADBD2DE
 P 8300 1950
 F 0 "U11" H 8550 2250 60  0000 C CNN
@@ -50,7 +48,7 @@ F 3 "" H 8300 1550 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR05
+L power:GND #PWR05
 U 1 1 5ADBD305
 P 8300 1450
 F 0 "#PWR05" H 8300 1200 50  0001 C CNN
@@ -61,7 +59,7 @@ F 3 "" H 8300 1450 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L 74HCT244 U12
+L artemsx:74HCT244 U12
 U 1 1 5ADBD3DF
 P 8300 2900
 F 0 "U12" H 8550 3200 60  0000 C CNN
@@ -72,7 +70,7 @@ F 3 "" H 8300 2500 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L 74HCT244 U12
+L artemsx:74HCT244 U12
 U 2 1 5ADBD3E5
 P 8300 3850
 F 0 "U12" H 8550 4150 60  0000 C CNN
@@ -83,7 +81,7 @@ F 3 "" H 8300 3450 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR06
+L power:GND #PWR06
 U 1 1 5ADBD3EB
 P 8300 3350
 F 0 "#PWR06" H 8300 3100 50  0001 C CNN
@@ -94,7 +92,7 @@ F 3 "" H 8300 3350 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR07
+L power:GND #PWR07
 U 1 1 5ADBD3FB
 P 8300 2400
 F 0 "#PWR07" H 8300 2150 50  0001 C CNN
@@ -105,7 +103,7 @@ F 3 "" H 8300 2400 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR08
+L power:GND #PWR08
 U 1 1 5ADBD415
 P 8300 4300
 F 0 "#PWR08" H 8300 4050 50  0001 C CNN
@@ -320,7 +318,7 @@ A15
 Entry Bus Bus
 	7000 1500 6900 1600
 $Comp
-L 74HCT245 U13
+L artemsx:74HCT245 U13
 U 1 1 5ADE24A9
 P 8300 5350
 F 0 "U13" H 8550 5850 60  0000 C CNN
@@ -331,7 +329,7 @@ F 3 "" H 8300 4700 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR09
+L power:GND #PWR09
 U 1 1 5ADE2895
 P 8300 6100
 F 0 "#PWR09" H 8300 5850 50  0001 C CNN
@@ -374,7 +372,7 @@ Entry Wire Line
 Text Label 9150 5700 2    60   ~ 0
 DATA7
 $Comp
-L 74HCT244 U14
+L artemsx:74HCT244 U14
 U 1 1 5ADE2CBE
 P 2950 2000
 F 0 "U14" H 2800 2300 60  0000 C CNN
@@ -385,7 +383,7 @@ F 3 "" H 2950 1600 60  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L 74HCT244 U14
+L artemsx:74HCT244 U14
 U 2 1 5ADE2D35
 P 2950 3150
 F 0 "U14" H 2800 3450 60  0000 C CNN
@@ -396,7 +394,7 @@ F 3 "" H 2950 2750 60  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L GND #PWR010
+L power:GND #PWR010
 U 1 1 5ADE2D77
 P 2950 2550
 F 0 "#PWR010" H 2950 2300 50  0001 C CNN
@@ -407,7 +405,7 @@ F 3 "" H 2950 2550 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR011
+L power:GND #PWR011
 U 1 1 5ADE2D9A
 P 2950 3700
 F 0 "#PWR011" H 2950 3450 50  0001 C CNN
@@ -614,7 +612,7 @@ Wire Bus Line
 Text HLabel 9600 6050 2    60   BiDi ~ 0
 DATA[0..7]
 $Comp
-L 74HC74 U15
+L artemsx:74HC74 U15
 U 1 1 5ADE4A9C
 P 2650 5300
 F 0 "U15" H 2800 5650 60  0000 C CNN
@@ -625,7 +623,7 @@ F 3 "" H 2650 5100 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L 74HC74 U15
+L artemsx:74HC74 U15
 U 2 1 5ADE4B12
 P 3850 5300
 F 0 "U15" H 4000 5650 60  0000 C CNN
@@ -670,7 +668,7 @@ Wire Wire Line
 Wire Wire Line
 	2650 4650 2650 4800
 $Comp
-L VCC #PWR012
+L power:VCC #PWR012
 U 1 1 5ADE5567
 P 3850 5900
 F 0 "#PWR012" H 3850 5750 50  0001 C CNN
@@ -700,7 +698,7 @@ Wire Wire Line
 Wire Wire Line
 	1800 5400 2250 5400
 $Comp
-L VCC #PWR013
+L power:VCC #PWR013
 U 1 1 5ADE6215
 P 4100 3400
 F 0 "#PWR013" H 4100 3250 50  0001 C CNN
@@ -728,7 +726,7 @@ Text HLabel 1100 2400 0    60   Input ~ 0
 Text HLabel 1100 2500 0    60   Input ~ 0
 ~EXTINT
 $Comp
-L 74HC08 U16
+L artemsx:74HC08 U16
 U 1 2 5ADE6F22
 P 3450 1100
 F 0 "U16" H 3450 1300 50  0000 C CNN
@@ -801,7 +799,7 @@ Wire Wire Line
 Wire Bus Line
 	6900 4200 6900 5950
 $Comp
-L 74HC08 U16
+L artemsx:74HC08 U16
 U 2 2 5ADE819D
 P 6500 1100
 F 0 "U16" H 6500 1300 50  0000 C CNN
@@ -812,7 +810,7 @@ F 3 "" H 6500 1100 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L 74HC32 U17
+L artemsx:74HC32 U17
 U 1 2 5ADE80AE
 P 5400 1700
 F 0 "U17" H 5400 1900 50  0000 C CNN
@@ -1061,7 +1059,7 @@ Wire Wire Line
 Wire Wire Line
 	1800 1950 2500 1950
 $Comp
-L Crystal Y3
+L artemsx:Crystal Y3
 U 1 1 5AEC8D3F
 P 5850 6700
 F 0 "Y3" H 5850 6800 50  0000 C CNN
@@ -1072,7 +1070,7 @@ F 3 "" H 5850 6700 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L CP C6
+L artemsx:CP C6
 U 1 1 5AEC8D46
 P 6300 7000
 F 0 "C6" H 6310 7070 50  0000 L CNN
@@ -1083,7 +1081,7 @@ F 3 "" H 6300 7000 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L CP C5
+L artemsx:CP C5
 U 1 1 5AEC8D4D
 P 5400 7000
 F 0 "C5" H 5410 7070 50  0000 L CNN
@@ -1094,7 +1092,7 @@ F 3 "" H 5400 7000 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L GND #PWR014
+L power:GND #PWR014
 U 1 1 5AEC8D54
 P 5850 7250
 F 0 "#PWR014" H 5850 7000 50  0001 C CNN
@@ -1122,7 +1120,7 @@ Wire Wire Line
 Wire Wire Line
 	6300 5850 6300 6900
 $Comp
-L 4069 U38
+L artemsx:4069 U38
 U 3 1 5AEC8D67
 P 5850 6200
 F 0 "U38" H 5850 6350 50  0000 C CNN
@@ -1133,7 +1131,7 @@ F 3 "" H 5850 6200 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L 4069 U38
+L artemsx:4069 U38
 U 4 1 5AEC8D6E
 P 4800 5750
 F 0 "U38" H 4800 5900 50  0000 C CNN
@@ -1144,9 +1142,11 @@ F 3 "" H 4800 5750 50  0001 C CNN
 	0    1    -1   0   
 $EndComp
 $Comp
-L R R4
+L artemsx-rescue:R R4
 U 1 1 5AEC8D75
 P 5400 6450
+AR Path="/5AEC8D75" Ref="R4"  Part="1" 
+AR Path="/5ADBC286/5AEC8D75" Ref="R4"  Part="1" 
 F 0 "R4" V 5480 6450 50  0000 C CNN
 F 1 "1K" V 5400 6450 50  0000 C CNN
 F 2 "artemsx:Axial_resistor" V 5330 6450 50  0001 C CNN
@@ -1164,9 +1164,11 @@ Wire Wire Line
 	6150 6200 6300 6200
 Connection ~ 6300 6700
 $Comp
-L R R3
+L artemsx-rescue:R R3
 U 1 1 5AEC8D84
 P 5850 5850
+AR Path="/5AEC8D84" Ref="R3"  Part="1" 
+AR Path="/5ADBC286/5AEC8D84" Ref="R3"  Part="1" 
 F 0 "R3" V 5750 5850 50  0000 C CNN
 F 1 "1M" V 5850 5850 50  0000 C CNN
 F 2 "artemsx:Axial_resistor" V 5780 5850 50  0001 C CNN
@@ -1180,7 +1182,7 @@ Wire Wire Line
 	6000 5850 6300 5850
 Connection ~ 6300 6200
 $Comp
-L 4069 U38
+L artemsx:4069 U38
 U 1 1 5AECC864
 P 3050 6800
 F 0 "U38" H 3050 6950 50  0000 C CNN
@@ -1191,7 +1193,7 @@ F 3 "" H 3050 6800 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L 4069 U38
+L artemsx:4069 U38
 U 2 1 5AECCAD0
 P 3850 6800
 F 0 "U38" H 3850 6950 50  0000 C CNN
@@ -1204,7 +1206,7 @@ $EndComp
 Wire Wire Line
 	3350 6800 3550 6800
 $Comp
-L CP C7
+L artemsx:CP C7
 U 1 1 5AECCD48
 P 2500 7000
 F 0 "C7" H 2510 7070 50  0000 L CNN
@@ -1215,7 +1217,7 @@ F 3 "" H 2500 7000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L VCC #PWR015
+L power:VCC #PWR015
 U 1 1 5AECCDA7
 P 2500 6400
 F 0 "#PWR015" H 2500 6250 50  0001 C CNN
@@ -1226,7 +1228,7 @@ F 3 "" H 2500 6400 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR016
+L power:GND #PWR016
 U 1 1 5AECCE4F
 P 2500 7200
 F 0 "#PWR016" H 2500 6950 50  0001 C CNN
@@ -1243,9 +1245,11 @@ Wire Wire Line
 Wire Wire Line
 	2500 6800 2750 6800
 $Comp
-L R_Small R5
+L artemsx-rescue:R_Small R5
 U 1 1 5AECD1D0
 P 2500 6600
+AR Path="/5AECD1D0" Ref="R5"  Part="1" 
+AR Path="/5ADBC286/5AECD1D0" Ref="R5"  Part="1" 
 F 0 "R5" V 2400 6600 50  0000 L CNN
 F 1 "10K" V 2600 6550 50  0000 L CNN
 F 2 "artemsx:Axial_resistor" H 2500 6600 50  0001 C CNN
@@ -1257,7 +1261,7 @@ Wire Wire Line
 	2500 6400 2500 6500
 Connection ~ 2500 6800
 $Comp
-L GND #PWR017
+L power:GND #PWR017
 U 1 1 5AECD789
 P 4350 7200
 F 0 "#PWR017" H 4350 6950 50  0001 C CNN
@@ -1274,7 +1278,7 @@ Wire Wire Line
 Wire Wire Line
 	4350 6800 4350 6900
 $Comp
-L Cap C8
+L artemsx:Cap C8
 U 1 1 5AECD8D5
 P 4350 7000
 F 0 "C8" H 4360 7070 50  0000 L CNN
@@ -1289,7 +1293,7 @@ Wire Wire Line
 Connection ~ 4550 4050
 Connection ~ 4350 6800
 $Comp
-L 74HC04 U2
+L artemsx:74HC04 U2
 U 6 1 5B0EF5C7
 P 4800 5000
 F 0 "U2" H 4800 5150 50  0000 C CNN

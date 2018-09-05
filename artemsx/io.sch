@@ -1,8 +1,6 @@
-EESchema Schematic File Version 2
-LIBS:artemsx
-LIBS:power
+EESchema Schematic File Version 4
 LIBS:artemsx-cache
-EELAYER 25 0
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -17,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L 74HC138 U23
+L artemsx:74HC138 U23
 U 1 1 5AE4C08A
 P 5450 3100
 F 0 "U23" H 5450 3600 60  0000 C CNN
@@ -44,7 +42,7 @@ NoConn ~ 5950 2850
 NoConn ~ 5950 3350
 NoConn ~ 5950 3450
 $Comp
-L 74HC04 U2
+L artemsx:74HC04 U2
 U 4 1 5AE4C25B
 P 3100 3900
 F 0 "U2" H 2900 4050 50  0000 C CNN
@@ -55,7 +53,7 @@ F 3 "" H 3100 3900 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L 74HC32 U24
+L artemsx:74HC32 U24
 U 1 1 5AE4C2D8
 P 3900 4000
 F 0 "U24" H 3900 4200 50  0000 C CNN

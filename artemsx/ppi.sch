@@ -1,8 +1,6 @@
-EESchema Schematic File Version 2
-LIBS:artemsx
-LIBS:power
+EESchema Schematic File Version 4
 LIBS:artemsx-cache
-EELAYER 25 0
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -17,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L 82C55A U19
+L artemsx:82C55A U19
 U 1 1 5AE22077
 P 5550 5200
 F 0 "U19" H 5900 6650 60  0000 C CNN
@@ -92,7 +90,7 @@ Wire Wire Line
 Wire Wire Line
 	2650 5400 4950 5400
 $Comp
-L GND #PWR020
+L power:GND #PWR020
 U 1 1 5AE225E1
 P 4750 6400
 F 0 "#PWR020" H 4750 6150 50  0001 C CNN
@@ -109,7 +107,7 @@ Wire Wire Line
 Text HLabel 2650 6100 0    60   Input ~ 0
 ~IOSL5
 $Comp
-L 74HC32 U17
+L artemsx:74HC32 U17
 U 2 2 5AE22C4B
 P 4000 5850
 F 0 "U17" H 4000 6050 50  0000 C CNN
@@ -120,7 +118,7 @@ F 3 "" H 4000 5850 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L 74HC32 U17
+L artemsx:74HC32 U17
 U 3 2 5AE22CA8
 P 4000 6350
 F 0 "U17" H 4000 6550 50  0000 C CNN
@@ -162,7 +160,7 @@ Wire Wire Line
 Text HLabel 2650 6900 0    60   Input ~ 0
 ~RESET
 $Comp
-L 74HC04 U2
+L artemsx:74HC04 U2
 U 2 1 5AE230A6
 P 4000 6900
 F 0 "U2" H 4000 7050 50  0000 C CNN
@@ -181,7 +179,7 @@ Wire Wire Line
 Wire Wire Line
 	2650 6900 3700 6900
 $Comp
-L 74HC153 U20
+L artemsx:74HC153 U20
 U 1 1 5AE23FCD
 P 7350 2550
 F 0 "U20" H 7600 3200 60  0000 C CNN
@@ -308,7 +306,7 @@ A14
 Text Label 4350 1550 0    60   ~ 0
 A15
 $Comp
-L 74HC139 U21
+L artemsx:74HC139 U21
 U 1 1 5AE32F51
 P 8650 2300
 F 0 "U21" H 8650 2600 60  0000 C CNN
@@ -335,7 +333,7 @@ Wire Wire Line
 Wire Wire Line
 	10300 2450 9050 2450
 $Comp
-L 74HC04 U2
+L artemsx:74HC04 U2
 U 3 1 5AE33555
 P 5650 1100
 F 0 "U2" H 5650 1250 50  0000 C CNN
@@ -350,7 +348,7 @@ Text HLabel 2650 1100 0    60   Input ~ 0
 Wire Wire Line
 	2650 1100 5350 1100
 $Comp
-L 74HC32 U17
+L artemsx:74HC32 U17
 U 4 2 5AE33CD3
 P 6600 1000
 F 0 "U17" H 6600 1200 50  0000 C CNN
@@ -394,7 +392,7 @@ Wire Wire Line
 	7400 3400 7400 3350
 Connection ~ 7300 3400
 $Comp
-L 74HC139 U21
+L artemsx:74HC139 U21
 U 2 1 5AE3598A
 P 8650 1500
 F 0 "U21" H 8650 1800 60  0000 C CNN
@@ -432,7 +430,7 @@ Wire Wire Line
 Wire Wire Line
 	9250 1800 10300 1800
 $Comp
-L 74HC08 U16
+L artemsx:74HC08 U16
 U 3 2 5AE37299
 P 9800 1500
 F 0 "U16" H 9800 1700 50  0000 C CNN
@@ -559,7 +557,7 @@ Wire Wire Line
 Wire Wire Line
 	6150 6350 7950 6350
 $Comp
-L 74HC74 U40
+L artemsx:74HC74 U40
 U 2 1 5B0E8C43
 P 5550 3000
 F 0 "U40" H 5700 3400 60  0000 C CNN
@@ -579,7 +577,7 @@ Wire Wire Line
 Wire Wire Line
 	5550 3650 5550 3500
 $Comp
-L GND #PWR021
+L power:GND #PWR021
 U 1 1 5B0E9535
 P 5000 3300
 F 0 "#PWR021" H 5000 3050 50  0001 C CNN
