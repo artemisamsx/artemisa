@@ -1,12 +1,10 @@
-EESchema Schematic File Version 2
-LIBS:artemsx
-LIBS:power
+EESchema Schematic File Version 4
 LIBS:artemsx-cache
-EELAYER 25 0
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 3 12
+Sheet 3 13
 Title ""
 Date ""
 Rev ""
@@ -17,18 +15,20 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L TMS99x8 U10
+L artemsx-rescue:TMS9928_9 U10
 U 1 1 5AD4E709
 P 3400 3400
+AR Path="/5AD4E709" Ref="U10"  Part="1" 
+AR Path="/5AD4D7B1/5AD4E709" Ref="U10"  Part="1" 
 F 0 "U10" H 3400 4800 60  0000 C CNN
-F 1 "TMS99x8" H 3400 2350 60  0000 C CNN
+F 1 "TMS9928/9" H 3400 2300 60  0000 C CNN
 F 2 "artemsx:DIP-40_600" H 3400 3950 60  0001 C CNN
 F 3 "" H 3400 3950 60  0001 C CNN
 	1    3400 3400
 	1    0    0    -1  
 $EndComp
 $Comp
-L 74HCT04 U5
+L artemsx:74HCT04 U5
 U 1 1 5AD4EB0E
 P 5400 2350
 F 0 "U5" H 5550 2450 50  0000 C CNN
@@ -39,7 +39,7 @@ F 3 "" H 5400 2350 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L 74HCT04 U5
+L artemsx:74HCT04 U5
 U 2 1 5AD4EB35
 P 5400 2850
 F 0 "U5" H 5550 2950 50  0000 C CNN
@@ -50,7 +50,7 @@ F 3 "" H 5400 2850 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L 74HCT04 U5
+L artemsx:74HCT04 U5
 U 3 1 5AD4EB64
 P 5450 3950
 F 0 "U5" H 5600 4050 50  0000 C CNN
@@ -65,7 +65,7 @@ Wire Wire Line
 Text Label 5850 2350 2    60   ~ 0
 WR
 Wire Wire Line
-	5700 2350 6000 2350
+	5700 2350 5850 2350
 Wire Wire Line
 	5850 2350 5850 2600
 Wire Wire Line
@@ -84,7 +84,7 @@ Wire Wire Line
 Wire Wire Line
 	5750 3950 6800 3950
 $Comp
-L 74HCT04 U5
+L artemsx:74HCT04 U5
 U 4 1 5AD4EE70
 P 5450 4450
 F 0 "U5" H 5600 4550 50  0000 C CNN
@@ -95,7 +95,7 @@ F 3 "" H 5450 4450 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L 74HCT04 U5
+L artemsx:74HCT04 U5
 U 5 1 5AD4EE91
 P 5450 4900
 F 0 "U5" H 5600 5000 50  0000 C CNN
@@ -106,7 +106,7 @@ F 3 "" H 5450 4900 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L 74HCT04 U5
+L artemsx:74HCT04 U5
 U 6 1 5AD4EEB8
 P 5450 5350
 F 0 "U5" H 5600 5450 50  0000 C CNN
@@ -143,7 +143,7 @@ Wire Wire Line
 Wire Wire Line
 	5750 5350 6800 5350
 $Comp
-L 74HCT574 U6
+L artemsx:74HCT574 U6
 U 1 1 5AD4F318
 P 7350 2150
 F 0 "U6" H 7350 2750 60  0000 C CNN
@@ -154,7 +154,7 @@ F 3 "" H 7350 1900 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L 74HCT574 U7
+L artemsx:74HCT574 U7
 U 1 1 5AD4F39B
 P 7350 3550
 F 0 "U7" H 7350 4150 60  0000 C CNN
@@ -165,7 +165,7 @@ F 3 "" H 7350 3300 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L 74HCT574 U8
+L artemsx:74HCT574 U8
 U 1 1 5AD4F3DF
 P 7350 4950
 F 0 "U8" H 7350 5550 60  0000 C CNN
@@ -422,7 +422,7 @@ Wire Wire Line
 Wire Wire Line
 	10100 4200 10600 4200
 $Comp
-L GND #PWR01
+L power:GND #PWR01
 U 1 1 5AD50251
 P 6700 5550
 F 0 "#PWR01" H 6700 5300 50  0001 C CNN
@@ -437,7 +437,7 @@ Wire Wire Line
 Wire Wire Line
 	6700 5450 6700 5550
 $Comp
-L GND #PWR02
+L power:GND #PWR02
 U 1 1 5AD5031D
 P 6700 4150
 F 0 "#PWR02" H 6700 3900 50  0001 C CNN
@@ -464,7 +464,7 @@ WR
 Wire Wire Line
 	6000 2550 6800 2550
 $Comp
-L GND #PWR03
+L power:GND #PWR03
 U 1 1 5AD50714
 P 8800 5000
 F 0 "#PWR03" H 8800 4750 50  0001 C CNN
@@ -612,8 +612,6 @@ Wire Wire Line
 	1850 2750 2750 2750
 Wire Wire Line
 	2750 2850 1850 2850
-Wire Bus Line
-	1750 1950 1750 2850
 Text HLabel 1300 1850 0    60   BiDi ~ 0
 DATA[0..7]
 Entry Bus Bus
@@ -646,20 +644,16 @@ Wire Wire Line
 	1700 3000 2750 3000
 Wire Wire Line
 	4850 3000 4850 3950
-Wire Bus Line
-	6300 1450 6300 5200
 Wire Wire Line
-	4750 3100 4750 6050
+	4750 3100 4750 4450
 Text Label 5100 3950 2    60   ~ 0
 ~RAS
 Wire Wire Line
 	4650 3200 4650 2350
 Wire Wire Line
-	6100 2650 6100 5850
+	6100 2650 6100 2850
 Wire Wire Line
-	6000 2350 6000 5950
-Wire Bus Line
-	10700 3000 10700 6200
+	6000 2350 6000 2550
 Entry Wire Line
 	6300 1650 6400 1750
 Entry Wire Line
@@ -757,10 +751,6 @@ Wire Bus Line
 	4650 6300 10600 6300
 Entry Bus Bus
 	10600 6300 10700 6200
-Wire Bus Line
-	4550 3300 4550 6200
-Wire Bus Line
-	4550 1450 4550 2900
 Entry Wire Line
 	4450 3450 4550 3550
 Entry Wire Line
@@ -794,7 +784,7 @@ Entry Wire Line
 Entry Wire Line
 	4550 2750 4450 2850
 $Comp
-L HM62256ALP-10 U9
+L artemsx:HM62256ALP-10 U9
 U 1 1 5ADB5BF6
 P 9500 4250
 F 0 "U9" H 9500 5100 60  0000 C CNN
@@ -805,7 +795,7 @@ F 3 "" H 9500 4100 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L 74HC32 U1
+L artemsx:74HC32 U1
 U 3 2 5ADB5F06
 P 1950 1000
 F 0 "U1" H 1950 1200 50  0000 C CNN
@@ -816,7 +806,7 @@ F 3 "" H 1950 1000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L 74HC32 U1
+L artemsx:74HC32 U1
 U 4 2 5ADB5F49
 P 1950 1500
 F 0 "U1" H 1950 1700 50  0000 C CNN
@@ -835,7 +825,7 @@ Text HLabel 1300 1250 0    60   Input ~ 0
 Wire Wire Line
 	1300 1250 1400 1250
 Wire Wire Line
-	1400 1100 1400 1400
+	1400 1100 1400 1250
 Wire Wire Line
 	1400 1100 1550 1100
 Wire Wire Line
@@ -862,7 +852,7 @@ Wire Wire Line
 Wire Wire Line
 	2550 3200 2550 1500
 $Comp
-L Crystal Y1
+L artemsx:Crystal Y1
 U 1 1 5ADB7F16
 P 2350 4050
 F 0 "Y1" V 2350 3900 50  0000 C CNN
@@ -873,15 +863,15 @@ F 3 "" H 2350 4050 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	2050 3850 2750 3850
+	2050 3850 2350 3850
 Wire Wire Line
 	2350 3850 2350 3950
 Wire Wire Line
 	2350 4150 2350 4250
 Wire Wire Line
-	2050 4250 2750 4250
+	2050 4250 2350 4250
 $Comp
-L CP C1
+L artemsx:CP C1
 U 1 1 5ADB87F4
 P 1950 3850
 F 0 "C1" V 1800 3800 50  0000 L CNN
@@ -892,7 +882,7 @@ F 3 "" H 1950 3850 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L CP C2
+L artemsx:CP C2
 U 1 1 5ADB8852
 P 1950 4250
 F 0 "C2" V 1800 4200 50  0000 L CNN
@@ -903,7 +893,7 @@ F 3 "" H 1950 4250 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L GND #PWR04
+L power:GND #PWR04
 U 1 1 5ADB888E
 P 1650 4400
 F 0 "#PWR04" H 1650 4150 50  0001 C CNN
@@ -918,11 +908,10 @@ Connection ~ 2350 4250
 Wire Wire Line
 	1850 3850 1650 3850
 Wire Wire Line
-	1650 3850 1650 4400
+	1650 3850 1650 4250
 Wire Wire Line
 	1850 4250 1650 4250
 Connection ~ 1650 4250
-NoConn ~ 2750 3600
 NoConn ~ 2750 3700
 Entry Bus Bus
 	10600 2900 10700 3000
@@ -930,8 +919,6 @@ Entry Bus Bus
 	8400 2800 8500 2900
 Wire Bus Line
 	10600 2900 8500 2900
-Wire Bus Line
-	8400 1550 8400 2800
 Entry Wire Line
 	8300 1750 8400 1850
 Entry Wire Line
@@ -958,4 +945,33 @@ Text Notes 1750 2700 1    60   ~ 0
 Data bus
 Text Notes 1600 2800 1    60   ~ 0
 Address bus
+NoConn ~ 4050 4400
+Wire Wire Line
+	5850 2350 6000 2350
+Wire Wire Line
+	4750 4450 4750 6050
+Wire Wire Line
+	6100 2850 6100 5850
+Wire Wire Line
+	6000 2550 6000 5950
+Wire Wire Line
+	1400 1250 1400 1400
+Wire Wire Line
+	2350 3850 2750 3850
+Wire Wire Line
+	2350 4250 2750 4250
+Wire Wire Line
+	1650 4250 1650 4400
+Wire Bus Line
+	1750 1950 1750 2850
+Wire Bus Line
+	10700 3000 10700 6200
+Wire Bus Line
+	4550 3300 4550 6200
+Wire Bus Line
+	4550 1450 4550 2900
+Wire Bus Line
+	8400 1550 8400 2800
+Wire Bus Line
+	6300 1450 6300 5200
 $EndSCHEMATC

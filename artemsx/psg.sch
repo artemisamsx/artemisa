@@ -1,12 +1,10 @@
-EESchema Schematic File Version 2
-LIBS:artemsx
-LIBS:power
+EESchema Schematic File Version 4
 LIBS:artemsx-cache
-EELAYER 25 0
+EELAYER 26 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 11 12
+Sheet 11 13
 Title ""
 Date ""
 Rev ""
@@ -17,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L AY-3-8910 U41
+L artemsx:AY-3-8910 U41
 U 1 1 5AED21CA
 P 7100 3850
 F 0 "U41" H 7100 5000 60  0000 C CNN
@@ -66,7 +64,7 @@ Entry Bus Bus
 Text HLabel 1500 4800 0    60   Input ~ 0
 ~RESET
 $Comp
-L 74HC32 U44
+L artemsx:74HC32 U44
 U 1 2 5AED26B6
 P 2400 4300
 F 0 "U44" H 2200 4500 50  0000 C CNN
@@ -81,7 +79,7 @@ Text HLabel 1500 4200 0    60   Input ~ 0
 Text HLabel 1500 4400 0    60   Input ~ 0
 A1
 $Comp
-L 74HC32 U44
+L artemsx:74HC32 U44
 U 2 2 5AED2724
 P 3550 4500
 F 0 "U44" H 3550 4700 50  0000 C CNN
@@ -94,7 +92,7 @@ $EndComp
 Text HLabel 1500 4600 0    60   Input ~ 0
 ~WR
 $Comp
-L 4069 U38
+L artemsx:4069 U38
 U 5 2 5AED281A
 P 4600 4500
 F 0 "U38" H 4450 4650 50  0000 C CNN
@@ -105,7 +103,7 @@ F 3 "" H 4600 4500 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L 74HC32 U24
+L artemsx:74HC32 U24
 U 4 2 5AED2880
 P 3150 3700
 F 0 "U24" H 3150 3900 50  0000 C CNN
@@ -118,7 +116,7 @@ $EndComp
 Text HLabel 1500 3600 0    60   Input ~ 0
 A0
 $Comp
-L 74HC32 U24
+L artemsx:74HC32 U24
 U 2 2 5AED2B82
 P 2350 2650
 F 0 "U24" H 2350 2850 50  0000 C CNN
@@ -129,7 +127,7 @@ F 3 "" H 2350 2650 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L 74HC32 U24
+L artemsx:74HC32 U24
 U 3 2 5AED2BDD
 P 3400 2950
 F 0 "U24" H 3400 3150 50  0000 C CNN
@@ -186,7 +184,7 @@ Connection ~ 1650 4400
 Wire Wire Line
 	1500 2550 1950 2550
 $Comp
-L 4069 U38
+L artemsx:4069 U38
 U 6 1 5AED2E73
 P 1650 3150
 F 0 "U38" H 1500 3300 50  0000 C CNN
@@ -240,7 +238,7 @@ Wire Wire Line
 Wire Wire Line
 	5750 3750 6500 3750
 $Comp
-L VCC #PWR048
+L power:VCC #PWR048
 U 1 1 5AED4BC8
 P 5900 3500
 F 0 "#PWR048" H 5900 3350 50  0001 C CNN
@@ -255,7 +253,7 @@ Wire Wire Line
 Wire Wire Line
 	5900 3500 5900 4400
 $Comp
-L 74HC74 U40
+L artemsx:74HC74 U40
 U 1 1 5AED5075
 P 4800 5750
 F 0 "U40" H 4950 6100 60  0000 C CNN
@@ -286,7 +284,7 @@ Wire Wire Line
 Wire Wire Line
 	6250 4150 6500 4150
 $Comp
-L VCC #PWR049
+L power:VCC #PWR049
 U 1 1 5AED527C
 P 4800 6350
 F 0 "#PWR049" H 4800 6200 50  0001 C CNN
@@ -297,7 +295,7 @@ F 3 "" H 4800 6350 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L VCC #PWR050
+L power:VCC #PWR050
 U 1 1 5AED52A5
 P 4800 5150
 F 0 "#PWR050" H 4800 5000 50  0001 C CNN
@@ -312,7 +310,7 @@ Wire Wire Line
 Wire Wire Line
 	4800 6250 4800 6350
 $Comp
-L GND #PWR051
+L power:GND #PWR051
 U 1 1 5AED606B
 P 6400 4950
 F 0 "#PWR051" H 6400 4700 50  0001 C CNN
@@ -332,7 +330,7 @@ Wire Wire Line
 NoConn ~ 6500 4650
 NoConn ~ 6500 4750
 $Comp
-L 74HC157 U42
+L artemsx:74HC157 U42
 U 1 1 5AED733D
 P 10650 2850
 F 0 "U42" H 10650 3400 60  0000 C CNN
@@ -343,7 +341,7 @@ F 3 "" H 10650 2300 60  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L 74HC157 U43
+L artemsx:74HC157 U43
 U 1 1 5AED73E1
 P 10650 4350
 F 0 "U43" H 10650 4900 60  0000 C CNN
@@ -438,7 +436,7 @@ IOA2
 Text Label 9900 2750 0    60   ~ 0
 IOA3
 $Comp
-L GND #PWR052
+L power:GND #PWR052
 U 1 1 5AED7BAD
 P 10050 3400
 F 0 "#PWR052" H 10050 3150 50  0001 C CNN
@@ -453,7 +451,7 @@ Wire Wire Line
 Wire Wire Line
 	10050 3250 10050 3400
 $Comp
-L GND #PWR053
+L power:GND #PWR053
 U 1 1 5AED7C5D
 P 10050 4900
 F 0 "#PWR053" H 10050 4650 50  0001 C CNN
@@ -537,7 +535,7 @@ IOB0
 Wire Wire Line
 	8750 3700 7700 3700
 $Comp
-L GND #PWR054
+L power:GND #PWR054
 U 1 1 5AED8BA2
 P 11250 4850
 F 0 "#PWR054" H 11250 4600 50  0001 C CNN
@@ -569,7 +567,7 @@ Wire Wire Line
 Wire Wire Line
 	11150 4550 12700 4550
 $Comp
-L 74HC07 U39
+L artemsx:74HC07 U39
 U 1 1 5AED8FC0
 P 10650 5400
 F 0 "U39" H 10450 5550 50  0000 C CNN
@@ -604,7 +602,7 @@ IOB0
 Wire Wire Line
 	9900 5400 10350 5400
 $Comp
-L 74HC07 U39
+L artemsx:74HC07 U39
 U 2 1 5AED939C
 P 10650 5750
 F 0 "U39" H 10450 5900 50  0000 C CNN
@@ -615,7 +613,7 @@ F 3 "" H 10650 5750 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L 74HC07 U39
+L artemsx:74HC07 U39
 U 3 1 5AED93DC
 P 10650 6100
 F 0 "U39" H 10450 6250 50  0000 C CNN
@@ -626,7 +624,7 @@ F 3 "" H 10650 6100 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L 74HC07 U39
+L artemsx:74HC07 U39
 U 4 1 5AED946E
 P 10650 6450
 F 0 "U39" H 10450 6600 50  0000 C CNN
@@ -657,9 +655,11 @@ Wire Wire Line
 	11750 3750 11750 6450
 Connection ~ 11750 3950
 $Comp
-L R R17
+L artemsx-rescue:R R17
 U 1 1 5AED9A99
 P 12000 3750
+AR Path="/5AED9A99" Ref="R17"  Part="1" 
+AR Path="/5AED18CC/5AED9A99" Ref="R17"  Part="1" 
 F 0 "R17" V 11950 3550 50  0000 C CNN
 F 1 "10K" V 12000 3750 50  0000 C CNN
 F 2 "artemsx:Axial_resistor" V 11930 3750 50  0001 C CNN
@@ -668,9 +668,11 @@ F 3 "" H 12000 3750 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L R R16
+L artemsx-rescue:R R16
 U 1 1 5AED9B28
 P 12000 3650
+AR Path="/5AED9B28" Ref="R16"  Part="1" 
+AR Path="/5AED18CC/5AED9B28" Ref="R16"  Part="1" 
 F 0 "R16" V 11950 3450 50  0000 C CNN
 F 1 "10K" V 12000 3650 50  0000 C CNN
 F 2 "artemsx:Axial_resistor" V 11930 3650 50  0001 C CNN
@@ -679,9 +681,11 @@ F 3 "" H 12000 3650 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L R R15
+L artemsx-rescue:R R15
 U 1 1 5AED9B6E
 P 12000 3550
+AR Path="/5AED9B6E" Ref="R15"  Part="1" 
+AR Path="/5AED18CC/5AED9B6E" Ref="R15"  Part="1" 
 F 0 "R15" V 11950 3350 50  0000 C CNN
 F 1 "10K" V 12000 3550 50  0000 C CNN
 F 2 "artemsx:Axial_resistor" V 11930 3550 50  0001 C CNN
@@ -690,9 +694,11 @@ F 3 "" H 12000 3550 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L R R14
+L artemsx-rescue:R R14
 U 1 1 5AED9BB7
 P 12000 3450
+AR Path="/5AED9BB7" Ref="R14"  Part="1" 
+AR Path="/5AED18CC/5AED9BB7" Ref="R14"  Part="1" 
 F 0 "R14" V 11950 3250 50  0000 C CNN
 F 1 "10K" V 12000 3450 50  0000 C CNN
 F 2 "artemsx:Axial_resistor" V 11930 3450 50  0001 C CNN
@@ -701,9 +707,11 @@ F 3 "" H 12000 3450 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L R R6
+L artemsx-rescue:R R6
 U 1 1 5AEDA94E
 P 11450 2000
+AR Path="/5AEDA94E" Ref="R6"  Part="1" 
+AR Path="/5AED18CC/5AEDA94E" Ref="R6"  Part="1" 
 F 0 "R6" V 11400 1800 50  0000 C CNN
 F 1 "10K" V 11450 2000 50  0000 C CNN
 F 2 "artemsx:Axial_resistor" V 11380 2000 50  0001 C CNN
@@ -712,9 +720,11 @@ F 3 "" H 11450 2000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R7
+L artemsx-rescue:R R7
 U 1 1 5AEDA954
 P 11550 2000
+AR Path="/5AEDA954" Ref="R7"  Part="1" 
+AR Path="/5AED18CC/5AEDA954" Ref="R7"  Part="1" 
 F 0 "R7" V 11500 1800 50  0000 C CNN
 F 1 "10K" V 11550 2000 50  0000 C CNN
 F 2 "artemsx:Axial_resistor" V 11480 2000 50  0001 C CNN
@@ -723,9 +733,11 @@ F 3 "" H 11550 2000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R8
+L artemsx-rescue:R R8
 U 1 1 5AEDA95A
 P 11650 2000
+AR Path="/5AEDA95A" Ref="R8"  Part="1" 
+AR Path="/5AED18CC/5AEDA95A" Ref="R8"  Part="1" 
 F 0 "R8" V 11600 1800 50  0000 C CNN
 F 1 "10K" V 11650 2000 50  0000 C CNN
 F 2 "artemsx:Axial_resistor" V 11580 2000 50  0001 C CNN
@@ -734,9 +746,11 @@ F 3 "" H 11650 2000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R9
+L artemsx-rescue:R R9
 U 1 1 5AEDA960
 P 11750 2000
+AR Path="/5AEDA960" Ref="R9"  Part="1" 
+AR Path="/5AED18CC/5AEDA960" Ref="R9"  Part="1" 
 F 0 "R9" V 11700 1800 50  0000 C CNN
 F 1 "10K" V 11750 2000 50  0000 C CNN
 F 2 "artemsx:Axial_resistor" V 11680 2000 50  0001 C CNN
@@ -745,9 +759,11 @@ F 3 "" H 11750 2000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R10
+L artemsx-rescue:R R10
 U 1 1 5AEDAA02
 P 11850 2000
+AR Path="/5AEDAA02" Ref="R10"  Part="1" 
+AR Path="/5AED18CC/5AEDAA02" Ref="R10"  Part="1" 
 F 0 "R10" V 11800 1800 50  0000 C CNN
 F 1 "10K" V 11850 2000 50  0000 C CNN
 F 2 "artemsx:Axial_resistor" V 11780 2000 50  0001 C CNN
@@ -756,9 +772,11 @@ F 3 "" H 11850 2000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R11
+L artemsx-rescue:R R11
 U 1 1 5AEDAA08
 P 11950 2000
+AR Path="/5AEDAA08" Ref="R11"  Part="1" 
+AR Path="/5AED18CC/5AEDAA08" Ref="R11"  Part="1" 
 F 0 "R11" V 11900 1800 50  0000 C CNN
 F 1 "10K" V 11950 2000 50  0000 C CNN
 F 2 "artemsx:Axial_resistor" V 11880 2000 50  0001 C CNN
@@ -767,9 +785,11 @@ F 3 "" H 11950 2000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R12
+L artemsx-rescue:R R12
 U 1 1 5AEDAA0E
 P 12050 2000
+AR Path="/5AEDAA0E" Ref="R12"  Part="1" 
+AR Path="/5AED18CC/5AEDAA0E" Ref="R12"  Part="1" 
 F 0 "R12" V 12000 1800 50  0000 C CNN
 F 1 "10K" V 12050 2000 50  0000 C CNN
 F 2 "artemsx:Axial_resistor" V 11980 2000 50  0001 C CNN
@@ -778,9 +798,11 @@ F 3 "" H 12050 2000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R13
+L artemsx-rescue:R R13
 U 1 1 5AEDAA14
 P 12150 2000
+AR Path="/5AEDAA14" Ref="R13"  Part="1" 
+AR Path="/5AED18CC/5AEDAA14" Ref="R13"  Part="1" 
 F 0 "R13" V 12100 1800 50  0000 C CNN
 F 1 "10K" V 12150 2000 50  0000 C CNN
 F 2 "artemsx:Axial_resistor" V 12080 2000 50  0001 C CNN
@@ -829,7 +851,7 @@ Wire Wire Line
 	12150 2150 12150 2450
 Connection ~ 12150 2450
 $Comp
-L CONN_JOY J4
+L artemsx:CONN_JOY J4
 U 1 1 5AEDC366
 P 14400 3100
 F 0 "J4" H 13850 3400 60  0000 C CNN
@@ -840,7 +862,7 @@ F 3 "" H 14400 3050 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CONN_JOY J5
+L artemsx:CONN_JOY J5
 U 1 1 5AEDCA7B
 P 14400 4950
 F 0 "J5" H 13850 5250 60  0000 C CNN
@@ -1007,7 +1029,7 @@ Entry Wire Line
 Wire Wire Line
 	14500 5750 14500 5400
 $Comp
-L GND #PWR055
+L power:GND #PWR055
 U 1 1 5AEDEE2F
 P 14700 5550
 F 0 "#PWR055" H 14700 5300 50  0001 C CNN
@@ -1018,7 +1040,7 @@ F 3 "" H 14700 5550 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR056
+L power:GND #PWR056
 U 1 1 5AEDEE94
 P 14700 3700
 F 0 "#PWR056" H 14700 3450 50  0001 C CNN
@@ -1029,7 +1051,7 @@ F 3 "" H 14700 3700 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L VCC #PWR057
+L power:VCC #PWR057
 U 1 1 5AEDEFE9
 P 14800 4350
 F 0 "#PWR057" H 14800 4200 50  0001 C CNN
@@ -1040,7 +1062,7 @@ F 3 "" H 14800 4350 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L VCC #PWR058
+L power:VCC #PWR058
 U 1 1 5AEDF04E
 P 14800 2500
 F 0 "#PWR058" H 14800 2350 50  0001 C CNN
@@ -1081,7 +1103,7 @@ Wire Bus Line
 Wire Bus Line
 	13550 5950 13550 6850
 $Comp
-L VCC #PWR059
+L power:VCC #PWR059
 U 1 1 5AEE1315
 P 12550 3550
 F 0 "#PWR059" H 12550 3400 50  0001 C CNN
@@ -1115,7 +1137,7 @@ Wire Wire Line
 	12350 3550 12150 3550
 Connection ~ 12350 3550
 $Comp
-L VCC #PWR060
+L power:VCC #PWR060
 U 1 1 5AEE1AE0
 P 11800 1650
 F 0 "#PWR060" H 11800 1500 50  0001 C CNN
@@ -1153,7 +1175,7 @@ Wire Wire Line
 	12050 1850 12050 1750
 Connection ~ 12050 1750
 $Comp
-L GND #PWR061
+L power:GND #PWR061
 U 1 1 5AEE292A
 P 8100 5800
 F 0 "#PWR061" H 8100 5550 50  0001 C CNN
@@ -1168,9 +1190,11 @@ Wire Wire Line
 Wire Wire Line
 	7700 4400 8100 4400
 $Comp
-L R R18
+L artemsx-rescue:R R18
 U 1 1 5AF09131
 P 7850 5250
+AR Path="/5AF09131" Ref="R18"  Part="1" 
+AR Path="/5AED18CC/5AF09131" Ref="R18"  Part="1" 
 F 0 "R18" V 7800 5000 50  0000 C CNN
 F 1 "470" V 7850 5250 50  0000 C CNN
 F 2 "artemsx:Axial_resistor" V 7780 5250 50  0001 C CNN
@@ -1199,7 +1223,7 @@ Wire Wire Line
 	7700 5000 7700 7200
 Connection ~ 7850 5000
 $Comp
-L CP C11
+L artemsx:CP C11
 U 1 1 5AF09E61
 P 7700 7300
 F 0 "C11" H 7710 7370 50  0000 L CNN
@@ -1210,9 +1234,11 @@ F 3 "" H 7700 7300 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R21
+L artemsx-rescue:R R21
 U 1 1 5AF09F18
 P 7700 7800
+AR Path="/5AF09F18" Ref="R21"  Part="1" 
+AR Path="/5AED18CC/5AF09F18" Ref="R21"  Part="1" 
 F 0 "R21" H 7600 7950 50  0000 C CNN
 F 1 "2k7" V 7700 7800 50  0000 C CNN
 F 2 "artemsx:Axial_resistor" V 7630 7800 50  0001 C CNN
@@ -1235,7 +1261,7 @@ Wire Wire Line
 Wire Wire Line
 	7100 7050 7100 7200
 $Comp
-L CP C9
+L artemsx:CP C9
 U 1 1 5AF0A5DE
 P 7100 7300
 F 0 "C9" H 7110 7370 50  0000 L CNN
@@ -1246,9 +1272,11 @@ F 3 "" H 7100 7300 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R19
+L artemsx-rescue:R R19
 U 1 1 5AF0A5E4
 P 7100 7800
+AR Path="/5AF0A5E4" Ref="R19"  Part="1" 
+AR Path="/5AED18CC/5AF0A5E4" Ref="R19"  Part="1" 
 F 0 "R19" H 7000 7950 50  0000 C CNN
 F 1 "20k" V 7100 7800 50  0000 C CNN
 F 2 "artemsx:Axial_resistor" V 7030 7800 50  0001 C CNN
@@ -1259,7 +1287,7 @@ $EndComp
 Wire Wire Line
 	7100 7400 7100 7650
 $Comp
-L CP C10
+L artemsx:CP C10
 U 1 1 5AF0A663
 P 7400 7300
 F 0 "C10" H 7410 7370 50  0000 L CNN
@@ -1270,9 +1298,11 @@ F 3 "" H 7400 7300 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R20
+L artemsx-rescue:R R20
 U 1 1 5AF0A669
 P 7400 7800
+AR Path="/5AF0A669" Ref="R20"  Part="1" 
+AR Path="/5AED18CC/5AF0A669" Ref="R20"  Part="1" 
 F 0 "R20" H 7300 7950 50  0000 C CNN
 F 1 "4k7" V 7400 7800 50  0000 C CNN
 F 2 "artemsx:Axial_resistor" V 7330 7800 50  0001 C CNN
@@ -1304,9 +1334,11 @@ Entry Wire Line
 Text Label 8750 8750 2    60   ~ 0
 IOA7
 $Comp
-L R R22
+L artemsx-rescue:R R22
 U 1 1 5AF3DBD3
 P 8100 5250
+AR Path="/5AF3DBD3" Ref="R22"  Part="1" 
+AR Path="/5AED18CC/5AF3DBD3" Ref="R22"  Part="1" 
 F 0 "R22" V 8050 5050 50  0000 C CNN
 F 1 "10K" V 8100 5250 50  0000 C CNN
 F 2 "artemsx:Axial_resistor" V 8030 5250 50  0001 C CNN
@@ -1315,9 +1347,11 @@ F 3 "" H 8100 5250 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R23
+L artemsx-rescue:R R23
 U 1 1 5AF3E1DF
 P 8350 5250
+AR Path="/5AF3E1DF" Ref="R23"  Part="1" 
+AR Path="/5AED18CC/5AF3E1DF" Ref="R23"  Part="1" 
 F 0 "R23" V 8300 5050 50  0000 C CNN
 F 1 "10K" V 8350 5250 50  0000 C CNN
 F 2 "artemsx:Axial_resistor" V 8280 5250 50  0001 C CNN
@@ -1334,7 +1368,7 @@ Wire Wire Line
 Wire Wire Line
 	8350 5600 8350 5400
 $Comp
-L 74HC07 U39
+L artemsx:74HC07 U39
 U 5 1 5B0E9A4D
 P 10650 7200
 F 0 "U39" H 10450 7350 50  0000 C CNN
@@ -1345,7 +1379,7 @@ F 3 "" H 10650 7200 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L 74HC07 U39
+L artemsx:74HC07 U39
 U 6 1 5B0E9B52
 P 10650 7600
 F 0 "U39" H 10450 7750 50  0000 C CNN
@@ -1356,7 +1390,7 @@ F 3 "" H 10650 7600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L VCC #PWR062
+L power:VCC #PWR062
 U 1 1 5B0EA206
 P 9950 7450
 F 0 "#PWR062" H 9950 7300 50  0001 C CNN
@@ -1378,7 +1412,7 @@ Wire Wire Line
 	10100 7600 10100 7200
 Connection ~ 10100 7600
 $Comp
-L 74HC08 U16
+L artemsx:74HC08 U16
 U 4 2 5B0EA0A9
 P 4500 3600
 F 0 "U16" H 4500 3800 50  0000 C CNN
@@ -1389,7 +1423,7 @@ F 3 "" H 4500 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L 74HC04 U2
+L artemsx:74HC04 U2
 U 5 2 5B0EAEB3
 P 5450 3750
 F 0 "U2" H 5300 3900 50  0000 C CNN

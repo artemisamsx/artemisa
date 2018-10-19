@@ -1,12 +1,10 @@
-EESchema Schematic File Version 2
-LIBS:artemsx
-LIBS:power
+EESchema Schematic File Version 4
 LIBS:artemsx-cache
-EELAYER 25 0
+EELAYER 26 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 1 12
+Sheet 1 13
 Title ""
 Date ""
 Rev ""
@@ -161,8 +159,6 @@ Text Label 12600 3500 2    60   ~ 0
 ~RD
 Text Label 12600 3600 2    60   ~ 0
 ~SLTSL1
-Wire Bus Line
-	4950 1800 4950 8750
 Wire Wire Line
 	12600 3400 12000 3400
 Wire Wire Line
@@ -183,8 +179,6 @@ Entry Bus Bus
 	8800 4550 8900 4650
 Entry Bus Bus
 	8900 4450 9000 4550
-Wire Bus Line
-	8900 4650 8900 7350
 Wire Bus Line
 	9000 4550 10850 4550
 Text Label 10800 3600 2    60   ~ 0
@@ -255,8 +249,6 @@ F21 "CASOUT" O L 5400 7700 60
 $EndSheet
 Entry Bus Bus
 	8550 4400 8650 4300
-Wire Bus Line
-	8550 4400 8550 8000
 Entry Wire Line
 	8450 6250 8550 6150
 Entry Wire Line
@@ -460,8 +452,6 @@ Entry Bus Bus
 Entry Bus Bus
 	8650 2450 8550 2550
 Wire Bus Line
-	8550 2150 8550 3300
-Wire Bus Line
 	8650 2450 10850 2450
 Text Label 10800 2450 2    60   ~ 0
 ADDR[0..15]
@@ -516,12 +506,6 @@ Text Label 5050 8300 0    60   ~ 0
 ~RESET
 Wire Wire Line
 	5050 8300 5400 8300
-Wire Bus Line
-	12700 1800 12700 8350
-Wire Bus Line
-	12700 5200 12700 5500
-Wire Bus Line
-	12700 5300 12700 5400
 Entry Bus Bus
 	12600 1700 12700 1800
 Wire Bus Line
@@ -686,8 +670,6 @@ Entry Bus Bus
 	7400 2050 7300 2150
 Entry Bus Bus
 	8900 4650 9000 4550
-Wire Bus Line
-	7300 2150 7300 2700
 $Sheet
 S 10850 7300 1150 1600
 U 5AED18CC
@@ -810,4 +792,22 @@ Text Label 12600 8150 2    60   ~ 0
 CASIN
 Wire Wire Line
 	12600 8150 12000 8150
+$Sheet
+S 2950 6300 1400 850 
+U 5B1ECD5D
+F0 "VOUT" 60
+F1 "vout.sch" 60
+$EndSheet
+Wire Bus Line
+	8900 4650 8900 7350
+Wire Bus Line
+	8550 2150 8550 3300
+Wire Bus Line
+	7300 2150 7300 2700
+Wire Bus Line
+	8550 4400 8550 8000
+Wire Bus Line
+	4950 1800 4950 8750
+Wire Bus Line
+	12700 1800 12700 8350
 $EndSCHEMATC

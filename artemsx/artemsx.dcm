@@ -1,5 +1,9 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP 1N4448
+D Diode
+$ENDCMP
+#
 $CMP 4069
 D CMOS hex inverter
 F http://www.ti.com/lit/ds/symlink/cd4069ub.pdf
@@ -110,6 +114,11 @@ D Programmable sound generator
 F http://map.grauw.nl/resources/sound/generalinstrument_ay-3-8910.pdf
 $ENDCMP
 #
+$CMP CD4066
+D CMOS Quad bilateral switch
+F http://www.ti.com/lit/ds/symlink/cd4066b.pdf
+$ENDCMP
+#
 $CMP CONN_JOY
 D MSX joystick connector
 F http://synpro.heimat.eu/docs/msx_mouse_principle.pdf
@@ -118,6 +127,11 @@ $ENDCMP
 $CMP CP
 D Polarised capacitor
 K cap capacitor
+$ENDCMP
+#
+$CMP CXA1645
+D RGB Encoder
+F https://gamesx.com/rgbadd/cxa1645.pdf
 $ENDCMP
 #
 $CMP Cap
@@ -134,6 +148,11 @@ D 32,768-word × 8-bit High Speed CMOS Static RAM
 F https://www.futurlec.com/Datasheet/Memory/62256ALP.pdf
 $ENDCMP
 #
+$CMP LM1881
+D Video Sync Separator
+F http://www.ti.com/lit/ds/symlink/lm1881.pdf
+$ENDCMP
+#
 $CMP MSX_Slot
 D MSX cartridge slot connector
 F https://www.msx.org/wiki/MSX_Cartridge_slot
@@ -144,12 +163,16 @@ D PS2 keyboard connector
 F https://en.wikipedia.org/wiki/PS/2
 $ENDCMP
 #
+$CMP Pot
+D Potentiometer
+$ENDCMP
+#
 $CMP SST39SF0x0
 D 1 Mbit / 2 Mbit / 4 Mbit (x8) Multi-Purpose Flash
 F https://cdn.sos.sk/productdata/e8/3d/e6946b0f/sst39sf010a-70-4i-nhe.pdf
 $ENDCMP
 #
-$CMP TMS99x8
+$CMP TMS9928_9
 D Video Display Processor
 F http://www.colecovision.dk/PDF/TMS9918.a.pdf
 $ENDCMP

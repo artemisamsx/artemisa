@@ -1,12 +1,10 @@
-EESchema Schematic File Version 2
-LIBS:artemsx
-LIBS:power
+EESchema Schematic File Version 4
 LIBS:artemsx-cache
-EELAYER 25 0
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 10 12
+Sheet 10 13
 Title ""
 Date ""
 Rev ""
@@ -17,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L MSX_Slot J2
+L artemsx:MSX_Slot J2
 U 1 1 5AE91CDF
 P 5050 3450
 F 0 "J2" H 5100 4750 50  0000 C CNN
@@ -200,7 +198,7 @@ ADDRESS BUS
 Text Notes 4900 6250 0    60   ~ 0
 DATA BUS
 $Comp
-L GND #PWR040
+L power:GND #PWR040
 U 1 1 5AE9275E
 P 4150 4450
 F 0 "#PWR040" H 4150 4200 50  0001 C CNN
@@ -218,7 +216,7 @@ Wire Wire Line
 	4850 4350 4150 4350
 Connection ~ 4150 4350
 $Comp
-L VCC #PWR041
+L power:VCC #PWR041
 U 1 1 5AE927BD
 P 4350 4950
 F 0 "#PWR041" H 4350 4800 50  0001 C CNN
@@ -342,7 +340,7 @@ Wire Wire Line
 Wire Wire Line
 	4650 4650 4850 4650
 $Comp
-L MSX_Slot J3
+L artemsx:MSX_Slot J3
 U 1 1 5AE938CD
 P 8500 3450
 F 0 "J3" H 8550 4750 50  0000 C CNN
@@ -517,7 +515,7 @@ ADDRESS BUS
 Text Notes 8350 6250 0    60   ~ 0
 DATA BUS
 $Comp
-L GND #PWR042
+L power:GND #PWR042
 U 1 1 5AE93927
 P 7600 4450
 F 0 "#PWR042" H 7600 4200 50  0001 C CNN
@@ -535,7 +533,7 @@ Wire Wire Line
 	8300 4350 7600 4350
 Connection ~ 7600 4350
 $Comp
-L VCC #PWR043
+L power:VCC #PWR043
 U 1 1 5AE93931
 P 7800 4950
 F 0 "#PWR043" H 7800 4800 50  0001 C CNN
@@ -805,9 +803,11 @@ CONTROL BUS
 NoConn ~ 5350 2650
 NoConn ~ 8800 2650
 $Comp
-L R R1
+L artemsx-rescue:R R1
 U 1 1 5AE95016
 P 2050 4850
+AR Path="/5AE95016" Ref="R1"  Part="1" 
+AR Path="/5AE915ED/5AE95016" Ref="R1"  Part="1" 
 F 0 "R1" V 2130 4850 50  0000 C CNN
 F 1 "10K" V 2050 4850 50  0000 C CNN
 F 2 "artemsx:Axial_resistor" V 1980 4850 50  0001 C CNN
@@ -816,7 +816,7 @@ F 3 "" H 2050 4850 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L VCC #PWR044
+L power:VCC #PWR044
 U 1 1 5AE95078
 P 2400 4800
 F 0 "#PWR044" H 2400 4650 50  0001 C CNN
@@ -827,9 +827,11 @@ F 3 "" H 2400 4800 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R2
+L artemsx-rescue:R R2
 U 1 1 5AE951FD
 P 2050 5350
+AR Path="/5AE951FD" Ref="R2"  Part="1" 
+AR Path="/5AE915ED/5AE951FD" Ref="R2"  Part="1" 
 F 0 "R2" V 2130 5350 50  0000 C CNN
 F 1 "10K" V 2050 5350 50  0000 C CNN
 F 2 "artemsx:Axial_resistor" V 1980 5350 50  0001 C CNN
@@ -838,7 +840,7 @@ F 3 "" H 2050 5350 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L VCC #PWR045
+L power:VCC #PWR045
 U 1 1 5AE95203
 P 2400 5300
 F 0 "#PWR045" H 2400 5150 50  0001 C CNN
@@ -849,7 +851,7 @@ F 3 "" H 2400 5300 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L 74HC32 U44
+L artemsx:74HC32 U44
 U 3 1 5B0EC8F3
 P 2150 4000
 F 0 "U44" H 2150 4200 50  0000 C CNN
@@ -887,7 +889,7 @@ Wire Wire Line
 	1800 4850 1800 5000
 Connection ~ 1800 5000
 $Comp
-L 74HC32 U44
+L artemsx:74HC32 U44
 U 4 1 5B0EDFF8
 P 2150 3450
 F 0 "U44" H 2150 3650 50  0000 C CNN
@@ -909,7 +911,7 @@ Connection ~ 1650 3350
 Text Notes 5650 7050 2    60   ~ 0
 Please note slots has no +12/-12 voltage rails. This is so\nbecase it's rarely needed and it would complicate the design,\nneeding a built-in AC/DC converter and voltage regulator. 
 $Comp
-L GND #PWR046
+L power:GND #PWR046
 U 1 1 5B1168BF
 P 5650 4800
 F 0 "#PWR046" H 5650 4550 50  0001 C CNN
@@ -927,7 +929,7 @@ Wire Wire Line
 	5350 4650 5650 4650
 Connection ~ 5650 4650
 $Comp
-L GND #PWR047
+L power:GND #PWR047
 U 1 1 5B116A61
 P 9100 4800
 F 0 "#PWR047" H 9100 4550 50  0001 C CNN

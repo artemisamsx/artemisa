@@ -1,12 +1,10 @@
-EESchema Schematic File Version 2
-LIBS:artemsx
-LIBS:power
+EESchema Schematic File Version 4
 LIBS:artemsx-cache
-EELAYER 25 0
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 2 12
+Sheet 2 13
 Title ""
 Date ""
 Rev ""
@@ -371,7 +369,7 @@ Wire Wire Line
 Entry Bus Bus
 	9500 2350 9400 2250
 $Comp
-L 74HC32 U1
+L artemsx:74HC32 U1
 U 1 2 5AD910AC
 P 4700 5000
 F 0 "U1" H 4700 5200 50  0000 C CNN
@@ -382,7 +380,7 @@ F 3 "" H 4700 5000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L 74HC32 U1
+L artemsx:74HC32 U1
 U 2 2 5AD910F1
 P 4700 5600
 F 0 "U1" H 4700 5800 50  0000 C CNN
@@ -393,7 +391,7 @@ F 3 "" H 4700 5600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L 74HC04 U2
+L artemsx:74HC04 U2
 U 1 1 5ADB187D
 P 3500 5700
 F 0 "U2" H 3500 5850 50  0000 C CNN
@@ -404,7 +402,7 @@ F 3 "" H 3500 5700 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L HM62256ALP-10 U3
+L artemsx:HM62256ALP-10 U3
 U 1 1 5ADB2034
 P 5050 3350
 F 0 "U3" H 5050 4200 60  0000 C CNN
@@ -415,7 +413,7 @@ F 3 "" H 5050 3200 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L HM62256ALP-10 U4
+L artemsx:HM62256ALP-10 U4
 U 1 1 5ADB2221
 P 8150 3350
 F 0 "U4" H 8150 4200 60  0000 C CNN

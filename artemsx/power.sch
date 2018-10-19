@@ -1,12 +1,10 @@
-EESchema Schematic File Version 2
-LIBS:artemsx
-LIBS:power
+EESchema Schematic File Version 4
 LIBS:artemsx-cache
-EELAYER 25 0
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 5 12
+Sheet 5 13
 Title ""
 Date ""
 Rev ""
@@ -17,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L VCC #PWR018
+L power:VCC #PWR018
 U 1 1 5AE11F1D
 P 3150 3150
 F 0 "#PWR018" H 3150 3000 50  0001 C CNN
@@ -28,7 +26,7 @@ F 3 "" H 3150 3150 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L GND #PWR019
+L power:GND #PWR019
 U 1 1 5AE11F31
 P 3150 4950
 F 0 "#PWR019" H 3150 4700 50  0001 C CNN
@@ -39,7 +37,7 @@ F 3 "" H 3150 4950 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L PWR_conn J6
+L artemsx:PWR_conn J6
 U 1 1 5B116116
 P 2200 4000
 F 0 "J6" H 2400 4350 60  0000 C CNN
@@ -50,7 +48,7 @@ F 3 "" H 2200 3900 60  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L Cap C12
+L artemsx:Cap C12
 U 1 1 5B117225
 P 3150 3600
 F 0 "C12" V 3200 3650 50  0000 L CNN
@@ -61,7 +59,7 @@ F 3 "" H 3150 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Cap C13
+L artemsx:Cap C13
 U 1 1 5B1172F2
 P 3300 3600
 F 0 "C13" V 3350 3650 50  0000 L CNN
@@ -72,7 +70,7 @@ F 3 "" H 3300 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Cap C14
+L artemsx:Cap C14
 U 1 1 5B117360
 P 3450 3600
 F 0 "C14" V 3500 3650 50  0000 L CNN
@@ -83,7 +81,7 @@ F 3 "" H 3450 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Cap C15
+L artemsx:Cap C15
 U 1 1 5B117387
 P 3600 3600
 F 0 "C15" V 3650 3650 50  0000 L CNN
@@ -94,7 +92,7 @@ F 3 "" H 3600 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Cap C16
+L artemsx:Cap C16
 U 1 1 5B1173B3
 P 3750 3600
 F 0 "C16" V 3800 3650 50  0000 L CNN
@@ -105,7 +103,7 @@ F 3 "" H 3750 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Cap C17
+L artemsx:Cap C17
 U 1 1 5B1173E8
 P 3900 3600
 F 0 "C17" V 3950 3650 50  0000 L CNN
@@ -116,7 +114,7 @@ F 3 "" H 3900 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Cap C18
+L artemsx:Cap C18
 U 1 1 5B117418
 P 4050 3600
 F 0 "C18" V 4100 3650 50  0000 L CNN
@@ -127,7 +125,7 @@ F 3 "" H 4050 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Cap C19
+L artemsx:Cap C19
 U 1 1 5B117441
 P 4200 3600
 F 0 "C19" V 4250 3650 50  0000 L CNN
@@ -138,7 +136,7 @@ F 3 "" H 4200 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Cap C20
+L artemsx:Cap C20
 U 1 1 5B117471
 P 4350 3600
 F 0 "C20" V 4400 3650 50  0000 L CNN
@@ -149,7 +147,7 @@ F 3 "" H 4350 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Cap C21
+L artemsx:Cap C21
 U 1 1 5B1174A8
 P 4500 3600
 F 0 "C21" V 4550 3650 50  0000 L CNN
@@ -160,7 +158,7 @@ F 3 "" H 4500 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Cap C22
+L artemsx:Cap C22
 U 1 1 5B11756C
 P 4650 3600
 F 0 "C22" V 4700 3650 50  0000 L CNN
@@ -171,7 +169,7 @@ F 3 "" H 4650 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Cap C23
+L artemsx:Cap C23
 U 1 1 5B117575
 P 4800 3600
 F 0 "C23" V 4850 3650 50  0000 L CNN
@@ -182,7 +180,7 @@ F 3 "" H 4800 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Cap C24
+L artemsx:Cap C24
 U 1 1 5B11757E
 P 4950 3600
 F 0 "C24" V 5000 3650 50  0000 L CNN
@@ -193,7 +191,7 @@ F 3 "" H 4950 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Cap C25
+L artemsx:Cap C25
 U 1 1 5B117587
 P 5100 3600
 F 0 "C25" V 5150 3650 50  0000 L CNN
@@ -204,7 +202,7 @@ F 3 "" H 5100 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Cap C26
+L artemsx:Cap C26
 U 1 1 5B117590
 P 5250 3600
 F 0 "C26" V 5300 3650 50  0000 L CNN
@@ -215,7 +213,7 @@ F 3 "" H 5250 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Cap C27
+L artemsx:Cap C27
 U 1 1 5B1176C3
 P 5400 3600
 F 0 "C27" V 5450 3650 50  0000 L CNN
@@ -226,7 +224,7 @@ F 3 "" H 5400 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Cap C28
+L artemsx:Cap C28
 U 1 1 5B1176CC
 P 5550 3600
 F 0 "C28" V 5600 3650 50  0000 L CNN
@@ -237,7 +235,7 @@ F 3 "" H 5550 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Cap C29
+L artemsx:Cap C29
 U 1 1 5B1176D5
 P 5700 3600
 F 0 "C29" V 5750 3650 50  0000 L CNN
@@ -248,7 +246,7 @@ F 3 "" H 5700 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Cap C30
+L artemsx:Cap C30
 U 1 1 5B1176DE
 P 5850 3600
 F 0 "C30" V 5900 3650 50  0000 L CNN
@@ -259,7 +257,7 @@ F 3 "" H 5850 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Cap C31
+L artemsx:Cap C31
 U 1 1 5B1176E7
 P 6000 3600
 F 0 "C31" V 6050 3650 50  0000 L CNN
@@ -270,7 +268,7 @@ F 3 "" H 6000 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Cap C32
+L artemsx:Cap C32
 U 1 1 5B117800
 P 6150 3600
 F 0 "C32" V 6200 3650 50  0000 L CNN
@@ -281,7 +279,7 @@ F 3 "" H 6150 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Cap C33
+L artemsx:Cap C33
 U 1 1 5B117809
 P 6300 3600
 F 0 "C33" V 6350 3650 50  0000 L CNN
@@ -292,7 +290,7 @@ F 3 "" H 6300 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Cap C34
+L artemsx:Cap C34
 U 1 1 5B117812
 P 6450 3600
 F 0 "C34" V 6500 3650 50  0000 L CNN
@@ -303,7 +301,7 @@ F 3 "" H 6450 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Cap C35
+L artemsx:Cap C35
 U 1 1 5B11781B
 P 6600 3600
 F 0 "C35" V 6650 3650 50  0000 L CNN
@@ -314,7 +312,7 @@ F 3 "" H 6600 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Cap C36
+L artemsx:Cap C36
 U 1 1 5B117824
 P 6750 3600
 F 0 "C36" V 6800 3650 50  0000 L CNN
@@ -325,7 +323,7 @@ F 3 "" H 6750 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Cap C37
+L artemsx:Cap C37
 U 1 1 5B11782D
 P 6900 3600
 F 0 "C37" V 6950 3650 50  0000 L CNN
@@ -336,7 +334,7 @@ F 3 "" H 6900 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Cap C38
+L artemsx:Cap C38
 U 1 1 5B117836
 P 7050 3600
 F 0 "C38" V 7100 3650 50  0000 L CNN
@@ -347,7 +345,7 @@ F 3 "" H 7050 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Cap C39
+L artemsx:Cap C39
 U 1 1 5B11783F
 P 7200 3600
 F 0 "C39" V 7250 3650 50  0000 L CNN
@@ -358,7 +356,7 @@ F 3 "" H 7200 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Cap C40
+L artemsx:Cap C40
 U 1 1 5B117848
 P 7350 3600
 F 0 "C40" V 7400 3650 50  0000 L CNN
@@ -369,7 +367,7 @@ F 3 "" H 7350 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Cap C41
+L artemsx:Cap C41
 U 1 1 5B117851
 P 7500 3600
 F 0 "C41" V 7550 3650 50  0000 L CNN
@@ -380,7 +378,7 @@ F 3 "" H 7500 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Cap C42
+L artemsx:Cap C42
 U 1 1 5B117AE8
 P 7650 3600
 F 0 "C42" V 7700 3650 50  0000 L CNN
@@ -391,7 +389,7 @@ F 3 "" H 7650 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Cap C43
+L artemsx:Cap C43
 U 1 1 5B117AF1
 P 7800 3600
 F 0 "C43" V 7850 3650 50  0000 L CNN
@@ -402,7 +400,7 @@ F 3 "" H 7800 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Cap C44
+L artemsx:Cap C44
 U 1 1 5B117AFA
 P 7950 3600
 F 0 "C44" V 8000 3650 50  0000 L CNN
@@ -413,7 +411,7 @@ F 3 "" H 7950 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Cap C45
+L artemsx:Cap C45
 U 1 1 5B117B03
 P 8100 3600
 F 0 "C45" V 8150 3650 50  0000 L CNN
@@ -424,7 +422,7 @@ F 3 "" H 8100 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Cap C46
+L artemsx:Cap C46
 U 1 1 5B117B0C
 P 8250 3600
 F 0 "C46" V 8300 3650 50  0000 L CNN
@@ -435,7 +433,7 @@ F 3 "" H 8250 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Cap C47
+L artemsx:Cap C47
 U 1 1 5B117B15
 P 8400 3600
 F 0 "C47" V 8450 3650 50  0000 L CNN
@@ -446,7 +444,7 @@ F 3 "" H 8400 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Cap C48
+L artemsx:Cap C48
 U 1 1 5B117B1E
 P 8550 3600
 F 0 "C48" V 8600 3650 50  0000 L CNN
@@ -457,7 +455,7 @@ F 3 "" H 8550 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Cap C49
+L artemsx:Cap C49
 U 1 1 5B117B27
 P 8700 3600
 F 0 "C49" V 8750 3650 50  0000 L CNN
@@ -468,7 +466,7 @@ F 3 "" H 8700 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Cap C50
+L artemsx:Cap C50
 U 1 1 5B117B30
 P 8850 3600
 F 0 "C50" V 8900 3650 50  0000 L CNN
@@ -479,7 +477,7 @@ F 3 "" H 8850 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Cap C51
+L artemsx:Cap C51
 U 1 1 5B117B39
 P 9000 3600
 F 0 "C51" V 9050 3650 50  0000 L CNN
@@ -490,7 +488,7 @@ F 3 "" H 9000 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Cap C52
+L artemsx:Cap C52
 U 1 1 5B117D38
 P 9150 3600
 F 0 "C52" V 9200 3650 50  0000 L CNN
@@ -501,7 +499,7 @@ F 3 "" H 9150 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Cap C53
+L artemsx:Cap C53
 U 1 1 5B117D40
 P 9300 3600
 F 0 "C53" V 9350 3650 50  0000 L CNN
@@ -512,7 +510,7 @@ F 3 "" H 9300 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Cap C54
+L artemsx:Cap C54
 U 1 1 5B117D48
 P 9450 3600
 F 0 "C54" V 9500 3650 50  0000 L CNN
@@ -523,7 +521,7 @@ F 3 "" H 9450 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Cap C55
+L artemsx:Cap C55
 U 1 1 5B117D50
 P 9600 3600
 F 0 "C55" V 9650 3650 50  0000 L CNN
@@ -807,7 +805,7 @@ Connection ~ 3450 3950
 Connection ~ 3600 3950
 Connection ~ 3750 3950
 $Comp
-L Cap C60
+L artemsx:Cap C60
 U 1 1 5B13DFC4
 P 9750 3600
 F 0 "C60" V 9800 3650 50  0000 L CNN
