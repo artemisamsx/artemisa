@@ -1,4 +1,4 @@
-(module PS2_conn (layer F.Cu) (tedit 5B0D6BD8)
+(module PS2_conn (layer F.Cu) (tedit 5BD190F5)
   (fp_text reference REF** (at 0 -14 180) (layer F.SilkS)
     (effects (font (size 1 1) (thickness 0.15)))
   )
@@ -23,8 +23,8 @@
   (pad "" thru_hole rect (at 0 -4.85 180) (size 3.5 1.5) (drill oval 3 1) (layers *.Cu *.Mask))
   (pad "" thru_hole rect (at -6.85 -5.5 270) (size 3.5 1.5) (drill oval 3 1) (layers *.Cu *.Mask))
   (pad "" thru_hole rect (at 6.85 -5.5 270) (size 3.5 1.5) (drill oval 3 1) (layers *.Cu *.Mask))
-  (model ${KIPRJMOD}/artemsx.3dshapes/PS2_conn.wrl
-    (at (xyz 0 0.28 0))
+  (model ${KIPRJMOD}/../libs/artemsx.3dshapes/PS2_conn.wrl
+    (offset (xyz 0 7.111999893188477 0))
     (scale (xyz 1.025 1.1 1.1))
     (rotate (xyz 0 0 0))
   )

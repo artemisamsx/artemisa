@@ -1,4 +1,4 @@
-(module Axial_resistor (layer F.Cu) (tedit 5968954F)
+(module Axial_resistor (layer F.Cu) (tedit 5BD18FF6)
   (descr "Resistor, Axial_DIN0207 series, Axial, Horizontal, pin pitch=10.16mm, 0.25W = 1/4W, length*diameter=6.3*2.5mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf")
   (tags "Resistor Axial_DIN0207 series Axial Horizontal pin pitch 10.16mm 0.25W = 1/4W length 6.3mm diameter 2.5mm")
   (fp_text reference R4 (at 5.08 -2.31) (layer F.SilkS)
@@ -25,8 +25,8 @@
   (fp_line (start 11.25 -1.6) (end -1.05 -1.6) (layer F.CrtYd) (width 0.05))
   (pad 1 thru_hole circle (at 0 0) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask))
   (pad 2 thru_hole oval (at 10.16 0) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask))
-  (model ${KIPRJMOD}/artemsx.3dshapes/Axial_resistor.wrl
-    (at (xyz 0.2 0 0))
+  (model ${KIPRJMOD}/../libs/artemsx.3dshapes/Axial_resistor.wrl
+    (offset (xyz 5.079999923706055 0 0))
     (scale (xyz 0.393701 0.393701 0.393701))
     (rotate (xyz 0 0 0))
   )
