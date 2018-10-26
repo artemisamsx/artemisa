@@ -17,5 +17,13 @@ Thanks to that, the graphics card can use a great variety of possible IO, and ev
 
 ## Available graphics cards
 
-TBD
+### GFX 9918
 
+![gfx-9918](img/gfx-9918.png)
+
+This is the most basic graphics card available. It provides a TMS-9918 chip with the following characteristics:
+
+* 16KB of static VRAM in a single chip (62256, actually of 32KB but half of them unused). 
+* 60Hz NTSC composite video output. 
+
+Simple, cheap, and easy to find materials. 
