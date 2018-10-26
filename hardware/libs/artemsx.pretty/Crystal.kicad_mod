@@ -1,4 +1,4 @@
-(module Crystal (layer F.Cu) (tedit 59F084CE)
+(module Crystal (layer F.Cu) (tedit 5BD19010)
   (fp_text reference REF** (at 0 -3.81) (layer F.SilkS)
     (effects (font (size 1 1) (thickness 0.15)))
   )
@@ -58,7 +58,7 @@
   (fp_line (start -3.2004 -2.32918) (end 3.2512 -2.32918) (layer F.SilkS) (width 0.15))
   (pad 1 thru_hole circle (at -2.44094 0) (size 1.50114 1.50114) (drill 0.8001) (layers *.Cu *.Mask))
   (pad 2 thru_hole circle (at 2.44094 0) (size 1.50114 1.50114) (drill 0.8001) (layers *.Cu *.Mask))
-  (model ${KIPRJMOD}/artemsx.3dshapes/Crystal.wrl
+  (model ${KIPRJMOD}/../libs/artemsx.3dshapes/Crystal.wrl
     (at (xyz 0 0 0))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 0))
