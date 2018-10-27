@@ -61,7 +61,7 @@
   (pad 8 thru_hole oval (at 1.3843 -5.842) (size 1.50114 1.99898) (drill 0.89916 (offset 0 0.24892)) (layers *.Cu *.Mask))
   (pad 9 thru_hole oval (at 4.15544 -5.842) (size 1.50114 1.99898) (drill 0.89916 (offset 0 0.24892)) (layers *.Cu *.Mask))
   (pad "" thru_hole circle (at -12.49426 -7.112) (size 5.00126 5.00126) (drill 3.2004) (layers *.Cu *.Mask))
-  (model ${KIPRJMOD}/../libs/artemsx.3dshapes/Joystick_conn.wrl
+  (model ${KIPRJMOD}/../libs/artemisa.3dshapes/Joystick_conn.wrl
     (at (xyz 0 0 0))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 0))

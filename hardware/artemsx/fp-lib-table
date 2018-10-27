@@ -1,3 +1,0 @@
-(fp_lib_table
-  (lib (name artemsx)(type KiCad)(uri "$(KIPRJMOD)/../libs/artemsx.pretty")(options "")(descr ""))
-)

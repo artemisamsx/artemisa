@@ -1,5 +1,5 @@
 EESchema Schematic File Version 4
-LIBS:artemsx-cache
+LIBS:artemisa-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
@@ -15,12 +15,12 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L artemsx:MSX_Slot J2
+L artemisa:MSX_Slot J2
 U 1 1 5AE91CDF
 P 5050 3450
 F 0 "J2" H 5100 4750 50  0000 C CNN
 F 1 "MSX_Slot" H 5100 2150 50  0000 C CNN
-F 2 "artemsx:Slot_conn" H 5050 3450 50  0001 C CNN
+F 2 "artemisa:Slot_conn" H 5050 3450 50  0001 C CNN
 F 3 "" H 5050 3450 50  0001 C CNN
 	1    5050 3450
 	1    0    0    -1  
@@ -340,12 +340,12 @@ Wire Wire Line
 Wire Wire Line
 	4650 4650 4850 4650
 $Comp
-L artemsx:MSX_Slot J3
+L artemisa:MSX_Slot J3
 U 1 1 5AE938CD
 P 8500 3450
 F 0 "J3" H 8550 4750 50  0000 C CNN
 F 1 "MSX_Slot" H 8550 2150 50  0000 C CNN
-F 2 "artemsx:Slot_conn" H 8500 3450 50  0001 C CNN
+F 2 "artemisa:Slot_conn" H 8500 3450 50  0001 C CNN
 F 3 "" H 8500 3450 50  0001 C CNN
 	1    8500 3450
 	1    0    0    -1  
@@ -803,14 +803,14 @@ CONTROL BUS
 NoConn ~ 5350 2650
 NoConn ~ 8800 2650
 $Comp
-L artemsx-rescue:R R1
+L artemisa-rescue:R R1
 U 1 1 5AE95016
 P 2050 4850
 AR Path="/5AE95016" Ref="R1"  Part="1" 
 AR Path="/5AE915ED/5AE95016" Ref="R1"  Part="1" 
 F 0 "R1" V 2130 4850 50  0000 C CNN
 F 1 "10K" V 2050 4850 50  0000 C CNN
-F 2 "artemsx:Axial_resistor" V 1980 4850 50  0001 C CNN
+F 2 "artemisa:Axial_resistor" V 1980 4850 50  0001 C CNN
 F 3 "" H 2050 4850 50  0001 C CNN
 	1    2050 4850
 	0    1    1    0   
@@ -827,14 +827,14 @@ F 3 "" H 2400 4800 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemsx-rescue:R R2
+L artemisa-rescue:R R2
 U 1 1 5AE951FD
 P 2050 5350
 AR Path="/5AE951FD" Ref="R2"  Part="1" 
 AR Path="/5AE915ED/5AE951FD" Ref="R2"  Part="1" 
 F 0 "R2" V 2130 5350 50  0000 C CNN
 F 1 "10K" V 2050 5350 50  0000 C CNN
-F 2 "artemsx:Axial_resistor" V 1980 5350 50  0001 C CNN
+F 2 "artemisa:Axial_resistor" V 1980 5350 50  0001 C CNN
 F 3 "" H 2050 5350 50  0001 C CNN
 	1    2050 5350
 	0    1    1    0   
@@ -851,12 +851,12 @@ F 3 "" H 2400 5300 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemsx:74HC32 U44
+L artemisa:74HC32 U44
 U 3 1 5B0EC8F3
 P 2150 4000
 F 0 "U44" H 2150 4200 50  0000 C CNN
 F 1 "74HC32" H 2150 3800 50  0000 C CNN
-F 2 "artemsx:DIP-14_300" H 2150 4000 50  0001 C CNN
+F 2 "artemisa:DIP-14_300" H 2150 4000 50  0001 C CNN
 F 3 "" H 2150 4000 50  0001 C CNN
 	3    2150 4000
 	1    0    0    -1  
@@ -889,12 +889,12 @@ Wire Wire Line
 	1800 4850 1800 5000
 Connection ~ 1800 5000
 $Comp
-L artemsx:74HC32 U44
+L artemisa:74HC32 U44
 U 4 1 5B0EDFF8
 P 2150 3450
 F 0 "U44" H 2150 3650 50  0000 C CNN
 F 1 "74HC32" H 2150 3250 50  0000 C CNN
-F 2 "artemsx:DIP-14_300" H 2150 3450 50  0001 C CNN
+F 2 "artemisa:DIP-14_300" H 2150 3450 50  0001 C CNN
 F 3 "" H 2150 3450 50  0001 C CNN
 	4    2150 3450
 	1    0    0    -1  

@@ -1,5 +1,5 @@
 EESchema Schematic File Version 4
-LIBS:artemsx-cache
+LIBS:artemisa-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
@@ -15,12 +15,12 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L artemsx:SST39SF0x0 U25
+L artemisa:SST39SF0x0 U25
 U 1 1 5AE56AE3
 P 5500 2750
 F 0 "U25" H 5500 3600 60  0000 C CNN
 F 1 "SST39SF0x0" H 5550 1500 60  0000 C CNN
-F 2 "artemsx:DIP-32_600" H 5500 2750 60  0001 C CNN
+F 2 "artemisa:DIP-32_600" H 5500 2750 60  0001 C CNN
 F 3 "" H 5500 2750 60  0001 C CNN
 	1    5500 2750
 	1    0    0    -1  

@@ -12,7 +12,7 @@
   (pad 3 thru_hole rect (at -3.5 -4.7) (size 2 4) (drill oval 0.8 3) (layers *.Cu *.Mask))
   (pad 1 thru_hole rect (at 2.7 -4.7) (size 2 4) (drill oval 0.8 3) (layers *.Cu *.Mask))
   (pad 2 thru_hole rect (at 0 0) (size 4 2) (drill oval 3 0.8) (layers *.Cu *.Mask))
-  (model ${KIPRJMOD}/../libs/artemsx.3dshapes/jack_55_21.wrl
+  (model ${KIPRJMOD}/../libs/artemisa.3dshapes/jack_55_21.wrl
     (offset (xyz -3.555999946594238 4.825999927520752 0))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 90))

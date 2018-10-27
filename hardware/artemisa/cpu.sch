@@ -1,5 +1,5 @@
 EESchema Schematic File Version 4
-LIBS:artemsx-cache
+LIBS:artemisa-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
@@ -15,34 +15,34 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L artemsx:Z84C00 U18
+L artemisa:Z84C00 U18
 U 1 1 5ADBCA58
 P 5850 3700
 F 0 "U18" H 5850 5100 60  0000 C CNN
 F 1 "Z84C00" H 5900 2300 60  0000 C CNN
-F 2 "artemsx:DIP-40_600" H 5850 3550 60  0001 C CNN
+F 2 "artemisa:DIP-40_600" H 5850 3550 60  0001 C CNN
 F 3 "" H 5850 3550 60  0001 C CNN
 	1    5850 3700
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemsx:74HCT244 U11
+L artemisa:74HCT244 U11
 U 1 1 5ADBD2B3
 P 8300 1000
 F 0 "U11" H 8550 1300 60  0000 C CNN
 F 1 "74HCT244" H 8600 650 60  0000 C CNN
-F 2 "artemsx:DIP-20_300" H 8300 600 60  0001 C CNN
+F 2 "artemisa:DIP-20_300" H 8300 600 60  0001 C CNN
 F 3 "" H 8300 600 60  0001 C CNN
 	1    8300 1000
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemsx:74HCT244 U11
+L artemisa:74HCT244 U11
 U 2 1 5ADBD2DE
 P 8300 1950
 F 0 "U11" H 8550 2250 60  0000 C CNN
 F 1 "74HCT244" H 8600 1600 60  0000 C CNN
-F 2 "artemsx:DIP-20_300" H 8300 1550 60  0001 C CNN
+F 2 "artemisa:DIP-20_300" H 8300 1550 60  0001 C CNN
 F 3 "" H 8300 1550 60  0001 C CNN
 	2    8300 1950
 	1    0    0    -1  
@@ -59,23 +59,23 @@ F 3 "" H 8300 1450 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemsx:74HCT244 U12
+L artemisa:74HCT244 U12
 U 1 1 5ADBD3DF
 P 8300 2900
 F 0 "U12" H 8550 3200 60  0000 C CNN
 F 1 "74HCT244" H 8600 2550 60  0000 C CNN
-F 2 "artemsx:DIP-20_300" H 8300 2500 60  0001 C CNN
+F 2 "artemisa:DIP-20_300" H 8300 2500 60  0001 C CNN
 F 3 "" H 8300 2500 60  0001 C CNN
 	1    8300 2900
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemsx:74HCT244 U12
+L artemisa:74HCT244 U12
 U 2 1 5ADBD3E5
 P 8300 3850
 F 0 "U12" H 8550 4150 60  0000 C CNN
 F 1 "74HCT244" H 8600 3500 60  0000 C CNN
-F 2 "artemsx:DIP-20_300" H 8300 3450 60  0001 C CNN
+F 2 "artemisa:DIP-20_300" H 8300 3450 60  0001 C CNN
 F 3 "" H 8300 3450 60  0001 C CNN
 	2    8300 3850
 	1    0    0    -1  
@@ -318,12 +318,12 @@ A15
 Entry Bus Bus
 	7000 1500 6900 1600
 $Comp
-L artemsx:74HCT245 U13
+L artemisa:74HCT245 U13
 U 1 1 5ADE24A9
 P 8300 5350
 F 0 "U13" H 8550 5850 60  0000 C CNN
 F 1 "74HCT245" H 8550 4850 60  0000 C CNN
-F 2 "artemsx:DIP-20_300" H 8300 4700 60  0001 C CNN
+F 2 "artemisa:DIP-20_300" H 8300 4700 60  0001 C CNN
 F 3 "" H 8300 4700 60  0001 C CNN
 	1    8300 5350
 	1    0    0    -1  
@@ -372,23 +372,23 @@ Entry Wire Line
 Text Label 9150 5700 2    60   ~ 0
 DATA7
 $Comp
-L artemsx:74HCT244 U14
+L artemisa:74HCT244 U14
 U 1 1 5ADE2CBE
 P 2950 2000
 F 0 "U14" H 2800 2300 60  0000 C CNN
 F 1 "74HCT244" H 2650 1700 60  0000 C CNN
-F 2 "artemsx:DIP-20_300" H 2950 1600 60  0001 C CNN
+F 2 "artemisa:DIP-20_300" H 2950 1600 60  0001 C CNN
 F 3 "" H 2950 1600 60  0001 C CNN
 	1    2950 2000
 	-1   0    0    -1  
 $EndComp
 $Comp
-L artemsx:74HCT244 U14
+L artemisa:74HCT244 U14
 U 2 1 5ADE2D35
 P 2950 3150
 F 0 "U14" H 2800 3450 60  0000 C CNN
 F 1 "74HCT244" H 2650 2800 60  0000 C CNN
-F 2 "artemsx:DIP-20_300" H 2950 2750 60  0001 C CNN
+F 2 "artemisa:DIP-20_300" H 2950 2750 60  0001 C CNN
 F 3 "" H 2950 2750 60  0001 C CNN
 	2    2950 3150
 	-1   0    0    -1  
@@ -612,23 +612,23 @@ Wire Bus Line
 Text HLabel 9600 6050 2    60   BiDi ~ 0
 DATA[0..7]
 $Comp
-L artemsx:74HC74 U15
+L artemisa:74HC74 U15
 U 1 1 5ADE4A9C
 P 2650 5300
 F 0 "U15" H 2800 5650 60  0000 C CNN
 F 1 "74HC74" H 2850 4900 60  0000 C CNN
-F 2 "artemsx:DIP-14_300" H 2650 5100 60  0001 C CNN
+F 2 "artemisa:DIP-14_300" H 2650 5100 60  0001 C CNN
 F 3 "" H 2650 5100 60  0001 C CNN
 	1    2650 5300
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemsx:74HC74 U15
+L artemisa:74HC74 U15
 U 2 1 5ADE4B12
 P 3850 5300
 F 0 "U15" H 4000 5650 60  0000 C CNN
 F 1 "74HC74" H 4050 4900 60  0000 C CNN
-F 2 "artemsx:DIP-14_300" H 3850 5100 60  0001 C CNN
+F 2 "artemisa:DIP-14_300" H 3850 5100 60  0001 C CNN
 F 3 "" H 3850 5100 60  0001 C CNN
 	2    3850 5300
 	1    0    0    -1  
@@ -726,12 +726,12 @@ Text HLabel 1100 2400 0    60   Input ~ 0
 Text HLabel 1100 2500 0    60   Input ~ 0
 ~EXTINT
 $Comp
-L artemsx:74HC08 U16
+L artemisa:74HC08 U16
 U 1 2 5ADE6F22
 P 3450 1100
 F 0 "U16" H 3450 1300 50  0000 C CNN
 F 1 "74HC08" H 3450 900 50  0000 C CNN
-F 2 "artemsx:DIP-14_300" H 3450 1100 50  0001 C CNN
+F 2 "artemisa:DIP-14_300" H 3450 1100 50  0001 C CNN
 F 3 "" H 3450 1100 50  0001 C CNN
 	1    3450 1100
 	1    0    0    -1  
@@ -799,23 +799,23 @@ Wire Wire Line
 Wire Bus Line
 	6900 4200 6900 5950
 $Comp
-L artemsx:74HC08 U16
+L artemisa:74HC08 U16
 U 2 2 5ADE819D
 P 6500 1100
 F 0 "U16" H 6500 1300 50  0000 C CNN
 F 1 "74HC08" H 6500 900 50  0000 C CNN
-F 2 "artemsx:DIP-14_300" H 6500 1100 50  0001 C CNN
+F 2 "artemisa:DIP-14_300" H 6500 1100 50  0001 C CNN
 F 3 "" H 6500 1100 50  0001 C CNN
 	2    6500 1100
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemsx:74HC32 U17
+L artemisa:74HC32 U17
 U 1 2 5ADE80AE
 P 5400 1700
 F 0 "U17" H 5400 1900 50  0000 C CNN
 F 1 "74HC32" H 5400 1500 50  0000 C CNN
-F 2 "artemsx:DIP-14_300" H 5400 1700 50  0001 C CNN
+F 2 "artemisa:DIP-14_300" H 5400 1700 50  0001 C CNN
 F 3 "" H 5400 1700 50  0001 C CNN
 	1    5400 1700
 	1    0    0    -1  
@@ -1059,34 +1059,34 @@ Wire Wire Line
 Wire Wire Line
 	1800 1950 2500 1950
 $Comp
-L artemsx:Crystal Y3
+L artemisa:Crystal Y3
 U 1 1 5AEC8D3F
 P 5850 6700
 F 0 "Y3" H 5850 6800 50  0000 C CNN
 F 1 "3.58Mhz" H 5850 6600 50  0000 C CNN
-F 2 "artemsx:Crystal" H 5850 6700 50  0001 C CNN
+F 2 "artemisa:Crystal" H 5850 6700 50  0001 C CNN
 F 3 "" H 5850 6700 50  0001 C CNN
 	1    5850 6700
 	-1   0    0    -1  
 $EndComp
 $Comp
-L artemsx:CP C6
+L artemisa:CP C6
 U 1 1 5AEC8D46
 P 6300 7000
 F 0 "C6" H 6310 7070 50  0000 L CNN
 F 1 "22pF" H 6310 6920 50  0000 L CNN
-F 2 "artemsx:Disc_capacitor" H 6300 7000 50  0001 C CNN
+F 2 "artemisa:Disc_capacitor" H 6300 7000 50  0001 C CNN
 F 3 "" H 6300 7000 50  0001 C CNN
 	1    6300 7000
 	-1   0    0    -1  
 $EndComp
 $Comp
-L artemsx:CP C5
+L artemisa:CP C5
 U 1 1 5AEC8D4D
 P 5400 7000
 F 0 "C5" H 5410 7070 50  0000 L CNN
 F 1 "22pF" H 5410 6920 50  0000 L CNN
-F 2 "artemsx:Disc_capacitor" H 5400 7000 50  0001 C CNN
+F 2 "artemisa:Disc_capacitor" H 5400 7000 50  0001 C CNN
 F 3 "" H 5400 7000 50  0001 C CNN
 	1    5400 7000
 	-1   0    0    -1  
@@ -1120,36 +1120,36 @@ Wire Wire Line
 Wire Wire Line
 	6300 5850 6300 6900
 $Comp
-L artemsx:4069 U38
+L artemisa:4069 U38
 U 3 1 5AEC8D67
 P 5850 6200
 F 0 "U38" H 5850 6350 50  0000 C CNN
 F 1 "4069" H 5850 6050 50  0000 C CNN
-F 2 "artemsx:DIP-14_300" H 5850 6200 50  0001 C CNN
+F 2 "artemisa:DIP-14_300" H 5850 6200 50  0001 C CNN
 F 3 "" H 5850 6200 50  0001 C CNN
 	3    5850 6200
 	-1   0    0    -1  
 $EndComp
 $Comp
-L artemsx:4069 U38
+L artemisa:4069 U38
 U 4 1 5AEC8D6E
 P 4800 5750
 F 0 "U38" H 4800 5900 50  0000 C CNN
 F 1 "4069" H 4800 5600 50  0000 C CNN
-F 2 "artemsx:DIP-14_300" H 4800 5750 50  0001 C CNN
+F 2 "artemisa:DIP-14_300" H 4800 5750 50  0001 C CNN
 F 3 "" H 4800 5750 50  0001 C CNN
 	4    4800 5750
 	0    1    -1   0   
 $EndComp
 $Comp
-L artemsx-rescue:R R4
+L artemisa-rescue:R R4
 U 1 1 5AEC8D75
 P 5400 6450
 AR Path="/5AEC8D75" Ref="R4"  Part="1" 
 AR Path="/5ADBC286/5AEC8D75" Ref="R4"  Part="1" 
 F 0 "R4" V 5480 6450 50  0000 C CNN
 F 1 "1K" V 5400 6450 50  0000 C CNN
-F 2 "artemsx:Axial_resistor" V 5330 6450 50  0001 C CNN
+F 2 "artemisa:Axial_resistor" V 5330 6450 50  0001 C CNN
 F 3 "" H 5400 6450 50  0001 C CNN
 	1    5400 6450
 	-1   0    0    -1  
@@ -1164,14 +1164,14 @@ Wire Wire Line
 	6150 6200 6300 6200
 Connection ~ 6300 6700
 $Comp
-L artemsx-rescue:R R3
+L artemisa-rescue:R R3
 U 1 1 5AEC8D84
 P 5850 5850
 AR Path="/5AEC8D84" Ref="R3"  Part="1" 
 AR Path="/5ADBC286/5AEC8D84" Ref="R3"  Part="1" 
 F 0 "R3" V 5750 5850 50  0000 C CNN
 F 1 "1M" V 5850 5850 50  0000 C CNN
-F 2 "artemsx:Axial_resistor" V 5780 5850 50  0001 C CNN
+F 2 "artemisa:Axial_resistor" V 5780 5850 50  0001 C CNN
 F 3 "" H 5850 5850 50  0001 C CNN
 	1    5850 5850
 	0    -1   1    0   
@@ -1182,23 +1182,23 @@ Wire Wire Line
 	6000 5850 6300 5850
 Connection ~ 6300 6200
 $Comp
-L artemsx:4069 U38
+L artemisa:4069 U38
 U 1 1 5AECC864
 P 3050 6800
 F 0 "U38" H 3050 6950 50  0000 C CNN
 F 1 "4069" H 3050 6650 50  0000 C CNN
-F 2 "artemsx:DIP-14_300" H 3050 6800 50  0001 C CNN
+F 2 "artemisa:DIP-14_300" H 3050 6800 50  0001 C CNN
 F 3 "" H 3050 6800 50  0001 C CNN
 	1    3050 6800
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemsx:4069 U38
+L artemisa:4069 U38
 U 2 1 5AECCAD0
 P 3850 6800
 F 0 "U38" H 3850 6950 50  0000 C CNN
 F 1 "4069" H 3850 6650 50  0000 C CNN
-F 2 "artemsx:DIP-14_300" H 3850 6800 50  0001 C CNN
+F 2 "artemisa:DIP-14_300" H 3850 6800 50  0001 C CNN
 F 3 "" H 3850 6800 50  0001 C CNN
 	2    3850 6800
 	1    0    0    -1  
@@ -1206,12 +1206,12 @@ $EndComp
 Wire Wire Line
 	3350 6800 3550 6800
 $Comp
-L artemsx:CP C7
+L artemisa:CP C7
 U 1 1 5AECCD48
 P 2500 7000
 F 0 "C7" H 2510 7070 50  0000 L CNN
 F 1 "1uF" H 2510 6920 50  0000 L CNN
-F 2 "artemsx:Radial_capacitor" H 2500 7000 50  0001 C CNN
+F 2 "artemisa:Radial_capacitor" H 2500 7000 50  0001 C CNN
 F 3 "" H 2500 7000 50  0001 C CNN
 	1    2500 7000
 	1    0    0    -1  
@@ -1245,14 +1245,14 @@ Wire Wire Line
 Wire Wire Line
 	2500 6800 2750 6800
 $Comp
-L artemsx-rescue:R_Small R5
+L artemisa-rescue:R_Small R5
 U 1 1 5AECD1D0
 P 2500 6600
 AR Path="/5AECD1D0" Ref="R5"  Part="1" 
 AR Path="/5ADBC286/5AECD1D0" Ref="R5"  Part="1" 
 F 0 "R5" V 2400 6600 50  0000 L CNN
 F 1 "10K" V 2600 6550 50  0000 L CNN
-F 2 "artemsx:Axial_resistor" H 2500 6600 50  0001 C CNN
+F 2 "artemisa:Axial_resistor" H 2500 6600 50  0001 C CNN
 F 3 "" H 2500 6600 50  0001 C CNN
 	1    2500 6600
 	1    0    0    -1  
@@ -1278,12 +1278,12 @@ Wire Wire Line
 Wire Wire Line
 	4350 6800 4350 6900
 $Comp
-L artemsx:Cap C8
+L artemisa:Cap C8
 U 1 1 5AECD8D5
 P 4350 7000
 F 0 "C8" H 4360 7070 50  0000 L CNN
 F 1 "22pF" H 4360 6920 50  0000 L CNN
-F 2 "artemsx:Disc_capacitor" H 4350 7000 50  0001 C CNN
+F 2 "artemisa:Disc_capacitor" H 4350 7000 50  0001 C CNN
 F 3 "" H 4350 7000 50  0001 C CNN
 	1    4350 7000
 	1    0    0    -1  
@@ -1293,12 +1293,12 @@ Wire Wire Line
 Connection ~ 4550 4050
 Connection ~ 4350 6800
 $Comp
-L artemsx:74HC04 U2
+L artemisa:74HC04 U2
 U 6 1 5B0EF5C7
 P 4800 5000
 F 0 "U2" H 4800 5150 50  0000 C CNN
 F 1 "74HC04" H 4800 4850 50  0000 C CNN
-F 2 "artemsx:DIP-14_300" H 4800 5000 50  0001 C CNN
+F 2 "artemisa:DIP-14_300" H 4800 5000 50  0001 C CNN
 F 3 "" H 4800 5000 50  0001 C CNN
 	6    4800 5000
 	0    -1   -1   0   
