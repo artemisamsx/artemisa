@@ -707,29 +707,8 @@ Text HLabel 1100 2400 0    60   Input ~ 0
 ~VDPINT
 Text HLabel 1100 2500 0    60   Input ~ 0
 ~EXTINT
-$Comp
-L artemisa:74HC08 U16
-U 1 2 5ADE6F22
-P 3450 1100
-F 0 "U16" H 3450 1300 50  0000 C CNN
-F 1 "74HC08" H 3450 900 50  0000 C CNN
-F 2 "artemisa:DIP-14_300" H 3450 1100 50  0001 C CNN
-F 3 "" H 3450 1100 50  0001 C CNN
-	1    3450 1100
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	1800 1000 3000 1000
-Wire Wire Line
-	1800 1200 3000 1200
 Wire Wire Line
 	5250 3750 4200 3750
-Wire Wire Line
-	4200 3750 4200 1100
-Wire Wire Line
-	4200 1100 3850 1100
-Text Label 4000 1100 0    60   ~ 0
-~INT
 Entry Wire Line
 	6800 4200 6900 4300
 Text Label 6800 4200 2    60   ~ 0
@@ -871,13 +850,9 @@ Wire Wire Line
 Wire Wire Line
 	9150 5200 8850 5200
 Entry Wire Line
-	1700 900  1800 1000
-Entry Wire Line
-	1700 1100 1800 1200
-Text Label 1800 1000 0    60   ~ 0
+	1700 4050 1800 4150
+Text Label 1800 4150 0    60   ~ 0
 ~EXTINT
-Text Label 1800 1200 0    60   ~ 0
-~VDPINT
 Entry Wire Line
 	1700 1750 1800 1850
 Entry Wire Line
@@ -1316,14 +1291,14 @@ Wire Wire Line
 	3400 3200 5250 3200
 Wire Wire Line
 	2500 6350 2500 6400
+Wire Wire Line
+	1800 4150 4200 4150
+Wire Wire Line
+	4200 4150 4200 3750
 Wire Bus Line
-	1700 800  1700 6300
+	4550 800  4550 1750
 Wire Bus Line
-	6900 1600 6900 3950
-Wire Bus Line
-	7400 1600 7400 3950
-Wire Bus Line
-	9200 900  9200 2350
+	7400 900  7400 1400
 Wire Bus Line
 	7400 5000 7400 5950
 Wire Bus Line
@@ -1333,7 +1308,11 @@ Wire Bus Line
 Wire Bus Line
 	9200 2550 9200 3950
 Wire Bus Line
-	7400 900  7400 1400
+	9200 900  9200 2350
 Wire Bus Line
-	4550 800  4550 1750
+	7400 1600 7400 3950
+Wire Bus Line
+	1700 800  1700 6300
+Wire Bus Line
+	6900 1600 6900 3950
 $EndSCHEMATC
