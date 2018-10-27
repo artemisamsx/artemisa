@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 11 13
+Sheet 11 11
 Title ""
 Date ""
 Rev ""
@@ -655,7 +655,7 @@ Wire Wire Line
 	11750 3750 11750 6450
 Connection ~ 11750 3950
 $Comp
-L artemisa-rescue:R R17
+L artemisa:R R17
 U 1 1 5AED9A99
 P 12000 3750
 AR Path="/5AED9A99" Ref="R17"  Part="1" 
@@ -668,7 +668,7 @@ F 3 "" H 12000 3750 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L artemisa-rescue:R R16
+L artemisa:R R16
 U 1 1 5AED9B28
 P 12000 3650
 AR Path="/5AED9B28" Ref="R16"  Part="1" 
@@ -681,7 +681,7 @@ F 3 "" H 12000 3650 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L artemisa-rescue:R R15
+L artemisa:R R15
 U 1 1 5AED9B6E
 P 12000 3550
 AR Path="/5AED9B6E" Ref="R15"  Part="1" 
@@ -694,7 +694,7 @@ F 3 "" H 12000 3550 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L artemisa-rescue:R R14
+L artemisa:R R14
 U 1 1 5AED9BB7
 P 12000 3450
 AR Path="/5AED9BB7" Ref="R14"  Part="1" 
@@ -707,7 +707,7 @@ F 3 "" H 12000 3450 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L artemisa-rescue:R R6
+L artemisa:R R6
 U 1 1 5AEDA94E
 P 11450 2000
 AR Path="/5AEDA94E" Ref="R6"  Part="1" 
@@ -720,7 +720,7 @@ F 3 "" H 11450 2000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemisa-rescue:R R7
+L artemisa:R R7
 U 1 1 5AEDA954
 P 11550 2000
 AR Path="/5AEDA954" Ref="R7"  Part="1" 
@@ -733,7 +733,7 @@ F 3 "" H 11550 2000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemisa-rescue:R R8
+L artemisa:R R8
 U 1 1 5AEDA95A
 P 11650 2000
 AR Path="/5AEDA95A" Ref="R8"  Part="1" 
@@ -746,7 +746,7 @@ F 3 "" H 11650 2000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemisa-rescue:R R9
+L artemisa:R R9
 U 1 1 5AEDA960
 P 11750 2000
 AR Path="/5AEDA960" Ref="R9"  Part="1" 
@@ -759,7 +759,7 @@ F 3 "" H 11750 2000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemisa-rescue:R R10
+L artemisa:R R10
 U 1 1 5AEDAA02
 P 11850 2000
 AR Path="/5AEDAA02" Ref="R10"  Part="1" 
@@ -772,7 +772,7 @@ F 3 "" H 11850 2000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemisa-rescue:R R11
+L artemisa:R R11
 U 1 1 5AEDAA08
 P 11950 2000
 AR Path="/5AEDAA08" Ref="R11"  Part="1" 
@@ -785,7 +785,7 @@ F 3 "" H 11950 2000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemisa-rescue:R R12
+L artemisa:R R12
 U 1 1 5AEDAA0E
 P 12050 2000
 AR Path="/5AEDAA0E" Ref="R12"  Part="1" 
@@ -798,7 +798,7 @@ F 3 "" H 12050 2000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemisa-rescue:R R13
+L artemisa:R R13
 U 1 1 5AEDAA14
 P 12150 2000
 AR Path="/5AEDAA14" Ref="R13"  Part="1" 
@@ -1190,7 +1190,7 @@ Wire Wire Line
 Wire Wire Line
 	7700 4400 8100 4400
 $Comp
-L artemisa-rescue:R R18
+L artemisa:R R18
 U 1 1 5AF09131
 P 7850 5250
 AR Path="/5AF09131" Ref="R18"  Part="1" 
@@ -1234,7 +1234,7 @@ F 3 "" H 7700 7300 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemisa-rescue:R R21
+L artemisa:R R21
 U 1 1 5AF09F18
 P 7700 7800
 AR Path="/5AF09F18" Ref="R21"  Part="1" 
@@ -1272,7 +1272,7 @@ F 3 "" H 7100 7300 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemisa-rescue:R R19
+L artemisa:R R19
 U 1 1 5AF0A5E4
 P 7100 7800
 AR Path="/5AF0A5E4" Ref="R19"  Part="1" 
@@ -1298,7 +1298,7 @@ F 3 "" H 7400 7300 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemisa-rescue:R R20
+L artemisa:R R20
 U 1 1 5AF0A669
 P 7400 7800
 AR Path="/5AF0A669" Ref="R20"  Part="1" 
@@ -1334,7 +1334,7 @@ Entry Wire Line
 Text Label 8750 8750 2    60   ~ 0
 IOA7
 $Comp
-L artemisa-rescue:R R22
+L artemisa:R R22
 U 1 1 5AF3DBD3
 P 8100 5250
 AR Path="/5AF3DBD3" Ref="R22"  Part="1" 
@@ -1347,7 +1347,7 @@ F 3 "" H 8100 5250 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemisa-rescue:R R23
+L artemisa:R R23
 U 1 1 5AF3E1DF
 P 8350 5250
 AR Path="/5AF3E1DF" Ref="R23"  Part="1" 
