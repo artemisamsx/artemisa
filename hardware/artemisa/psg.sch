@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 11 13
+Sheet 10 11
 Title ""
 Date ""
 Rev ""
@@ -154,15 +154,13 @@ Wire Wire Line
 Wire Wire Line
 	6150 3550 6500 3550
 Wire Bus Line
-	6050 2450 6050 3500
-Wire Bus Line
 	5950 2350 1500 2350
 Wire Wire Line
 	6150 4250 6500 4250
 Wire Wire Line
-	1500 4200 2000 4200
+	1500 4200 1900 4200
 Wire Wire Line
-	1500 4400 2000 4400
+	1500 4400 1650 4400
 Wire Wire Line
 	2850 4300 3000 4300
 Wire Wire Line
@@ -172,7 +170,7 @@ Wire Wire Line
 Wire Wire Line
 	1500 4600 3150 4600
 Wire Wire Line
-	4000 4500 4300 4500
+	4000 4500 4150 4500
 Connection ~ 4150 4500
 Wire Wire Line
 	4150 4000 4150 4500
@@ -251,7 +249,7 @@ $EndComp
 Wire Wire Line
 	6500 3850 5900 3850
 Wire Wire Line
-	5900 3500 5900 4400
+	5900 3500 5900 3850
 $Comp
 L artemisa:74HC74 U40
 U 1 1 5AED5075
@@ -351,18 +349,10 @@ F 3 "" H 10650 3800 60  0001 C CNN
 	1    10650 4350
 	-1   0    0    -1  
 $EndComp
-Wire Bus Line
-	9800 2500 9800 3500
-Wire Bus Line
-	9800 3700 9800 6850
 Entry Bus Bus
 	9700 3600 9800 3700
 Entry Bus Bus
 	9700 3600 9800 3500
-Wire Bus Line
-	8850 2500 8850 3500
-Wire Bus Line
-	8850 3700 8850 9700
 Entry Bus Bus
 	8950 3600 8850 3700
 Entry Bus Bus
@@ -462,7 +452,7 @@ F 3 "" H 10050 4900 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	9900 4750 10150 4750
+	9900 4750 10050 4750
 NoConn ~ 10150 4150
 NoConn ~ 10150 4250
 Text Label 9900 3150 0    60   ~ 0
@@ -548,7 +538,7 @@ $EndComp
 Wire Wire Line
 	11150 4150 11250 4150
 Wire Wire Line
-	11250 4150 11250 4850
+	11250 4150 11250 4250
 Wire Wire Line
 	11150 4250 11250 4250
 Connection ~ 11250 4250
@@ -559,13 +549,13 @@ Wire Wire Line
 	11150 4750 11250 4750
 Connection ~ 11250 4750
 Wire Wire Line
-	11150 3950 12700 3950
+	11150 3950 11750 3950
 Wire Wire Line
-	11150 4050 12700 4050
+	11150 4050 11650 4050
 Wire Wire Line
-	11150 4450 12700 4450
+	11150 4450 11550 4450
 Wire Wire Line
-	11150 4550 12700 4550
+	11150 4550 11450 4550
 $Comp
 L artemisa:74HC07 U39
 U 1 1 5AED8FC0
@@ -637,195 +627,39 @@ $EndComp
 Wire Wire Line
 	11450 5400 10950 5400
 Wire Wire Line
-	11450 3450 11450 5400
+	11450 3450 11450 4550
 Connection ~ 11450 4550
 Wire Wire Line
 	11550 5750 10950 5750
 Wire Wire Line
-	11550 3550 11550 5750
+	11550 3550 11550 4450
 Connection ~ 11550 4450
 Wire Wire Line
 	11650 6100 10950 6100
 Wire Wire Line
-	11650 3650 11650 6100
+	11650 3650 11650 4050
 Connection ~ 11650 4050
 Wire Wire Line
 	11750 6450 10950 6450
 Wire Wire Line
-	11750 3750 11750 6450
+	11750 3750 11750 3950
 Connection ~ 11750 3950
-$Comp
-L artemisa-rescue:R R17
-U 1 1 5AED9A99
-P 12000 3750
-AR Path="/5AED9A99" Ref="R17"  Part="1" 
-AR Path="/5AED18CC/5AED9A99" Ref="R17"  Part="1" 
-F 0 "R17" V 11950 3550 50  0000 C CNN
-F 1 "10K" V 12000 3750 50  0000 C CNN
-F 2 "artemisa:Axial_resistor" V 11930 3750 50  0001 C CNN
-F 3 "" H 12000 3750 50  0001 C CNN
-	1    12000 3750
-	0    -1   -1   0   
-$EndComp
-$Comp
-L artemisa-rescue:R R16
-U 1 1 5AED9B28
-P 12000 3650
-AR Path="/5AED9B28" Ref="R16"  Part="1" 
-AR Path="/5AED18CC/5AED9B28" Ref="R16"  Part="1" 
-F 0 "R16" V 11950 3450 50  0000 C CNN
-F 1 "10K" V 12000 3650 50  0000 C CNN
-F 2 "artemisa:Axial_resistor" V 11930 3650 50  0001 C CNN
-F 3 "" H 12000 3650 50  0001 C CNN
-	1    12000 3650
-	0    -1   -1   0   
-$EndComp
-$Comp
-L artemisa-rescue:R R15
-U 1 1 5AED9B6E
-P 12000 3550
-AR Path="/5AED9B6E" Ref="R15"  Part="1" 
-AR Path="/5AED18CC/5AED9B6E" Ref="R15"  Part="1" 
-F 0 "R15" V 11950 3350 50  0000 C CNN
-F 1 "10K" V 12000 3550 50  0000 C CNN
-F 2 "artemisa:Axial_resistor" V 11930 3550 50  0001 C CNN
-F 3 "" H 12000 3550 50  0001 C CNN
-	1    12000 3550
-	0    -1   -1   0   
-$EndComp
-$Comp
-L artemisa-rescue:R R14
-U 1 1 5AED9BB7
-P 12000 3450
-AR Path="/5AED9BB7" Ref="R14"  Part="1" 
-AR Path="/5AED18CC/5AED9BB7" Ref="R14"  Part="1" 
-F 0 "R14" V 11950 3250 50  0000 C CNN
-F 1 "10K" V 12000 3450 50  0000 C CNN
-F 2 "artemisa:Axial_resistor" V 11930 3450 50  0001 C CNN
-F 3 "" H 12000 3450 50  0001 C CNN
-	1    12000 3450
-	0    -1   -1   0   
-$EndComp
-$Comp
-L artemisa-rescue:R R6
-U 1 1 5AEDA94E
-P 11450 2000
-AR Path="/5AEDA94E" Ref="R6"  Part="1" 
-AR Path="/5AED18CC/5AEDA94E" Ref="R6"  Part="1" 
-F 0 "R6" V 11400 1800 50  0000 C CNN
-F 1 "10K" V 11450 2000 50  0000 C CNN
-F 2 "artemisa:Axial_resistor" V 11380 2000 50  0001 C CNN
-F 3 "" H 11450 2000 50  0001 C CNN
-	1    11450 2000
-	1    0    0    -1  
-$EndComp
-$Comp
-L artemisa-rescue:R R7
-U 1 1 5AEDA954
-P 11550 2000
-AR Path="/5AEDA954" Ref="R7"  Part="1" 
-AR Path="/5AED18CC/5AEDA954" Ref="R7"  Part="1" 
-F 0 "R7" V 11500 1800 50  0000 C CNN
-F 1 "10K" V 11550 2000 50  0000 C CNN
-F 2 "artemisa:Axial_resistor" V 11480 2000 50  0001 C CNN
-F 3 "" H 11550 2000 50  0001 C CNN
-	1    11550 2000
-	1    0    0    -1  
-$EndComp
-$Comp
-L artemisa-rescue:R R8
-U 1 1 5AEDA95A
-P 11650 2000
-AR Path="/5AEDA95A" Ref="R8"  Part="1" 
-AR Path="/5AED18CC/5AEDA95A" Ref="R8"  Part="1" 
-F 0 "R8" V 11600 1800 50  0000 C CNN
-F 1 "10K" V 11650 2000 50  0000 C CNN
-F 2 "artemisa:Axial_resistor" V 11580 2000 50  0001 C CNN
-F 3 "" H 11650 2000 50  0001 C CNN
-	1    11650 2000
-	1    0    0    -1  
-$EndComp
-$Comp
-L artemisa-rescue:R R9
-U 1 1 5AEDA960
-P 11750 2000
-AR Path="/5AEDA960" Ref="R9"  Part="1" 
-AR Path="/5AED18CC/5AEDA960" Ref="R9"  Part="1" 
-F 0 "R9" V 11700 1800 50  0000 C CNN
-F 1 "10K" V 11750 2000 50  0000 C CNN
-F 2 "artemisa:Axial_resistor" V 11680 2000 50  0001 C CNN
-F 3 "" H 11750 2000 50  0001 C CNN
-	1    11750 2000
-	1    0    0    -1  
-$EndComp
-$Comp
-L artemisa-rescue:R R10
-U 1 1 5AEDAA02
-P 11850 2000
-AR Path="/5AEDAA02" Ref="R10"  Part="1" 
-AR Path="/5AED18CC/5AEDAA02" Ref="R10"  Part="1" 
-F 0 "R10" V 11800 1800 50  0000 C CNN
-F 1 "10K" V 11850 2000 50  0000 C CNN
-F 2 "artemisa:Axial_resistor" V 11780 2000 50  0001 C CNN
-F 3 "" H 11850 2000 50  0001 C CNN
-	1    11850 2000
-	1    0    0    -1  
-$EndComp
-$Comp
-L artemisa-rescue:R R11
-U 1 1 5AEDAA08
-P 11950 2000
-AR Path="/5AEDAA08" Ref="R11"  Part="1" 
-AR Path="/5AED18CC/5AEDAA08" Ref="R11"  Part="1" 
-F 0 "R11" V 11900 1800 50  0000 C CNN
-F 1 "10K" V 11950 2000 50  0000 C CNN
-F 2 "artemisa:Axial_resistor" V 11880 2000 50  0001 C CNN
-F 3 "" H 11950 2000 50  0001 C CNN
-	1    11950 2000
-	1    0    0    -1  
-$EndComp
-$Comp
-L artemisa-rescue:R R12
-U 1 1 5AEDAA0E
-P 12050 2000
-AR Path="/5AEDAA0E" Ref="R12"  Part="1" 
-AR Path="/5AED18CC/5AEDAA0E" Ref="R12"  Part="1" 
-F 0 "R12" V 12000 1800 50  0000 C CNN
-F 1 "10K" V 12050 2000 50  0000 C CNN
-F 2 "artemisa:Axial_resistor" V 11980 2000 50  0001 C CNN
-F 3 "" H 12050 2000 50  0001 C CNN
-	1    12050 2000
-	1    0    0    -1  
-$EndComp
-$Comp
-L artemisa-rescue:R R13
-U 1 1 5AEDAA14
-P 12150 2000
-AR Path="/5AEDAA14" Ref="R13"  Part="1" 
-AR Path="/5AED18CC/5AEDAA14" Ref="R13"  Part="1" 
-F 0 "R13" V 12100 1800 50  0000 C CNN
-F 1 "10K" V 12150 2000 50  0000 C CNN
-F 2 "artemisa:Axial_resistor" V 12080 2000 50  0001 C CNN
-F 3 "" H 12150 2000 50  0001 C CNN
-	1    12150 2000
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
-	11150 2450 12700 2450
+	11150 2450 12150 2450
 Wire Wire Line
-	11150 2550 12700 2550
+	11150 2550 12050 2550
 Wire Wire Line
-	11150 2650 12700 2650
+	11150 2650 11950 2650
 Wire Wire Line
-	11150 2750 12700 2750
+	11150 2750 11850 2750
 Wire Wire Line
-	11150 2950 12700 2950
+	11150 2950 11750 2950
 Wire Wire Line
-	11150 3050 12700 3050
+	11150 3050 11650 3050
 Wire Wire Line
-	11150 3150 12700 3150
+	11150 3150 11550 3150
 Wire Wire Line
-	11150 3250 12700 3250
+	11150 3250 11450 3250
 Wire Wire Line
 	11450 2150 11450 3250
 Connection ~ 11450 3250
@@ -872,8 +706,6 @@ F 3 "" H 14400 4900 60  0001 C CNN
 	1    14400 4950
 	1    0    0    -1  
 $EndComp
-Wire Bus Line
-	13650 4000 14900 4000
 Entry Bus Bus
 	13550 3900 13650 4000
 Entry Bus Bus
@@ -884,18 +716,12 @@ Entry Bus Bus
 	13450 2150 13550 2250
 Entry Bus Bus
 	13550 2250 13650 2150
-Wire Bus Line
-	13650 2150 14900 2150
 Entry Bus Bus
 	13550 5750 13650 5850
-Wire Bus Line
-	13650 5850 14900 5850
 Entry Bus Bus
 	12800 2250 12900 2150
 Wire Bus Line
 	12900 2150 13450 2150
-Wire Bus Line
-	12800 2250 12800 4650
 Entry Wire Line
 	12800 2350 12700 2450
 Entry Wire Line
@@ -1100,8 +926,6 @@ Entry Bus Bus
 	13550 5950 13650 5850
 Wire Bus Line
 	13550 4100 13550 5750
-Wire Bus Line
-	13550 5950 13550 6850
 $Comp
 L power:VCC #PWR059
 U 1 1 5AEE1315
@@ -1124,9 +948,9 @@ Wire Wire Line
 Wire Wire Line
 	12150 3450 12350 3450
 Wire Wire Line
-	12350 3450 12350 3750
+	12350 3450 12350 3550
 Wire Wire Line
-	12150 3750 12550 3750
+	12150 3750 12350 3750
 Wire Wire Line
 	12550 3750 12550 3550
 Connection ~ 12350 3750
@@ -1150,7 +974,7 @@ $EndComp
 Wire Wire Line
 	11450 1850 11450 1750
 Wire Wire Line
-	11450 1750 12150 1750
+	11450 1750 11550 1750
 Wire Wire Line
 	12150 1750 12150 1850
 Wire Wire Line
@@ -1190,22 +1014,22 @@ Wire Wire Line
 Wire Wire Line
 	7700 4400 8100 4400
 $Comp
-L artemisa-rescue:R R18
+L artemisa:R R18
 U 1 1 5AF09131
 P 7850 5250
 AR Path="/5AF09131" Ref="R18"  Part="1" 
 AR Path="/5AED18CC/5AF09131" Ref="R18"  Part="1" 
-F 0 "R18" V 7800 5000 50  0000 C CNN
-F 1 "470" V 7850 5250 50  0000 C CNN
+F 0 "R18" H 7850 5350 50  0000 C CNN
+F 1 "470" H 7850 5250 40  0000 C CNN
 F 2 "artemisa:Axial_resistor" V 7780 5250 50  0001 C CNN
 F 3 "" H 7850 5250 50  0001 C CNN
 	1    7850 5250
-	1    0    0    -1  
+	0    1    1    0   
 $EndComp
 Wire Wire Line
 	7700 4550 7850 4550
 Wire Wire Line
-	7850 4550 7850 5100
+	7850 4550 7850 4650
 Wire Wire Line
 	7700 4650 7850 4650
 Connection ~ 7850 4650
@@ -1215,7 +1039,7 @@ Connection ~ 7850 4750
 Wire Wire Line
 	7850 5400 7850 5600
 Wire Wire Line
-	7850 5600 8350 5600
+	7850 5600 8100 5600
 Connection ~ 8100 5600
 Wire Wire Line
 	7850 5000 7700 5000
@@ -1234,17 +1058,17 @@ F 3 "" H 7700 7300 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemisa-rescue:R R21
+L artemisa:R R21
 U 1 1 5AF09F18
 P 7700 7800
 AR Path="/5AF09F18" Ref="R21"  Part="1" 
 AR Path="/5AED18CC/5AF09F18" Ref="R21"  Part="1" 
-F 0 "R21" H 7600 7950 50  0000 C CNN
-F 1 "2k7" V 7700 7800 50  0000 C CNN
+F 0 "R21" H 7700 7900 50  0000 C CNN
+F 1 "2k7" H 7700 7800 40  0000 C CNN
 F 2 "artemisa:Axial_resistor" V 7630 7800 50  0001 C CNN
 F 3 "" H 7700 7800 50  0001 C CNN
 	1    7700 7800
-	1    0    0    -1  
+	0    1    1    0   
 $EndComp
 Wire Wire Line
 	7700 7400 7700 7650
@@ -1272,17 +1096,17 @@ F 3 "" H 7100 7300 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemisa-rescue:R R19
+L artemisa:R R19
 U 1 1 5AF0A5E4
 P 7100 7800
 AR Path="/5AF0A5E4" Ref="R19"  Part="1" 
 AR Path="/5AED18CC/5AF0A5E4" Ref="R19"  Part="1" 
-F 0 "R19" H 7000 7950 50  0000 C CNN
-F 1 "20k" V 7100 7800 50  0000 C CNN
+F 0 "R19" H 7100 7900 50  0000 C CNN
+F 1 "20k" H 7100 7800 40  0000 C CNN
 F 2 "artemisa:Axial_resistor" V 7030 7800 50  0001 C CNN
 F 3 "" H 7100 7800 50  0001 C CNN
 	1    7100 7800
-	1    0    0    -1  
+	0    1    1    0   
 $EndComp
 Wire Wire Line
 	7100 7400 7100 7650
@@ -1298,28 +1122,28 @@ F 3 "" H 7400 7300 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemisa-rescue:R R20
+L artemisa:R R20
 U 1 1 5AF0A669
 P 7400 7800
 AR Path="/5AF0A669" Ref="R20"  Part="1" 
 AR Path="/5AED18CC/5AF0A669" Ref="R20"  Part="1" 
-F 0 "R20" H 7300 7950 50  0000 C CNN
-F 1 "4k7" V 7400 7800 50  0000 C CNN
+F 0 "R20" H 7400 7900 50  0000 C CNN
+F 1 "4k7" H 7400 7800 40  0000 C CNN
 F 2 "artemisa:Axial_resistor" V 7330 7800 50  0001 C CNN
 F 3 "" H 7400 7800 50  0001 C CNN
 	1    7400 7800
-	1    0    0    -1  
+	0    1    1    0   
 $EndComp
 Wire Wire Line
 	7400 7400 7400 7650
 Wire Wire Line
 	7100 7950 7100 8150
 Wire Wire Line
-	7100 8150 7700 8150
+	7100 8150 7400 8150
 Wire Wire Line
 	7700 8150 7700 7950
 Wire Wire Line
-	7400 7950 7400 8350
+	7400 7950 7400 8150
 Connection ~ 7400 8150
 Wire Wire Line
 	7400 8350 1500 8350
@@ -1334,37 +1158,37 @@ Entry Wire Line
 Text Label 8750 8750 2    60   ~ 0
 IOA7
 $Comp
-L artemisa-rescue:R R22
+L artemisa:R R22
 U 1 1 5AF3DBD3
 P 8100 5250
 AR Path="/5AF3DBD3" Ref="R22"  Part="1" 
 AR Path="/5AED18CC/5AF3DBD3" Ref="R22"  Part="1" 
-F 0 "R22" V 8050 5050 50  0000 C CNN
-F 1 "10K" V 8100 5250 50  0000 C CNN
+F 0 "R22" H 8100 5350 50  0000 C CNN
+F 1 "10K" H 8100 5250 40  0000 C CNN
 F 2 "artemisa:Axial_resistor" V 8030 5250 50  0001 C CNN
 F 3 "" H 8100 5250 50  0001 C CNN
 	1    8100 5250
-	1    0    0    -1  
+	0    1    1    0   
 $EndComp
 $Comp
-L artemisa-rescue:R R23
+L artemisa:R R23
 U 1 1 5AF3E1DF
 P 8350 5250
 AR Path="/5AF3E1DF" Ref="R23"  Part="1" 
 AR Path="/5AED18CC/5AF3E1DF" Ref="R23"  Part="1" 
-F 0 "R23" V 8300 5050 50  0000 C CNN
-F 1 "10K" V 8350 5250 50  0000 C CNN
+F 0 "R23" H 8350 5350 50  0000 C CNN
+F 1 "10K" H 8350 5250 40  0000 C CNN
 F 2 "artemisa:Axial_resistor" V 8280 5250 50  0001 C CNN
 F 3 "" H 8350 5250 50  0001 C CNN
 	1    8350 5250
-	1    0    0    -1  
+	0    1    1    0   
 $EndComp
 Wire Wire Line
 	8350 3450 8350 5100
 Wire Wire Line
 	8100 4400 8100 5100
 Wire Wire Line
-	8100 5400 8100 5800
+	8100 5400 8100 5600
 Wire Wire Line
 	8350 5600 8350 5400
 $Comp
@@ -1403,7 +1227,7 @@ $EndComp
 Wire Wire Line
 	10100 7200 10350 7200
 Wire Wire Line
-	9950 7600 10350 7600
+	9950 7600 10100 7600
 NoConn ~ 10950 7200
 NoConn ~ 10950 7600
 Wire Wire Line
@@ -1443,4 +1267,240 @@ Text HLabel 1500 8750 0    60   Input ~ 0
 CASIN
 Wire Wire Line
 	1500 8750 8750 8750
+Wire Wire Line
+	4150 4500 4300 4500
+Wire Wire Line
+	1650 4400 2000 4400
+Wire Wire Line
+	1900 4200 2000 4200
+Wire Wire Line
+	5900 3850 5900 4400
+Wire Wire Line
+	10050 4750 10150 4750
+Wire Wire Line
+	11250 4250 11250 4650
+Wire Wire Line
+	11250 4650 11250 4750
+Wire Wire Line
+	11250 4750 11250 4850
+Wire Wire Line
+	11450 4550 12700 4550
+Wire Wire Line
+	11450 4550 11450 5400
+Wire Wire Line
+	11550 4450 12700 4450
+Wire Wire Line
+	11550 4450 11550 5750
+Wire Wire Line
+	11650 4050 12700 4050
+Wire Wire Line
+	11650 4050 11650 6100
+Wire Wire Line
+	11750 3950 12700 3950
+Wire Wire Line
+	11750 3950 11750 6450
+Wire Wire Line
+	11450 3250 12700 3250
+Wire Wire Line
+	11550 3150 12700 3150
+Wire Wire Line
+	11650 3050 12700 3050
+Wire Wire Line
+	11750 2950 12700 2950
+Wire Wire Line
+	11850 2750 12700 2750
+Wire Wire Line
+	11950 2650 12700 2650
+Wire Wire Line
+	12050 2550 12700 2550
+Wire Wire Line
+	12150 2450 12700 2450
+Wire Wire Line
+	12350 3750 12550 3750
+Wire Wire Line
+	12350 3650 12350 3750
+Wire Wire Line
+	12350 3550 12350 3650
+Wire Wire Line
+	11800 1750 11850 1750
+Wire Wire Line
+	11750 1750 11800 1750
+Wire Wire Line
+	11650 1750 11750 1750
+Wire Wire Line
+	11550 1750 11650 1750
+Wire Wire Line
+	11850 1750 11950 1750
+Wire Wire Line
+	11950 1750 12050 1750
+Wire Wire Line
+	12050 1750 12150 1750
+Wire Wire Line
+	7850 4650 7850 4750
+Wire Wire Line
+	7850 4750 7850 5000
+Wire Wire Line
+	8100 5600 8350 5600
+Wire Wire Line
+	8100 5600 8100 5800
+Wire Wire Line
+	7850 5000 7850 5100
+Wire Wire Line
+	7400 8150 7700 8150
+Wire Wire Line
+	7400 8150 7400 8350
+Wire Wire Line
+	10100 7600 10350 7600
+$Comp
+L artemisa:R R6
+U 1 1 5BEF30B4
+P 11450 2000
+F 0 "R6" H 11600 1950 60  0000 L CNN
+F 1 "10K" H 11450 2000 39  0000 C CNN
+F 2 "artemisa:Axial_resistor" V 11450 2000 60  0001 C CNN
+F 3 "" V 11450 2000 60  0001 C CNN
+	1    11450 2000
+	0    1    1    0   
+$EndComp
+$Comp
+L artemisa:R R7
+U 1 1 5BF108A9
+P 11550 2000
+F 0 "R7" H 11700 1950 60  0000 L CNN
+F 1 "10K" H 11550 2000 39  0000 C CNN
+F 2 "artemisa:Axial_resistor" V 11550 2000 60  0001 C CNN
+F 3 "" V 11550 2000 60  0001 C CNN
+	1    11550 2000
+	0    1    1    0   
+$EndComp
+$Comp
+L artemisa:R R8
+U 1 1 5BF10915
+P 11650 2000
+F 0 "R8" H 11800 1950 60  0000 L CNN
+F 1 "10K" H 11650 2000 39  0000 C CNN
+F 2 "artemisa:Axial_resistor" V 11650 2000 60  0001 C CNN
+F 3 "" V 11650 2000 60  0001 C CNN
+	1    11650 2000
+	0    1    1    0   
+$EndComp
+$Comp
+L artemisa:R R9
+U 1 1 5BF10983
+P 11750 2000
+F 0 "R9" H 11900 1950 60  0000 L CNN
+F 1 "10K" H 11750 2000 39  0000 C CNN
+F 2 "artemisa:Axial_resistor" V 11750 2000 60  0001 C CNN
+F 3 "" V 11750 2000 60  0001 C CNN
+	1    11750 2000
+	0    1    1    0   
+$EndComp
+$Comp
+L artemisa:R R10
+U 1 1 5BF10A79
+P 11850 2000
+F 0 "R10" H 12000 1950 60  0000 L CNN
+F 1 "10K" H 11850 2000 39  0000 C CNN
+F 2 "artemisa:Axial_resistor" V 11850 2000 60  0001 C CNN
+F 3 "" V 11850 2000 60  0001 C CNN
+	1    11850 2000
+	0    1    1    0   
+$EndComp
+$Comp
+L artemisa:R R11
+U 1 1 5BF10A80
+P 11950 2000
+F 0 "R11" H 12100 1950 60  0000 L CNN
+F 1 "10K" H 11950 2000 39  0000 C CNN
+F 2 "artemisa:Axial_resistor" V 11950 2000 60  0001 C CNN
+F 3 "" V 11950 2000 60  0001 C CNN
+	1    11950 2000
+	0    1    1    0   
+$EndComp
+$Comp
+L artemisa:R R12
+U 1 1 5BF10A87
+P 12050 2000
+F 0 "R12" H 12200 1950 60  0000 L CNN
+F 1 "10K" H 12050 2000 39  0000 C CNN
+F 2 "artemisa:Axial_resistor" V 12050 2000 60  0001 C CNN
+F 3 "" V 12050 2000 60  0001 C CNN
+	1    12050 2000
+	0    1    1    0   
+$EndComp
+$Comp
+L artemisa:R R13
+U 1 1 5BF10A8E
+P 12150 2000
+F 0 "R13" H 12300 1950 60  0000 L CNN
+F 1 "10K" H 12150 2000 39  0000 C CNN
+F 2 "artemisa:Axial_resistor" V 12150 2000 60  0001 C CNN
+F 3 "" V 12150 2000 60  0001 C CNN
+	1    12150 2000
+	0    1    1    0   
+$EndComp
+$Comp
+L artemisa:R R14
+U 1 1 5BF3D4F8
+P 12000 3450
+F 0 "R14" H 12200 3500 60  0000 C CNN
+F 1 "10K" H 12000 3450 39  0000 C CNN
+F 2 "artemisa:Axial_resistor" V 12000 3450 60  0001 C CNN
+F 3 "" V 12000 3450 60  0001 C CNN
+	1    12000 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L artemisa:R R15
+U 1 1 5BF4C2B7
+P 12000 3550
+F 0 "R15" H 12200 3600 60  0000 C CNN
+F 1 "10K" H 12000 3550 39  0000 C CNN
+F 2 "artemisa:Axial_resistor" V 12000 3550 60  0001 C CNN
+F 3 "" V 12000 3550 60  0001 C CNN
+	1    12000 3550
+	1    0    0    -1  
+$EndComp
+$Comp
+L artemisa:R R16
+U 1 1 5BF4C31F
+P 12000 3650
+F 0 "R16" H 12200 3700 60  0000 C CNN
+F 1 "10K" H 12000 3650 39  0000 C CNN
+F 2 "artemisa:Axial_resistor" V 12000 3650 60  0001 C CNN
+F 3 "" V 12000 3650 60  0001 C CNN
+	1    12000 3650
+	1    0    0    -1  
+$EndComp
+$Comp
+L artemisa:R R17
+U 1 1 5BF4C389
+P 12000 3750
+F 0 "R17" H 12200 3800 60  0000 C CNN
+F 1 "10K" H 12000 3750 39  0000 C CNN
+F 2 "artemisa:Axial_resistor" V 12000 3750 60  0001 C CNN
+F 3 "" V 12000 3750 60  0001 C CNN
+	1    12000 3750
+	1    0    0    -1  
+$EndComp
+Wire Bus Line
+	13550 5950 13550 6850
+Wire Bus Line
+	13650 2150 14900 2150
+Wire Bus Line
+	13650 5850 14900 5850
+Wire Bus Line
+	9800 2500 9800 3500
+Wire Bus Line
+	6050 2450 6050 3500
+Wire Bus Line
+	9800 3700 9800 6850
+Wire Bus Line
+	8850 2500 8850 3500
+Wire Bus Line
+	8850 3700 8850 9700
+Wire Bus Line
+	13650 4000 14900 4000
+Wire Bus Line
+	12800 2250 12800 4650
 $EndSCHEMATC

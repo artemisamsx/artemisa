@@ -136,7 +136,7 @@ F 3 "" H 6600 6000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemisa-rescue:R R?
+L artemisa:R R?
 U 1 1 5B1EFB53
 P 6450 5650
 AR Path="/5B1EFB53" Ref="R?"  Part="1" 
@@ -238,7 +238,7 @@ F 3 "" H 4350 4650 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemisa-rescue:R R?
+L artemisa:R R?
 U 1 1 5B1F5FC5
 P 4750 4450
 AR Path="/5B1F5FC5" Ref="R?"  Part="1" 
@@ -298,7 +298,7 @@ VID_Y
 Wire Wire Line
 	1300 4250 1900 4250
 $Comp
-L artemisa-rescue:R R?
+L artemisa:R R?
 U 1 1 5B1FF728
 P 2150 4550
 AR Path="/5B1FF728" Ref="R?"  Part="1" 
@@ -333,7 +333,7 @@ VID_R_Y
 Wire Wire Line
 	1300 2700 1900 2700
 $Comp
-L artemisa-rescue:R R?
+L artemisa:R R?
 U 1 1 5B200539
 P 2150 3000
 AR Path="/5B200539" Ref="R?"  Part="1" 
@@ -373,7 +373,7 @@ F 3 "" H 5950 2650 60  0001 C CNN
 	1    0    0    1   
 $EndComp
 $Comp
-L artemisa-rescue:R R?
+L artemisa:R R?
 U 1 1 5B200689
 P 4950 3050
 AR Path="/5B200689" Ref="R?"  Part="1" 
@@ -386,7 +386,7 @@ F 3 "" H 4950 3050 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L artemisa-rescue:R R?
+L artemisa:R R?
 U 1 1 5B200731
 P 4950 2850
 AR Path="/5B200731" Ref="R?"  Part="1" 
@@ -419,7 +419,7 @@ Wire Wire Line
 Wire Wire Line
 	5250 2750 5250 2350
 $Comp
-L artemisa-rescue:R R?
+L artemisa:R R?
 U 1 1 5B200997
 P 5750 2350
 AR Path="/5B200997" Ref="R?"  Part="1" 
@@ -432,7 +432,7 @@ F 3 "" H 5750 2350 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L artemisa-rescue:R R?
+L artemisa:R R?
 U 1 1 5B200A0E
 P 4950 2350
 AR Path="/5B200A0E" Ref="R?"  Part="1" 
@@ -480,7 +480,7 @@ Wire Wire Line
 Wire Wire Line
 	2600 1300 2950 1300
 $Comp
-L artemisa-rescue:R R?
+L artemisa:R R?
 U 1 1 5B201514
 P 2150 1600
 AR Path="/5B201514" Ref="R?"  Part="1" 
@@ -520,7 +520,7 @@ F 3 "" H 5950 1250 60  0001 C CNN
 	1    0    0    1   
 $EndComp
 $Comp
-L artemisa-rescue:R R?
+L artemisa:R R?
 U 1 1 5B20152B
 P 4950 1650
 AR Path="/5B20152B" Ref="R?"  Part="1" 
@@ -533,7 +533,7 @@ F 3 "" H 4950 1650 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L artemisa-rescue:R R?
+L artemisa:R R?
 U 1 1 5B201532
 P 4950 1450
 AR Path="/5B201532" Ref="R?"  Part="1" 
@@ -565,7 +565,7 @@ Wire Wire Line
 Wire Wire Line
 	5250 1350 5250 950 
 $Comp
-L artemisa-rescue:R R?
+L artemisa:R R?
 U 1 1 5B201544
 P 5750 950
 AR Path="/5B201544" Ref="R?"  Part="1" 
@@ -578,7 +578,7 @@ F 3 "" H 5750 950 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L artemisa-rescue:R R?
+L artemisa:R R?
 U 1 1 5B20154B
 P 4950 950
 AR Path="/5B20154B" Ref="R?"  Part="1" 
@@ -846,7 +846,7 @@ F 3 "" H 2250 5700 60  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L artemisa-rescue:R R?
+L artemisa:R R?
 U 1 1 5B235D2B
 P 1950 5450
 AR Path="/5B235D2B" Ref="R?"  Part="1" 

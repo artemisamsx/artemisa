@@ -15,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L artemisa-rescue:TMS9928_9 U10
+L artemisa:TMS9928_9 U10
 U 1 1 5AD4E709
 P 3400 3400
 AR Path="/5AD4E709" Ref="U10"  Part="1" 
