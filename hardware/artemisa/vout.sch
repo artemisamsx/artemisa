@@ -1,5 +1,5 @@
 EESchema Schematic File Version 4
-LIBS:artemsx-cache
+LIBS:artemisa-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
@@ -15,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L artemsx:Crystal Y?
+L artemisa:Crystal Y?
 U 1 1 5B1ECE80
 P 5000 5550
 F 0 "Y?" H 5000 5450 50  0000 C CNN
@@ -26,23 +26,23 @@ F 3 "" H 5000 5550 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemsx:CP C?
+L artemisa:CP C?
 U 1 1 5B1EE917
 P 4600 5800
 F 0 "C?" H 4650 5900 50  0000 L CNN
 F 1 "27pF" H 4650 5700 50  0000 L CNN
-F 2 "artemsx:Disc_capacitor" H 4600 5800 50  0001 C CNN
+F 2 "artemisa:Disc_capacitor" H 4600 5800 50  0001 C CNN
 F 3 "" H 4600 5800 50  0001 C CNN
 	1    4600 5800
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemsx:CP C?
+L artemisa:CP C?
 U 1 1 5B1EE91E
 P 5400 5800
 F 0 "C?" H 5450 5900 50  0000 L CNN
 F 1 "27pF" H 5450 5700 50  0000 L CNN
-F 2 "artemsx:Disc_capacitor" H 5400 5800 50  0001 C CNN
+F 2 "artemisa:Disc_capacitor" H 5400 5800 50  0001 C CNN
 F 3 "" H 5400 5800 50  0001 C CNN
 	1    5400 5800
 	1    0    0    -1  
@@ -59,7 +59,7 @@ F 3 "" H 5000 6300 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemsx:4069 U?
+L artemisa:4069 U?
 U 1 1 5B1EEA6A
 P 5000 5100
 F 0 "U?" H 5000 5250 50  0000 C CNN
@@ -70,7 +70,7 @@ F 3 "" H 5000 5100 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemsx:4069 U?
+L artemisa:4069 U?
 U 2 1 5B1EEA99
 P 5800 5100
 F 0 "U?" H 5800 5250 50  0000 C CNN
@@ -81,7 +81,7 @@ F 3 "" H 5800 5100 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemsx:CXA1645 U?
+L artemisa:CXA1645 U?
 U 1 1 5B1EF93C
 P 7900 5100
 F 0 "U?" H 7900 5700 60  0000 C CNN
@@ -92,7 +92,7 @@ F 3 "" H 7900 4600 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemsx:CP C?
+L artemisa:CP C?
 U 1 1 5B1EFA19
 P 7100 5750
 F 0 "C?" H 7110 5820 50  0000 L CNN
@@ -114,7 +114,7 @@ F 3 "" H 7100 6000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemsx:CP C?
+L artemisa:CP C?
 U 1 1 5B1EFAFB
 P 6750 5650
 F 0 "C?" H 6760 5720 50  0000 L CNN
@@ -136,7 +136,7 @@ F 3 "" H 6600 6000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemsx-rescue:R R?
+L artemisa-rescue:R R?
 U 1 1 5B1EFB53
 P 6450 5650
 AR Path="/5B1EFB53" Ref="R?"  Part="1" 
@@ -216,7 +216,7 @@ Wire Wire Line
 Wire Wire Line
 	6250 5200 7350 5200
 $Comp
-L artemsx:LM1881 U?
+L artemisa:LM1881 U?
 U 1 1 5B1F5EA6
 P 5750 4400
 F 0 "U?" H 5750 4700 60  0000 C CNN
@@ -238,7 +238,7 @@ F 3 "" H 4350 4650 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemsx-rescue:R R?
+L artemisa-rescue:R R?
 U 1 1 5B1F5FC5
 P 4750 4450
 AR Path="/5B1F5FC5" Ref="R?"  Part="1" 
@@ -269,7 +269,7 @@ Wire Wire Line
 	4950 4450 4900 4450
 Connection ~ 4950 4550
 $Comp
-L artemsx:Cap C?
+L artemisa:Cap C?
 U 1 1 5B1F600E
 P 4750 4650
 F 0 "C?" V 4850 4500 50  0000 L CNN
@@ -298,7 +298,7 @@ VID_Y
 Wire Wire Line
 	1300 4250 1900 4250
 $Comp
-L artemsx-rescue:R R?
+L artemisa-rescue:R R?
 U 1 1 5B1FF728
 P 2150 4550
 AR Path="/5B1FF728" Ref="R?"  Part="1" 
@@ -333,7 +333,7 @@ VID_R_Y
 Wire Wire Line
 	1300 2700 1900 2700
 $Comp
-L artemsx-rescue:R R?
+L artemisa-rescue:R R?
 U 1 1 5B200539
 P 2150 3000
 AR Path="/5B200539" Ref="R?"  Part="1" 
@@ -362,7 +362,7 @@ $EndComp
 Wire Wire Line
 	2150 3300 2150 3150
 $Comp
-L artemsx:4558 U?
+L artemisa:4558 U?
 U 1 1 5B2005CC
 P 5700 2850
 F 0 "U?" H 5800 3050 60  0000 C CNN
@@ -373,7 +373,7 @@ F 3 "" H 5950 2650 60  0001 C CNN
 	1    0    0    1   
 $EndComp
 $Comp
-L artemsx-rescue:R R?
+L artemisa-rescue:R R?
 U 1 1 5B200689
 P 4950 3050
 AR Path="/5B200689" Ref="R?"  Part="1" 
@@ -386,7 +386,7 @@ F 3 "" H 4950 3050 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L artemsx-rescue:R R?
+L artemisa-rescue:R R?
 U 1 1 5B200731
 P 4950 2850
 AR Path="/5B200731" Ref="R?"  Part="1" 
@@ -419,7 +419,7 @@ Wire Wire Line
 Wire Wire Line
 	5250 2750 5250 2350
 $Comp
-L artemsx-rescue:R R?
+L artemisa-rescue:R R?
 U 1 1 5B200997
 P 5750 2350
 AR Path="/5B200997" Ref="R?"  Part="1" 
@@ -432,7 +432,7 @@ F 3 "" H 5750 2350 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L artemsx-rescue:R R?
+L artemisa-rescue:R R?
 U 1 1 5B200A0E
 P 4950 2350
 AR Path="/5B200A0E" Ref="R?"  Part="1" 
@@ -480,7 +480,7 @@ Wire Wire Line
 Wire Wire Line
 	2600 1300 2950 1300
 $Comp
-L artemsx-rescue:R R?
+L artemisa-rescue:R R?
 U 1 1 5B201514
 P 2150 1600
 AR Path="/5B201514" Ref="R?"  Part="1" 
@@ -509,7 +509,7 @@ $EndComp
 Wire Wire Line
 	2150 2000 2150 1750
 $Comp
-L artemsx:4558 U?
+L artemisa:4558 U?
 U 1 1 5B201524
 P 5700 1450
 F 0 "U?" H 5800 1650 60  0000 C CNN
@@ -520,7 +520,7 @@ F 3 "" H 5950 1250 60  0001 C CNN
 	1    0    0    1   
 $EndComp
 $Comp
-L artemsx-rescue:R R?
+L artemisa-rescue:R R?
 U 1 1 5B20152B
 P 4950 1650
 AR Path="/5B20152B" Ref="R?"  Part="1" 
@@ -533,7 +533,7 @@ F 3 "" H 4950 1650 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L artemsx-rescue:R R?
+L artemisa-rescue:R R?
 U 1 1 5B201532
 P 4950 1450
 AR Path="/5B201532" Ref="R?"  Part="1" 
@@ -565,7 +565,7 @@ Wire Wire Line
 Wire Wire Line
 	5250 1350 5250 950 
 $Comp
-L artemsx-rescue:R R?
+L artemisa-rescue:R R?
 U 1 1 5B201544
 P 5750 950
 AR Path="/5B201544" Ref="R?"  Part="1" 
@@ -578,7 +578,7 @@ F 3 "" H 5750 950 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L artemsx-rescue:R R?
+L artemisa-rescue:R R?
 U 1 1 5B20154B
 P 4950 950
 AR Path="/5B20154B" Ref="R?"  Part="1" 
@@ -617,7 +617,7 @@ Wire Wire Line
 Connection ~ 6300 1450
 Connection ~ 4250 3050
 $Comp
-L artemsx:Cap C?
+L artemisa:Cap C?
 U 1 1 5B201882
 P 1900 3000
 F 0 "C?" V 1800 2850 50  0000 L CNN
@@ -644,7 +644,7 @@ $EndComp
 Wire Wire Line
 	1900 3300 1900 3100
 $Comp
-L artemsx:Cap C?
+L artemisa:Cap C?
 U 1 1 5B201A75
 P 1900 1600
 F 0 "C?" V 1800 1450 50  0000 L CNN
@@ -668,7 +668,7 @@ $EndComp
 Wire Wire Line
 	1900 2000 1900 1700
 $Comp
-L artemsx:Cap C?
+L artemisa:Cap C?
 U 1 1 5B201ADD
 P 1900 4550
 F 0 "C?" V 1800 4400 50  0000 L CNN
@@ -698,7 +698,7 @@ Wire Wire Line
 	1900 1500 1900 1300
 Connection ~ 1900 1300
 $Comp
-L artemsx:CD4066 U?
+L artemisa:CD4066 U?
 U 2 1 5B22C884
 P 3450 3250
 F 0 "U?" H 3450 3500 60  0000 C CNN
@@ -724,12 +724,12 @@ Wire Wire Line
 Wire Wire Line
 	4000 3250 4000 3350
 $Comp
-L artemsx:CP C?
+L artemisa:CP C?
 U 1 1 5B22DC37
 P 2500 2700
 F 0 "C?" V 2600 2550 50  0000 L CNN
 F 1 "10uF" V 2400 2450 50  0000 L CNN
-F 2 "artemsx:Disc_capacitor" H 2500 2700 50  0001 C CNN
+F 2 "artemisa:Disc_capacitor" H 2500 2700 50  0001 C CNN
 F 3 "" H 2500 2700 50  0001 C CNN
 	1    2500 2700
 	0    -1   -1   0   
@@ -742,7 +742,7 @@ Wire Wire Line
 	2950 3250 2950 2700
 Connection ~ 2950 2700
 $Comp
-L artemsx:CD4066 U?
+L artemisa:CD4066 U?
 U 1 1 5B22E1EF
 P 3450 1950
 F 0 "U?" H 3450 2200 60  0000 C CNN
@@ -777,12 +777,12 @@ Connection ~ 2950 1300
 Wire Wire Line
 	2850 2400 3450 2400
 $Comp
-L artemsx:CP C?
+L artemisa:CP C?
 U 1 1 5B22E717
 P 2500 1300
 F 0 "C?" V 2600 1150 50  0000 L CNN
 F 1 "10uF" V 2400 1050 50  0000 L CNN
-F 2 "artemsx:Disc_capacitor" H 2500 1300 50  0001 C CNN
+F 2 "artemisa:Disc_capacitor" H 2500 1300 50  0001 C CNN
 F 3 "" H 2500 1300 50  0001 C CNN
 	1    2500 1300
 	0    -1   -1   0   
@@ -799,7 +799,7 @@ Wire Wire Line
 	3450 3600 3450 3700
 Connection ~ 3450 3700
 $Comp
-L artemsx:1N4448 CR?
+L artemisa:1N4448 CR?
 U 1 1 5B234944
 P 3200 4700
 F 0 "CR?" H 3200 4850 60  0000 C CNN
@@ -810,12 +810,12 @@ F 3 "" H 3250 4700 60  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L artemsx:CP C?
+L artemisa:CP C?
 U 1 1 5B234F7F
 P 2500 4250
 F 0 "C?" V 2600 4100 50  0000 L CNN
 F 1 "10uF" V 2400 4000 50  0000 L CNN
-F 2 "artemsx:Disc_capacitor" H 2500 4250 50  0001 C CNN
+F 2 "artemisa:Disc_capacitor" H 2500 4250 50  0001 C CNN
 F 3 "" H 2500 4250 50  0001 C CNN
 	1    2500 4250
 	0    -1   -1   0   
@@ -835,7 +835,7 @@ F 3 "" H 1650 5350 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemsx:1N4448 CR?
+L artemisa:1N4448 CR?
 U 1 1 5B235C7F
 P 2200 5700
 F 0 "CR?" V 2300 5800 60  0000 C CNN
@@ -846,7 +846,7 @@ F 3 "" H 2250 5700 60  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L artemsx-rescue:R R?
+L artemisa-rescue:R R?
 U 1 1 5B235D2B
 P 1950 5450
 AR Path="/5B235D2B" Ref="R?"  Part="1" 
@@ -863,7 +863,7 @@ Wire Wire Line
 Wire Wire Line
 	2200 5450 2200 5550
 $Comp
-L artemsx:1N4448 CR?
+L artemisa:1N4448 CR?
 U 1 1 5B2360B7
 P 2200 6150
 F 0 "CR?" V 2350 6250 60  0000 C CNN
@@ -889,7 +889,7 @@ $EndComp
 Wire Wire Line
 	2200 6300 2200 6450
 $Comp
-L artemsx:Pot R?
+L artemisa:Pot R?
 U 1 1 5B2366C3
 P 2750 5950
 F 0 "R?" H 2750 6050 60  0000 C CNN
@@ -916,7 +916,7 @@ Wire Wire Line
 Wire Wire Line
 	3200 5950 3200 4850
 $Comp
-L artemsx:4069 U?
+L artemisa:4069 U?
 U 3 1 5B237E09
 P 5750 3700
 F 0 "U?" H 5750 3850 50  0000 C CNN

@@ -26,7 +26,7 @@
   )
   (pad 1 thru_hole circle (at 0 0) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask))
   (pad 2 thru_hole circle (at 2.5 0) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask))
-  (model ${KIPRJMOD}/../libs/artemsx.3dshapes/Disc_capacitor.wrl
+  (model ${KIPRJMOD}/../libs/artemisa.3dshapes/Disc_capacitor.wrl
     (at (xyz 0 0 0))
     (scale (xyz 1 0.5 1))
     (rotate (xyz 0 0 0))

@@ -33,7 +33,7 @@
   (pad 2 thru_hole oval (at 5.0546 -3.99796) (size 1.99898 3.19786) (drill oval 0.99568 2.1971) (layers *.Cu *.Mask F.SilkS))
   (pad 1 thru_hole oval (at 0 0) (size 3.19786 1.99898) (drill oval 2.1971 0.99568) (layers *.Cu *.Mask F.SilkS))
   (pad 2 thru_hole oval (at -5.0546 -3.99796) (size 1.99898 3.19786) (drill oval 0.99568 2.1971) (layers *.Cu *.Mask F.SilkS))
-  (model ${KIPRJMOD}/../libs/artemsx.3dshapes/RCA.wrl
+  (model ${KIPRJMOD}/../libs/artemisa.3dshapes/RCA.wrl
     (at (xyz 0 0 0))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 0))

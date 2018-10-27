@@ -25,7 +25,7 @@
   (fp_line (start 11.25 -1.6) (end -1.05 -1.6) (layer F.CrtYd) (width 0.05))
   (pad 1 thru_hole circle (at 0 0) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask))
   (pad 2 thru_hole oval (at 10.16 0) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask))
-  (model ${KIPRJMOD}/../libs/artemsx.3dshapes/Axial_resistor.wrl
+  (model ${KIPRJMOD}/../libs/artemisa.3dshapes/Axial_resistor.wrl
     (offset (xyz 5.079999923706055 0 0))
     (scale (xyz 0.393701 0.393701 0.393701))
     (rotate (xyz 0 0 0))

@@ -291,7 +291,7 @@
     (add_net VCC)
   )
 
-  (module artemsx:DIP-28_600 (layer F.Cu) (tedit 58CC8E2F) (tstamp 5BD216C7)
+  (module artemisa:DIP-28_600 (layer F.Cu) (tedit 58CC8E2F) (tstamp 5BD216C7)
     (at 69.4 46.395)
     (descr "28-lead dip package, row spacing 15.24 mm (600 mils)")
     (tags "DIL DIP PDIP 2.54mm 15.24mm 600mil")
@@ -383,7 +383,7 @@
     )
   )
 
-  (module artemsx:DIP-20_300 (layer F.Cu) (tedit 58CC8E2D) (tstamp 5BD2F68D)
+  (module artemisa:DIP-20_300 (layer F.Cu) (tedit 58CC8E2D) (tstamp 5BD2F68D)
     (at 54.16 94.02 90)
     (descr "20-lead dip package, row spacing 7.62 mm (300 mils)")
     (tags "DIL DIP PDIP 2.54mm 7.62mm 300mil")
@@ -459,7 +459,7 @@
     )
   )
 
-  (module artemsx:GFX_conn (layer F.Cu) (tedit 5BD1EFE2) (tstamp 5BD21455)
+  (module artemisa:GFX_conn (layer F.Cu) (tedit 5BD1EFE2) (tstamp 5BD21455)
     (at 88.45 142.28 90)
     (descr "Box header 25x2pin 2.54mm")
     (tags "CONN DEV")
@@ -577,14 +577,14 @@
       (net 47 "Net-(J1-Pad5)"))
     (pad 6 thru_hole oval (at -25.4 -1.27 90) (size 1.5 2) (drill 1 (offset 0 -0.25)) (layers *.Cu *.Mask F.SilkS)
       (net 48 "Net-(J1-Pad6)"))
-    (model ${KIPRJMOD}/../libs/artemsx.3dshapes/GFX_conn.wrl
+    (model ${KIPRJMOD}/../libs/artemisa.3dshapes/GFX_conn.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
     )
   )
 
-  (module artemsx:Mounting_hole_M3 (layer F.Cu) (tedit 597B6CFB) (tstamp 5BD26DEF)
+  (module artemisa:Mounting_hole_M3 (layer F.Cu) (tedit 597B6CFB) (tstamp 5BD26DEF)
     (at 90 42)
     (descr "Mounting Hole 3.2mm, no annular, M3")
     (tags "mounting hole 3.2mm no annular m3")
@@ -599,7 +599,7 @@
     (pad 1 np_thru_hole circle (at 0 0) (size 3.2 3.2) (drill 3.2) (layers *.Cu *.Mask))
   )
 
-  (module artemsx:Mounting_hole_M3 (layer F.Cu) (tedit 5BD2DD43) (tstamp 5BD26A8E)
+  (module artemisa:Mounting_hole_M3 (layer F.Cu) (tedit 5BD2DD43) (tstamp 5BD26A8E)
     (at 48 42)
     (descr "Mounting Hole 3.2mm, no annular, M3")
     (tags "mounting hole 3.2mm no annular m3")
@@ -614,7 +614,7 @@
     (pad 1 np_thru_hole circle (at 0 0) (size 3.2 3.2) (drill 3.2) (layers *.Cu *.Mask))
   )
 
-  (module artemsx:Mounting_hole_M3 (layer F.Cu) (tedit 597B6CFB) (tstamp 5BD26A7C)
+  (module artemisa:Mounting_hole_M3 (layer F.Cu) (tedit 597B6CFB) (tstamp 5BD26A7C)
     (at 48 184)
     (descr "Mounting Hole 3.2mm, no annular, M3")
     (tags "mounting hole 3.2mm no annular m3")
@@ -629,7 +629,7 @@
     (pad 1 np_thru_hole circle (at 0 0) (size 3.2 3.2) (drill 3.2) (layers *.Cu *.Mask))
   )
 
-  (module artemsx:Disc_capacitor (layer F.Cu) (tedit 5BD1903F) (tstamp 5BD2F3C3)
+  (module artemisa:Disc_capacitor (layer F.Cu) (tedit 5BD1903F) (tstamp 5BD2F3C3)
     (at 57.97 178.475 180)
     (descr "C, Disc series, Radial, pin pitch=2.50mm, , diameter*width=3.8*2.6mm^2, Capacitor, http://www.vishay.com/docs/45233/krseries.pdf")
     (tags "C Disc series Radial pin pitch 2.50mm  diameter 3.8mm width 2.6mm Capacitor")
@@ -661,14 +661,14 @@
       (net 1 "Net-(C1-Pad1)"))
     (pad 2 thru_hole circle (at 2.5 0 180) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask)
       (net 2 GND))
-    (model ${KIPRJMOD}/../libs/artemsx.3dshapes/Disc_capacitor.wrl
+    (model ${KIPRJMOD}/../libs/artemisa.3dshapes/Disc_capacitor.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 0.5 1))
       (rotate (xyz 0 0 0))
     )
   )
 
-  (module artemsx:Disc_capacitor (layer F.Cu) (tedit 5BD1903F) (tstamp 5BD2F3FF)
+  (module artemisa:Disc_capacitor (layer F.Cu) (tedit 5BD1903F) (tstamp 5BD2F3FF)
     (at 55.43 163.235)
     (descr "C, Disc series, Radial, pin pitch=2.50mm, , diameter*width=3.8*2.6mm^2, Capacitor, http://www.vishay.com/docs/45233/krseries.pdf")
     (tags "C Disc series Radial pin pitch 2.50mm  diameter 3.8mm width 2.6mm Capacitor")
@@ -700,14 +700,14 @@
       (net 2 GND))
     (pad 1 thru_hole circle (at 0 0) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask)
       (net 3 "Net-(C2-Pad1)"))
-    (model ${KIPRJMOD}/../libs/artemsx.3dshapes/Disc_capacitor.wrl
+    (model ${KIPRJMOD}/../libs/artemisa.3dshapes/Disc_capacitor.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 0.5 1))
       (rotate (xyz 0 0 0))
     )
   )
 
-  (module artemsx:Disc_capacitor (layer F.Cu) (tedit 5BD1903F) (tstamp 5BD2E0A6)
+  (module artemisa:Disc_capacitor (layer F.Cu) (tedit 5BD1903F) (tstamp 5BD2E0A6)
     (at 53.525 172.125 90)
     (descr "C, Disc series, Radial, pin pitch=2.50mm, , diameter*width=3.8*2.6mm^2, Capacitor, http://www.vishay.com/docs/45233/krseries.pdf")
     (tags "C Disc series Radial pin pitch 2.50mm  diameter 3.8mm width 2.6mm Capacitor")
@@ -739,14 +739,14 @@
       (net 4 VCC))
     (pad 2 thru_hole circle (at 2.5 0 90) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask)
       (net 2 GND))
-    (model ${KIPRJMOD}/../libs/artemsx.3dshapes/Disc_capacitor.wrl
+    (model ${KIPRJMOD}/../libs/artemisa.3dshapes/Disc_capacitor.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 0.5 1))
       (rotate (xyz 0 0 0))
     )
   )
 
-  (module artemsx:Disc_capacitor (layer F.Cu) (tedit 5BD1903F) (tstamp 5BD22D4F)
+  (module artemisa:Disc_capacitor (layer F.Cu) (tedit 5BD1903F) (tstamp 5BD22D4F)
     (at 78.25 42.585 180)
     (descr "C, Disc series, Radial, pin pitch=2.50mm, , diameter*width=3.8*2.6mm^2, Capacitor, http://www.vishay.com/docs/45233/krseries.pdf")
     (tags "C Disc series Radial pin pitch 2.50mm  diameter 3.8mm width 2.6mm Capacitor")
@@ -778,14 +778,14 @@
       (net 2 GND))
     (pad 1 thru_hole circle (at 0 0 180) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask)
       (net 4 VCC))
-    (model ${KIPRJMOD}/../libs/artemsx.3dshapes/Disc_capacitor.wrl
+    (model ${KIPRJMOD}/../libs/artemisa.3dshapes/Disc_capacitor.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 0.5 1))
       (rotate (xyz 0 0 0))
     )
   )
 
-  (module artemsx:Disc_capacitor (layer F.Cu) (tedit 5BD1903F) (tstamp 5BD25B31)
+  (module artemisa:Disc_capacitor (layer F.Cu) (tedit 5BD1903F) (tstamp 5BD25B31)
     (at 50.35 121.325 270)
     (descr "C, Disc series, Radial, pin pitch=2.50mm, , diameter*width=3.8*2.6mm^2, Capacitor, http://www.vishay.com/docs/45233/krseries.pdf")
     (tags "C Disc series Radial pin pitch 2.50mm  diameter 3.8mm width 2.6mm Capacitor")
@@ -817,14 +817,14 @@
       (net 2 GND))
     (pad 1 thru_hole circle (at 0 0 270) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask)
       (net 4 VCC))
-    (model ${KIPRJMOD}/../libs/artemsx.3dshapes/Disc_capacitor.wrl
+    (model ${KIPRJMOD}/../libs/artemisa.3dshapes/Disc_capacitor.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 0.5 1))
       (rotate (xyz 0 0 0))
     )
   )
 
-  (module artemsx:Disc_capacitor (layer F.Cu) (tedit 5BD1903F) (tstamp 5BD25AB9)
+  (module artemisa:Disc_capacitor (layer F.Cu) (tedit 5BD1903F) (tstamp 5BD25AB9)
     (at 50.35 104.815 270)
     (descr "C, Disc series, Radial, pin pitch=2.50mm, , diameter*width=3.8*2.6mm^2, Capacitor, http://www.vishay.com/docs/45233/krseries.pdf")
     (tags "C Disc series Radial pin pitch 2.50mm  diameter 3.8mm width 2.6mm Capacitor")
@@ -856,14 +856,14 @@
       (net 4 VCC))
     (pad 2 thru_hole circle (at 2.5 0 270) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask)
       (net 2 GND))
-    (model ${KIPRJMOD}/../libs/artemsx.3dshapes/Disc_capacitor.wrl
+    (model ${KIPRJMOD}/../libs/artemisa.3dshapes/Disc_capacitor.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 0.5 1))
       (rotate (xyz 0 0 0))
     )
   )
 
-  (module artemsx:Disc_capacitor (layer F.Cu) (tedit 5BD1903F) (tstamp 5BD2E2F8)
+  (module artemisa:Disc_capacitor (layer F.Cu) (tedit 5BD1903F) (tstamp 5BD2E2F8)
     (at 50.35 88.94 270)
     (descr "C, Disc series, Radial, pin pitch=2.50mm, , diameter*width=3.8*2.6mm^2, Capacitor, http://www.vishay.com/docs/45233/krseries.pdf")
     (tags "C Disc series Radial pin pitch 2.50mm  diameter 3.8mm width 2.6mm Capacitor")
@@ -895,14 +895,14 @@
       (net 4 VCC))
     (pad 2 thru_hole circle (at 2.5 0 270) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask)
       (net 2 GND))
-    (model ${KIPRJMOD}/../libs/artemsx.3dshapes/Disc_capacitor.wrl
+    (model ${KIPRJMOD}/../libs/artemisa.3dshapes/Disc_capacitor.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 0.5 1))
       (rotate (xyz 0 0 0))
     )
   )
 
-  (module artemsx:Disc_capacitor (layer F.Cu) (tedit 5BD1903F) (tstamp 5BD2FA1E)
+  (module artemisa:Disc_capacitor (layer F.Cu) (tedit 5BD1903F) (tstamp 5BD2FA1E)
     (at 54.16 139.105 180)
     (descr "C, Disc series, Radial, pin pitch=2.50mm, , diameter*width=3.8*2.6mm^2, Capacitor, http://www.vishay.com/docs/45233/krseries.pdf")
     (tags "C Disc series Radial pin pitch 2.50mm  diameter 3.8mm width 2.6mm Capacitor")
@@ -934,14 +934,14 @@
       (net 2 GND))
     (pad 1 thru_hole circle (at 0 0 180) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask)
       (net 4 VCC))
-    (model ${KIPRJMOD}/../libs/artemsx.3dshapes/Disc_capacitor.wrl
+    (model ${KIPRJMOD}/../libs/artemisa.3dshapes/Disc_capacitor.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 0.5 1))
       (rotate (xyz 0 0 0))
     )
   )
 
-  (module artemsx:Disc_capacitor (layer F.Cu) (tedit 5BD1903F) (tstamp 5BD22C9B)
+  (module artemisa:Disc_capacitor (layer F.Cu) (tedit 5BD1903F) (tstamp 5BD22C9B)
     (at 89.085 84.495 180)
     (descr "C, Disc series, Radial, pin pitch=2.50mm, , diameter*width=3.8*2.6mm^2, Capacitor, http://www.vishay.com/docs/45233/krseries.pdf")
     (tags "C Disc series Radial pin pitch 2.50mm  diameter 3.8mm width 2.6mm Capacitor")
@@ -973,14 +973,14 @@
       (net 4 VCC))
     (pad 2 thru_hole circle (at 2.5 0 180) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask)
       (net 2 GND))
-    (model ${KIPRJMOD}/../libs/artemsx.3dshapes/Disc_capacitor.wrl
+    (model ${KIPRJMOD}/../libs/artemisa.3dshapes/Disc_capacitor.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 0.5 1))
       (rotate (xyz 0 0 0))
     )
   )
 
-  (module artemsx:Radial_capacitor (layer F.Cu) (tedit 5BD1910E) (tstamp 5BD21590)
+  (module artemisa:Radial_capacitor (layer F.Cu) (tedit 5BD1910E) (tstamp 5BD21590)
     (at 50.35 114.34 180)
     (descr "CP, Radial series, Radial, pin pitch=2.00mm, , diameter=5mm, Electrolytic Capacitor")
     (tags "CP Radial series Radial pin pitch 2.00mm  diameter 5mm Electrolytic Capacitor")
@@ -1124,14 +1124,14 @@
       (net 4 VCC))
     (pad 2 thru_hole circle (at 2 0 180) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask)
       (net 2 GND))
-    (model ${KIPRJMOD}/../libs/artemsx.3dshapes/Radial_capacitor.wrl
+    (model ${KIPRJMOD}/../libs/artemisa.3dshapes/Radial_capacitor.wrl
       (offset (xyz 0 0 1.269999980926514))
       (scale (xyz 1 1 2))
       (rotate (xyz 0 0 0))
     )
   )
 
-  (module artemsx:RCA (layer F.Cu) (tedit 5BD33AC7) (tstamp 5BD218DD)
+  (module artemisa:RCA (layer F.Cu) (tedit 5BD33AC7) (tstamp 5BD218DD)
     (at 58.605 54.015 180)
     (descr "RCA Audio connector, yellow, Pro Signal p/n PSG01547")
     (tags "rca, audio")
@@ -1171,14 +1171,14 @@
       (net 49 "Net-(J2-Pad1)"))
     (pad 2 thru_hole oval (at -5.0546 -3.99796 180) (size 1.99898 3.19786) (drill oval 0.99568 2.1971) (layers *.Cu *.Mask F.SilkS)
       (net 2 GND))
-    (model ${KIPRJMOD}/../libs/artemsx.3dshapes/RCA.wrl
+    (model ${KIPRJMOD}/../libs/artemisa.3dshapes/RCA.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
     )
   )
 
-  (module artemsx:Axial_resistor (layer F.Cu) (tedit 5BD18FF6) (tstamp 5BD2FF46)
+  (module artemisa:Axial_resistor (layer F.Cu) (tedit 5BD18FF6) (tstamp 5BD2FF46)
     (at 49.08 176.57 90)
     (descr "Resistor, Axial_DIN0207 series, Axial, Horizontal, pin pitch=10.16mm, 0.25W = 1/4W, length*diameter=6.3*2.5mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf")
     (tags "Resistor Axial_DIN0207 series Axial Horizontal pin pitch 10.16mm 0.25W = 1/4W length 6.3mm diameter 2.5mm")
@@ -1209,14 +1209,14 @@
       (net 49 "Net-(J2-Pad1)"))
     (pad 2 thru_hole oval (at 10.16 0 90) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask)
       (net 2 GND))
-    (model ${KIPRJMOD}/../libs/artemsx.3dshapes/Axial_resistor.wrl
+    (model ${KIPRJMOD}/../libs/artemisa.3dshapes/Axial_resistor.wrl
       (offset (xyz 5.079999923706055 0 0))
       (scale (xyz 0.393701 0.393701 0.393701))
       (rotate (xyz 0 0 0))
     )
   )
 
-  (module artemsx:DIP-40_600 (layer F.Cu) (tedit 58CC8E30) (tstamp 5BD2184A)
+  (module artemisa:DIP-40_600 (layer F.Cu) (tedit 58CC8E30) (tstamp 5BD2184A)
     (at 78.29 185.46 180)
     (descr "40-lead dip package, row spacing 15.24 mm (600 mils)")
     (tags "DIL DIP PDIP 2.54mm 15.24mm 600mil")
@@ -1332,7 +1332,7 @@
     )
   )
 
-  (module artemsx:DIP-14_300 (layer F.Cu) (tedit 58CC8E2C) (tstamp 5BD2F9C8)
+  (module artemisa:DIP-14_300 (layer F.Cu) (tedit 58CC8E2C) (tstamp 5BD2F9C8)
     (at 49.08 142.28)
     (descr "14-lead dip package, row spacing 7.62 mm (300 mils)")
     (tags "DIL DIP PDIP 2.54mm 7.62mm 300mil")
@@ -1396,7 +1396,7 @@
     )
   )
 
-  (module artemsx:DIP-20_300 (layer F.Cu) (tedit 58CC8E2D) (tstamp 5BD25BF5)
+  (module artemisa:DIP-20_300 (layer F.Cu) (tedit 58CC8E2D) (tstamp 5BD25BF5)
     (at 54.16 126.365 90)
     (descr "20-lead dip package, row spacing 7.62 mm (300 mils)")
     (tags "DIL DIP PDIP 2.54mm 7.62mm 300mil")
@@ -1472,7 +1472,7 @@
     )
   )
 
-  (module artemsx:DIP-20_300 (layer F.Cu) (tedit 58CC8E2D) (tstamp 5BD25C6A)
+  (module artemisa:DIP-20_300 (layer F.Cu) (tedit 58CC8E2D) (tstamp 5BD25C6A)
     (at 54.16 109.855 90)
     (descr "20-lead dip package, row spacing 7.62 mm (300 mils)")
     (tags "DIL DIP PDIP 2.54mm 7.62mm 300mil")
@@ -1548,7 +1548,7 @@
     )
   )
 
-  (module artemsx:DIP-14_300 (layer F.Cu) (tedit 58CC8E2C) (tstamp 5BD226C4)
+  (module artemisa:DIP-14_300 (layer F.Cu) (tedit 58CC8E2C) (tstamp 5BD226C4)
     (at 84.005 87.67)
     (descr "14-lead dip package, row spacing 7.62 mm (300 mils)")
     (tags "DIL DIP PDIP 2.54mm 7.62mm 300mil")
@@ -1612,7 +1612,7 @@
     )
   )
 
-  (module artemsx:Crystal (layer F.Cu) (tedit 5BD19010) (tstamp 5BD2F33F)
+  (module artemisa:Crystal (layer F.Cu) (tedit 5BD19010) (tstamp 5BD2F33F)
     (at 57.97 170.95406 90)
     (path /5ADB7F16)
     (fp_text reference Y1 (at 0 0 90) (layer F.SilkS)
@@ -1676,14 +1676,14 @@
       (net 1 "Net-(C1-Pad1)"))
     (pad 2 thru_hole circle (at 2.44094 0 90) (size 1.50114 1.50114) (drill 0.8001) (layers *.Cu *.Mask)
       (net 3 "Net-(C2-Pad1)"))
-    (model ${KIPRJMOD}/../libs/artemsx.3dshapes/Crystal.wrl
+    (model ${KIPRJMOD}/../libs/artemisa.3dshapes/Crystal.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
     )
   )
 
-  (module artemsx:Mounting_hole_M3 (layer F.Cu) (tedit 597B6CFB) (tstamp 5BD269F4)
+  (module artemisa:Mounting_hole_M3 (layer F.Cu) (tedit 597B6CFB) (tstamp 5BD269F4)
     (at 90 184)
     (descr "Mounting Hole 3.2mm, no annular, M3")
     (tags "mounting hole 3.2mm no annular m3")
@@ -1698,7 +1698,7 @@
     (pad 1 np_thru_hole circle (at 0 0) (size 3.2 3.2) (drill 3.2) (layers *.Cu *.Mask))
   )
 
-  (module artemsx:MSX_logo (layer F.Cu) (tedit 0) (tstamp 5BD34543)
+  (module artemisa:MSX_logo (layer F.Cu) (tedit 0) (tstamp 5BD34543)
     (at 49.08 54.015 90)
     (fp_text reference G*** (at 0 0 90) (layer F.SilkS) hide
       (effects (font (size 1.524 1.524) (thickness 0.3)))
@@ -1887,7 +1887,7 @@
       (xy -5.472572 -2.546406)) (layer F.SilkS) (width 0.01))
   )
 
-  (module artemsx:MSX_logo_small (layer F.Cu) (tedit 0) (tstamp 5BD36920)
+  (module artemisa:MSX_logo_small (layer F.Cu) (tedit 0) (tstamp 5BD36920)
     (at 87.815 67.985 90)
     (fp_text reference G*** (at 0 0 90) (layer F.SilkS) hide
       (effects (font (size 1.524 1.524) (thickness 0.3)))
