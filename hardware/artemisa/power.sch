@@ -466,17 +466,6 @@ F 3 "" H 8850 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemisa:Cap DC45
-U 1 1 5B117B39
-P 9000 3600
-F 0 "DC45" V 9050 3650 50  0000 L CNN
-F 1 "100nF" V 9050 3300 50  0000 L CNN
-F 2 "artemisa:Disc_capacitor" H 9000 3600 50  0001 C CNN
-F 3 "" H 9000 3600 50  0001 C CNN
-	1    9000 3600
-	1    0    0    -1  
-$EndComp
-$Comp
 L artemisa:Cap DC22
 U 1 1 5B117D38
 P 5550 3600
@@ -649,10 +638,6 @@ Wire Wire Line
 Wire Wire Line
 	8850 3950 8850 3700
 Wire Wire Line
-	9000 3250 9000 3500
-Wire Wire Line
-	9000 3950 9000 3700
-Wire Wire Line
 	5550 3250 5550 3500
 Wire Wire Line
 	5550 3950 5550 3700
@@ -690,7 +675,6 @@ Connection ~ 8250 3250
 Connection ~ 8400 3250
 Connection ~ 8550 3250
 Connection ~ 8700 3250
-Connection ~ 8850 3250
 Connection ~ 3900 3950
 Connection ~ 4050 3950
 Connection ~ 4200 3950
@@ -721,7 +705,6 @@ Connection ~ 8250 3950
 Connection ~ 8400 3950
 Connection ~ 8550 3950
 Connection ~ 8700 3950
-Connection ~ 8850 3950
 Connection ~ 3300 3950
 Connection ~ 3450 3950
 Connection ~ 3600 3950
@@ -807,8 +790,6 @@ Wire Wire Line
 Wire Wire Line
 	8700 3250 8850 3250
 Wire Wire Line
-	8850 3250 9000 3250
-Wire Wire Line
 	3900 3950 4050 3950
 Wire Wire Line
 	4050 3950 4200 3950
@@ -870,8 +851,6 @@ Wire Wire Line
 	8550 3950 8700 3950
 Wire Wire Line
 	8700 3950 8850 3950
-Wire Wire Line
-	8850 3950 9000 3950
 Wire Wire Line
 	3300 3950 3450 3950
 Wire Wire Line

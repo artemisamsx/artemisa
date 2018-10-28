@@ -64,14 +64,14 @@ Entry Bus Bus
 Text HLabel 1500 4800 0    60   Input ~ 0
 ~RESET
 $Comp
-L artemisa:74HC32 U44
-U 1 2 5AED26B6
+L artemisa:74HC32 U1
+U 3 2 5AED26B6
 P 2400 4300
-F 0 "U44" H 2200 4500 50  0000 C CNN
+F 0 "U1" H 2200 4500 50  0000 C CNN
 F 1 "74HC32" H 2550 4500 50  0000 C CNN
 F 2 "artemisa:DIP-14_300" H 2400 4300 50  0001 C CNN
 F 3 "" H 2400 4300 50  0001 C CNN
-	1    2400 4300
+	3    2400 4300
 	1    0    0    -1  
 $EndComp
 Text HLabel 1500 4200 0    60   Input ~ 0
@@ -79,14 +79,14 @@ Text HLabel 1500 4200 0    60   Input ~ 0
 Text HLabel 1500 4400 0    60   Input ~ 0
 A1
 $Comp
-L artemisa:74HC32 U44
-U 2 2 5AED2724
+L artemisa:74HC32 U1
+U 4 2 5AED2724
 P 3550 4500
-F 0 "U44" H 3550 4700 50  0000 C CNN
+F 0 "U1" H 3550 4700 50  0000 C CNN
 F 1 "74HC32" H 3550 4300 50  0000 C CNN
 F 2 "artemisa:DIP-14_300" H 3550 4500 50  0001 C CNN
 F 3 "" H 3550 4500 50  0001 C CNN
-	2    3550 4500
+	4    3550 4500
 	1    0    0    -1  
 $EndComp
 Text HLabel 1500 4600 0    60   Input ~ 0
