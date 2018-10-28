@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 9 11
+Sheet 8 11
 Title ""
 Date ""
 Rev ""
@@ -41,7 +41,7 @@ F 3 "" H 6850 7650 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6850 7650 6850 8050
+	6850 7650 6850 7850
 Wire Wire Line
 	6850 7850 7050 7850
 Wire Wire Line
@@ -97,10 +97,6 @@ Wire Wire Line
 	5100 3050 5450 3050
 Entry Bus Bus
 	5450 1550 5550 1650
-Wire Bus Line
-	5550 1650 5550 3000
-Wire Bus Line
-	2500 1550 14250 1550
 Entry Wire Line
 	3900 7950 4000 7850
 Entry Wire Line
@@ -119,8 +115,6 @@ Wire Wire Line
 	4450 7750 4000 7750
 Wire Wire Line
 	4000 7850 4450 7850
-Wire Bus Line
-	3900 7650 3900 8850
 Entry Wire Line
 	3900 8050 4000 7950
 Text Label 4000 7950 0    60   ~ 0
@@ -167,7 +161,7 @@ $EndComp
 Wire Wire Line
 	4450 8150 4250 8150
 Wire Wire Line
-	4250 8150 4250 8550
+	4250 8150 4250 8250
 Wire Wire Line
 	4450 8250 4250 8250
 Connection ~ 4250 8250
@@ -235,8 +229,6 @@ Wire Wire Line
 	9500 3050 9850 3050
 Entry Bus Bus
 	9850 1550 9950 1650
-Wire Bus Line
-	9950 1650 9950 3000
 $Comp
 L artemisa:74HC595 U30
 U 1 1 5AE7407D
@@ -312,8 +304,6 @@ Wire Wire Line
 	7300 3050 7650 3050
 Entry Bus Bus
 	7650 1550 7750 1650
-Wire Bus Line
-	7750 1650 7750 3000
 $Comp
 L artemisa:74HC595 U29
 U 1 1 5AE74195
@@ -389,8 +379,6 @@ Wire Wire Line
 	11700 3050 12050 3050
 Entry Bus Bus
 	12050 1550 12150 1650
-Wire Bus Line
-	12150 1650 12150 3000
 $Comp
 L artemisa:74HC595 U31
 U 1 1 5AE741DE
@@ -466,8 +454,6 @@ Wire Wire Line
 	13900 3050 14250 3050
 Entry Bus Bus
 	14250 1550 14350 1650
-Wire Bus Line
-	14350 1650 14350 4000
 $Comp
 L artemisa:74HC595 U32
 U 1 1 5AE744B9
@@ -541,8 +527,6 @@ Wire Wire Line
 	4500 5550 4150 5550
 Wire Wire Line
 	4150 5650 4500 5650
-Wire Bus Line
-	4600 4200 4600 5600
 $Comp
 L artemisa:74HC595 U33
 U 1 1 5AE746C2
@@ -605,8 +589,6 @@ Wire Wire Line
 	8900 5550 8550 5550
 Wire Wire Line
 	8550 5650 8900 5650
-Wire Bus Line
-	9000 4200 9000 5600
 $Comp
 L artemisa:74HC595 U35
 U 1 1 5AE746EB
@@ -669,8 +651,6 @@ Wire Wire Line
 	6700 5550 6350 5550
 Wire Wire Line
 	6350 5650 6700 5650
-Wire Bus Line
-	6800 4200 6800 5600
 $Comp
 L artemisa:74HC595 U34
 U 1 1 5AE74714
@@ -733,8 +713,6 @@ Wire Wire Line
 	11100 5550 10750 5550
 Wire Wire Line
 	10750 5650 11100 5650
-Wire Bus Line
-	11200 4200 11200 5600
 $Comp
 L artemisa:74HC595 U36
 U 1 1 5AE7473D
@@ -878,8 +856,6 @@ Entry Bus Bus
 	14250 4100 14350 4000
 Entry Bus Bus
 	13300 4100 13400 4200
-Wire Bus Line
-	4700 4100 14250 4100
 NoConn ~ 5700 9150
 NoConn ~ 5700 9050
 NoConn ~ 5700 8950
@@ -1005,22 +981,16 @@ Wire Wire Line
 	13300 3450 13300 3750
 Entry Wire Line
 	13200 3850 13300 3750
-Wire Bus Line
-	1500 3850 13300 3850
 Entry Bus Bus
 	1400 6350 1500 6450
 Entry Bus Bus
 	1400 3950 1500 3850
 Wire Bus Line
 	1400 3950 1400 6350
-Wire Bus Line
-	6300 6550 6300 9100
 Entry Bus Bus
 	6200 6450 6300 6550
 Entry Bus Bus
 	6300 6550 6400 6450
-Wire Bus Line
-	1500 6450 6200 6450
 Text Label 9450 7850 2    60   ~ 0
 STCP0
 Text Label 9450 7950 2    60   ~ 0
@@ -1081,8 +1051,6 @@ Wire Wire Line
 	8450 8150 9450 8150
 Wire Wire Line
 	9450 8250 8450 8250
-Wire Bus Line
-	9550 7300 9550 9100
 Entry Bus Bus
 	9450 7200 9550 7300
 Wire Bus Line
@@ -1126,8 +1094,6 @@ Entry Wire Line
 	2550 5050 2650 4950
 Wire Wire Line
 	2650 4950 2950 4950
-Wire Bus Line
-	2550 4800 2550 6350
 Text Label 4850 5050 0    60   ~ 0
 STCP6
 Entry Wire Line
@@ -1148,8 +1114,6 @@ Entry Wire Line
 	4750 5050 4850 4950
 Wire Wire Line
 	4850 4950 5150 4950
-Wire Bus Line
-	4750 4800 4750 6350
 Text Label 7050 5050 0    60   ~ 0
 STCP7
 Entry Wire Line
@@ -1170,8 +1134,6 @@ Entry Wire Line
 	6950 5050 7050 4950
 Wire Wire Line
 	7050 4950 7350 4950
-Wire Bus Line
-	6950 4800 6950 6350
 Text Label 9250 5050 0    60   ~ 0
 STCP8
 Entry Wire Line
@@ -1192,8 +1154,6 @@ Entry Wire Line
 	9150 5050 9250 4950
 Wire Wire Line
 	9250 4950 9550 4950
-Wire Bus Line
-	9150 4800 9150 6350
 Text Label 11450 5050 0    60   ~ 0
 STCP9
 Entry Wire Line
@@ -1214,8 +1174,6 @@ Entry Wire Line
 	11350 5050 11450 4950
 Wire Wire Line
 	11450 4950 11750 4950
-Wire Bus Line
-	11350 4800 11350 6350
 Text Label 3600 2450 0    60   ~ 0
 STCP0
 Entry Wire Line
@@ -1236,8 +1194,6 @@ Entry Wire Line
 	3500 2450 3600 2350
 Wire Wire Line
 	3600 2350 3900 2350
-Wire Bus Line
-	3500 2200 3500 3750
 Text Label 5800 2450 0    60   ~ 0
 STCP1
 Entry Wire Line
@@ -1258,8 +1214,6 @@ Entry Wire Line
 	5700 2450 5800 2350
 Wire Wire Line
 	5800 2350 6100 2350
-Wire Bus Line
-	5700 2200 5700 3750
 Text Label 8000 2450 0    60   ~ 0
 STCP2
 Entry Wire Line
@@ -1280,8 +1234,6 @@ Entry Wire Line
 	7900 2450 8000 2350
 Wire Wire Line
 	8000 2350 8300 2350
-Wire Bus Line
-	7900 2200 7900 3750
 Text Label 10200 2450 0    60   ~ 0
 STCP3
 Entry Wire Line
@@ -1302,8 +1254,6 @@ Entry Wire Line
 	10100 2450 10200 2350
 Wire Wire Line
 	10200 2350 10500 2350
-Wire Bus Line
-	10100 2200 10100 3750
 Text Label 12400 2450 0    60   ~ 0
 STCP4
 Entry Wire Line
@@ -1324,8 +1274,6 @@ Entry Wire Line
 	12300 2450 12400 2350
 Wire Wire Line
 	12400 2350 12700 2350
-Wire Bus Line
-	12300 2200 12300 3750
 Text HLabel 2650 10550 0    60   Input ~ 0
 ~RESET
 Wire Wire Line
@@ -1432,15 +1380,15 @@ $EndComp
 Wire Wire Line
 	6650 9550 6950 9550
 Wire Wire Line
-	6950 9350 6950 9750
+	6950 9350 6950 9550
 Wire Wire Line
 	6450 9550 6150 9550
 Wire Wire Line
-	6150 9250 6150 9750
+	6150 9250 6150 9550
 Wire Wire Line
 	6150 9950 6150 10150
 Wire Wire Line
-	6150 10150 6950 10150
+	6150 10150 6550 10150
 Wire Wire Line
 	6550 10150 6550 10300
 Wire Wire Line
@@ -1452,8 +1400,6 @@ Connection ~ 6150 9550
 Wire Wire Line
 	7050 9350 6950 9350
 Connection ~ 6950 9550
-Wire Bus Line
-	13400 4200 13400 5650
 Entry Wire Line
 	15650 4850 15550 4950
 Entry Wire Line
@@ -1503,10 +1449,10 @@ Wire Wire Line
 Wire Wire Line
 	15200 5650 15550 5650
 $Comp
-L artemisa:74HC595 U45
+L artemisa:74HC595 U44
 U 1 1 5B0080F3
 P 14600 5200
-F 0 "U45" H 14750 5800 50  0000 C CNN
+F 0 "U44" H 14750 5800 50  0000 C CNN
 F 1 "74HC595" H 14850 4600 50  0000 C CNN
 F 2 "artemisa:DIP-16_300" H 14600 5200 50  0001 C CNN
 F 3 "" H 14600 5200 50  0001 C CNN
@@ -1555,10 +1501,6 @@ Entry Wire Line
 	13600 5050 13700 4950
 Wire Wire Line
 	13700 4950 14000 4950
-Wire Bus Line
-	13600 4800 13600 6350
-Wire Bus Line
-	15650 4200 15650 5650
 Entry Bus Bus
 	14350 4000 14450 4100
 Wire Bus Line
@@ -1575,6 +1517,74 @@ Entry Wire Line
 	9550 8250 9450 8350
 Wire Wire Line
 	9450 8350 8450 8350
+Wire Wire Line
+	6850 7850 6850 8050
+Wire Wire Line
+	4250 8250 4250 8550
+Wire Wire Line
+	6550 10150 6950 10150
+Wire Wire Line
+	6150 9550 6150 9750
+Wire Wire Line
+	6950 9550 6950 9750
+Wire Bus Line
+	2500 1550 14250 1550
+Wire Bus Line
+	3900 7650 3900 8850
+Wire Bus Line
+	4700 4100 14250 4100
+Wire Bus Line
+	1500 6450 6200 6450
+Wire Bus Line
+	2550 4800 2550 6350
+Wire Bus Line
+	4750 4800 4750 6350
+Wire Bus Line
+	6950 4800 6950 6350
+Wire Bus Line
+	9150 4800 9150 6350
+Wire Bus Line
+	11350 4800 11350 6350
+Wire Bus Line
+	3500 2200 3500 3750
+Wire Bus Line
+	5700 2200 5700 3750
+Wire Bus Line
+	7900 2200 7900 3750
+Wire Bus Line
+	10100 2200 10100 3750
+Wire Bus Line
+	12300 2200 12300 3750
+Wire Bus Line
+	13600 4800 13600 6350
+Wire Bus Line
+	5550 1650 5550 3000
+Wire Bus Line
+	9950 1650 9950 3000
+Wire Bus Line
+	7750 1650 7750 3000
+Wire Bus Line
+	12150 1650 12150 3000
+Wire Bus Line
+	14350 1650 14350 4000
+Wire Bus Line
+	4600 4200 4600 5600
+Wire Bus Line
+	9000 4200 9000 5600
+Wire Bus Line
+	6800 4200 6800 5600
+Wire Bus Line
+	11200 4200 11200 5600
+Wire Bus Line
+	1500 3850 13300 3850
+Wire Bus Line
+	9550 7300 9550 9100
+Wire Bus Line
+	13400 4200 13400 5650
+Wire Bus Line
+	15650 4200 15650 5650
 Wire Bus Line
 	6400 6450 14600 6450
+Wire Bus Line
+	6300 6550 6300 9100
 $EndSCHEMATC

@@ -54,10 +54,10 @@ Cassette out (write)
 Text Notes 7000 4500 0    60   ~ 0
 Cassette in (read)
 $Comp
-L artemisa:CP C56
+L artemisa:CP C10
 U 1 1 5B11A155
 P 4850 2300
-F 0 "C56" V 4950 2250 50  0000 L CNN
+F 0 "C10" V 4950 2250 50  0000 L CNN
 F 1 "1uF" V 4750 2250 50  0000 L CNN
 F 2 "artemisa:Radial_capacitor" H 4850 2300 50  0001 C CNN
 F 3 "" H 4850 2300 50  0001 C CNN
@@ -84,10 +84,10 @@ $EndComp
 Wire Wire Line
 	4950 2300 5100 2300
 $Comp
-L artemisa:Cap C57
+L artemisa:Cap C11
 U 1 1 5B11A2B9
 P 5600 2500
-F 0 "C57" H 5610 2570 50  0000 L CNN
+F 0 "C11" H 5610 2570 50  0000 L CNN
 F 1 "22nF" H 5610 2420 50  0000 L CNN
 F 2 "artemisa:Disc_capacitor" H 5600 2500 50  0001 C CNN
 F 3 "" H 5600 2500 50  0001 C CNN
@@ -155,10 +155,10 @@ Wire Wire Line
 	6300 2650 6300 2750
 Connection ~ 6300 2300
 $Comp
-L artemisa:LM311 U46
+L artemisa:LM311 U22
 U 1 1 5B13BC96
 P 5800 4400
-F 0 "U46" H 5550 4600 60  0000 C CNN
+F 0 "U22" H 5550 4600 60  0000 C CNN
 F 1 "LM311" H 5600 4150 60  0000 C CNN
 F 2 "artemisa:DIP-8_300" H 5800 4400 60  0001 C CNN
 F 3 "" H 5800 4400 60  0001 C CNN
@@ -254,10 +254,10 @@ Wire Wire Line
 Wire Wire Line
 	4350 4550 4850 4550
 $Comp
-L artemisa:CP C59
+L artemisa:CP C13
 U 1 1 5B13C2F1
 P 4000 4200
-F 0 "C59" V 4050 4250 50  0000 L CNN
+F 0 "C13" V 4050 4250 50  0000 L CNN
 F 1 "1uF" V 3900 4150 50  0000 L CNN
 F 2 "artemisa:Radial_capacitor" H 4000 4200 50  0001 C CNN
 F 3 "" H 4000 4200 50  0001 C CNN
@@ -337,10 +337,10 @@ $EndComp
 Wire Wire Line
 	3650 3250 3650 3350
 $Comp
-L artemisa:Cap C58
+L artemisa:Cap C12
 U 1 1 5B13C72E
 P 3700 5250
-F 0 "C58" H 3710 5320 50  0000 L CNN
+F 0 "C12" H 3710 5320 50  0000 L CNN
 F 1 "22nF" H 3710 5170 50  0000 L CNN
 F 2 "artemisa:Disc_capacitor" H 3700 5250 50  0001 C CNN
 F 3 "" H 3700 5250 50  0001 C CNN

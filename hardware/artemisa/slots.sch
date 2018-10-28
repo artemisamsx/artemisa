@@ -200,7 +200,7 @@ Wire Wire Line
 	6200 6750 5700 6750
 Connection ~ 5700 6750
 Text Label 5450 5150 0    60   ~ 0
-~EXTRESET
+~RESET
 Text Label 5450 5050 0    60   ~ 0
 ~WR
 Text Label 5450 4950 0    60   ~ 0
@@ -282,7 +282,7 @@ NoConn ~ 6700 5150
 NoConn ~ 6700 6550
 NoConn ~ 6700 6650
 Text Label 7450 5150 2    60   ~ 0
-EXTCLK
+CLK
 Wire Wire Line
 	6900 5150 7450 5150
 Entry Wire Line
@@ -483,7 +483,7 @@ Wire Wire Line
 	9650 6750 9150 6750
 Connection ~ 9150 6750
 Text Label 8900 5150 0    60   ~ 0
-~EXTRESET
+~RESET
 Text Label 8900 5050 0    60   ~ 0
 ~WR
 Text Label 8900 4950 0    60   ~ 0
@@ -565,7 +565,7 @@ NoConn ~ 10150 5150
 NoConn ~ 10150 6550
 NoConn ~ 10150 6650
 Text Label 10900 5150 2    60   ~ 0
-EXTCLK
+CLK
 Wire Wire Line
 	10350 5150 10900 5150
 Entry Wire Line
@@ -592,15 +592,15 @@ Entry Bus Bus
 	7450 3100 7550 3200
 Entry Bus Bus
 	5250 3100 5350 3200
-Text Label 4300 5650 2    60   ~ 0
-~EXTRESET
+Text Label 4300 5550 2    60   ~ 0
+~RESET
 Text Label 4300 5150 2    60   ~ 0
 ~WR
 Text Label 4300 4850 2    60   ~ 0
 ~IORQ
 Text Label 4300 4950 2    60   ~ 0
 ~M1
-Text Label 4300 7700 2    60   ~ 0
+Text Label 4300 5950 2    60   ~ 0
 ~EXTWAIT
 Text Label 4300 4550 2    60   ~ 0
 ~CS12
@@ -617,7 +617,7 @@ Wire Wire Line
 Wire Wire Line
 	4300 4350 2900 4350
 Entry Wire Line
-	4400 5550 4300 5650
+	4400 5450 4300 5550
 Entry Wire Line
 	4400 5050 4300 5150
 Entry Wire Line
@@ -625,24 +625,24 @@ Entry Wire Line
 Entry Wire Line
 	4400 4850 4300 4950
 Entry Wire Line
-	4400 7600 4300 7700
+	4400 5850 4300 5950
 Entry Wire Line
 	4400 4450 4300 4550
 Entry Wire Line
 	4400 4250 4300 4350
-Text Label 4300 6550 2    60   ~ 0
+Text Label 4300 6150 2    60   ~ 0
 SOUND
 Wire Wire Line
-	4300 6550 2900 6550
+	4300 6150 2900 6150
 Entry Wire Line
-	4400 6450 4300 6550
+	4400 6050 4300 6150
 Text Label 4300 5050 2    60   ~ 0
 ~RD
 Text Label 4300 4750 2    60   ~ 0
 ~MREQ
-Text Label 4300 7200 2    60   ~ 0
+Text Label 4300 5850 2    60   ~ 0
 ~EXTINT
-Text Label 4300 5350 2    60   ~ 0
+Text Label 4300 5250 2    60   ~ 0
 ~RFSH
 Text Label 4300 4250 2    60   ~ 0
 ~SLTSL3
@@ -653,7 +653,7 @@ Wire Wire Line
 Wire Wire Line
 	2900 4750 4300 4750
 Wire Wire Line
-	4300 5350 2900 5350
+	4300 5250 2900 5250
 Wire Wire Line
 	2900 4250 4300 4250
 Wire Wire Line
@@ -663,17 +663,17 @@ Entry Wire Line
 Entry Wire Line
 	4400 4650 4300 4750
 Entry Wire Line
-	4400 7100 4300 7200
+	4400 5750 4300 5850
 Entry Wire Line
-	4400 5250 4300 5350
+	4400 5150 4300 5250
 Entry Wire Line
 	4400 4150 4300 4250
 Entry Wire Line
 	4400 4350 4300 4450
-Text Label 4300 6200 2    60   ~ 0
-EXTCLK
+Text Label 4300 5650 2    60   ~ 0
+CLK
 Entry Wire Line
-	4400 6100 4300 6200
+	4400 5550 4300 5650
 Text Label 4300 4150 2    60   ~ 0
 ~SLTSL2
 Wire Wire Line
@@ -700,17 +700,17 @@ Text HLabel 2900 5050 0    60   Input ~ 0
 ~RD
 Text HLabel 2900 5150 0    60   Input ~ 0
 ~WR
-Text HLabel 2900 5350 0    60   Input ~ 0
+Text HLabel 2900 5250 0    60   Input ~ 0
 ~RFSH
 Text HLabel 2900 5550 0    60   Input ~ 0
 ~RESET
-Text HLabel 2900 7700 0    60   Output ~ 0
+Text HLabel 2900 5950 0    60   Output ~ 0
 ~EXTWAIT
-Text HLabel 2900 6100 0    60   Input ~ 0
+Text HLabel 2900 5650 0    60   Input ~ 0
 CLK
-Text HLabel 2900 7200 0    60   Output ~ 0
+Text HLabel 2900 5850 0    60   Output ~ 0
 ~EXITINT
-Text HLabel 2900 6550 0    60   Output ~ 0
+Text HLabel 2900 6150 0    60   Output ~ 0
 SOUND
 Entry Bus Bus
 	4500 3100 4400 3200
@@ -720,46 +720,6 @@ Text Notes 9250 3050 0    60   ~ 0
 CONTROL BUS
 NoConn ~ 6700 4850
 NoConn ~ 10150 4850
-$Comp
-L artemisa:74HC32 U44
-U 3 1 5B0EC8F3
-P 3500 6200
-F 0 "U44" H 3500 6400 50  0000 C CNN
-F 1 "74HC32" H 3500 6000 50  0000 C CNN
-F 2 "artemisa:DIP-14_300" H 3500 6200 50  0001 C CNN
-F 3 "" H 3500 6200 50  0001 C CNN
-	3    3500 6200
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2900 6100 3000 6100
-Wire Wire Line
-	3000 6100 3000 6300
-Wire Wire Line
-	3000 6300 3100 6300
-Connection ~ 3000 6100
-Wire Wire Line
-	3950 6200 4300 6200
-$Comp
-L artemisa:74HC32 U44
-U 4 1 5B0EDFF8
-P 3500 5650
-F 0 "U44" H 3500 5850 50  0000 C CNN
-F 1 "74HC32" H 3500 5450 50  0000 C CNN
-F 2 "artemisa:DIP-14_300" H 3500 5650 50  0001 C CNN
-F 3 "" H 3500 5650 50  0001 C CNN
-	4    3500 5650
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3950 5650 4300 5650
-Wire Wire Line
-	3100 5550 3000 5550
-Wire Wire Line
-	3000 5550 3000 5750
-Wire Wire Line
-	3000 5750 3100 5750
-Connection ~ 3000 5550
 Text Notes 7000 9250 2    60   ~ 0
 Please note slots has no +12/-12 voltage rails. This is so\nbecase it's rarely needed and it would complicate the design,\nneeding a built-in AC/DC converter and voltage regulator. 
 Wire Wire Line
@@ -784,10 +744,6 @@ Wire Wire Line
 	8950 6550 8950 6650
 Wire Wire Line
 	9150 6750 9150 7150
-Wire Wire Line
-	3000 6100 3100 6100
-Wire Wire Line
-	3000 5550 2900 5550
 Wire Wire Line
 	7000 6850 7000 7000
 Wire Wire Line
@@ -984,7 +940,7 @@ Entry Wire Line
 Entry Wire Line
 	11100 4400 11000 4300
 Text Label 11150 5000 0    60   ~ 0
-~EXTRESET
+~RESET
 Text Label 11150 4900 0    60   ~ 0
 ~RD
 Text Label 11150 4800 0    60   ~ 0
@@ -1174,7 +1130,7 @@ Wire Wire Line
 Entry Wire Line
 	11000 3800 11100 3900
 Text Label 11150 3900 0    60   ~ 0
-EXTCLK
+CLK
 Wire Wire Line
 	13750 8400 13200 8400
 Wire Wire Line
@@ -1186,11 +1142,11 @@ Entry Wire Line
 Text Label 11150 4000 0    60   ~ 0
 SOUND
 $Comp
-L artemisa:74HC11 U5
+L artemisa:74HCT11 U5
 U 1 2 5BFA29EF
 P 9400 2350
 F 0 "U5" H 9375 2697 60  0000 C CNN
-F 1 "74HC11" H 9375 2591 60  0000 C CNN
+F 1 "74HCT11" H 9375 2591 60  0000 C CNN
 F 2 "artemisa:DIP-14_300" H 9400 2350 60  0001 C CNN
 F 3 "" H 9400 2350 60  0001 C CNN
 	1    9400 2350
@@ -1295,11 +1251,11 @@ Wire Wire Line
 Text Label 8550 3000 1    60   ~ 0
 ~EXTINT
 $Comp
-L artemisa:74HC11 U5
+L artemisa:74HCT11 U5
 U 2 2 5C08168F
 P 6050 2350
 F 0 "U5" H 6025 2697 60  0000 C CNN
-F 1 "74HC11" H 6025 2591 60  0000 C CNN
+F 1 "74HCT11" H 6025 2591 60  0000 C CNN
 F 2 "artemisa:DIP-14_300" H 6050 2350 60  0001 C CNN
 F 3 "" H 6050 2350 60  0001 C CNN
 	2    6050 2350
@@ -1404,35 +1360,76 @@ Wire Wire Line
 Text Label 5200 3000 1    60   ~ 0
 ~EXTWAIT
 Wire Wire Line
-	2900 7200 4300 7200
+	2900 5850 4300 5850
 Wire Wire Line
-	2900 7700 4300 7700
+	2900 5950 4300 5950
+Wire Wire Line
+	2900 5550 4300 5550
+Wire Wire Line
+	2900 5650 4300 5650
+$Comp
+L artemisa:74HCT11 U5
+U 3 2 5BE8AE63
+P 2900 1950
+F 0 "U5" H 2875 2297 60  0000 C CNN
+F 1 "74HCT11" H 2875 2191 60  0000 C CNN
+F 2 "artemisa:DIP-14_300" H 2900 1950 60  0001 C CNN
+F 3 "" H 2900 1950 60  0001 C CNN
+	3    2900 1950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2450 1850 2350 1850
+Wire Wire Line
+	2350 1850 2350 1950
+Wire Wire Line
+	2450 1950 2350 1950
+Connection ~ 2350 1950
+Wire Wire Line
+	2350 1950 2350 2050
+Wire Wire Line
+	2450 2050 2350 2050
+NoConn ~ 3300 1950
+Connection ~ 2350 2050
+Wire Wire Line
+	2350 2050 2350 2150
+$Comp
+L artemisa:GND #PWR0117
+U 1 1 5BE8AF13
+P 2350 2150
+F 0 "#PWR0117" H 2350 2050 60  0001 C CNN
+F 1 "GND" H 2350 2250 60  0001 C CNN
+F 2 "" H 2350 2150 60  0001 C CNN
+F 3 "" H 2350 2150 60  0001 C CNN
+	1    2350 2150
+	1    0    0    -1  
+$EndComp
 Wire Wire Line
 	11100 6800 13750 6800
 Wire Bus Line
-	2900 8150 11450 8150
-Wire Bus Line
-	5350 6150 5350 8400
-Wire Bus Line
-	2900 8500 10900 8500
+	8800 6150 8800 8400
 Wire Bus Line
 	7550 6150 7550 8400
 Wire Bus Line
-	8800 6150 8800 8400
+	2900 8500 10900 8500
+Wire Bus Line
+	5350 6150 5350 8400
+Wire Bus Line
+	2900 8150 11450 8150
 Wire Bus Line
 	7550 3200 7550 5050
 Wire Bus Line
-	5100 5300 5100 8050
-Wire Bus Line
-	7800 5300 7800 8050
-Wire Bus Line
-	5350 3200 5350 5050
+	8800 3200 8800 5050
 Wire Bus Line
 	8550 5300 8550 8050
 Wire Bus Line
-	8800 3200 8800 5050
+	5350 3200 5350 5050
 Wire Bus Line
-	4400 3200 4400 7650
+	7800 5300 7800 8050
+Wire Bus Line
+	5100 5300 5100 8050
+Wire Bus Line
+	4400 3200 4400 6150
 Wire Bus Line
 	11000 6150 11000 8400
 Wire Bus Line

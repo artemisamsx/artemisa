@@ -226,19 +226,8 @@ $EndComp
 $Comp
 L artemisa:Cap DC23
 U 1 1 5B1176CC
-P 5550 3600
-F 0 "DC23" V 5600 3650 50  0000 L CNN
-F 1 "100nF" V 5600 3300 50  0000 L CNN
-F 2 "artemisa:Disc_capacitor" H 5550 3600 50  0001 C CNN
-F 3 "" H 5550 3600 50  0001 C CNN
-	1    5550 3600
-	1    0    0    -1  
-$EndComp
-$Comp
-L artemisa:Cap DC24
-U 1 1 5B1176D5
 P 5700 3600
-F 0 "DC24" V 5750 3650 50  0000 L CNN
+F 0 "DC23" V 5750 3650 50  0000 L CNN
 F 1 "100nF" V 5750 3300 50  0000 L CNN
 F 2 "artemisa:Disc_capacitor" H 5700 3600 50  0001 C CNN
 F 3 "" H 5700 3600 50  0001 C CNN
@@ -246,10 +235,10 @@ F 3 "" H 5700 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemisa:Cap DC25
-U 1 1 5B1176DE
+L artemisa:Cap DC24
+U 1 1 5B1176D5
 P 5850 3600
-F 0 "DC25" V 5900 3650 50  0000 L CNN
+F 0 "DC24" V 5900 3650 50  0000 L CNN
 F 1 "100nF" V 5900 3300 50  0000 L CNN
 F 2 "artemisa:Disc_capacitor" H 5850 3600 50  0001 C CNN
 F 3 "" H 5850 3600 50  0001 C CNN
@@ -257,10 +246,10 @@ F 3 "" H 5850 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemisa:Cap DC26
-U 1 1 5B1176E7
+L artemisa:Cap DC25
+U 1 1 5B1176DE
 P 6000 3600
-F 0 "DC26" V 6050 3650 50  0000 L CNN
+F 0 "DC25" V 6050 3650 50  0000 L CNN
 F 1 "100nF" V 6050 3300 50  0000 L CNN
 F 2 "artemisa:Disc_capacitor" H 6000 3600 50  0001 C CNN
 F 3 "" H 6000 3600 50  0001 C CNN
@@ -268,10 +257,10 @@ F 3 "" H 6000 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemisa:Cap DC27
-U 1 1 5B117800
+L artemisa:Cap DC26
+U 1 1 5B1176E7
 P 6150 3600
-F 0 "DC27" V 6200 3650 50  0000 L CNN
+F 0 "DC26" V 6200 3650 50  0000 L CNN
 F 1 "100nF" V 6200 3300 50  0000 L CNN
 F 2 "artemisa:Disc_capacitor" H 6150 3600 50  0001 C CNN
 F 3 "" H 6150 3600 50  0001 C CNN
@@ -279,10 +268,10 @@ F 3 "" H 6150 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemisa:Cap DC28
-U 1 1 5B117809
+L artemisa:Cap DC27
+U 1 1 5B117800
 P 6300 3600
-F 0 "DC28" V 6350 3650 50  0000 L CNN
+F 0 "DC27" V 6350 3650 50  0000 L CNN
 F 1 "100nF" V 6350 3300 50  0000 L CNN
 F 2 "artemisa:Disc_capacitor" H 6300 3600 50  0001 C CNN
 F 3 "" H 6300 3600 50  0001 C CNN
@@ -290,10 +279,10 @@ F 3 "" H 6300 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemisa:Cap DC29
-U 1 1 5B117812
+L artemisa:Cap DC28
+U 1 1 5B117809
 P 6450 3600
-F 0 "DC29" V 6500 3650 50  0000 L CNN
+F 0 "DC28" V 6500 3650 50  0000 L CNN
 F 1 "100nF" V 6500 3300 50  0000 L CNN
 F 2 "artemisa:Disc_capacitor" H 6450 3600 50  0001 C CNN
 F 3 "" H 6450 3600 50  0001 C CNN
@@ -301,10 +290,10 @@ F 3 "" H 6450 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemisa:Cap DC30
-U 1 1 5B117824
+L artemisa:Cap DC29
+U 1 1 5B117812
 P 6600 3600
-F 0 "DC30" V 6650 3650 50  0000 L CNN
+F 0 "DC29" V 6650 3650 50  0000 L CNN
 F 1 "100nF" V 6650 3300 50  0000 L CNN
 F 2 "artemisa:Disc_capacitor" H 6600 3600 50  0001 C CNN
 F 3 "" H 6600 3600 50  0001 C CNN
@@ -312,10 +301,10 @@ F 3 "" H 6600 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemisa:Cap DC31
-U 1 1 5B11782D
+L artemisa:Cap DC30
+U 1 1 5B117824
 P 6750 3600
-F 0 "DC31" V 6800 3650 50  0000 L CNN
+F 0 "DC30" V 6800 3650 50  0000 L CNN
 F 1 "100nF" V 6800 3300 50  0000 L CNN
 F 2 "artemisa:Disc_capacitor" H 6750 3600 50  0001 C CNN
 F 3 "" H 6750 3600 50  0001 C CNN
@@ -323,10 +312,10 @@ F 3 "" H 6750 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemisa:Cap DC32
-U 1 1 5B117836
+L artemisa:Cap DC31
+U 1 1 5B11782D
 P 6900 3600
-F 0 "DC32" V 6950 3650 50  0000 L CNN
+F 0 "DC31" V 6950 3650 50  0000 L CNN
 F 1 "100nF" V 6950 3300 50  0000 L CNN
 F 2 "artemisa:Disc_capacitor" H 6900 3600 50  0001 C CNN
 F 3 "" H 6900 3600 50  0001 C CNN
@@ -334,10 +323,10 @@ F 3 "" H 6900 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemisa:Cap DC33
-U 1 1 5B11783F
+L artemisa:Cap DC32
+U 1 1 5B117836
 P 7050 3600
-F 0 "DC33" V 7100 3650 50  0000 L CNN
+F 0 "DC32" V 7100 3650 50  0000 L CNN
 F 1 "100nF" V 7100 3300 50  0000 L CNN
 F 2 "artemisa:Disc_capacitor" H 7050 3600 50  0001 C CNN
 F 3 "" H 7050 3600 50  0001 C CNN
@@ -345,10 +334,10 @@ F 3 "" H 7050 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemisa:Cap DC34
-U 1 1 5B117848
+L artemisa:Cap DC33
+U 1 1 5B11783F
 P 7200 3600
-F 0 "DC34" V 7250 3650 50  0000 L CNN
+F 0 "DC33" V 7250 3650 50  0000 L CNN
 F 1 "100nF" V 7250 3300 50  0000 L CNN
 F 2 "artemisa:Disc_capacitor" H 7200 3600 50  0001 C CNN
 F 3 "" H 7200 3600 50  0001 C CNN
@@ -356,10 +345,10 @@ F 3 "" H 7200 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemisa:Cap DC35
-U 1 1 5B117851
+L artemisa:Cap DC34
+U 1 1 5B117848
 P 7350 3600
-F 0 "DC35" V 7400 3650 50  0000 L CNN
+F 0 "DC34" V 7400 3650 50  0000 L CNN
 F 1 "100nF" V 7400 3300 50  0000 L CNN
 F 2 "artemisa:Disc_capacitor" H 7350 3600 50  0001 C CNN
 F 3 "" H 7350 3600 50  0001 C CNN
@@ -367,10 +356,10 @@ F 3 "" H 7350 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemisa:Cap DC36
-U 1 1 5B117AE8
+L artemisa:Cap DC35
+U 1 1 5B117851
 P 7500 3600
-F 0 "DC36" V 7550 3650 50  0000 L CNN
+F 0 "DC35" V 7550 3650 50  0000 L CNN
 F 1 "100nF" V 7550 3300 50  0000 L CNN
 F 2 "artemisa:Disc_capacitor" H 7500 3600 50  0001 C CNN
 F 3 "" H 7500 3600 50  0001 C CNN
@@ -378,10 +367,10 @@ F 3 "" H 7500 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemisa:Cap DC37
-U 1 1 5B117AF1
+L artemisa:Cap DC36
+U 1 1 5B117AE8
 P 7650 3600
-F 0 "DC37" V 7700 3650 50  0000 L CNN
+F 0 "DC36" V 7700 3650 50  0000 L CNN
 F 1 "100nF" V 7700 3300 50  0000 L CNN
 F 2 "artemisa:Disc_capacitor" H 7650 3600 50  0001 C CNN
 F 3 "" H 7650 3600 50  0001 C CNN
@@ -389,10 +378,10 @@ F 3 "" H 7650 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemisa:Cap DC38
-U 1 1 5B117AFA
+L artemisa:Cap DC37
+U 1 1 5B117AF1
 P 7800 3600
-F 0 "DC38" V 7850 3650 50  0000 L CNN
+F 0 "DC37" V 7850 3650 50  0000 L CNN
 F 1 "100nF" V 7850 3300 50  0000 L CNN
 F 2 "artemisa:Disc_capacitor" H 7800 3600 50  0001 C CNN
 F 3 "" H 7800 3600 50  0001 C CNN
@@ -400,10 +389,10 @@ F 3 "" H 7800 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemisa:Cap DC39
-U 1 1 5B117B03
+L artemisa:Cap DC38
+U 1 1 5B117AFA
 P 7950 3600
-F 0 "DC39" V 8000 3650 50  0000 L CNN
+F 0 "DC38" V 8000 3650 50  0000 L CNN
 F 1 "100nF" V 8000 3300 50  0000 L CNN
 F 2 "artemisa:Disc_capacitor" H 7950 3600 50  0001 C CNN
 F 3 "" H 7950 3600 50  0001 C CNN
@@ -411,10 +400,10 @@ F 3 "" H 7950 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemisa:Cap DC40
-U 1 1 5B117B0C
+L artemisa:Cap DC39
+U 1 1 5B117B03
 P 8100 3600
-F 0 "DC40" V 8150 3650 50  0000 L CNN
+F 0 "DC39" V 8150 3650 50  0000 L CNN
 F 1 "100nF" V 8150 3300 50  0000 L CNN
 F 2 "artemisa:Disc_capacitor" H 8100 3600 50  0001 C CNN
 F 3 "" H 8100 3600 50  0001 C CNN
@@ -422,10 +411,10 @@ F 3 "" H 8100 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemisa:Cap DC41
-U 1 1 5B117B15
+L artemisa:Cap DC40
+U 1 1 5B117B0C
 P 8250 3600
-F 0 "DC41" V 8300 3650 50  0000 L CNN
+F 0 "DC40" V 8300 3650 50  0000 L CNN
 F 1 "100nF" V 8300 3300 50  0000 L CNN
 F 2 "artemisa:Disc_capacitor" H 8250 3600 50  0001 C CNN
 F 3 "" H 8250 3600 50  0001 C CNN
@@ -433,10 +422,10 @@ F 3 "" H 8250 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemisa:Cap DC42
-U 1 1 5B117B1E
+L artemisa:Cap DC41
+U 1 1 5B117B15
 P 8400 3600
-F 0 "DC42" V 8450 3650 50  0000 L CNN
+F 0 "DC41" V 8450 3650 50  0000 L CNN
 F 1 "100nF" V 8450 3300 50  0000 L CNN
 F 2 "artemisa:Disc_capacitor" H 8400 3600 50  0001 C CNN
 F 3 "" H 8400 3600 50  0001 C CNN
@@ -444,10 +433,10 @@ F 3 "" H 8400 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemisa:Cap DC43
-U 1 1 5B117B27
+L artemisa:Cap DC42
+U 1 1 5B117B1E
 P 8550 3600
-F 0 "DC43" V 8600 3650 50  0000 L CNN
+F 0 "DC42" V 8600 3650 50  0000 L CNN
 F 1 "100nF" V 8600 3300 50  0000 L CNN
 F 2 "artemisa:Disc_capacitor" H 8550 3600 50  0001 C CNN
 F 3 "" H 8550 3600 50  0001 C CNN
@@ -455,10 +444,10 @@ F 3 "" H 8550 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemisa:Cap DC44
-U 1 1 5B117B30
+L artemisa:Cap DC43
+U 1 1 5B117B27
 P 8700 3600
-F 0 "DC44" V 8750 3650 50  0000 L CNN
+F 0 "DC43" V 8750 3650 50  0000 L CNN
 F 1 "100nF" V 8750 3300 50  0000 L CNN
 F 2 "artemisa:Disc_capacitor" H 8700 3600 50  0001 C CNN
 F 3 "" H 8700 3600 50  0001 C CNN
@@ -466,10 +455,10 @@ F 3 "" H 8700 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemisa:Cap DC45
-U 1 1 5B117B39
+L artemisa:Cap DC44
+U 1 1 5B117B30
 P 8850 3600
-F 0 "DC45" V 8900 3650 50  0000 L CNN
+F 0 "DC44" V 8900 3650 50  0000 L CNN
 F 1 "100nF" V 8900 3300 50  0000 L CNN
 F 2 "artemisa:Disc_capacitor" H 8850 3600 50  0001 C CNN
 F 3 "" H 8850 3600 50  0001 C CNN
@@ -477,14 +466,14 @@ F 3 "" H 8850 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemisa:Cap DC46
+L artemisa:Cap DC22
 U 1 1 5B117D38
-P 9000 3600
-F 0 "DC46" V 9050 3650 50  0000 L CNN
-F 1 "100nF" V 9050 3300 50  0000 L CNN
-F 2 "artemisa:Disc_capacitor" H 9000 3600 50  0001 C CNN
-F 3 "" H 9000 3600 50  0001 C CNN
-	1    9000 3600
+P 5550 3600
+F 0 "DC22" V 5600 3650 50  0000 L CNN
+F 1 "100nF" V 5600 3300 50  0000 L CNN
+F 2 "artemisa:Disc_capacitor" H 5550 3600 50  0001 C CNN
+F 3 "" H 5550 3600 50  0001 C CNN
+	1    5550 3600
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -565,10 +554,6 @@ Wire Wire Line
 Wire Wire Line
 	5400 3950 5400 3700
 Wire Wire Line
-	5550 3250 5550 3500
-Wire Wire Line
-	5550 3950 5550 3700
-Wire Wire Line
 	5700 3250 5700 3500
 Wire Wire Line
 	5700 3950 5700 3700
@@ -593,9 +578,9 @@ Wire Wire Line
 Wire Wire Line
 	6450 3950 6450 3700
 Wire Wire Line
-	6750 3250 6750 3500
+	6600 3250 6600 3500
 Wire Wire Line
-	6750 3950 6750 3700
+	6600 3950 6600 3700
 Wire Wire Line
 	6900 3250 6900 3500
 Wire Wire Line
@@ -653,9 +638,9 @@ Wire Wire Line
 Wire Wire Line
 	8850 3950 8850 3700
 Wire Wire Line
-	9000 3250 9000 3500
+	5550 3250 5550 3500
 Wire Wire Line
-	9000 3950 9000 3700
+	5550 3950 5550 3700
 Connection ~ 3300 3250
 Connection ~ 3450 3250
 Connection ~ 3600 3250
@@ -671,13 +656,12 @@ Connection ~ 4950 3250
 Connection ~ 5100 3250
 Connection ~ 5250 3250
 Connection ~ 5400 3250
-Connection ~ 5550 3250
 Connection ~ 5700 3250
 Connection ~ 5850 3250
 Connection ~ 6000 3250
 Connection ~ 6150 3250
 Connection ~ 6300 3250
-Connection ~ 6750 3250
+Connection ~ 6450 3250
 Connection ~ 6900 3250
 Connection ~ 7050 3250
 Connection ~ 7200 3250
@@ -691,7 +675,6 @@ Connection ~ 8250 3250
 Connection ~ 8400 3250
 Connection ~ 8550 3250
 Connection ~ 8700 3250
-Connection ~ 8850 3250
 Connection ~ 3900 3950
 Connection ~ 4050 3950
 Connection ~ 4200 3950
@@ -703,13 +686,12 @@ Connection ~ 4950 3950
 Connection ~ 5100 3950
 Connection ~ 5250 3950
 Connection ~ 5400 3950
-Connection ~ 5550 3950
 Connection ~ 5700 3950
 Connection ~ 5850 3950
 Connection ~ 6000 3950
 Connection ~ 6150 3950
 Connection ~ 6300 3950
-Connection ~ 6750 3950
+Connection ~ 6450 3950
 Connection ~ 6900 3950
 Connection ~ 7050 3950
 Connection ~ 7200 3950
@@ -723,7 +705,6 @@ Connection ~ 8250 3950
 Connection ~ 8400 3950
 Connection ~ 8550 3950
 Connection ~ 8700 3950
-Connection ~ 8850 3950
 Connection ~ 3300 3950
 Connection ~ 3450 3950
 Connection ~ 3600 3950
@@ -769,8 +750,6 @@ Wire Wire Line
 Wire Wire Line
 	5400 3250 5550 3250
 Wire Wire Line
-	5550 3250 5700 3250
-Wire Wire Line
 	5700 3250 5850 3250
 Wire Wire Line
 	5850 3250 6000 3250
@@ -781,7 +760,7 @@ Wire Wire Line
 Wire Wire Line
 	6300 3250 6450 3250
 Wire Wire Line
-	6600 3250 6750 3250
+	6450 3250 6600 3250
 Wire Wire Line
 	6750 3250 6900 3250
 Wire Wire Line
@@ -811,8 +790,6 @@ Wire Wire Line
 Wire Wire Line
 	8700 3250 8850 3250
 Wire Wire Line
-	8850 3250 9000 3250
-Wire Wire Line
 	3900 3950 4050 3950
 Wire Wire Line
 	4050 3950 4200 3950
@@ -835,8 +812,6 @@ Wire Wire Line
 Wire Wire Line
 	5400 3950 5550 3950
 Wire Wire Line
-	5550 3950 5700 3950
-Wire Wire Line
 	5700 3950 5850 3950
 Wire Wire Line
 	5850 3950 6000 3950
@@ -847,7 +822,7 @@ Wire Wire Line
 Wire Wire Line
 	6300 3950 6450 3950
 Wire Wire Line
-	6600 3950 6750 3950
+	6450 3950 6600 3950
 Wire Wire Line
 	6750 3950 6900 3950
 Wire Wire Line
@@ -876,8 +851,6 @@ Wire Wire Line
 	8550 3950 8700 3950
 Wire Wire Line
 	8700 3950 8850 3950
-Wire Wire Line
-	8850 3950 9000 3950
 Wire Wire Line
 	3300 3950 3450 3950
 Wire Wire Line
@@ -919,15 +892,21 @@ Connection ~ 2800 4800
 Wire Wire Line
 	2800 4800 3150 4800
 Wire Wire Line
-	6600 3950 6600 3700
+	6750 3950 6750 3700
 Wire Wire Line
-	6600 3250 6600 3500
+	6750 3250 6750 3500
 Wire Wire Line
-	6600 3250 6450 3250
+	6750 3250 6600 3250
+Connection ~ 6750 3250
 Connection ~ 6600 3250
-Connection ~ 6450 3250
 Wire Wire Line
-	6450 3950 6600 3950
-Connection ~ 6450 3950
+	6600 3950 6750 3950
 Connection ~ 6600 3950
+Connection ~ 6750 3950
+Connection ~ 5550 3250
+Wire Wire Line
+	5550 3250 5700 3250
+Connection ~ 5550 3950
+Wire Wire Line
+	5550 3950 5700 3950
 $EndSCHEMATC
