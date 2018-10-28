@@ -4815,10 +4815,10 @@
     )
   )
 
-  (module artemisa:Crystal (layer F.Cu) (tedit 5BD19010) (tstamp 5BD50811)
+  (module artemisa:Crystal (layer F.Cu) (tedit 5BD5E3C3) (tstamp 5BD50811)
     (at 133.88594 107.315)
     (path /5ADBC286/5AEC8D3F)
-    (fp_text reference Y3 (at 0 -3.81) (layer F.SilkS)
+    (fp_text reference Y1 (at 0.09906 0) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
     )
     (fp_text value 3.58Mhz (at 0 0) (layer F.Fab) hide

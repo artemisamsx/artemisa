@@ -1006,10 +1006,10 @@ Wire Wire Line
 Wire Wire Line
 	1800 1950 2500 1950
 $Comp
-L artemisa:Crystal Y3
+L artemisa:Crystal Y1
 U 1 1 5AEC8D3F
 P 5850 6700
-F 0 "Y3" H 5850 6800 50  0000 C CNN
+F 0 "Y1" H 5850 6800 50  0000 C CNN
 F 1 "3.58Mhz" H 5850 6600 50  0000 C CNN
 F 2 "artemisa:Crystal" H 5850 6700 50  0001 C CNN
 F 3 "" H 5850 6700 50  0001 C CNN
