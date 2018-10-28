@@ -1017,10 +1017,10 @@ F 3 "" H 5850 6700 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L artemisa:CP C6
+L artemisa:CP C2
 U 1 1 5AEC8D46
 P 6300 7000
-F 0 "C6" H 6310 7070 50  0000 L CNN
+F 0 "C2" H 6310 7070 50  0000 L CNN
 F 1 "22pF" H 6310 6920 50  0000 L CNN
 F 2 "artemisa:Disc_capacitor" H 6300 7000 50  0001 C CNN
 F 3 "" H 6300 7000 50  0001 C CNN
@@ -1028,10 +1028,10 @@ F 3 "" H 6300 7000 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L artemisa:CP C5
+L artemisa:CP C1
 U 1 1 5AEC8D4D
 P 5400 7000
-F 0 "C5" H 5410 7070 50  0000 L CNN
+F 0 "C1" H 5410 7070 50  0000 L CNN
 F 1 "22pF" H 5410 6920 50  0000 L CNN
 F 2 "artemisa:Disc_capacitor" H 5400 7000 50  0001 C CNN
 F 3 "" H 5400 7000 50  0001 C CNN
@@ -1153,10 +1153,10 @@ $EndComp
 Wire Wire Line
 	3350 6800 3550 6800
 $Comp
-L artemisa:CP C7
+L artemisa:CP C5
 U 1 1 5AECCD48
 P 2500 7000
-F 0 "C7" H 2510 7070 50  0000 L CNN
+F 0 "C5" H 2510 7070 50  0000 L CNN
 F 1 "1uF" H 2510 6920 50  0000 L CNN
 F 2 "artemisa:Radial_capacitor" H 2500 7000 50  0001 C CNN
 F 3 "" H 2500 7000 50  0001 C CNN
@@ -1223,10 +1223,10 @@ Wire Wire Line
 Wire Wire Line
 	4350 6800 4350 6900
 $Comp
-L artemisa:Cap C8
+L artemisa:Cap C6
 U 1 1 5AECD8D5
 P 4350 7000
-F 0 "C8" H 4360 7070 50  0000 L CNN
+F 0 "C6" H 4360 7070 50  0000 L CNN
 F 1 "22pF" H 4360 6920 50  0000 L CNN
 F 2 "artemisa:Disc_capacitor" H 4350 7000 50  0001 C CNN
 F 3 "" H 4350 7000 50  0001 C CNN
