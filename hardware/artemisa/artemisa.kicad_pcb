@@ -2,7 +2,7 @@
 
   (general
     (thickness 1.6)
-    (drawings 8)
+    (drawings 9)
     (tracks 0)
     (zones 0)
     (modules 143)
@@ -2243,7 +2243,7 @@
   )
 
   (module artemisa:DIP-14_300 (layer F.Cu) (tedit 58CC8E2C) (tstamp 5BDB0AC3)
-    (at 62.23 110.49)
+    (at 64.77 104.775)
     (descr "14-lead dip package, row spacing 7.62 mm (300 mils)")
     (tags "DIL DIP PDIP 2.54mm 7.62mm 300mil")
     (path /5AE915ED/5BFA29EF)
@@ -6986,17 +6986,17 @@
   )
 
   (module artemisa:Disc_capacitor (layer F.Cu) (tedit 5BD4540C) (tstamp 5BD5018A)
-    (at 67.31 106.68 180)
+    (at 75.565 104.775 270)
     (descr "C, Disc series, Radial, pin pitch=2.50mm, , diameter*width=3.8*2.6mm^2, Capacitor, http://www.vishay.com/docs/45233/krseries.pdf")
     (tags "C Disc series Radial pin pitch 2.50mm  diameter 3.8mm width 2.6mm Capacitor")
     (path /5AE11EC9/5B1173B3)
-    (fp_text reference DC5 (at -2.54 0 -90) (layer F.SilkS)
+    (fp_text reference DC5 (at -2.54 0) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
     )
-    (fp_text value 100nF (at 5.08 0 -90) (layer F.Fab)
+    (fp_text value 100nF (at 5.08 0) (layer F.Fab)
       (effects (font (size 1 1) (thickness 0.15)))
     )
-    (fp_text user %R (at -2.54 0 -90) (layer F.Fab)
+    (fp_text user %R (at -2.54 0) (layer F.Fab)
       (effects (font (size 1 1) (thickness 0.15)))
     )
     (fp_line (start 3.55 -1.65) (end -1.05 -1.65) (layer F.CrtYd) (width 0.05))
@@ -7013,9 +7013,9 @@
     (fp_line (start 3.15 1.3) (end 3.15 -1.3) (layer F.Fab) (width 0.1))
     (fp_line (start -0.65 1.3) (end 3.15 1.3) (layer F.Fab) (width 0.1))
     (fp_line (start -0.65 -1.3) (end -0.65 1.3) (layer F.Fab) (width 0.1))
-    (pad 2 thru_hole circle (at 2.5 0 180) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask)
+    (pad 2 thru_hole circle (at 2.5 0 270) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask)
       (net 1 GND))
-    (pad 1 thru_hole circle (at 0 0 180) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask)
+    (pad 1 thru_hole circle (at 0 0 270) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask)
       (net 13 VCC))
     (model ${KIPRJMOD}/../libs/artemisa.3dshapes/Disc_capacitor.wrl
       (at (xyz 0 0 0))
@@ -8146,11 +8146,11 @@
   )
 
   (module artemisa:GFX_conn (layer F.Cu) (tedit 5BD1EFE2) (tstamp 5BD4FCDE)
-    (at 66.04 189.23 90)
+    (at 66.04 182.88 90)
     (descr "Box header 25x2pin 2.54mm")
     (tags "CONN DEV")
     (path /5AE915ED/5BD8EA50)
-    (fp_text reference J9 (at 0 -5.7 90) (layer F.SilkS)
+    (fp_text reference J9 (at -34.29 -2.54 90) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.2032)))
     )
     (fp_text value GFX_Connector_Output (at 0 5.7 90) (layer F.SilkS) hide
@@ -8271,7 +8271,7 @@
   )
 
   (module artemisa:Axial_resistor (layer F.Cu) (tedit 5BD18FF6) (tstamp 5BD4FE67)
-    (at 71.12 136.525 180)
+    (at 73.66 131.445 180)
     (descr "Resistor, Axial_DIN0207 series, Axial, Horizontal, pin pitch=10.16mm, 0.25W = 1/4W, length*diameter=6.3*2.5mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf")
     (tags "Resistor Axial_DIN0207 series Axial Horizontal pin pitch 10.16mm 0.25W = 1/4W length 6.3mm diameter 2.5mm")
     (path /5AE915ED/5C08169F)
@@ -8309,7 +8309,7 @@
   )
 
   (module artemisa:Axial_resistor (layer F.Cu) (tedit 5BD18FF6) (tstamp 5BD4FE28)
-    (at 71.12 133.35 180)
+    (at 73.66 128.27 180)
     (descr "Resistor, Axial_DIN0207 series, Axial, Horizontal, pin pitch=10.16mm, 0.25W = 1/4W, length*diameter=6.3*2.5mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf")
     (tags "Resistor Axial_DIN0207 series Axial Horizontal pin pitch 10.16mm 0.25W = 1/4W length 6.3mm diameter 2.5mm")
     (path /5AE915ED/5C0816A6)
@@ -8347,7 +8347,7 @@
   )
 
   (module artemisa:Axial_resistor (layer F.Cu) (tedit 5BD18FF6) (tstamp 5BD4FDE9)
-    (at 71.12 130.175 180)
+    (at 73.66 125.095 180)
     (descr "Resistor, Axial_DIN0207 series, Axial, Horizontal, pin pitch=10.16mm, 0.25W = 1/4W, length*diameter=6.3*2.5mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf")
     (tags "Resistor Axial_DIN0207 series Axial Horizontal pin pitch 10.16mm 0.25W = 1/4W length 6.3mm diameter 2.5mm")
     (path /5AE915ED/5C0816AD)
@@ -8385,7 +8385,7 @@
   )
 
   (module artemisa:Axial_resistor (layer F.Cu) (tedit 5BD18FF6) (tstamp 5BD4FDAA)
-    (at 71.12 142.875 180)
+    (at 73.66 137.795 180)
     (descr "Resistor, Axial_DIN0207 series, Axial, Horizontal, pin pitch=10.16mm, 0.25W = 1/4W, length*diameter=6.3*2.5mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf")
     (tags "Resistor Axial_DIN0207 series Axial Horizontal pin pitch 10.16mm 0.25W = 1/4W length 6.3mm diameter 2.5mm")
     (path /5AE915ED/5BFD89AD)
@@ -8423,7 +8423,7 @@
   )
 
   (module artemisa:Axial_resistor (layer F.Cu) (tedit 5BD18FF6) (tstamp 5BD4FC78)
-    (at 71.12 146.05 180)
+    (at 73.66 140.97 180)
     (descr "Resistor, Axial_DIN0207 series, Axial, Horizontal, pin pitch=10.16mm, 0.25W = 1/4W, length*diameter=6.3*2.5mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf")
     (tags "Resistor Axial_DIN0207 series Axial Horizontal pin pitch 10.16mm 0.25W = 1/4W length 6.3mm diameter 2.5mm")
     (path /5AE915ED/5BFD8AA0)
@@ -8461,7 +8461,7 @@
   )
 
   (module artemisa:Axial_resistor (layer F.Cu) (tedit 5BD18FF6) (tstamp 5BD4FC39)
-    (at 71.12 139.7 180)
+    (at 73.66 134.62 180)
     (descr "Resistor, Axial_DIN0207 series, Axial, Horizontal, pin pitch=10.16mm, 0.25W = 1/4W, length*diameter=6.3*2.5mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf")
     (tags "Resistor Axial_DIN0207 series Axial Horizontal pin pitch 10.16mm 0.25W = 1/4W length 6.3mm diameter 2.5mm")
     (path /5AE915ED/5BFD8AC4)
@@ -9027,6 +9027,9 @@
     )
   )
 
+  (gr_text "Graphics card connector" (at 72.39 147.32 90) (layer F.SilkS)
+    (effects (font (size 1 1) (thickness 0.15)) (justify right))
+  )
   (gr_text "Artemisa MSX Computer System\nMotherboard Rev01\nCopyright (c) 2018 Alvaro Polo" (at 78.74 83.82) (layer F.SilkS)
     (effects (font (size 1.5 1.5) (thickness 0.3)) (justify left))
   )
