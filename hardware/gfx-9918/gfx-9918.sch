@@ -1249,12 +1249,12 @@ NoConn ~ 3100 6450
 $Comp
 L power:GND #PWR0103
 U 1 1 5C2C0EBE
-P 3400 7450
-F 0 "#PWR0103" H 3400 7200 50  0001 C CNN
-F 1 "GND" H 3400 7300 50  0000 C CNN
-F 2 "" H 3400 7450 50  0001 C CNN
-F 3 "" H 3400 7450 50  0001 C CNN
-	1    3400 7450
+P 3400 7850
+F 0 "#PWR0103" H 3400 7600 50  0001 C CNN
+F 1 "GND" H 3400 7700 50  0000 C CNN
+F 2 "" H 3400 7850 50  0001 C CNN
+F 3 "" H 3400 7850 50  0001 C CNN
+	1    3400 7850
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -1273,7 +1273,7 @@ Wire Wire Line
 	3100 6550 3400 6550
 Connection ~ 3400 6550
 Wire Wire Line
-	3400 6550 3400 7350
+	3400 6550 3400 7750
 $Comp
 L power:VCC #PWR0104
 U 1 1 5C36F6AF
@@ -1294,7 +1294,6 @@ Wire Wire Line
 Wire Wire Line
 	3800 6950 3800 6750
 Connection ~ 3800 6750
-NoConn ~ 3100 7150
 Wire Wire Line
 	5650 3300 5650 2200
 Wire Wire Line
@@ -1312,7 +1311,7 @@ U 1 1 5BD0FA02
 P 6550 7750
 F 0 "J2" H 6778 7796 50  0000 L CNN
 F 1 "RCA_Conn" V 6250 7550 50  0000 L CNN
-F 2 "artemisa:RCA" H 6550 7750 50  0001 C CNN
+F 2 "artemisa:RCA_yellow" H 6550 7750 50  0001 C CNN
 F 3 "" H 6550 7750 50  0001 C CNN
 	1    6550 7750
 	1    0    0    -1  
@@ -1335,16 +1334,9 @@ F 3 "" H 7200 8350 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6650 8150 6650 8250
-Wire Wire Line
-	6650 8250 7200 8250
-Wire Wire Line
 	7200 8250 7200 8350
 Wire Wire Line
-	6650 8250 6450 8250
-Wire Wire Line
-	6450 8250 6450 8150
-Connection ~ 6650 8250
+	6550 8250 6550 8150
 $Comp
 L Device:R_Small R1
 U 1 1 5BD71517
@@ -1442,12 +1434,12 @@ Connection ~ 4450 9050
 $Comp
 L artemisa:CP C11
 U 1 1 5BF07A7B
-P 3800 7150
-F 0 "C11" H 3891 7196 50  0000 L CNN
-F 1 "10uF" H 3891 7105 50  0000 L CNN
-F 2 "artemisa:Radial_capacitor" H 3800 7150 50  0001 C CNN
-F 3 "" H 3800 7150 50  0001 C CNN
-	1    3800 7150
+P 3800 7550
+F 0 "C11" H 3891 7596 50  0000 L CNN
+F 1 "10uF" H 3891 7505 50  0000 L CNN
+F 2 "artemisa:Radial_capacitor" H 3800 7550 50  0001 C CNN
+F 3 "" H 3800 7550 50  0001 C CNN
+	1    3800 7550
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -1491,15 +1483,15 @@ Connection ~ 6550 3800
 Wire Wire Line
 	6550 3800 6550 4100
 Wire Wire Line
-	3800 6950 3800 7050
+	3800 6950 3800 7450
 Connection ~ 3800 6950
 Wire Wire Line
-	3800 7250 3800 7350
+	3800 7650 3800 7750
 Wire Wire Line
-	3800 7350 3400 7350
-Connection ~ 3400 7350
+	3800 7750 3400 7750
+Connection ~ 3400 7750
 Wire Wire Line
-	3400 7350 3400 7450
+	3400 7750 3400 7850
 Wire Wire Line
 	12650 7350 12650 7400
 Wire Wire Line
@@ -1561,6 +1553,51 @@ Wire Wire Line
 	3100 8750 3400 8750
 Wire Wire Line
 	3100 9050 3400 9050
+$Comp
+L artemisa:RCA_Conn J3
+U 1 1 5BF6C6FC
+P 5800 7750
+F 0 "J3" H 6028 7796 50  0000 L CNN
+F 1 "RCA_Conn" V 5500 7550 50  0000 L CNN
+F 2 "artemisa:RCA_white" H 5800 7750 50  0001 C CNN
+F 3 "" H 5800 7750 50  0001 C CNN
+	1    5800 7750
+	1    0    0    -1  
+$EndComp
+$Comp
+L artemisa:RCA_Conn J4
+U 1 1 5BF6C752
+P 5050 7750
+F 0 "J4" H 5278 7796 50  0000 L CNN
+F 1 "RCA_Conn" V 4750 7550 50  0000 L CNN
+F 2 "artemisa:RCA_red" H 5050 7750 50  0001 C CNN
+F 3 "" H 5050 7750 50  0001 C CNN
+	1    5050 7750
+	1    0    0    -1  
+$EndComp
+Connection ~ 6550 8250
+Wire Wire Line
+	5800 8150 5800 8250
+Connection ~ 5800 8250
+Wire Wire Line
+	5050 8150 5050 8250
+Wire Wire Line
+	3100 7150 5050 7150
+Wire Wire Line
+	5800 7150 5800 7350
+Wire Wire Line
+	5050 7150 5050 7350
+Connection ~ 5050 7150
+Wire Wire Line
+	5050 7150 5800 7150
+Text Label 4550 7150 0    50   ~ 0
+SOUNDOUT
+Wire Wire Line
+	5050 8250 5800 8250
+Wire Wire Line
+	5800 8250 6550 8250
+Wire Wire Line
+	6550 8250 7200 8250
 Wire Bus Line
 	13850 3650 13850 8400
 Wire Bus Line
