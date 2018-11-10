@@ -292,7 +292,7 @@ Wire Wire Line
 Wire Wire Line
 	6900 6450 6700 6450
 Text Label 5450 4650 0    60   ~ 0
-SOUND
+EXTSOUND
 Wire Wire Line
 	5450 4650 6000 4650
 Entry Wire Line
@@ -575,7 +575,7 @@ Wire Wire Line
 Wire Wire Line
 	10350 6450 10150 6450
 Text Label 8900 4650 0    60   ~ 0
-SOUND
+EXTSOUND
 Wire Wire Line
 	8900 4650 9450 4650
 Entry Wire Line
@@ -631,7 +631,7 @@ Entry Wire Line
 Entry Wire Line
 	4400 4250 4300 4350
 Text Label 4300 6150 2    60   ~ 0
-SOUND
+EXTSOUND
 Wire Wire Line
 	4300 6150 2900 6150
 Entry Wire Line
@@ -711,7 +711,7 @@ CLK
 Text HLabel 2900 5850 0    60   Output ~ 0
 ~EXITINT
 Text HLabel 2900 6150 0    60   Output ~ 0
-SOUND
+EXTSOUND
 Entry Bus Bus
 	4500 3100 4400 3200
 Text Notes 5800 3050 0    60   ~ 0
@@ -1140,7 +1140,7 @@ Wire Wire Line
 Entry Wire Line
 	11000 3900 11100 4000
 Text Label 11150 4000 0    60   ~ 0
-SOUND
+AUDIO
 $Comp
 L artemisa:74HCT11 U5
 U 1 2 5BFA29EF
@@ -1404,30 +1404,38 @@ F 3 "" H 2350 2150 60  0001 C CNN
 	1    2350 2150
 	1    0    0    -1  
 $EndComp
+Text Label 4300 6250 2    60   ~ 0
+AUDIO
+Wire Wire Line
+	4300 6250 2900 6250
+Entry Wire Line
+	4400 6150 4300 6250
+Text HLabel 2900 6250 0    60   Input ~ 0
+AUDIO
 Wire Wire Line
 	11100 6800 13750 6800
 Wire Bus Line
-	8800 6150 8800 8400
-Wire Bus Line
-	7550 6150 7550 8400
-Wire Bus Line
-	2900 8500 10900 8500
+	2900 8150 11450 8150
 Wire Bus Line
 	5350 6150 5350 8400
 Wire Bus Line
-	2900 8150 11450 8150
+	2900 8500 10900 8500
+Wire Bus Line
+	7550 6150 7550 8400
+Wire Bus Line
+	8800 6150 8800 8400
 Wire Bus Line
 	7550 3200 7550 5050
 Wire Bus Line
-	8800 3200 8800 5050
-Wire Bus Line
-	8550 5300 8550 8050
-Wire Bus Line
-	5350 3200 5350 5050
+	5100 5300 5100 8050
 Wire Bus Line
 	7800 5300 7800 8050
 Wire Bus Line
-	5100 5300 5100 8050
+	5350 3200 5350 5050
+Wire Bus Line
+	8550 5300 8550 8050
+Wire Bus Line
+	8800 3200 8800 5050
 Wire Bus Line
 	4400 3200 4400 6150
 Wire Bus Line
