@@ -10,7 +10,8 @@ The interface used to communicate the Artemisa computer motherboard and the grap
 
 Artemisa considers the following modifications to the specs described in above link:
 
-* The line 16, which is reserved according to the standard, will be used to transmit the /VDPIOSEL signal. This will be active by the computer when IO ports 98h to 9Fh are selected with /IORQ active and /M1 inactive (i.e., a IO request to the VDP ports).
+* The line 16, which is reserved according to the standard, will be used to transmit the `/VDPIOSEL` signal. This will be active by the computer when IO ports 98h to 9Fh are selected with /IORQ active and /M1 inactive (i.e., a IO request to the VDP ports).
+* The line 49, which is `SOUNDIN` according to the standard, will be used to transmit the `SOUNDOUT` signal. In other words, the direction of the line changes. Originally, it goes from the external device to the computer. In Artemisa, it goes from the computer to the external device (the GFX card). The reason to do so is to delegate the sound output connectors to the graphics card. Most GFX card implementation will have video outputs suitable for TV sets. And they typically are accompanied by sound outputs (e.g., RCA connectors for CVBS+sound, SCART connectors, etc). Thanks to `SOUNDOUT`, the video card can provide such video+sound outputs without any external cable. 
 * As usual in Artemisa, +12v and -12v power signals are disconnected.
 
 Thanks to that, the graphics card can use a great variety of possible IO, and even memory, communications. From the simplest graphic card with a TMS9918 VDP mapped in ports 98h and 99h, to the most sophisticated combination of V9990 chips. 

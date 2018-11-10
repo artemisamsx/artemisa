@@ -1073,7 +1073,7 @@ $EndComp
 Wire Wire Line
 	7700 7400 7700 7650
 Text HLabel 1500 6900 0    60   Input ~ 0
-SOUND
+EXTSOUND
 Text HLabel 1500 7050 0    60   Input ~ 0
 BEEP
 Wire Wire Line
