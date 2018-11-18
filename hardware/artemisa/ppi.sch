@@ -1,5 +1,4 @@
 EESchema Schematic File Version 4
-LIBS:artemisa-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
@@ -79,14 +78,10 @@ Wire Wire Line
 	4600 4600 4950 4600
 Entry Bus Bus
 	4400 3800 4500 3900
-Text HLabel 2650 5300 0    60   Input ~ 0
+Text HLabel 2650 1350 0    60   Input ~ 0
 A14
-Text HLabel 2650 5400 0    60   Input ~ 0
+Text HLabel 2650 1450 0    60   Input ~ 0
 A15
-Wire Wire Line
-	2650 5300 4100 5300
-Wire Wire Line
-	2650 5400 4000 5400
 $Comp
 L power:GND #PWR020
 U 1 1 5AE225E1
@@ -283,23 +278,9 @@ Text Label 6400 4600 2    60   ~ 0
 PA7
 Wire Wire Line
 	6400 4600 6150 4600
-Wire Wire Line
-	7300 1650 7300 1750
-Wire Wire Line
-	4100 1650 7300 1650
-Wire Wire Line
-	4100 1650 4100 5300
-Connection ~ 4100 5300
-Wire Wire Line
-	4000 5400 4000 1550
-Wire Wire Line
-	4000 1550 7400 1550
-Wire Wire Line
-	7400 1550 7400 1750
-Connection ~ 4000 5400
-Text Label 4350 1650 0    60   ~ 0
+Text Label 4350 1350 0    60   ~ 0
 A14
-Text Label 4350 1550 0    60   ~ 0
+Text Label 4350 1450 0    60   ~ 0
 A15
 $Comp
 L artemisa:74HC139 U21
@@ -396,29 +377,21 @@ F 1 "74HC139" H 8650 1200 60  0000 C CNN
 F 2 "artemisa:DIP-16_300" H 8650 1350 60  0001 C CNN
 F 3 "" H 8650 1350 60  0001 C CNN
 	2    8650 1500
-	1    0    0    1   
+	1    0    0    -1  
 $EndComp
-Connection ~ 7300 1650
-Connection ~ 7400 1550
-Text Label 8050 1550 0    60   ~ 0
-A15
-Text Label 8050 1650 0    60   ~ 0
-A14
 Wire Wire Line
 	7850 2150 8250 2150
 Wire Wire Line
 	7850 2250 8250 2250
 Wire Wire Line
-	3200 1350 8250 1350
-Wire Wire Line
-	3200 1350 3200 5750
+	3200 1650 8250 1650
 Connection ~ 3200 5750
-Text Label 4350 1350 0    60   ~ 0
+Text Label 4350 1650 0    60   ~ 0
 ~RD
 NoConn ~ 9050 1350
 NoConn ~ 9050 1650
 Text HLabel 10300 1800 2    60   Output ~ 0
-~CS1
+~CS2
 Wire Wire Line
 	9050 1550 9250 1550
 Wire Wire Line
@@ -439,7 +412,7 @@ $EndComp
 Text HLabel 10300 1500 2    60   Output ~ 0
 ~CS12
 Text HLabel 10300 1200 2    60   Output ~ 0
-~CS2
+~CS1
 Wire Wire Line
 	9250 1450 9050 1450
 Wire Wire Line
@@ -589,19 +562,11 @@ Connection ~ 5000 3100
 Wire Wire Line
 	3450 6100 3450 6250
 Wire Wire Line
-	4100 5300 4950 5300
-Wire Wire Line
-	4000 5400 4950 5400
-Wire Wire Line
 	3100 6900 3700 6900
 Wire Wire Line
 	3000 6100 3450 6100
 Wire Wire Line
 	7300 3400 7400 3400
-Wire Wire Line
-	7300 1650 8250 1650
-Wire Wire Line
-	7400 1550 8250 1550
 Wire Wire Line
 	3200 5750 3600 5750
 Wire Wire Line
@@ -610,12 +575,36 @@ Wire Wire Line
 	9250 1400 9250 1450
 Wire Wire Line
 	5000 3100 5000 2900
+Wire Wire Line
+	2650 5400 4950 5400
+Wire Wire Line
+	2650 5300 4950 5300
+Wire Wire Line
+	3200 1650 3200 5750
+Wire Wire Line
+	8250 1350 7300 1350
+Wire Wire Line
+	8250 1450 7400 1450
+Wire Wire Line
+	7300 1750 7300 1350
+Connection ~ 7300 1350
+Wire Wire Line
+	7300 1350 2650 1350
+Wire Wire Line
+	7400 1750 7400 1450
 Wire Bus Line
 	7250 5550 7250 6050
 Wire Bus Line
-	4500 3900 4500 4800
-Wire Bus Line
 	6650 4600 6650 5400
 Wire Bus Line
+	4500 3900 4500 4800
+Wire Bus Line
 	6500 2250 6500 4600
+Connection ~ 7400 1450
+Wire Wire Line
+	7400 1450 2650 1450
+Text HLabel 2650 5300 0    60   Input ~ 0
+A0
+Text HLabel 2650 5400 0    60   Input ~ 0
+A1
 $EndSCHEMATC
