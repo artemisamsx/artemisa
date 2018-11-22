@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 1 12
+Sheet 1 13
 Title ""
 Date ""
 Rev ""
@@ -43,6 +43,7 @@ F11 "~EXTWAIT" I L 5400 5000 60
 F12 "~RESET" I L 5400 4700 60 
 F13 "~VDPINT" I L 5400 4800 60 
 F14 "~EXTINT" I L 5400 4900 60 
+F15 "DATADIR" I L 5400 5100 60 
 $EndSheet
 Entry Bus Bus
 	8450 4300 8550 4200
@@ -470,9 +471,9 @@ Text Notes 12850 3300 1    60   ~ 0
 CONTROL BUS
 Text Notes 12850 5350 1    60   ~ 0
 CONTROL BUS
-Text Notes 4900 4750 1    60   ~ 0
+Text Notes 4900 4300 1    60   ~ 0
 CONTROL BUS
-Text Notes 4900 8150 1    60   ~ 0
+Text Notes 4900 7350 1    60   ~ 0
 CONTROL BUS
 $Sheet
 S 10850 4150 1150 2100
@@ -703,19 +704,19 @@ BEEP
 Wire Wire Line
 	5400 7350 5050 7350
 $Sheet
-S 2900 5200 1450 600 
+S 2900 7600 1450 600 
 U 5B118A76
 F0 "CAS" 60
 F1 "cassette.sch" 60
-F2 "CASOUT" I R 4350 5350 60 
-F3 "CASIN" O R 4350 5600 60 
+F2 "CASOUT" I R 4350 7750 60 
+F3 "CASIN" O R 4350 8000 60 
 $EndSheet
 Entry Wire Line
-	4850 5350 4950 5450
-Text Label 4850 5350 2    60   ~ 0
+	4850 7750 4950 7850
+Text Label 4850 7750 2    60   ~ 0
 CASOUT
 Wire Wire Line
-	4850 5350 4350 5350
+	4850 7750 4350 7750
 Entry Wire Line
 	5050 7450 4950 7350
 Text Label 5050 7450 0    60   ~ 0
@@ -723,11 +724,11 @@ CASOUT
 Wire Wire Line
 	5050 7450 5400 7450
 Entry Wire Line
-	4850 5600 4950 5700
-Text Label 4850 5600 2    60   ~ 0
+	4850 8000 4950 8100
+Text Label 4850 8000 2    60   ~ 0
 CASIN
 Wire Wire Line
-	4850 5600 4350 5600
+	4850 8000 4350 8000
 Entry Wire Line
 	12700 8050 12600 8150
 Text Label 12600 8150 2    60   ~ 0
@@ -802,6 +803,46 @@ Text Label 4850 3350 2    60   ~ 0
 PSGCLK
 Wire Wire Line
 	4850 3350 4350 3350
+$Sheet
+S 2900 4450 1450 1550
+U 5C0244DD
+F0 "DECODING" 60
+F1 "decoding.sch" 60
+F2 "DATADIR" O R 4350 5350 60 
+F3 "~RD" I R 4350 4600 60 
+F4 "~IORQ" I R 4350 4700 60 
+F5 "~M1" I R 4350 4800 60 
+$EndSheet
+Entry Wire Line
+	4850 4600 4950 4700
+Text Label 4850 4600 2    60   ~ 0
+~RD
+Wire Wire Line
+	4850 4600 4350 4600
+Entry Wire Line
+	4850 4700 4950 4800
+Text Label 4850 4700 2    60   ~ 0
+~IORQ
+Wire Wire Line
+	4850 4700 4350 4700
+Entry Wire Line
+	4850 4800 4950 4900
+Text Label 4850 4800 2    60   ~ 0
+~M1
+Wire Wire Line
+	4850 4800 4350 4800
+Entry Wire Line
+	4850 5350 4950 5450
+Text Label 4850 5350 2    60   ~ 0
+DATADIR
+Wire Wire Line
+	4850 5350 4350 5350
+Entry Wire Line
+	5050 5100 4950 5200
+Text Label 5050 5100 0    60   ~ 0
+DATADIR
+Wire Wire Line
+	5050 5100 5400 5100
 Wire Bus Line
 	8550 2150 8550 3300
 Wire Bus Line
