@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 1 11
+Sheet 1 12
 Title ""
 Date ""
 Rev ""
@@ -470,8 +470,6 @@ Text Notes 12850 3300 1    60   ~ 0
 CONTROL BUS
 Text Notes 12850 5350 1    60   ~ 0
 CONTROL BUS
-Text Notes 4900 3600 1    60   ~ 0
-CONTROL BUS
 Text Notes 4900 4750 1    60   ~ 0
 CONTROL BUS
 Text Notes 4900 8150 1    60   ~ 0
@@ -626,7 +624,7 @@ F5 "A1" I L 10850 8000 60
 F6 "~WR" I R 12000 7650 60 
 F7 "A0" I L 10850 7900 60 
 F8 "~RD" I R 12000 7750 60 
-F9 "CLK" I R 12000 7850 60 
+F9 "PSGCLK" I R 12000 7850 60 
 F10 "EXTSOUND" I R 12000 7950 60 
 F11 "BEEP" I R 12000 8050 60 
 F12 "AUDIO" O R 12000 8350 60 
@@ -641,7 +639,7 @@ Wire Wire Line
 Entry Wire Line
 	12700 7750 12600 7850
 Text Label 12600 7850 2    60   ~ 0
-CLK
+PSGCLK
 Wire Wire Line
 	12600 7850 12000 7850
 Entry Wire Line
@@ -784,6 +782,26 @@ Text Label 5050 7750 0    60   ~ 0
 RESET
 Wire Wire Line
 	5050 7750 5400 7750
+$Sheet
+S 2900 3100 1450 850 
+U 5BF74A85
+F0 "CLOCK" 60
+F1 "clock.sch" 60
+F2 "CLK" O R 4350 3250 60 
+F3 "PSGCLK" O R 4350 3350 60 
+$EndSheet
+Entry Wire Line
+	4850 3250 4950 3350
+Text Label 4850 3250 2    60   ~ 0
+CLK
+Wire Wire Line
+	4850 3250 4350 3250
+Entry Wire Line
+	4850 3350 4950 3450
+Text Label 4850 3350 2    60   ~ 0
+PSGCLK
+Wire Wire Line
+	4850 3350 4350 3350
 Wire Bus Line
 	8550 2150 8550 3300
 Wire Bus Line
@@ -793,7 +811,7 @@ Wire Bus Line
 Wire Bus Line
 	8550 4400 8550 8000
 Wire Bus Line
-	4950 1800 4950 8750
-Wire Bus Line
 	12700 1800 12700 8350
+Wire Bus Line
+	4950 1800 4950 8750
 $EndSCHEMATC
