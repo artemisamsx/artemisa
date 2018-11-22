@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:artemisa-cache
 EELAYER 26 0
 EELAYER END
 $Descr A3 16535 11693
@@ -39,7 +40,7 @@ F8 "~RFSH" O L 5400 4400 60
 F9 "DATA[0..7]" B R 6700 4550 60 
 F10 "CLK" I L 5400 4600 60 
 F11 "~EXTWAIT" I L 5400 5000 60 
-F12 "~RESET" O L 5400 4700 60 
+F12 "~RESET" I L 5400 4700 60 
 F13 "~VDPINT" I L 5400 4800 60 
 F14 "~EXTINT" I L 5400 4900 60 
 $EndSheet
@@ -160,10 +161,11 @@ Entry Bus Bus
 Text Label 10800 3600 2    60   ~ 0
 DATA[0..7]
 $Sheet
-S 8000 8450 1150 950 
+S 2900 2050 1450 600 
 U 5AE11EC9
 F0 "Power" 60
 F1 "power.sch" 60
+F2 "~RESET" O R 4350 2200 60 
 $EndSheet
 $Sheet
 S 5400 5750 1300 2150
@@ -470,7 +472,7 @@ Text Notes 12850 3300 1    60   ~ 0
 CONTROL BUS
 Text Notes 12850 5350 1    60   ~ 0
 CONTROL BUS
-Text Notes 4900 3050 1    60   ~ 0
+Text Notes 4900 3600 1    60   ~ 0
 CONTROL BUS
 Text Notes 4900 4750 1    60   ~ 0
 CONTROL BUS
@@ -762,6 +764,12 @@ Text Label 8450 6150 2    60   ~ 0
 ADDR0
 Text Label 8450 6250 2    60   ~ 0
 ADDR1
+Entry Wire Line
+	4850 2200 4950 2300
+Text Label 4850 2200 2    60   ~ 0
+~RESET
+Wire Wire Line
+	4850 2200 4350 2200
 Wire Bus Line
 	8550 2150 8550 3300
 Wire Bus Line
