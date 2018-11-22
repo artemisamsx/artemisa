@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 3 11
+Sheet 3 12
 Title ""
 Date ""
 Rev ""
@@ -567,11 +567,11 @@ Wire Wire Line
 Wire Wire Line
 	3600 3300 3400 3300
 Connection ~ 2950 3650
-Text HLabel 1100 2950 0    60   Output ~ 0
-~M1
 Text HLabel 1100 3050 0    60   Output ~ 0
-~MREQ
+~M1
 Text HLabel 1100 3150 0    60   Output ~ 0
+~MREQ
+Text HLabel 1100 3250 0    60   Output ~ 0
 ~IORQ
 NoConn ~ 2500 2150
 Wire Wire Line
@@ -581,11 +581,11 @@ Wire Wire Line
 Wire Wire Line
 	2500 3200 1800 3200
 NoConn ~ 2500 3300
-Text HLabel 1100 3250 0    60   Output ~ 0
-~RD
 Text HLabel 1100 3350 0    60   Output ~ 0
-~WR
+~RD
 Text HLabel 1100 3450 0    60   Output ~ 0
+~WR
+Text HLabel 1100 3550 0    60   Output ~ 0
 ~RFSH
 Entry Bus Bus
 	9250 5950 9350 6050
@@ -615,7 +615,7 @@ F 3 "" H 3850 5100 60  0001 C CNN
 	2    3850 5300
 	1    0    0    -1  
 $EndComp
-Text HLabel 1100 3550 0    60   Output ~ 0
+Text HLabel 1100 2800 0    60   Input ~ 0
 CLK
 Wire Wire Line
 	1800 5200 2250 5200
@@ -675,8 +675,6 @@ Wire Wire Line
 Text HLabel 1100 2600 0    60   Input ~ 0
 ~EXTWAIT
 Connection ~ 2650 5900
-Wire Wire Line
-	1800 4550 4800 4550
 Wire Wire Line
 	1800 5400 2200 5400
 $Comp
@@ -918,7 +916,7 @@ Entry Wire Line
 Wire Wire Line
 	2200 5400 2200 6000
 Entry Wire Line
-	1700 3450 1600 3550
+	1700 2700 1600 2800
 Entry Wire Line
 	1700 2600 1600 2700
 Entry Wire Line
@@ -928,7 +926,7 @@ Entry Wire Line
 Entry Wire Line
 	1700 2500 1600 2600
 Wire Wire Line
-	1600 3550 1100 3550
+	1600 2800 1100 2800
 Wire Wire Line
 	1100 2700 1600 2700
 Wire Wire Line
@@ -937,7 +935,7 @@ Wire Wire Line
 	1600 2500 1100 2500
 Wire Wire Line
 	1100 2600 1600 2600
-Text Label 1600 3550 2    60   ~ 0
+Text Label 1600 2800 2    60   ~ 0
 CLK
 Text Label 1600 2700 2    60   ~ 0
 ~RESET
@@ -948,8 +946,6 @@ Text Label 1600 2500 2    60   ~ 0
 Text Label 1600 2600 2    60   ~ 0
 ~EXTWAIT
 Entry Wire Line
-	1700 2850 1600 2950
-Entry Wire Line
 	1700 2950 1600 3050
 Entry Wire Line
 	1700 3050 1600 3150
@@ -957,31 +953,33 @@ Entry Wire Line
 	1700 3150 1600 3250
 Entry Wire Line
 	1700 3250 1600 3350
-Wire Wire Line
-	1600 2950 1100 2950
-Wire Wire Line
-	1100 3050 1600 3050
-Wire Wire Line
-	1100 3150 1600 3150
-Wire Wire Line
-	1600 3250 1100 3250
-Wire Wire Line
-	1100 3350 1600 3350
-Text Label 1600 2950 2    60   ~ 0
-~M1
-Text Label 1600 3050 2    60   ~ 0
-~MREQ
-Text Label 1600 3150 2    60   ~ 0
-~IORQ
-Text Label 1600 3250 2    60   ~ 0
-~RD
-Text Label 1600 3350 2    60   ~ 0
-~WR
 Entry Wire Line
 	1700 3350 1600 3450
 Wire Wire Line
+	1600 3050 1100 3050
+Wire Wire Line
+	1100 3150 1600 3150
+Wire Wire Line
+	1100 3250 1600 3250
+Wire Wire Line
+	1600 3350 1100 3350
+Wire Wire Line
 	1100 3450 1600 3450
+Text Label 1600 3050 2    60   ~ 0
+~M1
+Text Label 1600 3150 2    60   ~ 0
+~MREQ
+Text Label 1600 3250 2    60   ~ 0
+~IORQ
+Text Label 1600 3350 2    60   ~ 0
+~RD
 Text Label 1600 3450 2    60   ~ 0
+~WR
+Entry Wire Line
+	1700 3450 1600 3550
+Wire Wire Line
+	1100 3550 1600 3550
+Text Label 1600 3550 2    60   ~ 0
 ~RFSH
 Wire Wire Line
 	5950 1700 5850 1700
@@ -1003,134 +1001,6 @@ Wire Wire Line
 	3800 3000 3800 3100
 Wire Wire Line
 	1800 1950 2500 1950
-$Comp
-L artemisa:Crystal Y1
-U 1 1 5AEC8D3F
-P 5850 6950
-F 0 "Y1" H 5850 7050 50  0000 C CNN
-F 1 "3.58Mhz" H 5850 6850 50  0000 C CNN
-F 2 "artemisa:Crystal" H 5850 6950 50  0001 C CNN
-F 3 "" H 5850 6950 50  0001 C CNN
-	1    5850 6950
-	-1   0    0    -1  
-$EndComp
-$Comp
-L artemisa:CP C2
-U 1 1 5AEC8D46
-P 6300 7250
-F 0 "C2" H 6310 7320 50  0000 L CNN
-F 1 "22pF" H 6310 7170 50  0000 L CNN
-F 2 "artemisa:Disc_capacitor" H 6300 7250 50  0001 C CNN
-F 3 "" H 6300 7250 50  0001 C CNN
-	1    6300 7250
-	-1   0    0    -1  
-$EndComp
-$Comp
-L artemisa:CP C1
-U 1 1 5AEC8D4D
-P 5400 7250
-F 0 "C1" H 5410 7320 50  0000 L CNN
-F 1 "22pF" H 5410 7170 50  0000 L CNN
-F 2 "artemisa:Disc_capacitor" H 5400 7250 50  0001 C CNN
-F 3 "" H 5400 7250 50  0001 C CNN
-	1    5400 7250
-	-1   0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR014
-U 1 1 5AEC8D54
-P 5850 7500
-F 0 "#PWR014" H 5850 7250 50  0001 C CNN
-F 1 "GND" H 5850 7350 50  0000 C CNN
-F 2 "" H 5850 7500 50  0001 C CNN
-F 3 "" H 5850 7500 50  0001 C CNN
-	1    5850 7500
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	6300 7450 6300 7350
-Wire Wire Line
-	5400 7450 5850 7450
-Wire Wire Line
-	5850 7450 5850 7500
-Wire Wire Line
-	5400 7450 5400 7350
-Connection ~ 5850 7450
-Wire Wire Line
-	5750 6950 5400 6950
-Wire Wire Line
-	5400 6850 5400 6950
-Wire Wire Line
-	6300 6950 5950 6950
-Wire Wire Line
-	6300 6100 6300 6450
-$Comp
-L artemisa:4069 U38
-U 4 1 5AEC8D67
-P 5850 6450
-F 0 "U38" H 5850 6600 50  0000 C CNN
-F 1 "4069" H 5850 6300 50  0000 C CNN
-F 2 "artemisa:DIP-14_300" H 5850 6450 50  0001 C CNN
-F 3 "" H 5850 6450 50  0001 C CNN
-	4    5850 6450
-	-1   0    0    -1  
-$EndComp
-$Comp
-L artemisa:4069 U38
-U 5 1 5AEC8D6E
-P 4800 5900
-F 0 "U38" H 4800 6050 50  0000 C CNN
-F 1 "4069" H 4800 5750 50  0000 C CNN
-F 2 "artemisa:DIP-14_300" H 4800 5900 50  0001 C CNN
-F 3 "" H 4800 5900 50  0001 C CNN
-	5    4800 5900
-	0    1    -1   0   
-$EndComp
-$Comp
-L artemisa:R R4
-U 1 1 5AEC8D75
-P 5400 6700
-AR Path="/5AEC8D75" Ref="R4"  Part="1" 
-AR Path="/5ADBC286/5AEC8D75" Ref="R4"  Part="1" 
-F 0 "R4" V 5450 6800 50  0000 C CNN
-F 1 "1K" H 5400 6700 39  0000 C CNN
-F 2 "artemisa:Axial_resistor" V 5330 6700 50  0001 C CNN
-F 3 "" H 5400 6700 50  0001 C CNN
-	1    5400 6700
-	0    1    -1   0   
-$EndComp
-Connection ~ 5400 6950
-Wire Wire Line
-	5400 6100 5400 6450
-Wire Wire Line
-	4800 6450 5400 6450
-Connection ~ 5400 6450
-Wire Wire Line
-	6150 6450 6300 6450
-Connection ~ 6300 6950
-$Comp
-L artemisa:R R3
-U 1 1 5AEC8D84
-P 5850 6100
-AR Path="/5AEC8D84" Ref="R3"  Part="1" 
-AR Path="/5ADBC286/5AEC8D84" Ref="R3"  Part="1" 
-F 0 "R3" H 5850 6200 50  0000 C CNN
-F 1 "1M" H 5850 6100 39  0000 C CNN
-F 2 "artemisa:Axial_resistor" V 5780 6100 50  0001 C CNN
-F 3 "" H 5850 6100 50  0001 C CNN
-	1    5850 6100
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	5400 6100 5700 6100
-Wire Wire Line
-	6000 6100 6300 6100
-Connection ~ 6300 6450
-Wire Wire Line
-	4800 4800 4800 4550
-Connection ~ 4800 4550
-Wire Wire Line
-	4800 6450 4800 6200
 Wire Wire Line
 	2950 2500 2950 2550
 Wire Wire Line
@@ -1144,20 +1014,6 @@ Wire Wire Line
 Wire Wire Line
 	4100 3850 4100 4250
 Wire Wire Line
-	5850 7450 6300 7450
-Wire Wire Line
-	5400 6950 5400 7150
-Wire Wire Line
-	5400 6450 5400 6550
-Wire Wire Line
-	5400 6450 5550 6450
-Wire Wire Line
-	6300 6950 6300 7150
-Wire Wire Line
-	6300 6450 6300 6950
-Wire Wire Line
-	4800 4550 5250 4550
-Wire Wire Line
 	3400 3200 5250 3200
 Wire Wire Line
 	1800 4150 4200 4150
@@ -1165,19 +1021,8 @@ Wire Wire Line
 	4200 4150 4200 3750
 Wire Wire Line
 	1800 4050 5250 4050
-$Comp
-L artemisa:4069 U38
-U 6 1 5C07DAE5
-P 4800 5100
-F 0 "U38" H 4800 5250 50  0000 C CNN
-F 1 "4069" H 4800 4950 50  0000 C CNN
-F 2 "artemisa:DIP-14_300" H 4800 5100 50  0001 C CNN
-F 3 "" H 4800 5100 50  0001 C CNN
-	6    4800 5100
-	0    1    -1   0   
-$EndComp
 Wire Wire Line
-	4800 5400 4800 5600
+	1800 4550 5250 4550
 Wire Bus Line
 	4550 800  4550 1750
 Wire Bus Line
