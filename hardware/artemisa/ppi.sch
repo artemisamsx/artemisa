@@ -152,26 +152,11 @@ Wire Wire Line
 Wire Wire Line
 	4650 5850 4450 5850
 Text HLabel 2650 6900 0    60   Input ~ 0
-~RESET
-$Comp
-L artemisa:74HC04 U2
-U 2 1 5AE230A6
-P 4000 6900
-F 0 "U2" H 4000 7050 50  0000 C CNN
-F 1 "74HC04" H 4000 6750 50  0000 C CNN
-F 2 "artemisa:DIP-14_300" H 4000 6900 50  0001 C CNN
-F 3 "" H 4000 6900 50  0001 C CNN
-	2    4000 6900
-	1    0    0    -1  
-$EndComp
+RESET
 Wire Wire Line
 	4950 6350 4900 6350
 Wire Wire Line
 	4900 6350 4900 6900
-Wire Wire Line
-	4900 6900 4300 6900
-Wire Wire Line
-	2650 6900 3100 6900
 $Comp
 L artemisa:74HC153 U20
 U 1 1 5AE23FCD
@@ -348,11 +333,6 @@ Wire Wire Line
 	8000 2450 8000 1000
 Wire Wire Line
 	8000 1000 7050 1000
-Wire Wire Line
-	3100 3650 5550 3650
-Wire Wire Line
-	3100 3650 3100 6900
-Connection ~ 3100 6900
 Text Label 3350 3650 0    60   ~ 0
 ~RESET
 Wire Wire Line
@@ -563,8 +543,6 @@ Connection ~ 5000 3100
 Wire Wire Line
 	3450 6100 3450 6250
 Wire Wire Line
-	3100 6900 3700 6900
-Wire Wire Line
 	3000 6100 3450 6100
 Wire Wire Line
 	7300 3400 7400 3400
@@ -593,6 +571,19 @@ Wire Wire Line
 	7300 1350 2650 1350
 Wire Wire Line
 	7400 1750 7400 1450
+Connection ~ 7400 1450
+Wire Wire Line
+	7400 1450 2650 1450
+Text HLabel 2650 5300 0    60   Input ~ 0
+A0
+Text HLabel 2650 5400 0    60   Input ~ 0
+A1
+Text HLabel 2650 3650 0    60   Input ~ 0
+~RESET
+Wire Wire Line
+	2650 3650 5550 3650
+Wire Wire Line
+	2650 6900 4900 6900
 Wire Bus Line
 	7250 5550 7250 6050
 Wire Bus Line
@@ -601,11 +592,4 @@ Wire Bus Line
 	4500 3900 4500 4800
 Wire Bus Line
 	6500 2250 6500 4600
-Connection ~ 7400 1450
-Wire Wire Line
-	7400 1450 2650 1450
-Text HLabel 2650 5300 0    60   Input ~ 0
-A0
-Text HLabel 2650 5400 0    60   Input ~ 0
-A1
 $EndSCHEMATC
