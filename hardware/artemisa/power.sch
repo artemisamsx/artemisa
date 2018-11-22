@@ -1111,25 +1111,25 @@ Text HLabel 7800 3900 2    60   Output ~ 0
 ~RESET
 Wire Wire Line
 	6800 3900 7800 3900
-$Comp
-L artemisa:74HC04 U?
-U 2 1 5C002366
-P 7250 3300
-AR Path="/5AE20302/5C002366" Ref="U?"  Part="2" 
-AR Path="/5AE11EC9/5C002366" Ref="U2"  Part="2" 
-F 0 "U2" H 7250 3450 50  0000 C CNN
-F 1 "74HC04" H 7250 3150 50  0000 C CNN
-F 2 "artemisa:DIP-14_300" H 7250 3300 50  0001 C CNN
-F 3 "" H 7250 3300 50  0001 C CNN
-	2    7250 3300
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	6800 3300 6800 3900
-Wire Wire Line
-	6800 3300 6950 3300
 Text HLabel 7800 3300 2    60   Output ~ 0
 RESET
 Wire Wire Line
 	7550 3300 7800 3300
+Wire Wire Line
+	6800 3300 6950 3300
+Wire Wire Line
+	6800 3300 6800 3900
+$Comp
+L artemisa:4069 U?
+U 3 1 5C0B5614
+P 7250 3300
+AR Path="/5ADBC286/5C0B5614" Ref="U?"  Part="2" 
+AR Path="/5AE11EC9/5C0B5614" Ref="U38"  Part="3" 
+F 0 "U38" H 7250 3450 50  0000 C CNN
+F 1 "4069" H 7250 3150 50  0000 C CNN
+F 2 "artemisa:DIP-14_300" H 7250 3300 50  0001 C CNN
+F 3 "" H 7250 3300 50  0001 C CNN
+	3    7250 3300
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
