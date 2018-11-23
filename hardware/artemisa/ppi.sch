@@ -295,62 +295,12 @@ Wire Wire Line
 Wire Wire Line
 	7400 3400 7400 3350
 Connection ~ 7300 3400
-$Comp
-L artemisa:74HC139 U21
-U 2 1 5AE3598A
-P 8650 1500
-F 0 "U21" H 8650 1800 60  0000 C CNN
-F 1 "74HC139" H 8650 1200 60  0000 C CNN
-F 2 "artemisa:DIP-16_300" H 8650 1350 60  0001 C CNN
-F 3 "" H 8650 1350 60  0001 C CNN
-	2    8650 1500
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	7850 2150 8250 2150
 Wire Wire Line
 	7850 2250 8250 2250
 Text Label 4350 1650 0    60   ~ 0
 ~RD
-NoConn ~ 9050 1350
-NoConn ~ 9050 1650
-Text HLabel 10300 1800 2    60   Output ~ 0
-~CS2
-Wire Wire Line
-	9050 1550 9250 1550
-Wire Wire Line
-	9250 1550 9250 1600
-Wire Wire Line
-	9250 1800 10300 1800
-$Comp
-L artemisa:74HC08 U16
-U 2 2 5AE37299
-P 9800 1500
-F 0 "U16" H 9800 1700 50  0000 C CNN
-F 1 "74HC08" H 9800 1300 50  0000 C CNN
-F 2 "artemisa:DIP-14_300" H 9800 1500 50  0001 C CNN
-F 3 "" H 9800 1500 50  0001 C CNN
-	2    9800 1500
-	1    0    0    -1  
-$EndComp
-Text HLabel 10300 1500 2    60   Output ~ 0
-~CS12
-Text HLabel 10300 1200 2    60   Output ~ 0
-~CS1
-Wire Wire Line
-	9250 1450 9050 1450
-Wire Wire Line
-	9250 1200 9250 1400
-Wire Wire Line
-	9250 1400 9350 1400
-Wire Wire Line
-	9250 1600 9350 1600
-Connection ~ 9250 1600
-Wire Wire Line
-	10300 1200 9250 1200
-Connection ~ 9250 1400
-Wire Wire Line
-	10200 1500 10300 1500
 Entry Wire Line
 	6650 4650 6550 4750
 Entry Wire Line
@@ -486,27 +436,17 @@ Connection ~ 5000 3100
 Wire Wire Line
 	7300 3400 7400 3400
 Wire Wire Line
-	9250 1600 9250 1800
-Wire Wire Line
-	9250 1400 9250 1450
-Wire Wire Line
 	5000 3100 5000 2900
 Wire Wire Line
 	2650 5400 4950 5400
 Wire Wire Line
 	2650 5300 4950 5300
 Wire Wire Line
-	8250 1350 7300 1350
-Wire Wire Line
-	8250 1450 7400 1450
-Wire Wire Line
 	7300 1750 7300 1350
-Connection ~ 7300 1350
 Wire Wire Line
 	7300 1350 2650 1350
 Wire Wire Line
 	7400 1750 7400 1450
-Connection ~ 7400 1450
 Wire Wire Line
 	7400 1450 2650 1450
 Text HLabel 2650 5300 0    60   Input ~ 0
@@ -519,10 +459,6 @@ Wire Wire Line
 	2650 3650 5550 3650
 Wire Wire Line
 	2650 6900 4900 6900
-Text HLabel 2650 1650 0    60   Input ~ 0
-~RD
-Wire Wire Line
-	2650 1650 8250 1650
 Text HLabel 2650 2350 0    60   Input ~ 0
 ~IOSL5
 Wire Wire Line

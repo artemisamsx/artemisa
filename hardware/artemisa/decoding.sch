@@ -123,4 +123,74 @@ Text HLabel 6100 3650 2    60   Output ~ 0
 ~PPIWR
 Wire Wire Line
 	4300 3650 6100 3650
+$Comp
+L artemisa:74HC139 U?
+U 2 1 5C0E2FC2
+P 3850 4350
+AR Path="/5AE20302/5C0E2FC2" Ref="U?"  Part="2" 
+AR Path="/5C0244DD/5C0E2FC2" Ref="U21"  Part="2" 
+F 0 "U21" H 3850 4650 60  0000 C CNN
+F 1 "74HC139" H 3850 4050 60  0000 C CNN
+F 2 "artemisa:DIP-16_300" H 3850 4200 60  0001 C CNN
+F 3 "" H 3850 4200 60  0001 C CNN
+	2    3850 4350
+	1    0    0    -1  
+$EndComp
+NoConn ~ 4250 4200
+NoConn ~ 4250 4500
+Text HLabel 6100 4650 2    60   Output ~ 0
+~CS2
+Wire Wire Line
+	4250 4400 4400 4400
+Wire Wire Line
+	4400 4400 4400 4450
+Wire Wire Line
+	4400 4650 6100 4650
+$Comp
+L artemisa:74HC08 U?
+U 2 2 5C0E2FCF
+P 4950 4350
+AR Path="/5AE20302/5C0E2FCF" Ref="U?"  Part="2" 
+AR Path="/5C0244DD/5C0E2FCF" Ref="U16"  Part="2" 
+F 0 "U16" H 4950 4550 50  0000 C CNN
+F 1 "74HC08" H 4950 4150 50  0000 C CNN
+F 2 "artemisa:DIP-14_300" H 4950 4350 50  0001 C CNN
+F 3 "" H 4950 4350 50  0001 C CNN
+	2    4950 4350
+	1    0    0    -1  
+$EndComp
+Text HLabel 6100 4350 2    60   Output ~ 0
+~CS12
+Text HLabel 6100 4050 2    60   Output ~ 0
+~CS1
+Wire Wire Line
+	4400 4300 4250 4300
+Wire Wire Line
+	4400 4050 4400 4250
+Wire Wire Line
+	4400 4250 4500 4250
+Wire Wire Line
+	4400 4450 4500 4450
+Connection ~ 4400 4450
+Wire Wire Line
+	6100 4050 4400 4050
+Connection ~ 4400 4250
+Wire Wire Line
+	5350 4350 6100 4350
+Wire Wire Line
+	4400 4450 4400 4650
+Wire Wire Line
+	4400 4250 4400 4300
+Text HLabel 2600 4200 0    60   Input ~ 0
+A14
+Text HLabel 2600 4300 0    60   Input ~ 0
+A15
+Text HLabel 2600 4500 0    60   Input ~ 0
+~RD
+Wire Wire Line
+	2600 4200 3450 4200
+Wire Wire Line
+	2600 4300 3450 4300
+Wire Wire Line
+	2600 4500 3450 4500
 $EndSCHEMATC
