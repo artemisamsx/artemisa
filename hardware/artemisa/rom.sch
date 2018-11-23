@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 8 13
+Sheet 7 13
 Title ""
 Date ""
 Rev ""
@@ -137,15 +137,13 @@ $EndComp
 Wire Wire Line
 	5000 3650 4800 3650
 Wire Wire Line
-	4800 3650 4800 4050
+	4800 3650 4800 3750
 Wire Wire Line
 	5000 3750 4800 3750
 Connection ~ 4800 3750
 Wire Wire Line
 	5000 3850 4800 3850
 Connection ~ 4800 3850
-Wire Bus Line
-	4450 2100 4450 3700
 Entry Bus Bus
 	4350 2000 4450 2100
 Wire Bus Line
@@ -198,8 +196,6 @@ Wire Wire Line
 	6450 2750 6000 2750
 Text Label 6450 2750 2    60   ~ 0
 DATA7
-Wire Bus Line
-	6550 1800 6550 2900
 Entry Bus Bus
 	6450 1700 6550 1800
 Wire Bus Line
@@ -237,4 +233,12 @@ Wire Wire Line
 	6200 2950 6000 2950
 Wire Wire Line
 	6100 3050 6000 3050
+Wire Wire Line
+	4800 3750 4800 3850
+Wire Wire Line
+	4800 3850 4800 4050
+Wire Bus Line
+	6550 1800 6550 2900
+Wire Bus Line
+	4450 2100 4450 3700
 $EndSCHEMATC
