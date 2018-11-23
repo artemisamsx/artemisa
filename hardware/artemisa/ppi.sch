@@ -246,44 +246,10 @@ Wire Wire Line
 	9050 2350 10300 2350
 Wire Wire Line
 	10300 2450 9050 2450
-$Comp
-L artemisa:74HC04 U2
-U 3 1 5AE33555
-P 5650 1100
-F 0 "U2" H 5650 1250 50  0000 C CNN
-F 1 "74HC04" H 5650 950 50  0000 C CNN
-F 2 "artemisa:DIP-14_300" H 5650 1100 50  0001 C CNN
-F 3 "" H 5650 1100 50  0001 C CNN
-	3    5650 1100
-	1    0    0    -1  
-$EndComp
-Text HLabel 2650 1100 0    60   Input ~ 0
-~RFSH
-Wire Wire Line
-	2650 1100 5350 1100
-$Comp
-L artemisa:74HC32 U17
-U 4 2 5AE33CD3
-P 6600 1000
-F 0 "U17" H 6600 1200 50  0000 C CNN
-F 1 "74HC32" H 6600 800 50  0000 C CNN
-F 2 "artemisa:DIP-14_300" H 6600 1000 50  0001 C CNN
-F 3 "" H 6600 1000 50  0001 C CNN
-	4    6600 1000
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	5950 1100 6200 1100
-Text HLabel 2650 900  0    60   Input ~ 0
-~MREQ
-Wire Wire Line
-	2650 900  6200 900 
+Text HLabel 2650 1250 0    60   Input ~ 0
+~SLTSLEN
 Wire Wire Line
 	8250 2450 8000 2450
-Wire Wire Line
-	8000 2450 8000 1000
-Wire Wire Line
-	8000 1000 7050 1000
 Text Label 3350 3650 0    60   ~ 0
 ~RESET
 Text Label 3350 2350 0    60   ~ 0
@@ -299,8 +265,6 @@ Wire Wire Line
 	7850 2150 8250 2150
 Wire Wire Line
 	7850 2250 8250 2250
-Text Label 4350 1650 0    60   ~ 0
-~RD
 Entry Wire Line
 	6650 4650 6550 4750
 Entry Wire Line
@@ -467,6 +431,10 @@ Wire Wire Line
 	2650 6050 4950 6050
 Wire Wire Line
 	2650 6150 4950 6150
+Wire Wire Line
+	2650 1250 8000 1250
+Wire Wire Line
+	8000 1250 8000 2450
 Wire Bus Line
 	7250 5550 7250 6050
 Wire Bus Line
