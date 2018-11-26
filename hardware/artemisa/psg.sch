@@ -63,69 +63,10 @@ Entry Bus Bus
 	5950 2350 6050 2450
 Text HLabel 1500 4800 0    60   Input ~ 0
 ~RESET
-$Comp
-L artemisa:74HC32 U1
-U 3 2 5AED26B6
-P 2400 4300
-F 0 "U1" H 2200 4500 50  0000 C CNN
-F 1 "74HC32" H 2550 4500 50  0000 C CNN
-F 2 "artemisa:DIP-14_300" H 2400 4300 50  0001 C CNN
-F 3 "" H 2400 4300 50  0001 C CNN
-	3    2400 4300
-	1    0    0    -1  
-$EndComp
-Text HLabel 1500 4200 0    60   Input ~ 0
-~IOSL4
-Text HLabel 1500 4400 0    60   Input ~ 0
-A1
-$Comp
-L artemisa:74HC32 U1
-U 4 2 5AED2724
-P 3550 4500
-F 0 "U1" H 3550 4700 50  0000 C CNN
-F 1 "74HC32" H 3550 4300 50  0000 C CNN
-F 2 "artemisa:DIP-14_300" H 3550 4500 50  0001 C CNN
-F 3 "" H 3550 4500 50  0001 C CNN
-	4    3550 4500
-	1    0    0    -1  
-$EndComp
-Text HLabel 1500 4600 0    60   Input ~ 0
-~WR
-$Comp
-L artemisa:74HC32 U24
-U 4 2 5AED2880
-P 3150 3700
-F 0 "U24" H 3150 3900 50  0000 C CNN
-F 1 "74HC32" H 3150 3500 50  0000 C CNN
-F 2 "artemisa:DIP-14_300" H 3150 3700 50  0001 C CNN
-F 3 "" H 3150 3700 50  0001 C CNN
-	4    3150 3700
-	1    0    0    -1  
-$EndComp
-Text HLabel 1500 3600 0    60   Input ~ 0
-A0
-$Comp
-L artemisa:74HC32 U24
-U 2 2 5AED2B82
-P 2350 2650
-F 0 "U24" H 2350 2850 50  0000 C CNN
-F 1 "74HC32" H 2350 2450 50  0000 C CNN
-F 2 "artemisa:DIP-14_300" H 2350 2650 50  0001 C CNN
-F 3 "" H 2350 2650 50  0001 C CNN
-	2    2350 2650
-	1    0    0    -1  
-$EndComp
-$Comp
-L artemisa:74HC32 U24
-U 3 2 5AED2BDD
-P 3400 2950
-F 0 "U24" H 3400 3150 50  0000 C CNN
-F 1 "74HC32" H 3400 2750 50  0000 C CNN
-F 2 "artemisa:DIP-14_300" H 3400 2950 50  0001 C CNN
-F 3 "" H 3400 2950 50  0001 C CNN
-	3    3400 2950
-	1    0    0    -1  
-$EndComp
+Text HLabel 1500 3750 0    60   Input ~ 0
+PSGBC1
+Text HLabel 1500 3950 0    60   Input ~ 0
+PSGBDIR
 Wire Wire Line
 	6150 2850 6500 2850
 Wire Wire Line
@@ -147,72 +88,9 @@ Wire Bus Line
 Wire Wire Line
 	6150 4250 6500 4250
 Wire Wire Line
-	1500 4200 1900 4200
-Wire Wire Line
-	1500 4400 1650 4400
-Wire Wire Line
-	2850 4300 3000 4300
-Wire Wire Line
-	3000 4300 3000 4400
-Wire Wire Line
-	3000 4400 3150 4400
-Wire Wire Line
-	1500 4600 3150 4600
-Wire Wire Line
-	4000 4500 4150 4500
-Connection ~ 4150 4500
-Wire Wire Line
-	4150 4000 4150 4500
-Wire Wire Line
-	2650 4000 4150 4000
-Text HLabel 1500 2550 0    60   Input ~ 0
-~RD
-Connection ~ 1650 4400
-Wire Wire Line
-	1500 2550 1950 2550
-Wire Wire Line
-	1650 2750 1950 2750
-Wire Wire Line
-	2800 2650 2900 2650
-Wire Wire Line
-	1900 4200 1900 3050
-Wire Wire Line
-	1900 3050 3000 3050
-Connection ~ 1900 4200
-Wire Wire Line
-	2900 2650 2900 2850
-Wire Wire Line
-	2900 2850 3000 2850
-Wire Wire Line
-	2750 3600 1500 3600
-Wire Wire Line
-	2650 4000 2650 3800
-Wire Wire Line
-	2650 3800 2750 3800
-Wire Wire Line
-	3950 2950 3950 3500
-Wire Wire Line
-	3950 3500 4050 3500
-Wire Wire Line
-	3600 3700 4050 3700
-Wire Wire Line
-	1650 3450 1650 4400
-Wire Wire Line
-	1650 2850 1650 2750
-Wire Wire Line
-	3950 2950 3850 2950
-Wire Wire Line
 	1500 4800 6150 4800
 Wire Wire Line
 	6150 4800 6150 4250
-Wire Wire Line
-	4900 4500 6050 4500
-Wire Wire Line
-	6050 4500 6050 3950
-Wire Wire Line
-	6050 3950 6500 3950
-Wire Wire Line
-	5750 3750 6500 3750
 $Comp
 L power:VCC #PWR048
 U 1 1 5AED4BC8
@@ -1160,44 +1038,10 @@ Wire Wire Line
 Wire Wire Line
 	10100 7600 10100 7200
 Connection ~ 10100 7600
-$Comp
-L artemisa:74HC08 U16
-U 3 2 5B0EA0A9
-P 4500 3600
-F 0 "U16" H 4500 3800 50  0000 C CNN
-F 1 "74HC08" H 4500 3400 50  0000 C CNN
-F 2 "artemisa:DIP-14_300" H 4500 3600 50  0001 C CNN
-F 3 "" H 4500 3600 50  0001 C CNN
-	3    4500 3600
-	1    0    0    -1  
-$EndComp
-$Comp
-L artemisa:74HC04 U2
-U 5 2 5B0EAEB3
-P 5450 3750
-F 0 "U2" H 5300 3900 50  0000 C CNN
-F 1 "74HC04" H 5650 3900 50  0000 C CNN
-F 2 "artemisa:DIP-14_300" H 5450 3750 50  0001 C CNN
-F 3 "" H 5450 3750 50  0001 C CNN
-	5    5450 3750
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	5150 3750 5050 3750
-Wire Wire Line
-	5050 3750 5050 3600
-Wire Wire Line
-	5050 3600 4900 3600
 Text HLabel 1500 8750 0    60   Input ~ 0
 CASIN
 Wire Wire Line
 	1500 8750 8750 8750
-Wire Wire Line
-	4150 4500 4300 4500
-Wire Wire Line
-	1650 4400 2000 4400
-Wire Wire Line
-	1900 4200 2000 4200
 Wire Wire Line
 	5900 3850 5900 4400
 Wire Wire Line
@@ -1440,32 +1284,14 @@ Connection ~ 10100 8300
 Wire Wire Line
 	10100 8300 10100 8500
 NoConn ~ 11150 8200
-$Comp
-L artemisa:74HC04 U2
-U 6 1 5C0AB59F
-P 1650 3150
-F 0 "U2" H 1500 3300 50  0000 C CNN
-F 1 "74HC04" H 1850 3300 50  0000 C CNN
-F 2 "artemisa:DIP-14_300" H 1650 3150 50  0001 C CNN
-F 3 "" H 1650 3150 50  0001 C CNN
-	6    1650 3150
-	0    -1   -1   0   
-$EndComp
-$Comp
-L artemisa:74HC04 U2
-U 2 2 5C0ABB66
-P 4600 4500
-F 0 "U2" H 4450 4650 50  0000 C CNN
-F 1 "74HC04" H 4800 4650 50  0000 C CNN
-F 2 "artemisa:DIP-14_300" H 4600 4500 50  0001 C CNN
-F 3 "" H 4600 4500 50  0001 C CNN
-	2    4600 4500
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	6250 4900 1500 4900
 Wire Wire Line
 	6250 4150 6250 4900
+Wire Wire Line
+	1500 3750 6500 3750
+Wire Wire Line
+	1500 3950 6500 3950
 Wire Bus Line
 	13550 5950 13550 6850
 Wire Bus Line
