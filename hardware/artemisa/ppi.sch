@@ -250,12 +250,6 @@ Text HLabel 2550 950  0    60   Input ~ 0
 ~SLTSLEN
 Wire Wire Line
 	8150 1950 7900 1950
-Text Label 3250 3150 0    60   ~ 0
-~RESET
-Text Label 3350 1850 0    60   ~ 0
-~PPISL
-Wire Wire Line
-	6100 2900 7200 2900
 Wire Wire Line
 	7200 2900 7200 2850
 Wire Wire Line
@@ -359,46 +353,8 @@ Wire Wire Line
 	9350 5650 6050 5650
 Wire Wire Line
 	6050 5850 9350 5850
-$Comp
-L artemisa:74HC74 U40
-U 2 1 5B0E8C43
-P 5450 2500
-F 0 "U40" H 5600 2900 60  0000 C CNN
-F 1 "74HC74" H 5650 2100 60  0000 C CNN
-F 2 "artemisa:DIP-14_300" H 5450 2300 60  0001 C CNN
-F 3 "" H 5450 2300 60  0001 C CNN
-	2    5450 2500
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	5850 2600 6100 2600
-Wire Wire Line
-	6100 2600 6100 2900
-NoConn ~ 5850 2400
-Wire Wire Line
-	5450 1850 5450 2000
-$Comp
-L power:GND #PWR021
-U 1 1 5B0E9535
-P 4900 2800
-F 0 "#PWR021" H 4900 2550 50  0001 C CNN
-F 1 "GND" H 4900 2650 50  0000 C CNN
-F 2 "" H 4900 2800 50  0001 C CNN
-F 3 "" H 4900 2800 50  0001 C CNN
-	1    4900 2800
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4900 2800 4900 2600
-Wire Wire Line
-	4900 2400 5050 2400
-Wire Wire Line
-	5050 2600 4900 2600
-Connection ~ 4900 2600
 Wire Wire Line
 	7200 2900 7300 2900
-Wire Wire Line
-	4900 2600 4900 2400
 Wire Wire Line
 	2550 4900 4850 4900
 Wire Wire Line
@@ -415,16 +371,10 @@ Text HLabel 2550 4800 0    60   Input ~ 0
 A0
 Text HLabel 2550 4900 0    60   Input ~ 0
 A1
-Text HLabel 2550 3150 0    60   Input ~ 0
-~RESET
-Wire Wire Line
-	2550 3150 5450 3150
 Wire Wire Line
 	2550 6400 4800 6400
-Text HLabel 2550 1850 0    60   Input ~ 0
-~PPISL
-Wire Wire Line
-	2550 1850 5450 1850
+Text HLabel 2550 2900 0    60   Input ~ 0
+~PPIRDY
 Wire Wire Line
 	2550 5550 4850 5550
 Wire Wire Line
@@ -433,6 +383,8 @@ Wire Wire Line
 	2550 950  7900 950 
 Wire Wire Line
 	7900 950  7900 1950
+Wire Wire Line
+	2550 2900 7200 2900
 Wire Bus Line
 	7150 5050 7150 5550
 Wire Bus Line
@@ -441,6 +393,4 @@ Wire Bus Line
 	4400 3400 4400 4300
 Wire Bus Line
 	6400 1750 6400 4100
-Wire Wire Line
-	5450 3000 5450 3150
 $EndSCHEMATC
