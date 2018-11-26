@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 5 13
+Sheet 5 12
 Title ""
 Date ""
 Rev ""
@@ -252,8 +252,8 @@ Wire Wire Line
 	8150 1950 7900 1950
 Text Label 3250 3150 0    60   ~ 0
 ~RESET
-Text Label 3250 1850 0    60   ~ 0
-~IOSL5
+Text Label 3350 1850 0    60   ~ 0
+~PPISL
 Wire Wire Line
 	6100 2900 7200 2900
 Wire Wire Line
@@ -422,7 +422,7 @@ Wire Wire Line
 Wire Wire Line
 	2550 6400 4800 6400
 Text HLabel 2550 1850 0    60   Input ~ 0
-~IOSL5
+~PPISL
 Wire Wire Line
 	2550 1850 5450 1850
 Wire Wire Line
