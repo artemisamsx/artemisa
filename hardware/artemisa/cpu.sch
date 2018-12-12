@@ -615,7 +615,7 @@ F 3 "" H 3850 5100 60  0001 C CNN
 	2    3850 5300
 	1    0    0    -1  
 $EndComp
-Text HLabel 1100 2800 0    60   Input ~ 0
+Text HLabel 1100 2700 0    60   Input ~ 0
 CLK
 Wire Wire Line
 	1800 5200 2250 5200
@@ -672,7 +672,7 @@ Wire Wire Line
 	3250 5900 2650 5900
 Wire Wire Line
 	2650 5900 2650 5800
-Text HLabel 1100 2600 0    60   Input ~ 0
+Text HLabel 1100 2500 0    60   Input ~ 0
 ~EXTWAIT
 Connection ~ 2650 5900
 Wire Wire Line
@@ -696,12 +696,12 @@ Wire Wire Line
 	4100 4250 5250 4250
 Connection ~ 4100 3850
 NoConn ~ 5250 4350
-Text HLabel 1100 2700 0    60   Input ~ 0
+Text HLabel 1100 2600 0    60   Input ~ 0
 ~RESET
 NoConn ~ 5250 3400
-Text HLabel 1100 2400 0    60   Input ~ 0
+Text HLabel 1100 2300 0    60   Input ~ 0
 ~VDPINT
-Text HLabel 1100 2500 0    60   Input ~ 0
+Text HLabel 1100 2400 0    60   Input ~ 0
 ~EXTINT
 Wire Wire Line
 	5250 3750 4200 3750
@@ -753,38 +753,6 @@ Wire Wire Line
 	6800 4800 6450 4800
 Wire Wire Line
 	6800 4900 6450 4900
-$Comp
-L artemisa:74HC08 U16
-U 1 2 5ADE819D
-P 6500 1100
-F 0 "U16" H 6500 1300 50  0000 C CNN
-F 1 "74HC08" H 6500 900 50  0000 C CNN
-F 2 "artemisa:DIP-14_300" H 6500 1100 50  0001 C CNN
-F 3 "" H 6500 1100 50  0001 C CNN
-	1    6500 1100
-	1    0    0    -1  
-$EndComp
-$Comp
-L artemisa:74HC32 U17
-U 1 2 5ADE80AE
-P 5400 1700
-F 0 "U17" H 5400 1900 50  0000 C CNN
-F 1 "74HC32" H 5400 1500 50  0000 C CNN
-F 2 "artemisa:DIP-14_300" H 5400 1700 50  0001 C CNN
-F 3 "" H 5400 1700 50  0001 C CNN
-	1    5400 1700
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	5950 1700 5950 1200
-Wire Wire Line
-	5950 1200 6050 1200
-Wire Wire Line
-	4650 1000 6050 1000
-Wire Wire Line
-	6900 1100 7150 1100
-Wire Wire Line
-	7150 1100 7150 4600
 Wire Wire Line
 	7150 4600 8300 4600
 Entry Bus Bus
@@ -861,22 +829,6 @@ Text Label 1800 1950 0    60   ~ 0
 ~MREQ
 Text Label 1800 2050 0    60   ~ 0
 ~IORQ
-Text Label 4650 1800 0    60   ~ 0
-~M1
-Text Label 4650 1600 0    60   ~ 0
-~IORQ
-Text Label 4650 1000 0    60   ~ 0
-~RD
-Wire Wire Line
-	4650 1600 5000 1600
-Wire Wire Line
-	5000 1800 4650 1800
-Entry Wire Line
-	4550 1700 4650 1800
-Entry Wire Line
-	4550 1500 4650 1600
-Entry Wire Line
-	4550 900  4650 1000
 Text Label 1800 3000 0    60   ~ 0
 ~RD
 Text Label 1800 3100 0    60   ~ 0
@@ -903,12 +855,6 @@ Entry Wire Line
 	1700 5100 1800 5200
 Entry Wire Line
 	1700 5800 1800 5900
-Entry Bus Bus
-	1700 800  1800 700 
-Entry Bus Bus
-	4450 700  4550 800 
-Wire Bus Line
-	1800 700  4450 700 
 Text Label 1800 5400 0    60   ~ 0
 CLK
 Entry Wire Line
@@ -916,34 +862,34 @@ Entry Wire Line
 Wire Wire Line
 	2200 5400 2200 6000
 Entry Wire Line
-	1700 2700 1600 2800
-Entry Wire Line
 	1700 2600 1600 2700
+Entry Wire Line
+	1700 2500 1600 2600
+Entry Wire Line
+	1700 2200 1600 2300
 Entry Wire Line
 	1700 2300 1600 2400
 Entry Wire Line
 	1700 2400 1600 2500
-Entry Wire Line
-	1700 2500 1600 2600
 Wire Wire Line
-	1600 2800 1100 2800
-Wire Wire Line
-	1100 2700 1600 2700
-Wire Wire Line
-	1100 2400 1600 2400
-Wire Wire Line
-	1600 2500 1100 2500
+	1600 2700 1100 2700
 Wire Wire Line
 	1100 2600 1600 2600
-Text Label 1600 2800 2    60   ~ 0
-CLK
+Wire Wire Line
+	1100 2300 1600 2300
+Wire Wire Line
+	1600 2400 1100 2400
+Wire Wire Line
+	1100 2500 1600 2500
 Text Label 1600 2700 2    60   ~ 0
-~RESET
-Text Label 1600 2400 2    60   ~ 0
-~VDPINT
-Text Label 1600 2500 2    60   ~ 0
-~EXTINT
+CLK
 Text Label 1600 2600 2    60   ~ 0
+~RESET
+Text Label 1600 2300 2    60   ~ 0
+~VDPINT
+Text Label 1600 2400 2    60   ~ 0
+~EXTINT
+Text Label 1600 2500 2    60   ~ 0
 ~EXTWAIT
 Entry Wire Line
 	1700 2950 1600 3050
@@ -981,8 +927,6 @@ Wire Wire Line
 	1100 3550 1600 3550
 Text Label 1600 3550 2    60   ~ 0
 ~RFSH
-Wire Wire Line
-	5950 1700 5850 1700
 Wire Wire Line
 	3400 2050 3700 2050
 Wire Wire Line
@@ -1023,8 +967,24 @@ Wire Wire Line
 	1800 4050 5250 4050
 Wire Wire Line
 	1800 4550 5250 4550
-Wire Bus Line
-	4550 800  4550 1750
+Text Label 1800 6250 0    60   ~ 0
+DATADIR
+Entry Wire Line
+	1700 6150 1800 6250
+Wire Wire Line
+	7150 6250 7150 4600
+Wire Wire Line
+	1800 6250 7150 6250
+Text HLabel 1100 2800 0    60   Input ~ 0
+DATADIR
+Entry Wire Line
+	1700 2700 1600 2800
+Wire Wire Line
+	1600 2800 1100 2800
+Text Label 1600 2800 2    60   ~ 0
+DATADIR
+Text Label 7450 4600 0    60   ~ 0
+DATADIR
 Wire Bus Line
 	7400 900  7400 1400
 Wire Bus Line
@@ -1040,7 +1000,7 @@ Wire Bus Line
 Wire Bus Line
 	7400 1600 7400 3950
 Wire Bus Line
-	1700 800  1700 6300
-Wire Bus Line
 	6900 1600 6900 3950
+Wire Bus Line
+	1700 1700 1700 6200
 $EndSCHEMATC
