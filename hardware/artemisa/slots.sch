@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 9 12
+Sheet 8 12
 Title ""
 Date ""
 Rev ""
@@ -749,9 +749,9 @@ Wire Wire Line
 Wire Wire Line
 	10450 6850 10450 7000
 Text HLabel 2900 3950 0    60   Input ~ 0
-~IOSL3
+~VDPSL
 Text Label 4300 3950 2    60   ~ 0
-~VDPIOSL
+~VDPSL
 Wire Wire Line
 	2900 3950 4300 3950
 Entry Wire Line
@@ -1000,7 +1000,7 @@ Wire Wire Line
 Wire Wire Line
 	11100 3600 13750 3600
 Text Label 11150 5100 0    60   ~ 0
-~VDPIOSL
+~VDPSL
 Wire Wire Line
 	11100 5100 13750 5100
 Entry Wire Line

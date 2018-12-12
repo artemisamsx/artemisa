@@ -14,12 +14,8 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Entry Wire Line
-	2800 4600 2900 4700
-Text Label 2900 4700 0    60   ~ 0
-ADDR15
 Wire Wire Line
-	9050 3150 9050 5600
+	9050 3150 9050 5050
 Text Notes 2200 4550 0    60   ~ 0
 Address bus
 Text Notes 2300 1700 0    60   ~ 0
@@ -117,31 +113,13 @@ DATA6
 Text Label 6300 3000 2    60   ~ 0
 DATA7
 Wire Wire Line
-	2900 4700 2900 5100
-Wire Wire Line
-	3800 5700 4300 5700
-Wire Wire Line
-	2900 5700 3200 5700
-Wire Wire Line
-	2150 4900 3250 4900
-Wire Wire Line
-	2900 5100 4300 5100
-Connection ~ 2900 5100
-Wire Wire Line
-	3250 5500 4300 5500
-Connection ~ 3250 4900
-Wire Wire Line
-	5950 5000 5150 5000
-Wire Wire Line
-	5950 3150 5950 5000
+	5950 3150 5950 4900
 Wire Wire Line
 	5750 3350 5750 4250
 Wire Wire Line
 	5850 3250 5850 4350
 Wire Wire Line
 	2150 4350 5850 4350
-Wire Wire Line
-	9050 5600 5150 5600
 Text HLabel 2150 4600 0    60   Input ~ 0
 ADDR[0..15]
 Wire Wire Line
@@ -343,44 +321,9 @@ Text HLabel 2150 4350 0    60   Input ~ 0
 Connection ~ 5750 4250
 Connection ~ 5850 4350
 Text HLabel 2150 4900 0    60   Input ~ 0
-~SLTSL1
-Wire Wire Line
-	3250 4900 3250 5500
+~RAMSL0
 Entry Bus Bus
 	9500 1850 9400 1750
-$Comp
-L artemisa:74HC32 U1
-U 1 2 5AD910AC
-P 4700 5000
-F 0 "U1" H 4700 5200 50  0000 C CNN
-F 1 "74HC32" H 4700 4800 50  0000 C CNN
-F 2 "artemisa:DIP-14_300" H 4700 5000 50  0001 C CNN
-F 3 "" H 4700 5000 50  0001 C CNN
-	1    4700 5000
-	1    0    0    -1  
-$EndComp
-$Comp
-L artemisa:74HC32 U1
-U 2 2 5AD910F1
-P 4700 5600
-F 0 "U1" H 4700 5800 50  0000 C CNN
-F 1 "74HC32" H 4700 5400 50  0000 C CNN
-F 2 "artemisa:DIP-14_300" H 4700 5600 50  0001 C CNN
-F 3 "" H 4700 5600 50  0001 C CNN
-	2    4700 5600
-	1    0    0    -1  
-$EndComp
-$Comp
-L artemisa:74HC04 U2
-U 1 1 5ADB187D
-P 3500 5700
-F 0 "U2" H 3500 5850 50  0000 C CNN
-F 1 "74HC04" H 3500 5550 50  0000 C CNN
-F 2 "artemisa:DIP-14_300" H 3500 5700 50  0001 C CNN
-F 3 "" H 3500 5700 50  0001 C CNN
-	1    3500 5700
-	1    0    0    -1  
-$EndComp
 $Comp
 L artemisa:HM62256ALP-10 U3
 U 1 1 5ADB2034
@@ -424,27 +367,11 @@ Text Label 6400 4250 0    60   ~ 0
 Text Label 6400 4350 0    60   ~ 0
 ~RD
 Wire Wire Line
-	2900 5100 2900 5700
-Wire Wire Line
-	3250 4900 4300 4900
-Wire Wire Line
 	5850 4350 8950 4350
 Wire Wire Line
 	2150 4250 5750 4250
 Wire Wire Line
 	5750 4250 8850 4250
-Wire Bus Line
-	2250 1750 9400 1750
-Wire Bus Line
-	2150 4600 6850 4600
-Wire Bus Line
-	6400 1850 6400 3200
-Wire Bus Line
-	9500 1850 9500 3200
-Wire Bus Line
-	3850 2200 3850 4500
-Wire Bus Line
-	6950 2200 6950 4500
 $Comp
 L artemisa:GND #PWR0111
 U 1 1 5BE3951A
@@ -489,4 +416,26 @@ F 3 "" H 8150 2050 60  0001 C CNN
 	1    8150 2050
 	1    0    0    -1  
 $EndComp
+Text HLabel 2150 5050 0    60   Input ~ 0
+~RAMSL1
+Wire Wire Line
+	2150 4900 5950 4900
+Wire Wire Line
+	2150 5050 9050 5050
+Wire Bus Line
+	2250 1750 9400 1750
+Wire Bus Line
+	2150 4600 6850 4600
+Wire Bus Line
+	6400 1850 6400 3200
+Wire Bus Line
+	9500 1850 9500 3200
+Wire Bus Line
+	3850 2200 3850 4500
+Wire Bus Line
+	6950 2200 6950 4500
+Text Label 9000 5050 2    60   ~ 0
+~RAMSL1
+Text Label 5900 4900 2    60   ~ 0
+~RAMSL0
 $EndSCHEMATC
