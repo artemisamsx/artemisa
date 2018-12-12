@@ -50,8 +50,6 @@ Entry Bus Bus
 	3950 4800 4050 4700
 Entry Bus Bus
 	4050 2950 4150 2850
-Wire Bus Line
-	4050 2950 4050 3650
 Entry Bus Bus
 	4300 5050 4400 4950
 Entry Bus Bus
@@ -246,8 +244,6 @@ Wire Bus Line
 	3650 6850 2950 6850
 Wire Bus Line
 	3550 7000 2950 7000
-Entry Bus Bus
-	4050 2750 4150 2850
 $Sheet
 S 5300 1500 1150 900 
 U 5AE56078
@@ -263,11 +259,7 @@ Entry Bus Bus
 Text Label 5250 1900 2    60   ~ 0
 ADDR[0..15]
 Entry Bus Bus
-	4400 2950 4500 3050
-Entry Bus Bus
 	4400 1750 4500 1650
-Wire Bus Line
-	4400 1750 4400 2950
 Text Label 5250 1650 2    60   ~ 0
 DATA[0..7]
 Entry Wire Line
@@ -568,8 +560,6 @@ Text Label 7050 5550 2    60   ~ 0
 ~VDPSL
 Wire Wire Line
 	7050 5550 6450 5550
-Entry Bus Bus
-	4050 3650 4150 3750
 Entry Wire Line
 	7150 5250 7050 5350
 Text Label 7050 5350 2    60   ~ 0
@@ -812,8 +802,6 @@ Text Label 1200 2300 0    60   ~ 0
 ~RESET
 Wire Wire Line
 	1200 2300 1650 2300
-Wire Bus Line
-	4050 3850 4050 4700
 Entry Bus Bus
 	3950 2200 4050 2300
 Wire Bus Line
@@ -841,9 +829,9 @@ Wire Bus Line
 Wire Bus Line
 	4400 5150 4400 6150
 Wire Bus Line
-	4400 3150 4400 4950
+	4400 1750 4400 4950
 Wire Bus Line
-	4050 2000 4050 2750
+	4050 2000 4050 4700
 Wire Bus Line
 	4050 4900 4050 6550
 Wire Bus Line
