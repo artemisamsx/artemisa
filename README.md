@@ -6,5 +6,6 @@ This is still work in progress, but you may find some specs and designs in this 
 
 ## Specifications
 
+* [Data Cassette Interface](doc/casio.md).
 * [Video Display Processor](doc/vdp.md).
 
