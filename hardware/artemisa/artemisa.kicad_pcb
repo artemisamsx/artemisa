@@ -6,7 +6,7 @@
     (tracks 5965)
     (zones 0)
     (modules 148)
-    (nets 274)
+    (nets 275)
   )
 
   (page A3)
@@ -364,6 +364,7 @@
   (net 271 /DECODING/~PPISL)
   (net 272 /~PPIRDY)
   (net 273 "Net-(C12-Pad2)")
+  (net 274 "Net-(R30-Pad2)")
 
   (net_class Default "Esta es la clase de red por defecto."
     (clearance 0.2)
@@ -573,6 +574,7 @@
     (add_net "Net-(R23-Pad1)")
     (add_net "Net-(R3-Pad2)")
     (add_net "Net-(R30-Pad1)")
+    (add_net "Net-(R30-Pad2)")
     (add_net "Net-(U1-Pad10)")
     (add_net "Net-(U1-Pad5)")
     (add_net "Net-(U1-Pad8)")
@@ -7841,9 +7843,9 @@
     (fp_line (start 1.93 1.25) (end 8.23 1.25) (layer F.Fab) (width 0.1))
     (fp_line (start 1.93 -1.25) (end 1.93 1.25) (layer F.Fab) (width 0.1))
     (pad 2 thru_hole oval (at 10.16 0 270) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask)
-      (net 239 "Net-(C13-Pad1)"))
+      (net 274 "Net-(R30-Pad2)"))
     (pad 1 thru_hole circle (at 0 0 270) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask)
-      (net 221 "Net-(R30-Pad1)"))
+      (net 239 "Net-(C13-Pad1)"))
     (model ${KIPRJMOD}/../libs/artemisa.3dshapes/Axial_resistor.wrl
       (offset (xyz 5.079999923706055 0 0))
       (scale (xyz 0.393701 0.393701 0.393701))
@@ -7917,7 +7919,7 @@
     (fp_line (start 1.93 1.25) (end 8.23 1.25) (layer F.Fab) (width 0.1))
     (fp_line (start 1.93 -1.25) (end 1.93 1.25) (layer F.Fab) (width 0.1))
     (pad 2 thru_hole oval (at 10.16 0 90) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask)
-      (net 221 "Net-(R30-Pad1)"))
+      (net 274 "Net-(R30-Pad2)"))
     (pad 1 thru_hole circle (at 0 0 90) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask)
       (net 238 "Net-(C12-Pad1)"))
     (model ${KIPRJMOD}/../libs/artemisa.3dshapes/Axial_resistor.wrl
@@ -7957,7 +7959,7 @@
     (pad 2 thru_hole oval (at 10.16 0 270) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask)
       (net 12 VCC))
     (pad 1 thru_hole circle (at 0 0 270) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask)
-      (net 221 "Net-(R30-Pad1)"))
+      (net 274 "Net-(R30-Pad2)"))
     (model ${KIPRJMOD}/../libs/artemisa.3dshapes/Axial_resistor.wrl
       (offset (xyz 5.079999923706055 0 0))
       (scale (xyz 0.393701 0.393701 0.393701))
@@ -8001,7 +8003,7 @@
     (pad 7 thru_hole oval (at 7.62 2.54) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask)
       (net 219 /CASIN))
     (pad 3 thru_hole oval (at 0 5.08) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask)
-      (net 221 "Net-(R30-Pad1)"))
+      (net 274 "Net-(R30-Pad2)"))
     (pad 6 thru_hole oval (at 7.62 5.08) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask)
       (net 240 "Net-(U22-Pad6)"))
     (pad 2 thru_hole oval (at 0 2.54) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask)
@@ -15052,7 +15054,7 @@
   (segment (start 141.605 88.265) (end 142.875 88.265) (width 0.25) (layer F.Cu) (net 273))
   (segment (start 142.875 88.265) (end 160.655 88.265) (width 0.25) (layer F.Cu) (net 273))
 
-  (zone (net 1) (net_name GND) (layer F.Cu) (tstamp 5BFC650E) (hatch edge 0.508)
+  (zone (net 1) (net_name GND) (layer F.Cu) (tstamp 5C8FDC06) (hatch edge 0.508)
     (connect_pads (clearance 0.508))
     (min_thickness 0.254)
     (fill yes (arc_segments 16) (thermal_gap 0.508) (thermal_bridge_width 0.508))
@@ -18301,7 +18303,7 @@
       )
     )
   )
-  (zone (net 1) (net_name GND) (layer B.Cu) (tstamp 5BFC650B) (hatch edge 0.508)
+  (zone (net 1) (net_name GND) (layer B.Cu) (tstamp 5C8FDC03) (hatch edge 0.508)
     (connect_pads (clearance 0.508))
     (min_thickness 0.254)
     (fill yes (arc_segments 16) (thermal_gap 0.508) (thermal_bridge_width 0.508))
