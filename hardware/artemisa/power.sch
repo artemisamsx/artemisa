@@ -125,17 +125,6 @@ F 3 "" H 9800 4150 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemisa:Cap DC13
-U 1 1 5B117441
-P 5550 1350
-F 0 "DC13" V 5600 1400 50  0000 L CNN
-F 1 "100nF" V 5600 1050 50  0000 L CNN
-F 2 "artemisa:Disc_capacitor" H 5550 1350 50  0001 C CNN
-F 3 "" H 5550 1350 50  0001 C CNN
-	1    5550 1350
-	1    0    0    -1  
-$EndComp
-$Comp
 L artemisa:Cap DC14
 U 1 1 5B117471
 P 10800 4150
@@ -1532,17 +1521,7 @@ F 3 "" H 10500 3750 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5100 1000 5550 1000
+	5100 1000 5850 1000
 Wire Wire Line
-	5100 1700 5550 1700
-Wire Wire Line
-	5550 1250 5550 1000
-Connection ~ 5550 1000
-Wire Wire Line
-	5550 1000 5850 1000
-Wire Wire Line
-	5550 1450 5550 1700
-Connection ~ 5550 1700
-Wire Wire Line
-	5550 1700 5850 1700
+	5100 1700 5850 1700
 $EndSCHEMATC
