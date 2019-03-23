@@ -1,10 +1,10 @@
 EESchema Schematic File Version 4
 LIBS:artemisa-cache
-EELAYER 26 0
+EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 12 12
+Sheet 11 12
 Title ""
 Date ""
 Rev ""
@@ -89,6 +89,7 @@ U 4 1 5BF8886E
 P 3350 2950
 AR Path="/5ADBC286/5BF8886E" Ref="U?"  Part="4" 
 AR Path="/5BF74A85/5BF8886E" Ref="U38"  Part="4" 
+AR Path="/5BF8886E" Ref="U38"  Part="4" 
 F 0 "U38" H 3350 3100 50  0000 C CNN
 F 1 "4069" H 3350 2800 50  0000 C CNN
 F 2 "artemisa:DIP-14_300" H 3350 2950 50  0001 C CNN
@@ -102,6 +103,7 @@ U 5 1 5BF88875
 P 4400 2950
 AR Path="/5ADBC286/5BF88875" Ref="U?"  Part="5" 
 AR Path="/5BF74A85/5BF88875" Ref="U38"  Part="5" 
+AR Path="/5BF88875" Ref="U38"  Part="5" 
 F 0 "U38" H 4400 3100 50  0000 C CNN
 F 1 "4069" H 4400 2800 50  0000 C CNN
 F 2 "artemisa:DIP-14_300" H 4400 2950 50  0001 C CNN
@@ -167,6 +169,7 @@ U 6 1 5BF8889A
 P 5200 2950
 AR Path="/5ADBC286/5BF8889A" Ref="U?"  Part="6" 
 AR Path="/5BF74A85/5BF8889A" Ref="U38"  Part="6" 
+AR Path="/5BF8889A" Ref="U38"  Part="6" 
 F 0 "U38" H 5200 3100 50  0000 C CNN
 F 1 "4069" H 5200 2800 50  0000 C CNN
 F 2 "artemisa:DIP-14_300" H 5200 2950 50  0001 C CNN

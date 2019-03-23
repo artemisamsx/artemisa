@@ -1,6 +1,6 @@
 EESchema Schematic File Version 4
 LIBS:artemisa-cache
-EELAYER 26 0
+EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -422,6 +422,10 @@ Wire Wire Line
 	2150 4900 5950 4900
 Wire Wire Line
 	2150 5050 9050 5050
+Text Label 9000 5050 2    60   ~ 0
+~RAMSL1
+Text Label 5900 4900 2    60   ~ 0
+~RAMSL0
 Wire Bus Line
 	2250 1750 9400 1750
 Wire Bus Line
@@ -434,8 +438,4 @@ Wire Bus Line
 	3850 2200 3850 4500
 Wire Bus Line
 	6950 2200 6950 4500
-Text Label 9000 5050 2    60   ~ 0
-~RAMSL1
-Text Label 5900 4900 2    60   ~ 0
-~RAMSL0
 $EndSCHEMATC
