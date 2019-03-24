@@ -180,17 +180,6 @@ F 3 "" H 6300 1350 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemisa:Cap DC19
-U 1 1 5B117587
-P 6450 1350
-F 0 "DC19" V 6500 1400 50  0000 L CNN
-F 1 "100nF" V 6500 1050 50  0000 L CNN
-F 2 "artemisa:Disc_capacitor" H 6450 1350 50  0001 C CNN
-F 3 "" H 6450 1350 50  0001 C CNN
-	1    6450 1350
-	1    0    0    -1  
-$EndComp
-$Comp
 L artemisa:Cap DC21
 U 1 1 5B1176C3
 P 7800 4150
@@ -475,14 +464,6 @@ Wire Wire Line
 Wire Wire Line
 	6300 1700 6300 1450
 Wire Wire Line
-	6450 1000 6450 1250
-Wire Wire Line
-	6450 1700 6450 1450
-Wire Wire Line
-	6600 1000 6600 1250
-Wire Wire Line
-	6600 1700 6600 1450
-Wire Wire Line
 	7350 1000 7350 1250
 Wire Wire Line
 	7350 1700 7350 1450
@@ -558,8 +539,6 @@ Connection ~ 4800 1000
 Connection ~ 4950 1000
 Connection ~ 5100 1000
 Connection ~ 6300 1000
-Connection ~ 6450 1000
-Connection ~ 6600 1000
 Connection ~ 7350 1000
 Connection ~ 7500 1000
 Connection ~ 7650 1000
@@ -576,8 +555,6 @@ Connection ~ 9750 1000
 Connection ~ 9900 1000
 Connection ~ 10050 1000
 Connection ~ 6300 1700
-Connection ~ 6450 1700
-Connection ~ 6600 1700
 Connection ~ 7350 1700
 Connection ~ 7500 1700
 Connection ~ 7650 1700
@@ -604,10 +581,6 @@ Wire Wire Line
 	4800 1000 4950 1000
 Wire Wire Line
 	4950 1000 5100 1000
-Wire Wire Line
-	6300 1000 6450 1000
-Wire Wire Line
-	6450 1000 6600 1000
 Wire Wire Line
 	7350 1000 7500 1000
 Wire Wire Line
@@ -638,10 +611,6 @@ Wire Wire Line
 	9900 1000 10050 1000
 Wire Wire Line
 	10050 1000 10200 1000
-Wire Wire Line
-	6300 1700 6450 1700
-Wire Wire Line
-	6450 1700 6600 1700
 Wire Wire Line
 	7350 1700 7500 1700
 Wire Wire Line
@@ -1303,10 +1272,6 @@ F 3 "" H 7500 4000 60  0001 C CNN
 	3    7500 4150
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	6600 1000 6900 1000
-Wire Wire Line
-	6600 1700 6900 1700
 $Comp
 L artemisa:VCC #PWR0150
 U 1 1 5CA24CB6
@@ -1625,4 +1590,8 @@ F 3 "" H 3500 5150 60  0001 C CNN
 	3    3500 5350
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	6300 1000 6900 1000
+Wire Wire Line
+	6300 1700 6900 1700
 $EndSCHEMATC
