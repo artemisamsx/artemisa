@@ -70,28 +70,6 @@ F 3 "" H 1800 4150 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemisa:Cap DC3
-U 1 1 5B117360
-P 4800 1350
-F 0 "DC3" V 4850 1400 50  0000 L CNN
-F 1 "100nF" V 4850 1050 50  0000 L CNN
-F 2 "artemisa:Disc_capacitor" H 4800 1350 50  0001 C CNN
-F 3 "" H 4800 1350 50  0001 C CNN
-	1    4800 1350
-	1    0    0    -1  
-$EndComp
-$Comp
-L artemisa:Cap DC4
-U 1 1 5B117387
-P 4950 1350
-F 0 "DC4" V 5000 1400 50  0000 L CNN
-F 1 "100nF" V 5000 1050 50  0000 L CNN
-F 2 "artemisa:Disc_capacitor" H 4950 1350 50  0001 C CNN
-F 3 "" H 4950 1350 50  0001 C CNN
-	1    4950 1350
-	1    0    0    -1  
-$EndComp
-$Comp
 L artemisa:Cap DC5
 U 1 1 5B1173B3
 P 4800 5350
@@ -261,14 +239,6 @@ Connection ~ 4000 2550
 Connection ~ 4000 1000
 Connection ~ 4000 1700
 Wire Wire Line
-	4800 1000 4800 1250
-Wire Wire Line
-	4800 1700 4800 1450
-Wire Wire Line
-	4950 1000 4950 1250
-Wire Wire Line
-	4950 1700 4950 1450
-Wire Wire Line
 	6300 1000 6300 1250
 Wire Wire Line
 	6300 1700 6300 1450
@@ -276,20 +246,12 @@ Wire Wire Line
 	6900 1000 6900 1250
 Wire Wire Line
 	6900 1700 6900 1450
-Connection ~ 4800 1000
-Connection ~ 4950 1000
 Connection ~ 6300 1000
 Connection ~ 6300 1700
-Connection ~ 4800 1700
-Connection ~ 4950 1700
 Wire Wire Line
 	4000 2550 4000 2700
 Wire Wire Line
 	4000 1700 4000 2550
-Wire Wire Line
-	4800 1000 4950 1000
-Wire Wire Line
-	4800 1700 4950 1700
 $Comp
 L artemisa:VCC #PWR0115
 U 1 1 5BE412CC
@@ -797,10 +759,6 @@ Wire Wire Line
 Connection ~ 5500 4500
 Wire Wire Line
 	5500 4500 5500 4550
-Wire Wire Line
-	4000 1000 4800 1000
-Wire Wire Line
-	4000 1700 4800 1700
 $Comp
 L artemisa:74HC08 U16
 U 5 1 5C991D82
@@ -1263,9 +1221,9 @@ F 3 "" H 4500 5350 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4950 1000 6300 1000
-Wire Wire Line
-	4950 1700 6300 1700
-Wire Wire Line
 	4800 5450 4800 5700
+Wire Wire Line
+	4000 1000 6300 1000
+Wire Wire Line
+	4000 1700 6300 1700
 $EndSCHEMATC
