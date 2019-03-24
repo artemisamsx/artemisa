@@ -79,21 +79,10 @@ Wire Wire Line
 	3550 4400 3900 4400
 Entry Bus Bus
 	3350 3600 3450 3700
-Text HLabel 3000 1350 0    60   Input ~ 0
+Text HLabel 3000 1700 0    60   Input ~ 0
 A14
-Text HLabel 3000 1450 0    60   Input ~ 0
+Text HLabel 3000 1800 0    60   Input ~ 0
 A15
-$Comp
-L power:GND #PWR020
-U 1 1 5AE225E1
-P 3700 6200
-F 0 "#PWR020" H 3700 5950 50  0001 C CNN
-F 1 "GND" H 3700 6050 50  0000 C CNN
-F 2 "" H 3700 6200 50  0001 C CNN
-F 3 "" H 3700 6200 50  0001 C CNN
-	1    3700 6200
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	3900 6050 3700 6050
 Wire Wire Line
@@ -112,8 +101,8 @@ $Comp
 L artemisa:74HC153 U20
 U 1 1 5AE23FCD
 P 6300 2350
-F 0 "U20" H 6550 3000 60  0000 C CNN
-F 1 "74HC153" H 6600 1700 60  0000 C CNN
+F 0 "U20" H 6000 3150 60  0000 C CNN
+F 1 "74HC153" H 6600 1600 60  0000 C CNN
 F 2 "artemisa:DIP-16_300" H 6300 2200 60  0001 C CNN
 F 3 "" H 6300 2200 60  0001 C CNN
 	1    6300 2350
@@ -215,50 +204,45 @@ Text Label 5350 4400 2    60   ~ 0
 PA7
 Wire Wire Line
 	5350 4400 5100 4400
-Text Label 3300 1350 0    60   ~ 0
+Text Label 5550 1700 0    60   ~ 0
 A14
-Text Label 3300 1450 0    60   ~ 0
+Text Label 5550 1800 0    60   ~ 0
 A15
 $Comp
 L artemisa:74HC139 U21
 U 1 1 5AE32F51
-P 7600 2100
-F 0 "U21" H 7600 2400 60  0000 C CNN
-F 1 "74HC139" H 7600 1800 60  0000 C CNN
-F 2 "artemisa:DIP-16_300" H 7600 1950 60  0001 C CNN
-F 3 "" H 7600 1950 60  0001 C CNN
-	1    7600 2100
+P 8250 2100
+F 0 "U21" H 8250 2400 60  0000 C CNN
+F 1 "74HC139" H 8250 1800 60  0000 C CNN
+F 2 "artemisa:DIP-16_300" H 8250 1950 60  0001 C CNN
+F 3 "" H 8250 1950 60  0001 C CNN
+	1    8250 2100
 	1    0    0    -1  
 $EndComp
-Text HLabel 8400 1950 2    60   Output ~ 0
+Text HLabel 9050 1950 2    60   Output ~ 0
 ~SLTSL0
-Text HLabel 8400 2050 2    60   Output ~ 0
+Text HLabel 9050 2050 2    60   Output ~ 0
 ~SLTSL1
-Text HLabel 8400 2150 2    60   Output ~ 0
+Text HLabel 9050 2150 2    60   Output ~ 0
 ~SLTSL2
-Text HLabel 8400 2250 2    60   Output ~ 0
+Text HLabel 9050 2250 2    60   Output ~ 0
 ~SLTSL3
 Wire Wire Line
-	8000 1950 8400 1950
+	8650 1950 9050 1950
 Wire Wire Line
-	8400 2050 8000 2050
+	9050 2050 8650 2050
 Wire Wire Line
-	8000 2150 8400 2150
+	8650 2150 9050 2150
 Wire Wire Line
-	8400 2250 8000 2250
-Text HLabel 3000 1250 0    60   Input ~ 0
+	9050 2250 8650 2250
+Text HLabel 3000 1100 0    60   Input ~ 0
 ~SLTSLEN
 Wire Wire Line
-	7200 2250 6950 2250
+	7850 2250 7600 2250
 Wire Wire Line
-	6250 3200 6250 3150
+	6800 1950 7850 1950
 Wire Wire Line
-	6350 3200 6350 3150
-Connection ~ 6250 3200
-Wire Wire Line
-	6800 1950 7200 1950
-Wire Wire Line
-	6800 2050 7200 2050
+	6800 2050 7850 2050
 Entry Wire Line
 	5600 4450 5500 4550
 Entry Wire Line
@@ -354,37 +338,95 @@ Wire Wire Line
 Wire Wire Line
 	5100 6150 8400 6150
 Wire Wire Line
-	6250 3200 6350 3200
-Wire Wire Line
 	3000 5200 3900 5200
 Wire Wire Line
 	3000 5100 3900 5100
-Wire Wire Line
-	6250 1550 6250 1350
-Wire Wire Line
-	6250 1350 3000 1350
-Wire Wire Line
-	6350 1550 6350 1450
-Wire Wire Line
-	6350 1450 3000 1450
 Text HLabel 3000 5100 0    60   Input ~ 0
 A0
 Text HLabel 3000 5200 0    60   Input ~ 0
 A1
 Wire Wire Line
 	3000 6700 3850 6700
-Text HLabel 3000 3200 0    60   Input ~ 0
+Text HLabel 3000 2850 0    60   Input ~ 0
 ~PPIRDY
 Wire Wire Line
 	3000 5850 3900 5850
 Wire Wire Line
 	3000 5950 3900 5950
 Wire Wire Line
-	3000 1250 6950 1250
+	3000 1100 7600 1100
 Wire Wire Line
-	6950 1250 6950 2250
+	7600 1100 7600 2250
 Wire Wire Line
-	3000 3200 6250 3200
+	5800 1700 3000 1700
+Wire Wire Line
+	5800 1800 3000 1800
+Wire Wire Line
+	3000 2850 5650 2850
+Wire Wire Line
+	5800 2950 5650 2950
+Wire Wire Line
+	5650 2950 5650 2850
+Connection ~ 5650 2850
+Wire Wire Line
+	5650 2850 5800 2850
+$Comp
+L artemisa:GND #PWR?
+U 1 1 5CD37544
+P 6300 3150
+F 0 "#PWR?" H 6300 3050 60  0001 C CNN
+F 1 "GND" H 6300 3250 60  0001 C CNN
+F 2 "" H 6300 3150 60  0001 C CNN
+F 3 "" H 6300 3150 60  0001 C CNN
+	1    6300 3150
+	1    0    0    -1  
+$EndComp
+$Comp
+L artemisa:VCC #PWR?
+U 1 1 5CD379D5
+P 6300 1350
+F 0 "#PWR?" H 6300 1300 60  0001 C CNN
+F 1 "VCC" H 6300 1600 60  0001 C CNN
+F 2 "" H 6300 1350 60  0001 C CNN
+F 3 "" H 6300 1350 60  0001 C CNN
+	1    6300 1350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6300 1350 6300 1400
+$Comp
+L artemisa:Cap DC?
+U 1 1 5CD4DD25
+P 6650 1400
+AR Path="/5AE11EC9/5CD4DD25" Ref="DC?"  Part="1" 
+AR Path="/5AE20302/5CD4DD25" Ref="DC20"  Part="1" 
+F 0 "DC20" V 6700 1500 50  0000 L CNN
+F 1 "100nF" V 6700 1100 50  0000 L CNN
+F 2 "artemisa:Disc_capacitor" H 6650 1400 50  0001 C CNN
+F 3 "" H 6650 1400 50  0001 C CNN
+	1    6650 1400
+	0    -1   -1   0   
+$EndComp
+Connection ~ 6300 1400
+Wire Wire Line
+	6300 1400 6300 1500
+$Comp
+L artemisa:GND #PWR?
+U 1 1 5CD57E3D
+P 6900 1500
+F 0 "#PWR?" H 6900 1400 60  0001 C CNN
+F 1 "GND" H 6900 1600 60  0001 C CNN
+F 2 "" H 6900 1500 60  0001 C CNN
+F 3 "" H 6900 1500 60  0001 C CNN
+	1    6900 1500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6300 1400 6550 1400
+Wire Wire Line
+	6900 1400 6900 1500
+Wire Wire Line
+	6750 1400 6900 1400
 Wire Bus Line
 	6200 5350 6200 5850
 Wire Bus Line
@@ -393,4 +435,15 @@ Wire Bus Line
 	3450 3700 3450 4600
 Wire Bus Line
 	5450 2050 5450 4400
+$Comp
+L artemisa:GND #PWR?
+U 1 1 5CD7004D
+P 3700 6200
+F 0 "#PWR?" H 3700 6100 60  0001 C CNN
+F 1 "GND" H 3700 6300 60  0001 C CNN
+F 2 "" H 3700 6200 60  0001 C CNN
+F 3 "" H 3700 6200 60  0001 C CNN
+	1    3700 6200
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
