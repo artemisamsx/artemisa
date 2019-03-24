@@ -213,17 +213,6 @@ F 3 "" H 7800 4150 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemisa:Cap DC23
-U 1 1 5B1176CC
-P 7050 1350
-F 0 "DC23" V 7100 1400 50  0000 L CNN
-F 1 "100nF" V 7100 1050 50  0000 L CNN
-F 2 "artemisa:Disc_capacitor" H 7050 1350 50  0001 C CNN
-F 3 "" H 7050 1350 50  0001 C CNN
-	1    7050 1350
-	1    0    0    -1  
-$EndComp
-$Comp
 L artemisa:Cap DC24
 U 1 1 5B1176D5
 P 5800 4150
@@ -509,10 +498,6 @@ Wire Wire Line
 Wire Wire Line
 	6600 1700 6600 1450
 Wire Wire Line
-	7050 1000 7050 1250
-Wire Wire Line
-	7050 1700 7050 1450
-Wire Wire Line
 	7350 1000 7350 1250
 Wire Wire Line
 	7350 1700 7350 1450
@@ -561,10 +546,6 @@ Wire Wire Line
 Wire Wire Line
 	9150 1700 9150 1450
 Wire Wire Line
-	9450 1000 9450 1250
-Wire Wire Line
-	9450 1700 9450 1450
-Wire Wire Line
 	9600 1000 9600 1250
 Wire Wire Line
 	9600 1700 9600 1450
@@ -595,7 +576,6 @@ Connection ~ 5850 1000
 Connection ~ 6300 1000
 Connection ~ 6450 1000
 Connection ~ 6600 1000
-Connection ~ 7050 1000
 Connection ~ 7350 1000
 Connection ~ 7500 1000
 Connection ~ 7650 1000
@@ -607,7 +587,6 @@ Connection ~ 8700 1000
 Connection ~ 8850 1000
 Connection ~ 9000 1000
 Connection ~ 9150 1000
-Connection ~ 9450 1000
 Connection ~ 9600 1000
 Connection ~ 9750 1000
 Connection ~ 9900 1000
@@ -616,7 +595,6 @@ Connection ~ 5850 1700
 Connection ~ 6300 1700
 Connection ~ 6450 1700
 Connection ~ 6600 1700
-Connection ~ 7050 1700
 Connection ~ 7350 1700
 Connection ~ 7500 1700
 Connection ~ 7650 1700
@@ -628,7 +606,6 @@ Connection ~ 8700 1700
 Connection ~ 8850 1700
 Connection ~ 9000 1700
 Connection ~ 9150 1700
-Connection ~ 9450 1700
 Connection ~ 9600 1700
 Connection ~ 9750 1700
 Connection ~ 9900 1700
@@ -671,8 +648,6 @@ Wire Wire Line
 Wire Wire Line
 	9000 1000 9150 1000
 Wire Wire Line
-	9450 1000 9600 1000
-Wire Wire Line
 	9600 1000 9750 1000
 Wire Wire Line
 	9750 1000 9900 1000
@@ -706,8 +681,6 @@ Wire Wire Line
 	8850 1700 9000 1700
 Wire Wire Line
 	9000 1700 9150 1700
-Wire Wire Line
-	9450 1700 9600 1700
 Wire Wire Line
 	9600 1700 9750 1700
 Wire Wire Line
@@ -765,11 +738,7 @@ Wire Wire Line
 Connection ~ 7950 1700
 Connection ~ 8100 1700
 Connection ~ 6900 1000
-Wire Wire Line
-	6900 1000 7050 1000
 Connection ~ 6900 1700
-Wire Wire Line
-	6900 1700 7050 1700
 $Comp
 L artemisa:CP C14
 U 1 1 5BDB7C43
@@ -1246,14 +1215,6 @@ Connection ~ 5500 4500
 Wire Wire Line
 	5500 4500 5500 4550
 Wire Wire Line
-	7050 1700 7350 1700
-Wire Wire Line
-	7050 1000 7350 1000
-Wire Wire Line
-	9150 1700 9450 1700
-Wire Wire Line
-	9150 1000 9450 1000
-Wire Wire Line
 	4000 1000 4800 1000
 Wire Wire Line
 	4000 1700 4800 1700
@@ -1525,10 +1486,10 @@ Wire Wire Line
 Wire Wire Line
 	5100 1700 5850 1700
 $Comp
-L artemisa:VCC #PWR?
+L artemisa:VCC #PWR0168
 U 1 1 5CC6BCDD
 P 1500 4950
-F 0 "#PWR?" H 1500 4900 60  0001 C CNN
+F 0 "#PWR0168" H 1500 4900 60  0001 C CNN
 F 1 "VCC" H 1500 5200 60  0001 C CNN
 F 2 "" H 1500 4950 60  0001 C CNN
 F 3 "" H 1500 4950 60  0001 C CNN
@@ -1536,10 +1497,10 @@ F 3 "" H 1500 4950 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemisa:GND #PWR?
+L artemisa:GND #PWR0169
 U 1 1 5CC6BCE3
 P 1500 5750
-F 0 "#PWR?" H 1500 5650 60  0001 C CNN
+F 0 "#PWR0169" H 1500 5650 60  0001 C CNN
 F 1 "GND" H 1500 5850 60  0001 C CNN
 F 2 "" H 1500 5750 60  0001 C CNN
 F 3 "" H 1500 5750 60  0001 C CNN
@@ -1575,4 +1536,12 @@ F 3 "" H 1500 5350 50  0001 C CNN
 	7    1500 5350
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	6900 1000 7350 1000
+Wire Wire Line
+	6900 1700 7350 1700
+Wire Wire Line
+	9150 1700 9600 1700
+Wire Wire Line
+	9150 1000 9600 1000
 $EndSCHEMATC
