@@ -94,12 +94,12 @@ $EndComp
 $Comp
 L artemisa:Cap DC5
 U 1 1 5B1173B3
-P 5100 1350
-F 0 "DC5" V 5150 1400 50  0000 L CNN
-F 1 "100nF" V 5150 1050 50  0000 L CNN
-F 2 "artemisa:Disc_capacitor" H 5100 1350 50  0001 C CNN
-F 3 "" H 5100 1350 50  0001 C CNN
-	1    5100 1350
+P 4800 5350
+F 0 "DC5" V 4850 5400 50  0000 L CNN
+F 1 "100nF" V 4850 5050 50  0000 L CNN
+F 2 "artemisa:Disc_capacitor" H 4800 5350 50  0001 C CNN
+F 3 "" H 4800 5350 50  0001 C CNN
+	1    4800 5350
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -313,10 +313,6 @@ Wire Wire Line
 Wire Wire Line
 	4950 1700 4950 1450
 Wire Wire Line
-	5100 1000 5100 1250
-Wire Wire Line
-	5100 1700 5100 1450
-Wire Wire Line
 	6300 1000 6300 1250
 Wire Wire Line
 	6300 1700 6300 1450
@@ -342,7 +338,6 @@ Wire Wire Line
 	6900 1700 6900 1450
 Connection ~ 4800 1000
 Connection ~ 4950 1000
-Connection ~ 5100 1000
 Connection ~ 6300 1000
 Connection ~ 7350 1000
 Connection ~ 9750 1000
@@ -353,15 +348,12 @@ Connection ~ 9750 1700
 Connection ~ 9900 1700
 Connection ~ 4800 1700
 Connection ~ 4950 1700
-Connection ~ 5100 1700
 Wire Wire Line
 	4000 2550 4000 2700
 Wire Wire Line
 	4000 1700 4000 2550
 Wire Wire Line
 	4800 1000 4950 1000
-Wire Wire Line
-	4950 1000 5100 1000
 Wire Wire Line
 	9750 1000 9900 1000
 Wire Wire Line
@@ -372,8 +364,6 @@ Wire Wire Line
 	9900 1700 10050 1700
 Wire Wire Line
 	4800 1700 4950 1700
-Wire Wire Line
-	4950 1700 5100 1700
 $Comp
 L artemisa:VCC #PWR0115
 U 1 1 5BE412CC
@@ -1248,10 +1238,6 @@ F 3 "" H 2500 5150 60  0001 C CNN
 	3    2500 5350
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	5100 1000 6300 1000
-Wire Wire Line
-	5100 1700 6300 1700
 $Comp
 L artemisa:VCC #PWR0175
 U 1 1 5CD0D94C
@@ -1311,4 +1297,59 @@ Wire Wire Line
 	7350 1000 9750 1000
 Wire Wire Line
 	7350 1700 9750 1700
+$Comp
+L artemisa:VCC #PWR?
+U 1 1 5D9221D9
+P 4500 4950
+F 0 "#PWR?" H 4500 4900 60  0001 C CNN
+F 1 "VCC" H 4500 5200 60  0001 C CNN
+F 2 "" H 4500 4950 60  0001 C CNN
+F 3 "" H 4500 4950 60  0001 C CNN
+	1    4500 4950
+	1    0    0    -1  
+$EndComp
+$Comp
+L artemisa:GND #PWR?
+U 1 1 5D9221DF
+P 4500 5750
+F 0 "#PWR?" H 4500 5650 60  0001 C CNN
+F 1 "GND" H 4500 5850 60  0001 C CNN
+F 2 "" H 4500 5750 60  0001 C CNN
+F 3 "" H 4500 5750 60  0001 C CNN
+	1    4500 5750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4500 4950 4500 5000
+Wire Wire Line
+	4500 5650 4500 5700
+Wire Wire Line
+	4500 5000 4800 5000
+Wire Wire Line
+	4800 5000 4800 5250
+Connection ~ 4500 5000
+Wire Wire Line
+	4500 5000 4500 5050
+Wire Wire Line
+	4800 5700 4500 5700
+Connection ~ 4500 5700
+Wire Wire Line
+	4500 5700 4500 5750
+$Comp
+L artemisa:74HCT11 U5
+U 4 1 5D92C858
+P 4500 5350
+F 0 "U5" V 4300 5550 60  0000 L CNN
+F 1 "74HCT11" V 4300 5000 60  0000 L CNN
+F 2 "" H 4500 5350 60  0001 C CNN
+F 3 "" H 4500 5350 60  0001 C CNN
+	4    4500 5350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4950 1000 6300 1000
+Wire Wire Line
+	4950 1700 6300 1700
+Wire Wire Line
+	4800 5450 4800 5700
 $EndSCHEMATC
