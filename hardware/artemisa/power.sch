@@ -202,17 +202,6 @@ F 3 "" H 5800 4150 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemisa:Cap DC25
-U 1 1 5B1176DE
-P 7350 1350
-F 0 "DC25" V 7400 1400 50  0000 L CNN
-F 1 "100nF" V 7400 1050 50  0000 L CNN
-F 2 "artemisa:Disc_capacitor" H 7350 1350 50  0001 C CNN
-F 3 "" H 7350 1350 50  0001 C CNN
-	1    7350 1350
-	1    0    0    -1  
-$EndComp
-$Comp
 L artemisa:Cap DC38
 U 1 1 5B117AFA
 P 2800 4150
@@ -284,10 +273,6 @@ Wire Wire Line
 Wire Wire Line
 	6300 1700 6300 1450
 Wire Wire Line
-	7350 1000 7350 1250
-Wire Wire Line
-	7350 1700 7350 1450
-Wire Wire Line
 	6900 1000 6900 1250
 Wire Wire Line
 	6900 1700 6900 1450
@@ -337,8 +322,6 @@ Wire Wire Line
 Connection ~ 3650 2550
 Wire Wire Line
 	3650 2550 4000 2550
-Connection ~ 6900 1000
-Connection ~ 6900 1700
 $Comp
 L artemisa:CP C14
 U 1 1 5BDB7C43
@@ -1124,10 +1107,6 @@ F 3 "" H 1500 5350 50  0001 C CNN
 	7    1500 5350
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	6900 1000 7350 1000
-Wire Wire Line
-	6900 1700 7350 1700
 $Comp
 L artemisa:VCC #PWR0173
 U 1 1 5CCEA730
