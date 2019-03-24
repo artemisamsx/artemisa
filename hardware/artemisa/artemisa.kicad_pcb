@@ -6790,7 +6790,7 @@
     (at 146.685 211.455)
     (descr "14-lead dip package, row spacing 7.62 mm (300 mils)")
     (tags "DIL DIP PDIP 2.54mm 7.62mm 300mil")
-    (path /5AED18CC/5AED8FC0)
+    (path /5AE11EC9/5CC7BF8C)
     (fp_text reference U39 (at 3.81 1.27) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
     )
