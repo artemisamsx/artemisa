@@ -1,6 +1,6 @@
 EESchema Schematic File Version 4
 LIBS:artemisa-cache
-EELAYER 26 0
+EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -131,12 +131,12 @@ U 1 1 5B13C12F
 P 7200 4800
 AR Path="/5B13C12F" Ref="R30"  Part="1" 
 AR Path="/5B118A76/5B13C12F" Ref="R30"  Part="1" 
-F 0 "R30" V 7200 4650 50  0000 C CNN
+F 0 "R30" V 7200 4950 50  0000 C CNN
 F 1 "10k" H 7200 4800 39  0000 C CNN
 F 2 "artemisa:Axial_resistor" H 7200 4800 50  0001 C CNN
 F 3 "" H 7200 4800 50  0001 C CNN
 	1    7200 4800
-	0    1    -1   0   
+	0    -1   1    0   
 $EndComp
 $Comp
 L artemisa:CP C13
