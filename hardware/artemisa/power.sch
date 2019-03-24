@@ -138,12 +138,12 @@ $EndComp
 $Comp
 L artemisa:Cap DC15
 U 1 1 5B1174A8
-P 5850 1350
-F 0 "DC15" V 5900 1400 50  0000 L CNN
-F 1 "100nF" V 5900 1050 50  0000 L CNN
-F 2 "artemisa:Disc_capacitor" H 5850 1350 50  0001 C CNN
-F 3 "" H 5850 1350 50  0001 C CNN
-	1    5850 1350
+P 2800 5350
+F 0 "DC15" V 2850 5400 50  0000 L CNN
+F 1 "100nF" V 2850 5050 50  0000 L CNN
+F 2 "artemisa:Disc_capacitor" H 2800 5350 50  0001 C CNN
+F 3 "" H 2800 5350 50  0001 C CNN
+	1    2800 5350
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -391,12 +391,12 @@ $EndComp
 $Comp
 L artemisa:Cap DC40
 U 1 1 5B117B0C
-P 9600 1350
-F 0 "DC40" V 9650 1400 50  0000 L CNN
-F 1 "100nF" V 9650 1050 50  0000 L CNN
-F 2 "artemisa:Disc_capacitor" H 9600 1350 50  0001 C CNN
-F 3 "" H 9600 1350 50  0001 C CNN
-	1    9600 1350
+P 3800 5350
+F 0 "DC40" V 3850 5400 50  0000 L CNN
+F 1 "100nF" V 3850 5050 50  0000 L CNN
+F 2 "artemisa:Disc_capacitor" H 3800 5350 50  0001 C CNN
+F 3 "" H 3800 5350 50  0001 C CNN
+	1    3800 5350
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -481,10 +481,6 @@ Wire Wire Line
 	5100 1000 5100 1250
 Wire Wire Line
 	5100 1700 5100 1450
-Wire Wire Line
-	5850 1000 5850 1250
-Wire Wire Line
-	5850 1700 5850 1450
 Wire Wire Line
 	6300 1000 6300 1250
 Wire Wire Line
@@ -572,7 +568,6 @@ Wire Wire Line
 Connection ~ 4800 1000
 Connection ~ 4950 1000
 Connection ~ 5100 1000
-Connection ~ 5850 1000
 Connection ~ 6300 1000
 Connection ~ 6450 1000
 Connection ~ 6600 1000
@@ -591,7 +586,6 @@ Connection ~ 9600 1000
 Connection ~ 9750 1000
 Connection ~ 9900 1000
 Connection ~ 10050 1000
-Connection ~ 5850 1700
 Connection ~ 6300 1700
 Connection ~ 6450 1700
 Connection ~ 6600 1700
@@ -1269,10 +1263,6 @@ Wire Wire Line
 Connection ~ 6500 4500
 Wire Wire Line
 	6500 4500 6500 4550
-Wire Wire Line
-	5850 1000 6300 1000
-Wire Wire Line
-	5850 1700 6300 1700
 $Comp
 L artemisa:VCC #PWR0148
 U 1 1 5C9D2D26
@@ -1481,10 +1471,6 @@ F 3 "" H 10500 3750 60  0001 C CNN
 	3    10500 4150
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	5100 1000 5850 1000
-Wire Wire Line
-	5100 1700 5850 1700
 $Comp
 L artemisa:VCC #PWR0168
 U 1 1 5CC6BCDD
@@ -1544,4 +1530,110 @@ Wire Wire Line
 	9150 1700 9600 1700
 Wire Wire Line
 	9150 1000 9600 1000
+$Comp
+L artemisa:VCC #PWR?
+U 1 1 5CCEA730
+P 2500 4950
+F 0 "#PWR?" H 2500 4900 60  0001 C CNN
+F 1 "VCC" H 2500 5200 60  0001 C CNN
+F 2 "" H 2500 4950 60  0001 C CNN
+F 3 "" H 2500 4950 60  0001 C CNN
+	1    2500 4950
+	1    0    0    -1  
+$EndComp
+$Comp
+L artemisa:GND #PWR?
+U 1 1 5CCEA736
+P 2500 5750
+F 0 "#PWR?" H 2500 5650 60  0001 C CNN
+F 1 "GND" H 2500 5850 60  0001 C CNN
+F 2 "" H 2500 5750 60  0001 C CNN
+F 3 "" H 2500 5750 60  0001 C CNN
+	1    2500 5750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2500 4950 2500 5000
+Wire Wire Line
+	2500 5650 2500 5700
+Wire Wire Line
+	2500 5000 2800 5000
+Wire Wire Line
+	2800 5000 2800 5250
+Connection ~ 2500 5000
+Wire Wire Line
+	2500 5000 2500 5050
+Wire Wire Line
+	2800 5450 2800 5700
+Wire Wire Line
+	2800 5700 2500 5700
+Connection ~ 2500 5700
+Wire Wire Line
+	2500 5700 2500 5750
+$Comp
+L artemisa:74HC74 U15
+U 3 1 5CCFAF7F
+P 2500 5350
+F 0 "U15" V 2300 5550 60  0000 L CNN
+F 1 "74HC74" V 2300 5000 60  0000 L CNN
+F 2 "" H 2500 5150 60  0001 C CNN
+F 3 "" H 2500 5150 60  0001 C CNN
+	3    2500 5350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5100 1000 6300 1000
+Wire Wire Line
+	5100 1700 6300 1700
+$Comp
+L artemisa:VCC #PWR?
+U 1 1 5CD0D94C
+P 3500 4950
+F 0 "#PWR?" H 3500 4900 60  0001 C CNN
+F 1 "VCC" H 3500 5200 60  0001 C CNN
+F 2 "" H 3500 4950 60  0001 C CNN
+F 3 "" H 3500 4950 60  0001 C CNN
+	1    3500 4950
+	1    0    0    -1  
+$EndComp
+$Comp
+L artemisa:GND #PWR?
+U 1 1 5CD0D952
+P 3500 5750
+F 0 "#PWR?" H 3500 5650 60  0001 C CNN
+F 1 "GND" H 3500 5850 60  0001 C CNN
+F 2 "" H 3500 5750 60  0001 C CNN
+F 3 "" H 3500 5750 60  0001 C CNN
+	1    3500 5750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3500 4950 3500 5000
+Wire Wire Line
+	3500 5650 3500 5700
+Wire Wire Line
+	3500 5000 3800 5000
+Wire Wire Line
+	3800 5000 3800 5250
+Connection ~ 3500 5000
+Wire Wire Line
+	3500 5000 3500 5050
+Wire Wire Line
+	3800 5450 3800 5700
+Wire Wire Line
+	3800 5700 3500 5700
+Connection ~ 3500 5700
+Wire Wire Line
+	3500 5700 3500 5750
+$Comp
+L artemisa:74HC74 U40
+U 3 1 5CD0D962
+P 3500 5350
+F 0 "U40" V 3300 5550 60  0000 L CNN
+F 1 "74HC74" V 3300 5000 60  0000 L CNN
+F 2 "" H 3500 5150 60  0001 C CNN
+F 3 "" H 3500 5150 60  0001 C CNN
+	3    3500 5350
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
