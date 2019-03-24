@@ -235,116 +235,6 @@ F 3 "" H 7650 1350 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemisa:Cap DC28
-U 1 1 5B117809
-P 7800 1350
-F 0 "DC28" V 7850 1400 50  0000 L CNN
-F 1 "100nF" V 7850 1050 50  0000 L CNN
-F 2 "artemisa:Disc_capacitor" H 7800 1350 50  0001 C CNN
-F 3 "" H 7800 1350 50  0001 C CNN
-	1    7800 1350
-	1    0    0    -1  
-$EndComp
-$Comp
-L artemisa:Cap DC29
-U 1 1 5B117812
-P 7950 1350
-F 0 "DC29" V 8000 1400 50  0000 L CNN
-F 1 "100nF" V 8000 1050 50  0000 L CNN
-F 2 "artemisa:Disc_capacitor" H 7950 1350 50  0001 C CNN
-F 3 "" H 7950 1350 50  0001 C CNN
-	1    7950 1350
-	1    0    0    -1  
-$EndComp
-$Comp
-L artemisa:Cap DC30
-U 1 1 5B117824
-P 8100 1350
-F 0 "DC30" V 8150 1400 50  0000 L CNN
-F 1 "100nF" V 8150 1050 50  0000 L CNN
-F 2 "artemisa:Disc_capacitor" H 8100 1350 50  0001 C CNN
-F 3 "" H 8100 1350 50  0001 C CNN
-	1    8100 1350
-	1    0    0    -1  
-$EndComp
-$Comp
-L artemisa:Cap DC31
-U 1 1 5B11782D
-P 8250 1350
-F 0 "DC31" V 8300 1400 50  0000 L CNN
-F 1 "100nF" V 8300 1050 50  0000 L CNN
-F 2 "artemisa:Disc_capacitor" H 8250 1350 50  0001 C CNN
-F 3 "" H 8250 1350 50  0001 C CNN
-	1    8250 1350
-	1    0    0    -1  
-$EndComp
-$Comp
-L artemisa:Cap DC32
-U 1 1 5B117836
-P 8400 1350
-F 0 "DC32" V 8450 1400 50  0000 L CNN
-F 1 "100nF" V 8450 1050 50  0000 L CNN
-F 2 "artemisa:Disc_capacitor" H 8400 1350 50  0001 C CNN
-F 3 "" H 8400 1350 50  0001 C CNN
-	1    8400 1350
-	1    0    0    -1  
-$EndComp
-$Comp
-L artemisa:Cap DC33
-U 1 1 5B11783F
-P 8550 1350
-F 0 "DC33" V 8600 1400 50  0000 L CNN
-F 1 "100nF" V 8600 1050 50  0000 L CNN
-F 2 "artemisa:Disc_capacitor" H 8550 1350 50  0001 C CNN
-F 3 "" H 8550 1350 50  0001 C CNN
-	1    8550 1350
-	1    0    0    -1  
-$EndComp
-$Comp
-L artemisa:Cap DC34
-U 1 1 5B117848
-P 8700 1350
-F 0 "DC34" V 8750 1400 50  0000 L CNN
-F 1 "100nF" V 8750 1050 50  0000 L CNN
-F 2 "artemisa:Disc_capacitor" H 8700 1350 50  0001 C CNN
-F 3 "" H 8700 1350 50  0001 C CNN
-	1    8700 1350
-	1    0    0    -1  
-$EndComp
-$Comp
-L artemisa:Cap DC35
-U 1 1 5B117851
-P 8850 1350
-F 0 "DC35" V 8900 1400 50  0000 L CNN
-F 1 "100nF" V 8900 1050 50  0000 L CNN
-F 2 "artemisa:Disc_capacitor" H 8850 1350 50  0001 C CNN
-F 3 "" H 8850 1350 50  0001 C CNN
-	1    8850 1350
-	1    0    0    -1  
-$EndComp
-$Comp
-L artemisa:Cap DC36
-U 1 1 5B117AE8
-P 9000 1350
-F 0 "DC36" V 9050 1400 50  0000 L CNN
-F 1 "100nF" V 9050 1050 50  0000 L CNN
-F 2 "artemisa:Disc_capacitor" H 9000 1350 50  0001 C CNN
-F 3 "" H 9000 1350 50  0001 C CNN
-	1    9000 1350
-	1    0    0    -1  
-$EndComp
-$Comp
-L artemisa:Cap DC37
-U 1 1 5B117AF1
-P 9150 1350
-F 0 "DC37" V 9200 1400 50  0000 L CNN
-F 1 "100nF" V 9200 1050 50  0000 L CNN
-F 2 "artemisa:Disc_capacitor" H 9150 1350 50  0001 C CNN
-F 3 "" H 9150 1350 50  0001 C CNN
-	1    9150 1350
-	1    0    0    -1  
-$EndComp
-$Comp
 L artemisa:Cap DC38
 U 1 1 5B117AFA
 P 2800 4150
@@ -411,17 +301,6 @@ F 3 "" H 10050 1350 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemisa:Cap DC44
-U 1 1 5B117B30
-P 10200 1350
-F 0 "DC44" V 10250 1400 50  0000 L CNN
-F 1 "100nF" V 10250 1050 50  0000 L CNN
-F 2 "artemisa:Disc_capacitor" H 10200 1350 50  0001 C CNN
-F 3 "" H 10200 1350 50  0001 C CNN
-	1    10200 1350
-	1    0    0    -1  
-$EndComp
-$Comp
 L artemisa:Cap DC22
 U 1 1 5B117D38
 P 6900 1350
@@ -476,42 +355,6 @@ Wire Wire Line
 Wire Wire Line
 	7650 1700 7650 1450
 Wire Wire Line
-	7800 1000 7800 1250
-Wire Wire Line
-	7800 1700 7800 1450
-Wire Wire Line
-	7950 1000 7950 1250
-Wire Wire Line
-	7950 1700 7950 1450
-Wire Wire Line
-	8250 1000 8250 1250
-Wire Wire Line
-	8250 1700 8250 1450
-Wire Wire Line
-	8400 1000 8400 1250
-Wire Wire Line
-	8400 1700 8400 1450
-Wire Wire Line
-	8550 1000 8550 1250
-Wire Wire Line
-	8550 1700 8550 1450
-Wire Wire Line
-	8700 1000 8700 1250
-Wire Wire Line
-	8700 1700 8700 1450
-Wire Wire Line
-	8850 1000 8850 1250
-Wire Wire Line
-	8850 1700 8850 1450
-Wire Wire Line
-	9000 1000 9000 1250
-Wire Wire Line
-	9000 1700 9000 1450
-Wire Wire Line
-	9150 1000 9150 1250
-Wire Wire Line
-	9150 1700 9150 1450
-Wire Wire Line
 	9600 1000 9600 1250
 Wire Wire Line
 	9600 1700 9600 1450
@@ -528,10 +371,6 @@ Wire Wire Line
 Wire Wire Line
 	10050 1700 10050 1450
 Wire Wire Line
-	10200 1000 10200 1250
-Wire Wire Line
-	10200 1700 10200 1450
-Wire Wire Line
 	6900 1000 6900 1250
 Wire Wire Line
 	6900 1700 6900 1450
@@ -542,34 +381,16 @@ Connection ~ 6300 1000
 Connection ~ 7350 1000
 Connection ~ 7500 1000
 Connection ~ 7650 1000
-Connection ~ 7800 1000
-Connection ~ 8250 1000
-Connection ~ 8400 1000
-Connection ~ 8550 1000
-Connection ~ 8700 1000
-Connection ~ 8850 1000
-Connection ~ 9000 1000
-Connection ~ 9150 1000
 Connection ~ 9600 1000
 Connection ~ 9750 1000
 Connection ~ 9900 1000
-Connection ~ 10050 1000
 Connection ~ 6300 1700
 Connection ~ 7350 1700
 Connection ~ 7500 1700
 Connection ~ 7650 1700
-Connection ~ 7800 1700
-Connection ~ 8250 1700
-Connection ~ 8400 1700
-Connection ~ 8550 1700
-Connection ~ 8700 1700
-Connection ~ 8850 1700
-Connection ~ 9000 1700
-Connection ~ 9150 1700
 Connection ~ 9600 1700
 Connection ~ 9750 1700
 Connection ~ 9900 1700
-Connection ~ 10050 1700
 Connection ~ 4800 1700
 Connection ~ 4950 1700
 Connection ~ 5100 1700
@@ -586,61 +407,21 @@ Wire Wire Line
 Wire Wire Line
 	7500 1000 7650 1000
 Wire Wire Line
-	7650 1000 7800 1000
-Wire Wire Line
-	7800 1000 7950 1000
-Wire Wire Line
-	8100 1000 8250 1000
-Wire Wire Line
-	8250 1000 8400 1000
-Wire Wire Line
-	8400 1000 8550 1000
-Wire Wire Line
-	8550 1000 8700 1000
-Wire Wire Line
-	8700 1000 8850 1000
-Wire Wire Line
-	8850 1000 9000 1000
-Wire Wire Line
-	9000 1000 9150 1000
-Wire Wire Line
 	9600 1000 9750 1000
 Wire Wire Line
 	9750 1000 9900 1000
 Wire Wire Line
 	9900 1000 10050 1000
 Wire Wire Line
-	10050 1000 10200 1000
-Wire Wire Line
 	7350 1700 7500 1700
 Wire Wire Line
 	7500 1700 7650 1700
-Wire Wire Line
-	7650 1700 7800 1700
-Wire Wire Line
-	7800 1700 7950 1700
-Wire Wire Line
-	8100 1700 8250 1700
-Wire Wire Line
-	8250 1700 8400 1700
-Wire Wire Line
-	8400 1700 8550 1700
-Wire Wire Line
-	8550 1700 8700 1700
-Wire Wire Line
-	8700 1700 8850 1700
-Wire Wire Line
-	8850 1700 9000 1700
-Wire Wire Line
-	9000 1700 9150 1700
 Wire Wire Line
 	9600 1700 9750 1700
 Wire Wire Line
 	9750 1700 9900 1700
 Wire Wire Line
 	9900 1700 10050 1700
-Wire Wire Line
-	10050 1700 10200 1700
 Wire Wire Line
 	4800 1700 4950 1700
 Wire Wire Line
@@ -677,18 +458,6 @@ Wire Wire Line
 Connection ~ 3650 2550
 Wire Wire Line
 	3650 2550 4000 2550
-Wire Wire Line
-	8100 1700 8100 1450
-Wire Wire Line
-	8100 1000 8100 1250
-Wire Wire Line
-	8100 1000 7950 1000
-Connection ~ 8100 1000
-Connection ~ 7950 1000
-Wire Wire Line
-	7950 1700 8100 1700
-Connection ~ 7950 1700
-Connection ~ 8100 1700
 Connection ~ 6900 1000
 Connection ~ 6900 1700
 $Comp
@@ -1480,10 +1249,6 @@ Wire Wire Line
 	6900 1000 7350 1000
 Wire Wire Line
 	6900 1700 7350 1700
-Wire Wire Line
-	9150 1700 9600 1700
-Wire Wire Line
-	9150 1000 9600 1000
 $Comp
 L artemisa:VCC #PWR0173
 U 1 1 5CCEA730
@@ -1594,4 +1359,8 @@ Wire Wire Line
 	6300 1000 6900 1000
 Wire Wire Line
 	6300 1700 6900 1700
+Wire Wire Line
+	7650 1000 9600 1000
+Wire Wire Line
+	7650 1700 9600 1700
 $EndSCHEMATC
