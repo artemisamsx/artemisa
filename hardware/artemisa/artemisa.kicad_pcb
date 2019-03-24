@@ -1390,7 +1390,7 @@
     (at 125.095 124.46 180)
     (descr "C, Disc series, Radial, pin pitch=2.50mm, , diameter*width=3.8*2.6mm^2, Capacitor, http://www.vishay.com/docs/45233/krseries.pdf")
     (tags "C Disc series Radial pin pitch 2.50mm  diameter 3.8mm width 2.6mm Capacitor")
-    (path /5AE11EC9/5B1176CC)
+    (path /5C0244DD/5CCA1AF7)
     (fp_text reference DC23 (at -2.54 0 -90) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
     )
