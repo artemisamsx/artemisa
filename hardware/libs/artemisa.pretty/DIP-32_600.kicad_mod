@@ -1,4 +1,4 @@
-(module DIP-32_W15.24mm (layer F.Cu) (tedit 58CC8E2F)
+(module DIP-32_600 (layer F.Cu) (tedit 5C98B2E9)
   (descr "32-lead dip package, row spacing 15.24 mm (600 mils)")
   (tags "DIL DIP PDIP 2.54mm 15.24mm 600mil")
   (fp_text reference REF** (at 7.62 -2.39) (layer F.SilkS)
@@ -57,9 +57,9 @@
   (pad 31 thru_hole oval (at 15.24 2.54) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask))
   (pad 16 thru_hole oval (at 0 38.1) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask))
   (pad 32 thru_hole oval (at 15.24 0) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask))
-  (model ${KISYS3DMOD}/Housings_DIP.3dshapes/DIP-32_W15.24mm.wrl
-    (at (xyz 0 0 0))
+  (model ${KIPRJMOD}/../libs/artemisa.3dshapes/DIP-32_600.wrl
+    (offset (xyz 7.5 -19 0))
     (scale (xyz 1 1 1))
-    (rotate (xyz 0 0 0))
+    (rotate (xyz 0 0 90))
   )
 )
