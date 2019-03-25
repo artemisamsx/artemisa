@@ -1,4 +1,4 @@
-(module RCA_white (layer F.Cu) (tedit 5C97DCB6)
+(module RCA_white (layer F.Cu) (tedit 5C98B6B5)
   (descr "RCA Audio connector, yellow, Pro Signal p/n PSG01547")
   (tags "rca, audio")
   (fp_text reference rca_yellow (at 0 15.7988) (layer F.SilkS)
@@ -29,7 +29,7 @@
   (pad 1 thru_hole rect (at -3.75 -3.75) (size 1.4 2.5) (drill oval 0.7 2) (layers *.Cu *.Mask F.SilkS))
   (model ${KIPRJMOD}/../libs/artemisa.3dshapes/RCA_white.wrl
     (at (xyz 0 0 0))
-    (scale (xyz 1 1 1))
+    (scale (xyz 0.8 1 0.8))
     (rotate (xyz 0 0 0))
   )
 )
