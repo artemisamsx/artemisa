@@ -1,4 +1,4 @@
-(module Slot_conn (layer F.Cu) (tedit 5BDAD454)
+(module Slot_conn (layer F.Cu) (tedit 5C98ED0E)
   (fp_text reference J2 (at -34.29 -3.925) (layer F.SilkS)
     (effects (font (size 1 1) (thickness 0.15)))
   )
@@ -79,4 +79,9 @@
   (pad 48 thru_hole circle (at 27.94 -2.425 270) (size 1.25 1.25) (drill 0.9) (layers *.Cu *.Mask))
   (pad 49 thru_hole circle (at 30.48 2.425 270) (size 1.25 1.25) (drill 0.9) (layers *.Cu *.Mask))
   (pad 50 thru_hole circle (at 30.48 -2.425 270) (size 1.25 1.25) (drill 0.9) (layers *.Cu *.Mask))
+  (model ${KIPRJMOD}/../libs/artemisa.3dshapes/Slot_conn.wrl
+    (offset (xyz 0 0 2))
+    (scale (xyz 1 1 1))
+    (rotate (xyz 90 180 90))
+  )
 )

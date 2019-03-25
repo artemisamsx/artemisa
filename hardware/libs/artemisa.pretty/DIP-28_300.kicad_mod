@@ -1,4 +1,4 @@
-(module DIP-28_W7.62mm (layer F.Cu) (tedit 58CC8E2F)
+(module DIP-28_300 (layer F.Cu) (tedit 5C98B520)
   (descr "28-lead dip package, row spacing 7.62 mm (300 mils)")
   (tags "DIL DIP PDIP 2.54mm 7.62mm 300mil")
   (fp_text reference REF** (at 3.81 -2.39) (layer F.SilkS)
@@ -53,9 +53,9 @@
   (pad 27 thru_hole oval (at 7.62 2.54) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask))
   (pad 14 thru_hole oval (at 0 33.02) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask))
   (pad 28 thru_hole oval (at 7.62 0) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask))
-  (model ${KISYS3DMOD}/Housings_DIP.3dshapes/DIP-28_W7.62mm.wrl
-    (at (xyz 0 0 0))
+  (model ${KIPRJMOD}/../libs/artemisa.3dshapes/DIP-28_300.wrl
+    (offset (xyz 4 -16.5 0))
     (scale (xyz 1 1 1))
-    (rotate (xyz 0 0 0))
+    (rotate (xyz 0 0 90))
   )
 )
