@@ -2,8 +2,28 @@ The following 3D models are authored by W. Lain - kcswalter@member.fsf.org:
 
 - Axial_resistor
 - Crystal
+- DIN8
+- DIP-8_300.wrl
+- DIP-24_300.wrl
+- DIP-20_300.wrl
+- DIP-18_300.wrl
+- DIP-16_300.wrl
+- DIP-14_300.wrl
+- DIP-28_300.wrl
+- DIP-28_600.wrl
+- DIP-32_600.wrl
+- DIP-40_600.wrl
 - Disc_capacitor
+- GFX_conn
+- jack_55_21
+- Joystick_conn
+- LED
+- PS2_conn
 - Radial_capacitor
+- RCA_red
+- RCA_write
+- RCA_yellow
 
-They can be obtained from his website http://smisioto.no-ip.org/elettronica/kicad/kicad-en.htm.
+
+They can be obtained from his website http://www.smisioto.eu/elettronica/kicad/kicad-en.htm
 
