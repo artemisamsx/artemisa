@@ -1,4 +1,4 @@
-15864519524694550
+15873862927792550
 artemisa
 Axial_resistor
 Resistor, Axial_DIN0207 series, Axial, Horizontal, pin pitch=10.16mm, 0.25W = 1/4W, length*diameter=6.3*2.5mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf
@@ -13,6 +13,20 @@ Crystal
 0
 2
 2
+artemisa
+DB25F
+D-SUB 25 pin socket, Tyco P/N 4-106507-2
+
+0
+27
+25
+artemisa
+DB25M
+D-SUB 25 pin plug, Tyco P/N 5747842-5
+
+0
+27
+25
 artemisa
 DIN8
 
@@ -189,12 +203,40 @@ rca, audio
 3
 2
 artemisa
+RN4
+R-net, sil package, 5pin
+CONN DEV
+0
+5
+5
+artemisa
+RN6
+R-net, sil package, 7pin
+CONN DEV
+0
+7
+7
+artemisa
+RN8
+R-net, sil package, 9pin
+CONN DEV
+0
+9
+9
+artemisa
 Slot_conn
 
 
 0
 50
 50
+artemisa
+TO92
+TO92 flat pins
+
+0
+3
+3
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
