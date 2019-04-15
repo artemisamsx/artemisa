@@ -1,4 +1,4 @@
-15869195705334550
+15870752253530550
 artemisa
 Axial_resistor
 Resistor, Axial_DIN0207 series, Axial, Horizontal, pin pitch=10.16mm, 0.25W = 1/4W, length*diameter=6.3*2.5mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf
@@ -216,6 +216,13 @@ Slot_conn
 0
 50
 50
+artemisa
+TO92
+TO92 flat pins
+
+0
+3
+3
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
