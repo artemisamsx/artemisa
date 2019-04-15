@@ -26,6 +26,7 @@ The following 3D models are authored by W. Lain - kcswalter@member.fsf.org:
 - RN4
 - RN6
 - RN8
+- TO92
 
 They can be obtained from his website http://www.smisioto.eu/elettronica/kicad/kicad-en.htm
 
