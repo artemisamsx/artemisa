@@ -330,7 +330,6 @@ Wire Bus Line
 NoConn ~ 5100 6050
 Text HLabel 8400 6150 2    60   Output ~ 0
 BEEP
-NoConn ~ 5100 5850
 Text HLabel 8400 5950 2    60   Output ~ 0
 CASOUT
 Wire Wire Line
@@ -495,6 +494,92 @@ Wire Wire Line
 Connection ~ 4500 3300
 Wire Wire Line
 	4500 3300 4500 3500
+$Comp
+L artemisa:2N2222 Q1
+U 1 1 5CB905A3
+P 5700 7300
+F 0 "Q1" H 5744 7353 60  0000 L CNN
+F 1 "2N2222" H 5744 7247 60  0000 L CNN
+F 2 "artemisa:TO92" H 5700 7300 60  0001 C CNN
+F 3 "" H 5700 7300 60  0001 C CNN
+	1    5700 7300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5100 5850 5250 5850
+Wire Wire Line
+	5250 5850 5250 6500
+$Comp
+L artemisa:R R36
+U 1 1 5CB93BBB
+P 5250 6650
+F 0 "R36" H 5150 6750 60  0000 L CNN
+F 1 "3300" H 5150 6650 40  0000 L CNN
+F 2 "artemisa:Axial_resistor" V 5250 6650 60  0001 C CNN
+F 3 "" V 5250 6650 60  0001 C CNN
+	1    5250 6650
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5250 6800 5250 7300
+Wire Wire Line
+	5250 7300 5500 7300
+$Comp
+L artemisa:GND #PWR0109
+U 1 1 5CB96B66
+P 5700 7600
+F 0 "#PWR0109" H 5700 7500 60  0001 C CNN
+F 1 "GND" H 5700 7700 60  0001 C CNN
+F 2 "" H 5700 7600 60  0001 C CNN
+F 3 "" H 5700 7600 60  0001 C CNN
+	1    5700 7600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5700 7500 5700 7600
+$Comp
+L artemisa:R R37
+U 1 1 5CB999EC
+P 6100 6600
+F 0 "R37" H 6000 6700 60  0000 L CNN
+F 1 "160" H 6050 6600 40  0000 L CNN
+F 2 "artemisa:Axial_resistor" V 6100 6600 60  0001 C CNN
+F 3 "" V 6100 6600 60  0001 C CNN
+	1    6100 6600
+	-1   0    0    1   
+$EndComp
+$Comp
+L artemisa:VCC #PWR0253
+U 1 1 5CB99CFB
+P 6350 6500
+F 0 "#PWR0253" H 6350 6450 60  0001 C CNN
+F 1 "VCC" H 6350 6750 60  0001 C CNN
+F 2 "" H 6350 6500 60  0001 C CNN
+F 3 "" H 6350 6500 60  0001 C CNN
+	1    6350 6500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6350 6600 6250 6600
+$Comp
+L artemisa:LED D2
+U 1 1 5CB6DADA
+P 5700 6850
+F 0 "D2" V 5661 6928 50  0000 L CNN
+F 1 "LED" V 5752 6928 50  0000 L CNN
+F 2 "artemisa:LED" H 5700 6850 50  0001 C CNN
+F 3 "" H 5700 6850 50  0001 C CNN
+	1    5700 6850
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6350 6500 6350 6600
+Wire Wire Line
+	5950 6600 5700 6600
+Wire Wire Line
+	5700 6600 5700 6700
+Wire Wire Line
+	5700 7000 5700 7100
 Wire Bus Line
 	6200 5350 6200 5850
 Wire Bus Line
