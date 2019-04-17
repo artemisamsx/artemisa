@@ -6,4 +6,9 @@ K connector
 F ~
 $ENDCMP
 #
+$CMP DB25M
+K connector
+F ~
+$ENDCMP
+#
 #End Doc Library
