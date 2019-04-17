@@ -316,12 +316,10 @@ Wire Wire Line
 	7000 2500 7700 2500
 Entry Bus Bus
 	6800 2200 6900 2300
-Text HLabel 3500 5100 0    60   Input ~ 0
+Text HLabel 3500 5200 0    60   Input ~ 0
 ~CAPSLOCK
 Wire Wire Line
-	3500 5100 6900 5100
-Wire Wire Line
-	6900 5100 6900 4400
+	6900 5200 6900 4400
 Wire Wire Line
 	6900 4400 7700 4400
 Wire Wire Line
@@ -364,22 +362,40 @@ Connection ~ 7600 4900
 Wire Wire Line
 	7600 4900 7600 5000
 Wire Wire Line
-	7000 5200 7000 4600
+	7000 5500 7000 4600
 Wire Wire Line
-	3500 5200 7000 5200
-Text HLabel 3500 5200 0    60   Input ~ 0
+	3500 5500 7000 5500
+Text HLabel 3500 5500 0    60   Input ~ 0
 ~RESET
 Wire Wire Line
 	7600 2350 7600 4500
 Wire Wire Line
 	7700 4500 7600 4500
+Connection ~ 7600 4500
+Wire Wire Line
+	7600 4500 7600 4700
+$Comp
+L artemisa:74HC07 U?
+U 5 1 5D09A220
+P 4550 5200
+AR Path="/5AED18CC/5D09A220" Ref="U?"  Part="5" 
+AR Path="/5AE5DD12/5D09A220" Ref="U39"  Part="5" 
+F 0 "U39" H 4350 5350 50  0000 C CNN
+F 1 "74HC07" H 4650 5350 50  0000 C CNN
+F 2 "artemisa:DIP-14_300" H 4550 5200 50  0001 C CNN
+F 3 "" H 4550 5200 50  0001 C CNN
+	5    4550 5200
+	1    0    0    -1  
+$EndComp
+NoConn ~ 5300 6250
+Wire Wire Line
+	3500 5200 4250 5200
+Wire Wire Line
+	4850 5200 6900 5200
 Wire Bus Line
 	4750 3300 4750 4500
 Wire Bus Line
 	6900 2300 6900 3150
 Wire Bus Line
 	3500 2200 6800 2200
-Connection ~ 7600 4500
-Wire Wire Line
-	7600 4500 7600 4700
 $EndSCHEMATC
