@@ -218,8 +218,6 @@ Entry Wire Line
 	4050 2200 4150 2100
 Wire Wire Line
 	4500 1250 4500 1350
-Text HLabel 3500 5200 0    60   Input ~ 0
-~RESET
 Wire Bus Line
 	3500 4600 4650 4600
 Text HLabel 3500 4600 0    60   Input ~ 0
@@ -319,7 +317,7 @@ Wire Wire Line
 Entry Bus Bus
 	6800 2200 6900 2300
 Text HLabel 3500 5100 0    60   Input ~ 0
-~CAPSLED
+~CAPSLOCK
 Wire Wire Line
 	3500 5100 6900 5100
 Wire Wire Line
@@ -327,14 +325,10 @@ Wire Wire Line
 Wire Wire Line
 	6900 4400 7700 4400
 Wire Wire Line
-	3500 5200 7000 5200
-Wire Wire Line
-	7000 5200 7000 4500
-Wire Wire Line
-	7000 4500 7700 4500
+	7000 4600 7700 4600
 Text Label 7250 4400 2    60   ~ 0
-~CAPSLED
-Text Label 7250 4500 2    60   ~ 0
+~CAPSLOCK
+Text Label 7250 4600 2    60   ~ 0
 ~RESET
 $Comp
 L artemisa:VCC #PWR01
@@ -348,11 +342,7 @@ F 3 "" H 7600 2350 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7600 4600 7600 4700
-Wire Wire Line
 	7600 4700 7700 4700
-Wire Wire Line
-	7600 4600 7700 4600
 $Comp
 L artemisa:GND #PWR02
 U 1 1 5CC5DB9D
@@ -374,12 +364,22 @@ Connection ~ 7600 4900
 Wire Wire Line
 	7600 4900 7600 5000
 Wire Wire Line
-	7600 4600 7600 2350
-Connection ~ 7600 4600
+	7000 5200 7000 4600
+Wire Wire Line
+	3500 5200 7000 5200
+Text HLabel 3500 5200 0    60   Input ~ 0
+~RESET
+Wire Wire Line
+	7600 2350 7600 4500
+Wire Wire Line
+	7700 4500 7600 4500
 Wire Bus Line
 	4750 3300 4750 4500
 Wire Bus Line
 	6900 2300 6900 3150
 Wire Bus Line
 	3500 2200 6800 2200
+Connection ~ 7600 4500
+Wire Wire Line
+	7600 4500 7600 4700
 $EndSCHEMATC
