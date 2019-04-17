@@ -4,7 +4,7 @@ EELAYER 29 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 9 12
+Sheet 8 12
 Title ""
 Date ""
 Rev ""
@@ -775,17 +775,6 @@ Wire Wire Line
 	6400 3700 6400 4400
 $Comp
 L artemisa:74HC07 U39
-U 5 1 5B0E9A4D
-P 8950 6600
-F 0 "U39" H 8750 6750 50  0000 C CNN
-F 1 "74HC07" H 9050 6750 50  0000 C CNN
-F 2 "artemisa:DIP-14_300" H 8950 6600 50  0001 C CNN
-F 3 "" H 8950 6600 50  0001 C CNN
-	5    8950 6600
-	1    0    0    -1  
-$EndComp
-$Comp
-L artemisa:74HC07 U39
 U 6 1 5B0E9B52
 P 8950 7000
 F 0 "U39" H 8750 7150 50  0000 C CNN
@@ -795,12 +784,7 @@ F 3 "" H 8950 7000 50  0001 C CNN
 	6    8950 7000
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	8400 6600 8650 6600
-NoConn ~ 9250 6600
 NoConn ~ 9250 7000
-Wire Wire Line
-	8400 6500 8400 6600
 Text HLabel 3900 8050 0    60   Input ~ 0
 CASIN
 Wire Wire Line
@@ -1055,17 +1039,6 @@ F 3 "" H 4200 3600 60  0001 C CNN
 $EndComp
 Wire Wire Line
 	4200 3600 4200 3700
-$Comp
-L artemisa:VCC #PWR0268
-U 1 1 5DA1DB34
-P 8400 6500
-F 0 "#PWR0268" H 8400 6450 60  0001 C CNN
-F 1 "VCC" H 8400 6750 60  0001 C CNN
-F 2 "" H 8400 6500 60  0001 C CNN
-F 3 "" H 8400 6500 60  0001 C CNN
-	1    8400 6500
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	8400 6900 8400 7000
 $Comp
