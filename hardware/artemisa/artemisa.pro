@@ -1,4 +1,4 @@
-update=Wednesday, 17 April 2019 at 20:00:57
+update=Saturday, 20 April 2019 at 13:46:54
 version=1
 last_client=kicad
 [cvpcb]
@@ -35,11 +35,11 @@ MinViaDrill=0.3
 MinMicroViaDiameter=0.2
 MinMicroViaDrill=0.09999999999999999
 MinHoleToHole=0.25
-TrackWidth1=0.25
-ViaDiameter1=0.6
-ViaDrill1=0.4
-dPairWidth1=0.2
-dPairGap1=0.25
+TrackWidth1=0.2032
+ViaDiameter1=0.4064
+ViaDrill1=0.3048
+dPairWidth1=0.1524
+dPairGap1=0.1524
 dPairViaGap1=0.25
 SilkLineWidth=0.15
 SilkTextSizeV=1
@@ -67,13 +67,13 @@ SolderPasteClearance=0
 SolderPasteRatio=-0
 [pcbnew/Netclasses]
 [pcbnew/Netclasses/1]
-Name=Kikipcb
-Clearance=0.1524
-TrackWidth=0.1524
-ViaDiameter=0.4
-ViaDrill=0.3
-uViaDiameter=0.3
-uViaDrill=0.1
+Name=Power
+Clearance=0.254
+TrackWidth=0.508
+ViaDiameter=0.6096
+ViaDrill=0.4064
+uViaDiameter=0.4064
+uViaDrill=0.3048
 dPairWidth=0.1524
 dPairGap=0.1524
 dPairViaGap=0.25
