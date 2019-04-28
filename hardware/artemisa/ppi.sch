@@ -4,7 +4,7 @@ EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 5 12
+Sheet 12 12
 Title ""
 Date ""
 Rev ""
@@ -327,7 +327,6 @@ Text HLabel 8400 5250 2    60   Output ~ 0
 KBROW[0..3]
 Wire Bus Line
 	6300 5250 8400 5250
-NoConn ~ 5100 6050
 Text HLabel 8400 6150 2    60   Output ~ 0
 BEEP
 Text HLabel 8400 5950 2    60   Output ~ 0
@@ -580,6 +579,10 @@ Wire Wire Line
 	5700 6600 5700 6700
 Wire Wire Line
 	5700 7000 5700 7100
+Text HLabel 8400 6050 2    60   Output ~ 0
+~CAPSLOCK
+Wire Wire Line
+	5100 6050 8400 6050
 Wire Bus Line
 	6200 5350 6200 5850
 Wire Bus Line

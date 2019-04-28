@@ -2,6 +2,8 @@ The following 3D models are authored by W. Lain - kcswalter@member.fsf.org:
 
 - Axial_resistor
 - Crystal
+- DB25F
+- DB25M
 - DIN8
 - DIP-8_300.wrl
 - DIP-24_300.wrl
