@@ -1,30 +1,88 @@
+// Artemisa Computer System
+// PS2 keyboard matrix emulator
+// Copyright (C) 2018-2019 Alvaro Polo
+//
+// This is an Arduino sketch that implements the firmware of the keyboard
+// matrix emulator used in the Artemisa Computer System. The purpose of
+// this firmware is to adapt the PS2 interface of a modern keyboard and
+// expose it to the MSX as a old-school keyboard matrix.
+//
+// It does so by using a network of 74HC595 ICs connected to an ATmega328
+// microcontroller. The 595 network will operate as a sort of small and
+// unexpensive dual-port memory based upon serial-to-parallel shift registers.
+// The ATmega will write bytes into it using the serial interface (write port),
+// while the MSX PPI will read the bytes using the parallel interface (read
+// port). Each 595 stores 8-bits, representing a single row of the MSX keyboard
+// matrix. Using a total of eleven 595s you can represent the whole keyboard
+// matrix.
+//
+
+// This library is used to interact with the PS2 keyboard.
+// More info in https://github.com/techpaul/PS2KeyAdvanced
 #include <PS2KeyAdvanced.h>
 
-#define PS2_PIN_DATA     3
-#define PS2_PIN_CLK      2
-#define MATRIX_PIN_DS    5
-#define MATRIX_PIN_SHCP  4
+// Uncomment this to debug the firmware using serial port
+// #define DEBUG 1
 
+// The Arduino pin where PS2 DATA is connected.
+#define PS2_PIN_DATA     3 // ATmega328 pin #5 (PD3/INT1)
+
+// The Arduino pin where PS2 CLOCK is connected.
+// Note: this MUST be connected to an interrupt pin.
+#define PS2_PIN_CLK      2 // ATmega328 pin #4 (PD2/INT0)
+
+// The Arduino pin where matrix DS line is connected.
+#define MATRIX_PIN_DS    5 // ATmega328 pin #11 (PD5)
+
+// The Arduino pin where matrix SHCP line is connected.
+#define MATRIX_PIN_SHCP  4 // ATmega328 pin #6 (PD4)
+
+// The Arduino pin where CAPSLOCK line is connected.
+#define CAPSLOCK_PIN     13 // ATmega328 pin #19 (PB5/SCLK)
+
+// How many rows of MSX matrix we will emulate
 #define MATRIX_NROWS     11
+
+// What is the maximum scancode from PS2 keyboard we will process
 #define KEYCODE_MAX      0xa0
 
-PS2KeyAdvanced keyboard;
-
-int outputs[MATRIX_NROWS] = {
-  A0, A1, A2, A3, A4, A5,
-  8, 9, 10, 11, 12,
+// An array that indicates the Arduino pins where each matrix row STCP signal
+// is connected.
+const int outputs[MATRIX_NROWS] PROGMEM = {
+  A0, // STCP0, ATmega328 pin #23 (PC0)
+  A1, // STCP1, ATmega328 pin #24 (PC1)
+  A2, // STCP2, ATmega328 pin #25 (PC2)
+  A3, // STCP3, ATmega328 pin #26 (PC3)
+  A4, // STCP4, ATmega328 pin #27 (PC4)
+  A5, // STCP5, ATmega328 pin #28 (PC5)
+  8,  // STCP6, ATmega328 pin #14 (PB0)
+  9,  // STCP7, ATmega328 pin #15 (PB1)
+  10, // STCP8, ATmega328 pin #16 (PB2/SS)
+  11, // STCP9, ATmega328 pin #17 (PB3/MOSI)
+  12, // STCP10, ATmega328 pin #18 (PB4/MISO)
 };
 
+// An array that maintains the state of the MSX matrix.
+// Each item represents the n-th row of the matrix. Each row has 8 columns,
+// each one represented by one bit in each entry of this array.
 byte matrix[MATRIX_NROWS];
 
+// A struct that describes the mapping between some scancode of the PS2
+// keyboard and a key in the MSX keyboard.
 struct mapping {
+  // The row of that key in the MSX matrix
   int row;
+  // The column of the key in the MSX matrix
   int offset;
 };
 
+// The mapping table establishes a mapping between a scancode coming from the
+// PS2 keyboard and the matrix coordinates of MSX keyboard being emulated.
+// A value of `{-1, -1 }` means there is no MSX equivalent for such scancode.
+//
 // MSX international keyboard mapping.
 // See http://map.grauw.nl/articles/keymatrix.php
-mapping international_mapping[] = {  
+const mapping international_mapping[] PROGMEM = {
   { -1, -1 }, // 0x00:
   { -1, -1 }, // 0x01:
   { -1, -1 }, // 0x02:
@@ -43,7 +101,7 @@ mapping international_mapping[] = {
   { -1, -1 }, // 0x0f:
   { -1, -1 }, // 0x10:
   { 8, 1 },   // 0x11: PS2_KEY_HOME
-  { 7, 6 },   // 0x12: PS2_KEY_END 
+  { 7, 6 },   // 0x12: PS2_KEY_END
   { -1, -1 }, // 0x13:
   { -1, -1 }, // 0x14:
   { 8, 4 },   // 0x15: PS2_KEY_L_ARROW
@@ -53,7 +111,7 @@ mapping international_mapping[] = {
   { 8, 2 },   // 0x19: PS2_KEY_INSERT
   { 8, 3 },   // 0x1a: PS2_KEY_DELETE
   { 7, 2 },   // 0x1b: PS2_KEY_ESC
-  { 7, 5 },   // 0x1c: PS2_KEY_BS 
+  { 7, 5 },   // 0x1c: PS2_KEY_BS
   { 7, 3 },   // 0x1d: PS2_KEY_TAB
   { 7, 7 },   // 0x1e: PS2_KEY_ENTER
   { 8, 0 },   // 0x1f: PS2_KEY_SPACE
@@ -96,7 +154,7 @@ mapping international_mapping[] = {
   { 3, 1 },   // 0x44: PS2_KEY_D
   { 3, 2 },   // 0x45: PS2_KEY_E
   { 3, 3 },   // 0x46: PS2_KEY_F
-  { 3, 4 },   // 0x47: PS2_KEY_G 
+  { 3, 4 },   // 0x47: PS2_KEY_G
   { 3, 5 },   // 0x48: PS2_KEY_H
   { 3, 6 },   // 0x49: PS2_KEY_I
   { 3, 7 },   // 0x4a: PS2_KEY_J
@@ -188,91 +246,144 @@ mapping international_mapping[] = {
   { -1, -1 }, // 0xa0:
 };
 
-void init_outputs() {
+// The object that will manage the PS2 keyboard.
+PS2KeyAdvanced keyboard;
+
+// Initialize the IO pins
+void init_iopins() {
+  // The pin used to transmit the serial data
   pinMode(MATRIX_PIN_DS, OUTPUT);
+  digitalWrite(MATRIX_PIN_DS, 0);
+
+  // The pin used to transmit shift clock.
   pinMode(MATRIX_PIN_SHCP, OUTPUT);
-  shift_value(0xff);  // all 1s means unpressed
-  
+  digitalWrite(MATRIX_PIN_SHCP, 0);
+
+  // The pins used to transmit storage register clock to each 595.
   for (int i = 0; i < MATRIX_NROWS; i++) {
     pinMode(outputs[i], OUTPUT);
     digitalWrite(outputs[i], LOW);
-    latch_row(i);
   }
+
+  // The pin used to read CAPSLOCK signal
+  pinMode(CAPSLOCK_PIN, INPUT);
 }
 
+// Initialize the matrix
 void init_matrix() {
+  byte value = 0xff; // all 1s means unpressed
   for (int i = 0; i < MATRIX_NROWS; i++) {
-    matrix[i] = 0xff; // all 1s means unpressed
+    matrix[i] = value;
   }
+  write_all_rows(value);
 }
 
+// Shift the given value to all 595s.
+// Note this just shifts the value. It will not latch it.
 void shift_value(byte value) {
   shiftOut(MATRIX_PIN_DS, MATRIX_PIN_SHCP, MSBFIRST, value);
-  /*
-  for (int i = 7; i >= 0; i--) {
-    digitalWrite(MATRIX_PIN_DS, bitRead(value, i));
-    digitalWrite(MATRIX_PIN_SHCP, HIGH);
-    //delayMicroseconds(10);
-    digitalWrite(MATRIX_PIN_SHCP, LOW);
-  }
-  digitalWrite(MATRIX_PIN_DS, HIGH);
-  */
 }
 
+// Latch the previously shifted value to 595 that governs the given row.
 void latch_row(int row) {
   digitalWrite(outputs[row], HIGH);
   delayMicroseconds(10);
   digitalWrite(outputs[row], LOW);
 }
 
+// Write the given value for the given row.
+// This shifts the value and sends the latch signal to the 595 that governs
+// that row.
 void write_row(int row, byte value) {
   shift_value(value);
   latch_row(row);
 }
 
+// Write the given value to all rows
+void write_all_rows(byte value) {
+  // We want each 595 to be loaded with value. To do that, we shift it to all
+  // registers and then we send a latch signal to each 595.
+  shift_value(value);
+  for (int i = 0; i < MATRIX_NROWS; i++) {
+    latch_row(i);
+  }
+}
+
+// Handle the given scan code.
 void handle_code(int16_t c) {
+  // The actual key is in the lower nibble transmitted by the keyboard.
   byte key = c & 0x00ff;
   if (key >= KEYCODE_MAX) {
     return;
   }
+
   mapping m = international_mapping[key];
   if (m.row == -1) {
+    // There is no mapping defined for that scancode. Skip it.
     return;
   }
+
   byte r = matrix[m.row];
   if (c & PS2_BREAK) {
     bitSet(r, m.offset);
   } else {
     bitClear(r, m.offset);
   }
+
   if (r != matrix[m.row]) {
+    // We detected a change in the row. Something was pressed or released!
+#ifdef DEBUG
     Serial.print(F("Row "));
     Serial.print(m.row);
     Serial.print(F(" has changed to "));
     Serial.println(r, BIN);
+#endif
     matrix[m.row] = r;
     write_row(m.row, r);
   }
 }
 
+// Handle capslock state changes
+void handle_capslock() {
+  static int before = -1;
+  int after = digitalRead(CAPSLOCK_PIN);
+  if (before != after) {
+    byte flags = keyboard.getLock();
+
+    // CAPSLOCK is inverse logic, HIGH means disabled
+    if (after) { flags &= ~PS2_LOCK_CAPS; } // Clear the LOCK_CAPS bit
+    else { flags |= PS2_LOCK_CAPS; } // Set the LOCK_CAPS bit
+
+    keyboard.setLock(flags);
+    before = after;
+  }
+}
+
+// Setup the microcontroller
 void setup() {
   // Configure the keyboard library
   keyboard.begin(PS2_PIN_DATA, PS2_PIN_CLK);
   keyboard.resetKey();
-  init_outputs();
+
+  init_iopins();
   init_matrix();
+
+#ifdef DEBUG
   Serial.begin(9600);
   Serial.println( F( "PS2 Advanced Key Simple Test:" ) );
+#endif
 }
 
-
+// Main loop of the microcontroller
 void loop() {
+  // Process a PS2 keyboard event if available
   if (keyboard.available()) {
-    // read the next key
     uint16_t c = keyboard.read();
     if (c > 0) {
       handle_code(c);
     }
   }
-}
 
+  // Process capslock state change
+  handle_capslock();
+}

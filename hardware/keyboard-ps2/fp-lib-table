@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name artemisa)(type KiCad)(uri "$(KIPRJMOD)/../libs/artemisa.pretty")(options "")(descr ""))
+)
