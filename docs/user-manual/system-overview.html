@@ -1,0 +1,318 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>System Overview · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="assembly.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2" data-path="system-overview.html">
+            
+                <a href="system-overview.html">
+            
+                    
+                    System Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="assembly.html">
+            
+                <a href="assembly.html">
+            
+                    
+                    Assembly
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >System Overview</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="artemisa-computer-system-user-manual---system-overview">Artemisa Computer System User Manual - System Overview</h1>
+<h2 id="the-system">The System</h2>
+<p>Artemisa is a 8-bits computer powered by a Z80 microprocessor running at 3.58Mhz. This CPU was designed by Zilog in the 70&apos;s, as a binary compatible extension of the popular Intel 8080. The Z80 was also used in many other computers and videogame consoles during the 80&apos;s, as the ZX Spectrum, the Amstrad CPC, the Coleco Vision or the Sega Master System.</p>
+<p>Artemisa is equipped with 64KB of RAM memory. It can be used by programs to store their code, data, and graphics. It also provides 32KB of ROM memory where MSX BIOS and MSX BASIC resides. The MSX BIOS is a collection of software routines used by programmers to make their programs interact with the hardware. The MSX BASIC is a programming language and user environment you can use to code programs and give commands to the computer.</p>
+<p>As any other MSX system, there are two major chips that complete the system along the Z80: the VDP and the PSG.</p>
+<p>The VDP is the Video Display Processor, an integrated circuit capable of generating a video output for your screen. There were different revisions of the VDP across different generations of MSX. First designs started with a <a href="https://en.wikipedia.org/wiki/Texas_Instruments_TMS9918" target="_blank">TMS9918</a>, a VDP that was already used in Coleco Vision, Sega SG-1000 and some other home computers as the SVI-328. This chip can generate graphics with 256x192 pixels and 16 colors, with hardware-accelarated sprites to make animated graphics. The TMS9918 has a video output limited to NTSC composite video, with synchronization, luminance and crominance all together in a single line. This limitation led the second wave of MSX computers to use the TMS9928 and TMS9929 instead. These VDPs have the same functionality as TMS9918, but they had a component video output that separates the chrominance from the luminance. Thanks to that, the designers can manipulate the video signals to generate the outputs that better fit their needs (composite video, radio-frequence modulation for TV sets, RGB, etc). In addition, the TMS9929 uses PAL encoding instead of NTSC, so they became the right option in most european countries.</p>
+<p>Depending on your TV set or monitor, you will have different needs. NTSC vs PAL, composite vs RGB, SCART vs RCA connectors... This customization is really important for the users. That&apos;s why Artemisa is designed to support every single option for every single user. This is achieved by separating the VDP and its circuitry from the rest of the computer in a graphics card. This card is connected to the computer mainboard by a ribbon cable. Thus, users can purshase their Artemisa computer by choosing the graphics card that better fits their needs.</p>
+<p>Along the VDP, any MSX has a PSG. The PSG is the Programmable Sound Generator, a chip that can generate and play sound and music. Artemisa is equipped with the <a href="https://es.wikipedia.org/wiki/General_Instrument_AY-3-8910" target="_blank">AY-3-8910A</a>. This PSG is also present in the ZX Spectrum and the Amstrad CPC computers. It capable to reproduce 3 different tones with base frequencies of up to 125 kHz.</p>
+<p>Using this chip set, and some other circuitry, Artemisa supports several peripherals common in the MSX world.</p>
+<ul>
+<li>A keyboard port that supports keyboards with up to 96 keys.</li>
+<li>Two joystick ports compatible with MSX/Coleco/SEGA devices.</li>
+<li>One datassete port to load or save software from a magnetic tape data storage.</li>
+<li>Two expansion slots to connect cartridges with software or new hardware to expand the computer.</li>
+</ul>
+<p>If you are a experienced MSX users, you should know there is a few things you may find in a MSX computer that are not present in Artemisa:</p>
+<ul>
+<li>Printer port. We expect you to do many things with your Artemisa computer. But printing documents is not one of them.</li>
+<li>Serial port. Same reason as for the printer port.</li>
+<li>+12V and -12V power lines. Complicates the design and introduces additional security concerns. Any hardware (cartridge) that depends upon this will not work.</li>
+</ul>
+<h2 id="system-parts">System Parts</h2>
+<p>After this introduction to the overall system, you have a high level idea of what you can get from Artemisa. Now it is time to tell you about the different parts that comprise an Artemisa system.</p>
+<p>Artemisa is designed to fit your needs as much as possible. There are two parts of the system that are more sensible to customization than the rest:</p>
+<ul>
+<li><p>The video system. We already discussed a little bit about this. In Artemisa, the VDP and related circuits are separated from the rest of the computer into a separated graphics card. And the graphics card must be connected to an external monitor or a TV. The right option depends on the computer setup you want. See <a href="#graphics-card">Graphics card</a> section for more details.</p>
+</li>
+<li><p>The keyboard. Artemisa is designed to be used with an external keyboard specially designed for it. There are different options for these keyboards depending on the grade of experience you want to obtain and the cost you can afford. See <a href="#keyboard">Keyboard</a> section for more details.</p>
+</li>
+</ul>
+<p>So in summary, in order to have a full Artemisa computer system, you will need the following parts:</p>
+<ul>
+<li>One Artemisa system base. This includes the motherboard of the computer, the case, the power supply, the cables, the screws and the spacers needed to assemble the computer.</li>
+<li>An Artemisa-compatible keyboard or a keyboard adapter with a suitable external keyboard.</li>
+<li>An Artemisa-compatible graphics card with a suitable external monitor or TV set.</li>
+</ul>
+<h2 id="graphics-card">Graphics card</h2>
+<p>The graphics card is connected to the mainboard via IDC ports on both boards. A ribbon cable connects the ports. The graphics card is designed to be mounted beside the motherboard, so this internal connection is perfect for the job.</p>
+<p>The graphics card port has 50 pins, and it have a pinout similar to those used in the MSX slots. This means the graphics card can behave like a MSX cartridge, mapping its hardware in arbitrary IO ports, or even memory space of the Z80. One of the particularities of this port is that the sound line is &quot;reversed&quot;. Instead of connecting a external sound device to the computer, it takes the sound line from the computer to consume it. Thanks to that, the graphics card can produce its own video signal and combine it with the sound signal produced by the computer coming from the motherboard. This might be used to offer outputs that combine video and sound, as SCART connectors.</p>
+<p>The following graphics cards are available:</p>
+<ul>
+<li>GFX9918. This is the most basic graphic card available for Artemisa. It is powered by the TMS9918 chip, the first video processor used in a MSX computer. This board generates a NTSC composite video output at 60Hz combined with the sound line via RCA connectors (classic yellow, white and red triad). It includes 16KB of video RAM (VRAM) using static memory.</li>
+</ul>
+<p><img src="img/gfx-9918.png" alt="gfx-9918"></p>
+<ul>
+<li>GFX992X (under development). This is an evolution of GFX9918. It uses a TMS9928 or a TMS9929 chip, for NTSC or PAL encoding, respectively. This card has the same graphical features as the GFX9918, but it generates a component video output (YPbPr) instead of composite video. In a few words, the crominance is separated from the luminance in the 9928/9929 chips, what provides a major improvement in the video quality. You can use one chip or the other using the same board, depending on the system used by your TV set or monitor (NTSC or PAL). The board encodes the component video signals to produce RGB+sync. All these outputs plus the sound signal are offered as a female SCART connector you can connect to your TV set via a standard cable.</li>
+</ul>
+<h2 id="keyboard">Keyboard</h2>
+<p>Artemisa provides a DB25 connector (classic parallel port, but with custom pinout) in its motherboard to connect an Artemisa compatible keyboard peripheral. This keyboard port basically sends row coordinates of the keyboard matrix to be read, and receives back the status of each column for that row in the matrix. You have different options in order to connect a real keyboard to the computer:</p>
+<ul>
+<li><p>Use the Artemisa PS2 Keyboard Adapter. This is a separated device that can be connected to the Artemisa keyboard port. It adapts a regular PS2 keyboard and exposes it to Artemisa as a regular keyboard. A unexpensive and simple option, but will affect your user experience negatively since you will have to use a keyboard with a PC key distribution.</p>
+</li>
+<li><p>Use the Artemisa USB Keyboard adapter (under development). The same as PS2 adapter, but for USB keyboards.</p>
+</li>
+<li><p>Use an Artemisa keyboard (under development). Use a mechanical keyboard designed specifically to be connected to an Artemisa computer, with a real MSX key distribution. For real pro users.</p>
+</li>
+</ul>
+<h2 id="case">Case</h2>
+<p>Artemisa motherboard is distributed with a very simple case comprised by two acrylic plates where motherboard and graphics card can be mounted. The lower plate is opaque white, and it has several holes to screw spacers where the boards stands on. The upper plate is transparent. So you can enjoy looking at the circuits of your favorite MSX computer every time you use it. The upper plate also has special cuts for the cartridge connectors.</p>
+<h2 id="power-supply">Power supply</h2>
+<p>The motherboard provides a 2.5/5.5mm DC power jack to connect a 5V, 2A external power supply. As mentioned above, no +12V/-12V power lines are used in Artemisa.</p>
+<h2 id="next">Next</h2>
+<p>Now you have a clear general idea about what&apos;s Artemisa. Let&apos;s see how you can <a href="030-assembly.md">assemble it from its parts</a>.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="assembly.html" class="navigation navigation-next " aria-label="Next page: Assembly">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"System Overview","level":"1.2","depth":1,"next":{"title":"Assembly","level":"1.3","depth":1,"path":"assembly.md","ref":"assembly.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"system-overview.md","mtime":"2019-05-22T09:50:37.185Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-22T10:20:11.427Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

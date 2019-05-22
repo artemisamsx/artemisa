@@ -1,0 +1,330 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Cassette Input & Output · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="vdp.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="vdp.html">
+            
+                <a href="vdp.html">
+            
+                    
+                    Video Display Processor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="casio.html">
+            
+                <a href="casio.html">
+            
+                    
+                    Cassette Input & Output
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Cassette Input & Output</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="artemisa-msx-computer-system-service-manual---cassette-input--output">Artemisa MSX Computer System Service Manual - Cassette Input &amp; Output</h1>
+<p>As most MSX systems, Artemisa provides a interface to load and save programs and data from an audio cassette. Data is backed up at 1200 or 2400 baud with Frequency Shift Keying (FSK) in the standard &quot;Kansas City&quot; format.</p>
+<p>The cassette device is connected to the MSX through a 8-pin DIN connector (DIN 45326) with the following pinout:</p>
+<table>
+<thead>
+<tr>
+<th>Pin</th>
+<th>Name</th>
+<th>Direction</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>GND</td>
+<td></td>
+<td>Ground</td>
+</tr>
+<tr>
+<td>2</td>
+<td>GND</td>
+<td></td>
+<td>Ground</td>
+</tr>
+<tr>
+<td>3</td>
+<td>GND</td>
+<td></td>
+<td>Ground</td>
+</tr>
+<tr>
+<td>4</td>
+<td>CMTOUT</td>
+<td></td>
+<td>Sound output</td>
+</tr>
+<tr>
+<td>5</td>
+<td>CMTIN</td>
+<td></td>
+<td>Sound input</td>
+</tr>
+<tr>
+<td>6</td>
+<td>REM+</td>
+<td></td>
+<td>Remote control</td>
+</tr>
+<tr>
+<td>7</td>
+<td>REM-</td>
+<td></td>
+<td>Remote control</td>
+</tr>
+<tr>
+<td>8</td>
+<td>GND</td>
+<td></td>
+<td>Ground</td>
+</tr>
+</tbody>
+</table>
+<p>In summary, pins 4 and 5 carry the sound output and input, respectivelly. Pins 6 and 7 are used to start and stop the cassette motor. They are barely used in practice and Artemisa do not use them (these pins are grounded). The rest of pins are connected to ground.</p>
+<p>There are two different circuits in Artemisa to generate cassette input and outputs: one that decodes <code>CMTIN</code> and another one that encodes <code>CMTOUT</code>.</p>
+<h2 id="cassette-input-decoding">Cassette Input Decoding</h2>
+<p>The audio cassette will send an analog signal to the computer with a form of sinusoidal wave through <code>CMTIN</code>. The decoding circuit is based on a LM311 part, a voltage comparator, in order to convert the input wave into a 5V squared signal.</p>
+<p><img src="img/casin.png" alt="casin"></p>
+<p>What LM311 does is basically open or close its open-collector output based on the voltage levels of <code>IN+</code> and <code>IN-</code> pads. If <code>IN+</code> voltage is greater than <code>IN-</code> voltage, the output transistor will not conduct. Thus, thanks to the pull-up resistor R33, the output will be 5V. If <code>IN+</code> voltage is less than <code>IN-</code> voltage, the output transistor conducts. Thus, the output will be 0 volts sin emiter is connected to ground.</p>
+<p>In order to achieve that, the circuit have the following <a href="https://en.wikipedia.org/wiki/Voltage_divider" target="_blank">voltage dividers</a>:</p>
+<ul>
+<li>One made by <code>R28</code> and <code>R29</code> that feed <code>IN+</code>. Both resistors have the same value, so the input to <code>IN+</code> is approximately 2.5 volts.</li>
+<li>One made by <code>R30</code> and <code>R35</code> on top of <code>IN+</code>, that feed <code>IN-</code>. The combination of both resistors gives approximately 2.61 volts in <code>IN-</code>.</li>
+</ul>
+<p>Since the values of resistors in <code>IN-</code> are really large, we might expect to have a very low current coming from <code>IN+</code> (&lt;50uA). So <code>IN+</code> maintains its voltage intact. <code>C13</code> also contributes to counter act the voltage drop from <code>IN-</code>, maintaining the potential at 2.5 volts.</p>
+<p>In abscense of voltage coming from <code>CMTIN</code>, this circuit will ensure the voltage in <code>IN-</code> is slightly greater than <code>IN+</code>. Thus, when we receive no signal from the cassette, the digital output will be low. We would read zeroes.</p>
+<p>When a voltage comes from <code>CMTIN</code>, it passes through <code>C12</code> and <code>R34</code>. The capacitor removes the DC offset, and the resistor reduces the amplitude of the waveform. This is especially needed for data recorders that generate signals that exceed the 5 volts peer-to-peek (some do). The analogic signal is combined with the DC value provided by the voltage divider in <code>IN-</code>. As result, the low part of the pulse will be below 2.5v barrier. And high part of the pulse will be above it. Thus, the LM311 will generate a squared waveform in <code>CASIN</code> that matches the frequency of <code>CMTIN</code> line.</p>
+<h2 id="cassette-output-encoding">Cassette Output Encoding</h2>
+<p>The audio cassette will expect an analog signal from the computer with a form of sinusoidal wave through <code>CMTOUT</code>. The encoding is implemented by the following RC circuit.</p>
+<p><img src="img/casout.png" alt="casin"></p>
+<p>The capacitor C10 removes the DC bias from the output signal. The circuit formed by R25 and C11 implements a <a href="https://www.electronics-tutorials.ws/rc/rc-integrator.html" target="_blank">RC integrator</a> that causes the input squared signal to acquire a pseudo-sinusoidal waveform. Finally, the combination of R26 and R27 acts as a voltage divider that reduces the amplitude of the signal</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="vdp.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Video Display Processor">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Cassette Input & Output","level":"1.3","depth":1,"previous":{"title":"Video Display Processor","level":"1.2","depth":1,"path":"vdp.md","ref":"vdp.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"casio.md","mtime":"2019-05-21T14:15:19.190Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-22T10:20:09.657Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
