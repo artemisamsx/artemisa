@@ -48,7 +48,7 @@
 
 // An array that indicates the Arduino pins where each matrix row STCP signal
 // is connected.
-const int outputs[MATRIX_NROWS] PROGMEM = {
+const int outputs[MATRIX_NROWS] = {
   A0, // STCP0, ATmega328 pin #23 (PC0)
   A1, // STCP1, ATmega328 pin #24 (PC1)
   A2, // STCP2, ATmega328 pin #25 (PC2)
@@ -82,7 +82,7 @@ struct mapping {
 //
 // MSX international keyboard mapping.
 // See http://map.grauw.nl/articles/keymatrix.php
-const mapping international_mapping[] PROGMEM = {
+const mapping international_mapping[] = {
   { -1, -1 }, // 0x00:
   { -1, -1 }, // 0x01:
   { -1, -1 }, // 0x02:
