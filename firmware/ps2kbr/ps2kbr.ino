@@ -19,7 +19,7 @@
 
 // This library is used to interact with the PS2 keyboard.
 // More info in https://github.com/techpaul/PS2KeyAdvanced
-#include <PS2KeyAdvanced.h>
+#include "PS2KeyAdvanced.h"
 
 // Uncomment this to debug the firmware using serial port
 // #define DEBUG 1
