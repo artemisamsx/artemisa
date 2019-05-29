@@ -370,7 +370,7 @@ void setup() {
 
 #ifdef DEBUG
   Serial.begin(9600);
-  Serial.println( F( "PS2 Advanced Key Simple Test:" ) );
+  Serial.println( F( "PS2 Keyboard Adapter board" ) );
 #endif
 }
 
