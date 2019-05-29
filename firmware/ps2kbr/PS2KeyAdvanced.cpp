@@ -683,86 +683,7 @@ uint16_t translate(void)
   // trap not found key
   if (index == length)
     retdata = 0;
-  /* valid found values only */
-  if (retdata > 0)
-  {
-    if (retdata <= PS2_KEY_CAPS)
-    { // process lock keys need second make to turn off
-      if (PS2_keystatus & _BREAK)
-      {
-        PS2_lockstate[retdata] = 0; // Set received a break so next make toggles LOCK status
-        retdata = PS2_KEY_IGNORE;   // ignore key
-      }
-      else
-      {
-        if (PS2_lockstate[retdata] == 1)
-          retdata = PS2_KEY_IGNORE; // ignore key if make and not received break
-        else
-        {
-          PS2_lockstate[retdata] = 1;
-          switch (retdata)
-          {
-          case PS2_KEY_CAPS:
-            index = PS2_LOCK_CAPS;
-            // Set CAPS lock if not set before
-            if (PS2_keystatus & _CAPS)
-              PS2_keystatus &= ~_CAPS;
-            else
-              PS2_keystatus |= _CAPS;
-            break;
-          case PS2_KEY_SCROLL:
-            index = PS2_LOCK_SCROLL;
-            break;
-          case PS2_KEY_NUM:
-            index = PS2_LOCK_NUM;
-            break;
-          }
-          // Now update PS2_led_lock status to match
-          if (PS2_led_lock & index)
-          {
-            PS2_led_lock &= ~index;
-            PS2_keystatus |= _BREAK; // send as break
-          }
-          else
-            PS2_led_lock |= index;
-          set_lock();
-        }
-      }
-    }
-    else if (retdata >= PS2_KEY_L_SHIFT && retdata <= PS2_KEY_R_GUI)
-    { // Update bits for _SHIFT, _CTRL, _ALT, _ALT GR, _GUI in status
-#if defined(ARDUINO_ARCH_AVR)
-      index = pgm_read_byte(&control_flags[retdata - PS2_KEY_L_SHIFT]);
-#elif defined(ARDUINO_ARCH_SAM)
-      index = control_flags[retdata - PS2_KEY_L_SHIFT];
-#endif
-      if (PS2_keystatus & _BREAK)
-        PS2_keystatus &= ~index;
-      else
-          // if already set ignore repeats if flag set
-          if ((PS2_keystatus & index) && (_mode & _NO_REPEATS))
-        retdata = PS2_KEY_IGNORE; // ignore repeat _SHIFT, _CTRL, _ALT, _GUI
-      else
-        PS2_keystatus |= index;
-    }
-    else
-        // Numeric keypad ONLY works in numlock state or when _SHIFT status
-        if (retdata >= PS2_KEY_KP0 && retdata <= PS2_KEY_KP_DOT)
-      if (!(PS2_led_lock & PS2_LOCK_NUM) || (PS2_keystatus & _SHIFT))
-#if defined(ARDUINO_ARCH_AVR)
-        retdata = pgm_read_byte(&scroll_remap[retdata - PS2_KEY_KP0]);
-#elif defined(ARDUINO_ARCH_SAM)
-        retdata = scroll_remap[retdata - PS2_KEY_KP0];
-#endif
-    // Sort break code handling or ignore for all having processed the _SHIFT etc status
-    if ((PS2_keystatus & _BREAK) && (_mode & _NO_BREAKS))
-      return (uint16_t)PS2_KEY_IGNORE;
-    // Assign Function keys _mode
-    if ((retdata <= PS2_KEY_SPACE || retdata >= PS2_KEY_F1) && retdata != PS2_KEY_EUROPE2)
-      PS2_keystatus |= _FUNCTION;
-    else
-      PS2_keystatus &= ~_FUNCTION;
-  }
+
   return (retdata | ((uint16_t)PS2_keystatus << 8));
 }
 
@@ -820,8 +741,6 @@ void PS2KeyAdvanced::setLock(uint8_t code)
 {
   code &= 0xF;             // To allow for rare keyboards with extra LED
   PS2_led_lock = code;     // update our lock copy
-  PS2_keystatus &= ~_CAPS; // Update copy of _CAPS lock as well
-  PS2_keystatus |= (code & PS2_LOCK_CAPS) ? _CAPS : 0;
   set_lock();
 }
 
