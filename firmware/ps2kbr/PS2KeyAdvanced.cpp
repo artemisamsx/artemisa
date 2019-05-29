@@ -6,16 +6,16 @@
   Updated January 2016 - Paul Carpenter - add tested on Due and tidy ups for V1.5 Library Management
 
   IMPORTANT WARNING
- 
-    If using a DUE or similar board with 3V3 I/O you MUST put a level translator 
-    like a Texas Instruments TXS0102 or FET circuit as the signals are 
+
+    If using a DUE or similar board with 3V3 I/O you MUST put a level translator
+    like a Texas Instruments TXS0102 or FET circuit as the signals are
     Bi-directional (signals transmitted from both ends on same wire).
- 
+
     Failure to do so may damage your Arduino Due or similar board.
 
   Test History
     September 2014 Uno and Mega 2560 September 2014 using Arduino V1.6.0
-    January 2016   Uno, Mega 2560 and Due using Arduino 1.6.7 and Due Board 
+    January 2016   Uno, Mega 2560 and Due using Arduino 1.6.7 and Due Board
                     Manager V1.6.6
 
   Assumption - Only ONE keyboard added to one Arduino
@@ -129,15 +129,14 @@
 #include "PS2KeyCode.h"
 #include "PS2KeyTable.h"
 
-
 // Private function declarations
-void send_bit( void );
-void send_now( uint8_t );
-int16_t send_next( void );
-void ps2_reset( void );
-uint8_t decode_key( uint8_t );
-void pininput( uint8_t );
-void set_lock( );
+void send_bit(void);
+void send_now(uint8_t);
+int16_t send_next(void);
+void ps2_reset(void);
+uint8_t decode_key(uint8_t);
+void pininput(uint8_t);
+void set_lock();
 
 /* Constant control functions to flags array
    in translated key code value order  */
@@ -146,12 +145,11 @@ const uint8_t PROGMEM control_flags[] = {
 #elif defined(ARDUINO_ARCH_SAM)
 const uint8_t control_flags[] = {
 #endif
-                _SHIFT, _SHIFT, _CTRL, _CTRL,
-                _ALT, _ALT_GR, _GUI, _GUI
-                };
+    _SHIFT, _SHIFT, _CTRL, _CTRL,
+    _ALT, _ALT_GR, _GUI, _GUI};
 
 // Private Variables
-volatile uint8_t _ps2mode;          /* _ps2mode contains
+volatile uint8_t _ps2mode; /* _ps2mode contains
     _PS2_BUSY      bit 7 = busy until all expected bytes RX/TX
     _TX_MODE       bit 6 = direction 1 = TX, 0 = RX (default)
     _BREAK_KEY     bit 5 = break code detected
@@ -162,31 +160,31 @@ volatile uint8_t _ps2mode;          /* _ps2mode contains
                            and not sent anything */
 
 /* volatile RX buffers and variables accessed via interrupt functions */
-volatile uint16_t _rx_buffer[ _RX_BUFFER_SIZE ];     // buffer for data from keyboard
-volatile uint8_t _head;              // _head = last byte written
-uint8_t _tail;                       // _tail = last byte read (not modified in IRQ ever)
+volatile uint16_t _rx_buffer[_RX_BUFFER_SIZE]; // buffer for data from keyboard
+volatile uint8_t _head;                        // _head = last byte written
+uint8_t _tail;                                 // _tail = last byte read (not modified in IRQ ever)
 volatile int8_t _bytes_expected;
-volatile uint8_t _bitcount;          // Main state variable and bit count for ints
+volatile uint8_t _bitcount; // Main state variable and bit count for ints
 volatile uint8_t _shiftdata;
 volatile uint8_t _parity;
 
 /* TX variables */
-volatile uint8_t _tx_buff[ _TX_BUFFER_SIZE ];    // buffer for keyboard commans
-volatile uint8_t _tx_head;          // buffer write pointer
-volatile uint8_t _tx_tail;          // buffer read pointer
-volatile uint8_t _last_sent;        // last byte if resend requested
-volatile uint8_t _now_send;         // immediate byte to send
-volatile uint8_t _response_count;   // bytes expected in reply to next TX
-volatile uint8_t _tx_ready;         // TX status for type of send contains
-            /* _HANDSHAKE 0x80 = handshaking command (ECHO/RESEND)
+volatile uint8_t _tx_buff[_TX_BUFFER_SIZE]; // buffer for keyboard commans
+volatile uint8_t _tx_head;                  // buffer write pointer
+volatile uint8_t _tx_tail;                  // buffer read pointer
+volatile uint8_t _last_sent;                // last byte if resend requested
+volatile uint8_t _now_send;                 // immediate byte to send
+volatile uint8_t _response_count;           // bytes expected in reply to next TX
+volatile uint8_t _tx_ready;                 // TX status for type of send contains
+                                            /* _HANDSHAKE 0x80 = handshaking command (ECHO/RESEND)
                _COMMAND   0x01 = other command processing */
 
 /* Output key buffering */
-uint16_t _key_buffer[ _KEY_BUFF_SIZE ]; // Output Buffer for translated keys
-uint8_t _key_head;                      // Output buffer WR pointer
-uint8_t _key_tail;                      // Output buffer RD pointer
-uint8_t _mode = 0;            // Mode for output buffer contains
-          /* _NO_REPEATS 0x80 No repeat make codes for _CTRL, _ALT, _SHIFT, _GUI
+uint16_t _key_buffer[_KEY_BUFF_SIZE]; // Output Buffer for translated keys
+uint8_t _key_head;                    // Output buffer WR pointer
+uint8_t _key_tail;                    // Output buffer RD pointer
+uint8_t _mode = 0;                    // Mode for output buffer contains
+                                      /* _NO_REPEATS 0x80 No repeat make codes for _CTRL, _ALT, _SHIFT, _GUI
              _NO_BREAKS  0x08 No break codes */
 
 // Arduino settings for pins and interrupts Needed to send data
@@ -194,10 +192,9 @@ uint8_t PS2_DataPin;
 uint8_t PS2_IrqPin;
 
 // Key decoding variables
-uint8_t PS2_led_lock = 0;     // LED and Lock status
-uint8_t PS2_lockstate[ 4 ];   // Save if had break on key for locks
-uint8_t PS2_keystatus;        // current CAPS etc status for top byte
-
+uint8_t PS2_led_lock = 0; // LED and Lock status
+uint8_t PS2_lockstate[4]; // Save if had break on key for locks
+uint8_t PS2_keystatus;    // current CAPS etc status for top byte
 
 /*------------------ Code starts here -------------------------*/
 
@@ -205,32 +202,32 @@ uint8_t PS2_keystatus;        // current CAPS etc status for top byte
    To receive 11 bits - start 8 data, ODD parity, stop
    To send data calls send_bit()
    Interrupt every falling incoming clock edge from keyboard */
-void ps2interrupt( void )
+void ps2interrupt(void)
 {
-if( _ps2mode & _TX_MODE )
-  send_bit();
-else
+  if (_ps2mode & _TX_MODE)
+    send_bit();
+  else
   {
-  static uint32_t prev_ms = 0;
-  uint32_t now_ms;
-  uint8_t val, ret;
+    static uint32_t prev_ms = 0;
+    uint32_t now_ms;
+    uint8_t val, ret;
 
-  val = digitalRead( PS2_DataPin );
-  /* timeout catch for glitches reset everything */
-  now_ms = millis();
-  if( now_ms - prev_ms > 250 )
+    val = digitalRead(PS2_DataPin);
+    /* timeout catch for glitches reset everything */
+    now_ms = millis();
+    if (now_ms - prev_ms > 250)
     {
-    _bitcount = 0;
-    _shiftdata = 0;
+      _bitcount = 0;
+      _shiftdata = 0;
     }
-  prev_ms = now_ms;
-  _bitcount++;             // Now point to next bit
-  switch( _bitcount )
+    prev_ms = now_ms;
+    _bitcount++; // Now point to next bit
+    switch (_bitcount)
     {
     case 1: // Start bit
-            _parity = 0;
-            _ps2mode |= _PS2_BUSY;    // set busy
-            break;
+      _parity = 0;
+      _ps2mode |= _PS2_BUSY; // set busy
+      break;
     case 2:
     case 3:
     case 4:
@@ -238,64 +235,62 @@ else
     case 6:
     case 7:
     case 8:
-    case 9: // Data bits
-            _parity += val;          // another one received ?
-            _shiftdata >>= 1;        // right _SHIFT one place for next bit
-            _shiftdata |= ( val ) ? 0x80 : 0;    // or in MSbit
-            break;
-    case 10: // Parity check
-            _parity &= 1;            // Get LSB if 1 = odd number of 1's so parity bit should be 0
-            if( _parity == val )     // Both same parity error
-              _parity = 0xFD;        // To ensure at next bit count clear and discard
-            break;
-    case 11: // Stop bit lots of spare time now
-            if( _parity >= 0xFD )    // had parity error
-              {
-              send_now( PS2_KC_RESEND );    // request resend
-              _tx_ready |= _HANDSHAKE;
-              }
-            else                    // Good so save byte in _rx_buffer
-              {
-              // Check _SHIFTed data for commands and action
-              ret = decode_key( _shiftdata );
-              if( ret & 0x2 )       // decrement expected bytes
-                _bytes_expected--;
-              if( _bytes_expected <= 0 || ret & 4 )   // Save value ??
-                {
-                val = _head + 1;
-                if( val >= _RX_BUFFER_SIZE )
-                  val = 0;
-                if( val != _tail )
-                  {
-                  // get last byte to save
-                  _rx_buffer[ val ] = uint16_t( _shiftdata );
-                  // save extra details
-                  _rx_buffer[ val ] |= uint16_t( _ps2mode ) << 8;
-                  _head = val;
-                  }
-                }
-              if( ret & 0x10 )              // Special command to send (ECHO/RESEND)
-                {
-                send_now( _now_send );
-                _tx_ready |= _HANDSHAKE;
-                }
-              else
-                if( _bytes_expected <= 0 )  // Receive data finished
-                  {
-                  // Set mode and status for next receive byte
-                  _ps2mode &= ~( _E0_MODE + _E1_MODE + _WAIT_RESPONSE + _BREAK_KEY );
-                  _bytes_expected = 0;
-                  _ps2mode &= ~_PS2_BUSY;
-                  send_next();              // Check for more to send
-                  }
-             }
-             // fall through to default
+    case 9:                           // Data bits
+      _parity += val;                 // another one received ?
+      _shiftdata >>= 1;               // right _SHIFT one place for next bit
+      _shiftdata |= (val) ? 0x80 : 0; // or in MSbit
+      break;
+    case 10:              // Parity check
+      _parity &= 1;       // Get LSB if 1 = odd number of 1's so parity bit should be 0
+      if (_parity == val) // Both same parity error
+        _parity = 0xFD;   // To ensure at next bit count clear and discard
+      break;
+    case 11:               // Stop bit lots of spare time now
+      if (_parity >= 0xFD) // had parity error
+      {
+        send_now(PS2_KC_RESEND); // request resend
+        _tx_ready |= _HANDSHAKE;
+      }
+      else // Good so save byte in _rx_buffer
+      {
+        // Check _SHIFTed data for commands and action
+        ret = decode_key(_shiftdata);
+        if (ret & 0x2) // decrement expected bytes
+          _bytes_expected--;
+        if (_bytes_expected <= 0 || ret & 4) // Save value ??
+        {
+          val = _head + 1;
+          if (val >= _RX_BUFFER_SIZE)
+            val = 0;
+          if (val != _tail)
+          {
+            // get last byte to save
+            _rx_buffer[val] = uint16_t(_shiftdata);
+            // save extra details
+            _rx_buffer[val] |= uint16_t(_ps2mode) << 8;
+            _head = val;
+          }
+        }
+        if (ret & 0x10) // Special command to send (ECHO/RESEND)
+        {
+          send_now(_now_send);
+          _tx_ready |= _HANDSHAKE;
+        }
+        else if (_bytes_expected <= 0) // Receive data finished
+        {
+          // Set mode and status for next receive byte
+          _ps2mode &= ~(_E0_MODE + _E1_MODE + _WAIT_RESPONSE + _BREAK_KEY);
+          _bytes_expected = 0;
+          _ps2mode &= ~_PS2_BUSY;
+          send_next(); // Check for more to send
+        }
+      }
+      // fall through to default
     default: // in case of weird error and end of byte reception resync
-            _bitcount = 0;
+      _bitcount = 0;
     }
   }
 }
-
 
 /* Decode value received to check for errors commands and responses
    NOT keycode translate yet
@@ -307,82 +302,81 @@ else
 
    Codes like EE, AA and FC ( Echo, BAT pass and fail) treated as valid codes code 6
 */
-uint8_t decode_key( uint8_t value )
+uint8_t decode_key(uint8_t value)
 {
-uint8_t state;
+  uint8_t state;
 
-state = 6;             // default state save and decrement
+  state = 6; // default state save and decrement
 
-// Anything but resend received clear valid value to resend
-if( value != PS2_KC_RESEND )
-  _ps2mode &= ~( _LAST_VALID );
+  // Anything but resend received clear valid value to resend
+  if (value != PS2_KC_RESEND)
+    _ps2mode &= ~(_LAST_VALID);
 
-// First check not a valid response code from a host command
-if( _ps2mode & _WAIT_RESPONSE )
-  if( value < 0xF0 )
-    return state;      // Save response and decrement
+  // First check not a valid response code from a host command
+  if (_ps2mode & _WAIT_RESPONSE)
+    if (value < 0xF0)
+      return state; // Save response and decrement
 
-// E1 Pause mode  special case just decrement
-if( _ps2mode & _E1_MODE )
-  return 2;
+  // E1 Pause mode  special case just decrement
+  if (_ps2mode & _E1_MODE)
+    return 2;
 
-switch( value )
-   {
-   case 0:      // Buffer overrun Errors Reset modes and buffers
-   case PS2_KC_OVERRUN:
-                ps2_reset( );
-                state = 0xC;
-                break;
-   case PS2_KC_RESEND:   // Resend last byte if we have sent something
-                if( ( _ps2mode & _LAST_VALID ) )
-                  {
-                  _now_send = _last_sent;
-                  state = 0x10;
-                  }
-                else
-                  state = 0;
-                break;
-   case PS2_KC_ERROR: // General error pass up but stop any sending or receiving
-                _bytes_expected = 0;
-                _ps2mode = 0;
-                _tx_ready = 0;
-                state = 0xE;
-                break;
-   case PS2_KC_KEYBREAK:   // break Code - wait the final key byte
-                _bytes_expected = 1;
-                _ps2mode |= _BREAK_KEY;
-                state = 0;
-                break;
-   case PS2_KC_ECHO:   // Echo if we did not originate echo back
-                state = 4;                  // always save
-                if( _ps2mode & _LAST_VALID && _last_sent != PS2_KC_ECHO )
-                  {
-                  _now_send = PS2_KC_ECHO;
-                  state |= 0x10;            // send _command on exit
-                  }
-                break;
-   case PS2_KC_BAT:     // BAT pass
-                _bytes_expected = 0;         // reset as if in middle of something lost now
-                state = 4;
-                break;
-   case PS2_KC_EXTEND1:   // Major extend code (PAUSE key only)
-                if( !( _ps2mode & _E1_MODE ) )  // First E1 only
-                  {
-                  _bytes_expected = 7;       // seven more bytes
-                  _ps2mode |= _E1_MODE;
-                  _ps2mode &= ~_BREAK_KEY;    // Always a make
-                  }
-                state = 0;
-                break;
-   case PS2_KC_EXTEND:   // Two byte Extend code
-                _bytes_expected = 1;        // one more byte at least to wait for
-                _ps2mode |= _E0_MODE;
-                state = 0;
-                break;
-   }
-return state;
+  switch (value)
+  {
+  case 0: // Buffer overrun Errors Reset modes and buffers
+  case PS2_KC_OVERRUN:
+    ps2_reset();
+    state = 0xC;
+    break;
+  case PS2_KC_RESEND: // Resend last byte if we have sent something
+    if ((_ps2mode & _LAST_VALID))
+    {
+      _now_send = _last_sent;
+      state = 0x10;
+    }
+    else
+      state = 0;
+    break;
+  case PS2_KC_ERROR: // General error pass up but stop any sending or receiving
+    _bytes_expected = 0;
+    _ps2mode = 0;
+    _tx_ready = 0;
+    state = 0xE;
+    break;
+  case PS2_KC_KEYBREAK: // break Code - wait the final key byte
+    _bytes_expected = 1;
+    _ps2mode |= _BREAK_KEY;
+    state = 0;
+    break;
+  case PS2_KC_ECHO: // Echo if we did not originate echo back
+    state = 4;      // always save
+    if (_ps2mode & _LAST_VALID && _last_sent != PS2_KC_ECHO)
+    {
+      _now_send = PS2_KC_ECHO;
+      state |= 0x10; // send _command on exit
+    }
+    break;
+  case PS2_KC_BAT:       // BAT pass
+    _bytes_expected = 0; // reset as if in middle of something lost now
+    state = 4;
+    break;
+  case PS2_KC_EXTEND1:          // Major extend code (PAUSE key only)
+    if (!(_ps2mode & _E1_MODE)) // First E1 only
+    {
+      _bytes_expected = 7; // seven more bytes
+      _ps2mode |= _E1_MODE;
+      _ps2mode &= ~_BREAK_KEY; // Always a make
+    }
+    state = 0;
+    break;
+  case PS2_KC_EXTEND:    // Two byte Extend code
+    _bytes_expected = 1; // one more byte at least to wait for
+    _ps2mode |= _E0_MODE;
+    state = 0;
+    break;
+  }
+  return state;
 }
-
 
 /* Send data to keyboard
    Data pin direction should already be changed
@@ -391,16 +385,16 @@ return state;
 
    Start bit setting is due to bug in attachinterrupt not clearing pending interrupts
    Also no clear pending interrupt function   */
-void send_bit( void )
+void send_bit(void)
 {
-uint8_t val;
+  uint8_t val;
 
-_bitcount++;               // Now point to next bit
-switch( _bitcount )
+  _bitcount++; // Now point to next bit
+  switch (_bitcount)
   {
   case 1: // Start bit due to Arduino bug
-          digitalWrite( PS2_DataPin, ( LOW ) );
-          break;
+    digitalWrite(PS2_DataPin, (LOW));
+    break;
   case 2:
   case 3:
   case 4:
@@ -409,39 +403,38 @@ switch( _bitcount )
   case 7:
   case 8:
   case 9:
-          // Data bits
-          val = _shiftdata & 0x01;   // get LSB
-          digitalWrite( PS2_DataPin, val ); // send start bit
-          _parity += val;            // another one received ?
-          _shiftdata >>= 1;          // right _SHIFT one place for next bit
-          break;
+    // Data bits
+    val = _shiftdata & 0x01;        // get LSB
+    digitalWrite(PS2_DataPin, val); // send start bit
+    _parity += val;                 // another one received ?
+    _shiftdata >>= 1;               // right _SHIFT one place for next bit
+    break;
   case 10:
-          // Parity - Send LSB if 1 = odd number of 1's so parity should be 0
-          digitalWrite( PS2_DataPin, ( ~_parity & 1 ) );
-          break;
+    // Parity - Send LSB if 1 = odd number of 1's so parity should be 0
+    digitalWrite(PS2_DataPin, (~_parity & 1));
+    break;
   case 11: // Stop bit write change to input pull up for high stop bit
-          pininput( PS2_DataPin );
-          break;
+    pininput(PS2_DataPin);
+    break;
   case 12: // Acknowledge bit low we cannot do anything if high instead of low
-          if( !( _now_send == PS2_KC_ECHO || _now_send == PS2_KC_RESEND ) )
-            {
-            _last_sent = _now_send;   // save in case of resend request
-            _ps2mode |= _LAST_VALID;
-            }
-          // clear modes to receive again
-          _ps2mode &= ~_TX_MODE;
-          if( _tx_ready & _HANDSHAKE )      // If _HANDSHAKE done
-            _tx_ready &= ~_HANDSHAKE;
-          else                              // else we finished a command
-            _tx_ready &= ~_COMMAND;
-          if( !( _ps2mode & _WAIT_RESPONSE ) )   //  if not wait response
-            send_next();                    // check anything else to queue up
-          // fall through to default
-  default: // in case of weird error and end of byte reception re-sync
-          _bitcount = 0;
+    if (!(_now_send == PS2_KC_ECHO || _now_send == PS2_KC_RESEND))
+    {
+      _last_sent = _now_send; // save in case of resend request
+      _ps2mode |= _LAST_VALID;
+    }
+    // clear modes to receive again
+    _ps2mode &= ~_TX_MODE;
+    if (_tx_ready & _HANDSHAKE) // If _HANDSHAKE done
+      _tx_ready &= ~_HANDSHAKE;
+    else // else we finished a command
+      _tx_ready &= ~_COMMAND;
+    if (!(_ps2mode & _WAIT_RESPONSE)) //  if not wait response
+      send_next();                    // check anything else to queue up
+                                      // fall through to default
+  default:                            // in case of weird error and end of byte reception re-sync
+    _bitcount = 0;
   }
 }
-
 
 /* Takes a byte sets up variables and starts the data sending processes
    Starts the actual byte transmission
@@ -454,47 +447,46 @@ switch( _bitcount )
   Main difference _bytes_expected is NOT altered in _HANDSHAKE mode
   in command mode we update _bytes_expected with number of response bytes
 */
-void send_now( uint8_t command )
+void send_now(uint8_t command)
 {
-_shiftdata = command;
-_now_send = command;     // copy for later to save in last sent
-_bitcount = 0;
-_parity = 0;
-_ps2mode |= _TX_MODE + _PS2_BUSY;
+  _shiftdata = command;
+  _now_send = command; // copy for later to save in last sent
+  _bitcount = 0;
+  _parity = 0;
+  _ps2mode |= _TX_MODE + _PS2_BUSY;
 
-// Only do this if sending a command not from Handshaking
-if( !( _tx_ready & _HANDSHAKE ) && ( _tx_ready & _COMMAND ) )
+  // Only do this if sending a command not from Handshaking
+  if (!(_tx_ready & _HANDSHAKE) && (_tx_ready & _COMMAND))
   {
-  _bytes_expected = _response_count;  // How many bytes command will generate
-  _ps2mode |= _WAIT_RESPONSE;
+    _bytes_expected = _response_count; // How many bytes command will generate
+    _ps2mode |= _WAIT_RESPONSE;
   }
 
-// set pins to outputs and high
-digitalWrite( PS2_DataPin, HIGH );
-pinMode( PS2_DataPin, OUTPUT );
-digitalWrite( PS2_IrqPin, HIGH );
-pinMode( PS2_IrqPin, OUTPUT );
-delayMicroseconds( 10 );
+  // set pins to outputs and high
+  digitalWrite(PS2_DataPin, HIGH);
+  pinMode(PS2_DataPin, OUTPUT);
+  digitalWrite(PS2_IrqPin, HIGH);
+  pinMode(PS2_IrqPin, OUTPUT);
+  delayMicroseconds(10);
 #if defined(ARDUINO_ARCH_SAM)
-// STOP interrupt handler as Due etc. a lot faster than Uno/Mega
-// Setting pin output low will cause interrupt before ready
-detachInterrupt( digitalPinToInterrupt( PS2_IrqPin ) );
+  // STOP interrupt handler as Due etc. a lot faster than Uno/Mega
+  // Setting pin output low will cause interrupt before ready
+  detachInterrupt(digitalPinToInterrupt(PS2_IrqPin));
 #endif
-// set Clock LOW
-digitalWrite( PS2_IrqPin, LOW );
-// set clock low for 60us
-delayMicroseconds( 60 );
-// Set data low - Start bit
-digitalWrite( PS2_DataPin, LOW );
-// set clock to input_pullup
-pininput( PS2_IrqPin );
+  // set Clock LOW
+  digitalWrite(PS2_IrqPin, LOW);
+  // set clock low for 60us
+  delayMicroseconds(60);
+  // Set data low - Start bit
+  digitalWrite(PS2_DataPin, LOW);
+  // set clock to input_pullup
+  pininput(PS2_IrqPin);
 #if defined(ARDUINO_ARCH_SAM)
-// Restart interrupt handler as Due etc. a lot faster than Uno/Mega
-attachInterrupt( digitalPinToInterrupt( PS2_IrqPin ), ps2interrupt, FALLING );
+  // Restart interrupt handler as Due etc. a lot faster than Uno/Mega
+  attachInterrupt(digitalPinToInterrupt(PS2_IrqPin), ps2interrupt, FALLING);
 //  wait clock interrupt to send data
 #endif
 }
-
 
 /* Send next byte/command from TX queue and start sending
    Must be ready to send and idle
@@ -511,51 +503,48 @@ attachInterrupt( digitalPinToInterrupt( PS2_IrqPin ), ps2interrupt, FALLING );
             -2 if buffer empty
 
     Note PS2_KEY_IGNORE is used to denote a byte(s) expected in response */
-int16_t send_next( void )
+int16_t send_next(void)
 {
-uint8_t  i;
-int16_t  val;
+  uint8_t i;
+  int16_t val;
 
-val = -1;
-// Check buffer not empty
-i = _tx_tail;
-if( i == _tx_head )
-  return -2;
+  val = -1;
+  // Check buffer not empty
+  i = _tx_tail;
+  if (i == _tx_head)
+    return -2;
 
-// set command bit in _tx_ready as another command to do
-_tx_ready |= _COMMAND;
+  // set command bit in _tx_ready as another command to do
+  _tx_ready |= _COMMAND;
 
-// Already item waiting to be sent or sending interrupt routines will call back
-if( _tx_ready & _HANDSHAKE )
-  return -134;
+  // Already item waiting to be sent or sending interrupt routines will call back
+  if (_tx_ready & _HANDSHAKE)
+    return -134;
 
-// if busy let interrupt catch and call us again
-if( _ps2mode & _PS2_BUSY )
-  return -134;
+  // if busy let interrupt catch and call us again
+  if (_ps2mode & _PS2_BUSY)
+    return -134;
 
-// Following only accessed when not receiving or sending protocol bytes
-// Scan for command response and expected bytes to follow
-_response_count = 0;
-do
+  // Following only accessed when not receiving or sending protocol bytes
+  // Scan for command response and expected bytes to follow
+  _response_count = 0;
+  do
   {
-  i++;
-  if( i >= _TX_BUFFER_SIZE )
-    i = 0;
-  if( val == -1 )
-    val = _tx_buff[ i ];
-  else
-    if( _tx_buff[ i ] != PS2_KEY_IGNORE )
+    i++;
+    if (i >= _TX_BUFFER_SIZE)
+      i = 0;
+    if (val == -1)
+      val = _tx_buff[i];
+    else if (_tx_buff[i] != PS2_KEY_IGNORE)
       break;
     else
       _response_count++;
-  _tx_tail = i;
-  }
-while( i != _tx_head );
-// Now know what to send and expect start the actual wire sending
-send_now( val );
-return 1;
+    _tx_tail = i;
+  } while (i != _tx_head);
+  // Now know what to send and expect start the actual wire sending
+  send_now(val);
+  return 1;
 }
-
 
 /*  Send a byte to the TX buffer
     Value in buffer of PS2_KEY_IGNORE signifies wait for response,
@@ -563,60 +552,56 @@ return 1;
 
     Returns -4 - if buffer full (buffer overrun not written)
     Returns 1 byte written when done */
-int send_byte( uint8_t val )
+int send_byte(uint8_t val)
 {
-uint8_t ret;
+  uint8_t ret;
 
-ret = _tx_head + 1;
-if( ret >= _TX_BUFFER_SIZE )
-  ret = 0;
-if( ret != _tx_tail )
+  ret = _tx_head + 1;
+  if (ret >= _TX_BUFFER_SIZE)
+    ret = 0;
+  if (ret != _tx_tail)
   {
-  _tx_buff[ ret ] = val;
-  _tx_head = ret;
-  return 1;
+    _tx_buff[ret] = val;
+    _tx_head = ret;
+    return 1;
   }
-return -4;
+  return -4;
 }
 
-
 // initialize a data pin for input
-void pininput( uint8_t pin )
+void pininput(uint8_t pin)
 {
 #ifdef INPUT_PULLUP
-pinMode( pin, INPUT_PULLUP );
+  pinMode(pin, INPUT_PULLUP);
 #else
-digitalWrite( pin, HIGH );
-pinMode( pin, INPUT );
+  digitalWrite(pin, HIGH);
+  pinMode(pin, INPUT);
 #endif
 }
 
-
-void ps2_reset( void )
+void ps2_reset(void)
 {
-/* reset buffers and states */
-_tx_head = 0;
-_tx_tail = 0;
-_tx_ready = 0;
-_response_count = 0;
-_head = 0;
-_tail = 0;
-_bitcount = 0;
-PS2_keystatus = 0;
-_ps2mode = 0;
+  /* reset buffers and states */
+  _tx_head = 0;
+  _tx_tail = 0;
+  _tx_ready = 0;
+  _response_count = 0;
+  _head = 0;
+  _tail = 0;
+  _bitcount = 0;
+  PS2_keystatus = 0;
+  _ps2mode = 0;
 }
-
 
 uint8_t key_available()
 {
-int8_t  i;
+  int8_t i;
 
-i = _head - _tail;
-if( i < 0 )
-  i += _RX_BUFFER_SIZE;
-return uint8_t( i );
+  i = _head - _tail;
+  if (i < 0)
+    i += _RX_BUFFER_SIZE;
+  return uint8_t(i);
 }
-
 
 /*  Translate PS2 keyboard code sequence into our key code data
     PAUSE key (_E1_MODE) is de_ALT with as special case, and
@@ -627,254 +612,246 @@ return uint8_t( i );
     Returns 0 for no valid key or processed internally ignored or similar
             0 for empty buffer
     */
-uint16_t translate( void )
+uint16_t translate(void)
 {
-uint8_t   index, length, data;
-uint16_t  retdata;
+  uint8_t index, length, data;
+  uint16_t retdata;
 
-// get next character
-// Check first something to fetch
-index = _tail;
-// check for empty buffer
-if( index == _head )
-  return 0;
-index++;
-if( index >= _RX_BUFFER_SIZE )
-  index = 0;
-_tail = index;
-// Get the flags byte break modes etc in this order
-data = _rx_buffer[ index ] & 0xFF;
-index = ( _rx_buffer[ index ] & 0xFF00 ) >> 8;
+  // get next character
+  // Check first something to fetch
+  index = _tail;
+  // check for empty buffer
+  if (index == _head)
+    return 0;
+  index++;
+  if (index >= _RX_BUFFER_SIZE)
+    index = 0;
+  _tail = index;
+  // Get the flags byte break modes etc in this order
+  data = _rx_buffer[index] & 0xFF;
+  index = (_rx_buffer[index] & 0xFF00) >> 8;
 
-// Catch special case of PAUSE key
-if( index & _E1_MODE )
-  return  PS2_KEY_PAUSE + _FUNCTION;
+  // Catch special case of PAUSE key
+  if (index & _E1_MODE)
+    return PS2_KEY_PAUSE + _FUNCTION;
 
-// Ignore anything not actual keycode but command/response
-// Return untranslated as valid
-if( ( data >= PS2_KC_BAT && data != PS2_KC_LANG1 && data != PS2_KC_LANG2 )
-    || ( index & _WAIT_RESPONSE ) )
-  return ( uint16_t )data;
+  // Ignore anything not actual keycode but command/response
+  // Return untranslated as valid
+  if ((data >= PS2_KC_BAT && data != PS2_KC_LANG1 && data != PS2_KC_LANG2) || (index & _WAIT_RESPONSE))
+    return (uint16_t)data;
 
-// Gather the break of key status
-if( index & _BREAK_KEY )
-  PS2_keystatus |= _BREAK;
-else
-  PS2_keystatus &= ~_BREAK;
+  // Gather the break of key status
+  if (index & _BREAK_KEY)
+    PS2_keystatus |= _BREAK;
+  else
+    PS2_keystatus &= ~_BREAK;
 
-retdata = 0;    // error code by default
-// Scan appropriate table
-if( index & _E0_MODE )
+  retdata = 0; // error code by default
+  // Scan appropriate table
+  if (index & _E0_MODE)
   {
-  length = sizeof( extended_key ) / sizeof( extended_key[ 0 ] );
-  for( index = 0; index < length; index++ )
+    length = sizeof(extended_key) / sizeof(extended_key[0]);
+    for (index = 0; index < length; index++)
 #if defined(ARDUINO_ARCH_AVR)
-     if( data == pgm_read_byte( &extended_key[ index ][ 0 ] ) )
-       {
-       retdata = pgm_read_byte( &extended_key[ index ][ 1 ] );
-#elif defined(ARDUINO_ARCH_SAM)
-     if( data == extended_key[ index ][ 0 ] )
-       {
-       retdata = extended_key[ index ][ 1 ];
-#endif
-       break;
-       }
-  }
-else
-  {
-  length = sizeof( single_key ) / sizeof( single_key[ 0 ] );
-  for( index = 0; index < length; index++ )
-#if defined(ARDUINO_ARCH_AVR)
-     if( data == pgm_read_byte( &single_key[ index ][ 0 ] ) )
-       {
-       retdata = pgm_read_byte( &single_key[ index ][ 1 ] );
-#elif defined(ARDUINO_ARCH_SAM)
-     if( data == single_key[ index ][ 0 ] )
-       {
-       retdata = single_key[ index ][ 1 ];
-#endif
-       break;
-       }
-  }
-// trap not found key
-if( index == length )
-  retdata = 0;
-/* valid found values only */
-if( retdata > 0 )
-  {
-  if( retdata <= PS2_KEY_CAPS )
-    {   // process lock keys need second make to turn off
-    if( PS2_keystatus & _BREAK )
+      if (data == pgm_read_byte(&extended_key[index][0]))
       {
-      PS2_lockstate[ retdata ] = 0; // Set received a break so next make toggles LOCK status
-      retdata = PS2_KEY_IGNORE;     // ignore key
+        retdata = pgm_read_byte(&extended_key[index][1]);
+#elif defined(ARDUINO_ARCH_SAM)
+      if (data == extended_key[index][0])
+      {
+        retdata = extended_key[index][1];
+#endif
+        break;
       }
-    else
+  }
+  else
+  {
+    length = sizeof(single_key) / sizeof(single_key[0]);
+    for (index = 0; index < length; index++)
+#if defined(ARDUINO_ARCH_AVR)
+      if (data == pgm_read_byte(&single_key[index][0]))
       {
-      if( PS2_lockstate[ retdata ] == 1 )
-        retdata = PS2_KEY_IGNORE;   // ignore key if make and not received break
+        retdata = pgm_read_byte(&single_key[index][1]);
+#elif defined(ARDUINO_ARCH_SAM)
+      if (data == single_key[index][0])
+      {
+        retdata = single_key[index][1];
+#endif
+        break;
+      }
+  }
+  // trap not found key
+  if (index == length)
+    retdata = 0;
+  /* valid found values only */
+  if (retdata > 0)
+  {
+    if (retdata <= PS2_KEY_CAPS)
+    { // process lock keys need second make to turn off
+      if (PS2_keystatus & _BREAK)
+      {
+        PS2_lockstate[retdata] = 0; // Set received a break so next make toggles LOCK status
+        retdata = PS2_KEY_IGNORE;   // ignore key
+      }
       else
-        {
-        PS2_lockstate[ retdata ] = 1;
-        switch( retdata )
-          {
-          case PS2_KEY_CAPS:   index = PS2_LOCK_CAPS;
-                               // Set CAPS lock if not set before
-                               if( PS2_keystatus & _CAPS )
-                                 PS2_keystatus &= ~_CAPS;
-                               else
-                                 PS2_keystatus |= _CAPS;
-                               break;
-          case PS2_KEY_SCROLL: index = PS2_LOCK_SCROLL;
-                               break;
-          case PS2_KEY_NUM:    index = PS2_LOCK_NUM;
-                               break;
-          }
-        // Now update PS2_led_lock status to match
-        if( PS2_led_lock & index )
-          {
-          PS2_led_lock &= ~index;
-          PS2_keystatus |= _BREAK;     // send as break
-          }
+      {
+        if (PS2_lockstate[retdata] == 1)
+          retdata = PS2_KEY_IGNORE; // ignore key if make and not received break
         else
-          PS2_led_lock |= index;
-        set_lock( );
+        {
+          PS2_lockstate[retdata] = 1;
+          switch (retdata)
+          {
+          case PS2_KEY_CAPS:
+            index = PS2_LOCK_CAPS;
+            // Set CAPS lock if not set before
+            if (PS2_keystatus & _CAPS)
+              PS2_keystatus &= ~_CAPS;
+            else
+              PS2_keystatus |= _CAPS;
+            break;
+          case PS2_KEY_SCROLL:
+            index = PS2_LOCK_SCROLL;
+            break;
+          case PS2_KEY_NUM:
+            index = PS2_LOCK_NUM;
+            break;
+          }
+          // Now update PS2_led_lock status to match
+          if (PS2_led_lock & index)
+          {
+            PS2_led_lock &= ~index;
+            PS2_keystatus |= _BREAK; // send as break
+          }
+          else
+            PS2_led_lock |= index;
+          set_lock();
         }
       }
     }
-  else
-    if( retdata >= PS2_KEY_L_SHIFT && retdata <= PS2_KEY_R_GUI )
-      { // Update bits for _SHIFT, _CTRL, _ALT, _ALT GR, _GUI in status
+    else if (retdata >= PS2_KEY_L_SHIFT && retdata <= PS2_KEY_R_GUI)
+    { // Update bits for _SHIFT, _CTRL, _ALT, _ALT GR, _GUI in status
 #if defined(ARDUINO_ARCH_AVR)
-      index = pgm_read_byte( &control_flags[ retdata - PS2_KEY_L_SHIFT ] );
+      index = pgm_read_byte(&control_flags[retdata - PS2_KEY_L_SHIFT]);
 #elif defined(ARDUINO_ARCH_SAM)
-      index = control_flags[ retdata - PS2_KEY_L_SHIFT ];
+      index = control_flags[retdata - PS2_KEY_L_SHIFT];
 #endif
-      if( PS2_keystatus & _BREAK )
+      if (PS2_keystatus & _BREAK)
         PS2_keystatus &= ~index;
       else
-        // if already set ignore repeats if flag set
-        if( ( PS2_keystatus & index ) && ( _mode & _NO_REPEATS ) )
-          retdata = PS2_KEY_IGNORE; // ignore repeat _SHIFT, _CTRL, _ALT, _GUI
-        else
-          PS2_keystatus |= index;
-      }
+          // if already set ignore repeats if flag set
+          if ((PS2_keystatus & index) && (_mode & _NO_REPEATS))
+        retdata = PS2_KEY_IGNORE; // ignore repeat _SHIFT, _CTRL, _ALT, _GUI
+      else
+        PS2_keystatus |= index;
+    }
     else
-      // Numeric keypad ONLY works in numlock state or when _SHIFT status
-      if( retdata >= PS2_KEY_KP0 && retdata <=  PS2_KEY_KP_DOT )
-        if( !( PS2_led_lock & PS2_LOCK_NUM ) || ( PS2_keystatus & _SHIFT ) )
+        // Numeric keypad ONLY works in numlock state or when _SHIFT status
+        if (retdata >= PS2_KEY_KP0 && retdata <= PS2_KEY_KP_DOT)
+      if (!(PS2_led_lock & PS2_LOCK_NUM) || (PS2_keystatus & _SHIFT))
 #if defined(ARDUINO_ARCH_AVR)
-          retdata = pgm_read_byte( &scroll_remap[ retdata - PS2_KEY_KP0 ] );
+        retdata = pgm_read_byte(&scroll_remap[retdata - PS2_KEY_KP0]);
 #elif defined(ARDUINO_ARCH_SAM)
-          retdata = scroll_remap[ retdata - PS2_KEY_KP0 ];
+        retdata = scroll_remap[retdata - PS2_KEY_KP0];
 #endif
-  // Sort break code handling or ignore for all having processed the _SHIFT etc status
-  if( ( PS2_keystatus & _BREAK ) && ( _mode & _NO_BREAKS ) )
-    return ( uint16_t )PS2_KEY_IGNORE;
-  // Assign Function keys _mode
-  if( ( retdata <= PS2_KEY_SPACE || retdata >= PS2_KEY_F1 ) && retdata != PS2_KEY_EUROPE2 )
-    PS2_keystatus |= _FUNCTION;
-  else
-    PS2_keystatus &= ~_FUNCTION;
+    // Sort break code handling or ignore for all having processed the _SHIFT etc status
+    if ((PS2_keystatus & _BREAK) && (_mode & _NO_BREAKS))
+      return (uint16_t)PS2_KEY_IGNORE;
+    // Assign Function keys _mode
+    if ((retdata <= PS2_KEY_SPACE || retdata >= PS2_KEY_F1) && retdata != PS2_KEY_EUROPE2)
+      PS2_keystatus |= _FUNCTION;
+    else
+      PS2_keystatus &= ~_FUNCTION;
   }
-return ( retdata | ( (uint16_t)PS2_keystatus << 8 ) );
+  return (retdata | ((uint16_t)PS2_keystatus << 8));
 }
-
 
 /* Build command to send lock status
     Assumes data is within range */
-void set_lock( )
+void set_lock()
 {
-send_byte( PS2_KC_LOCK );        // send command
-send_byte( PS2_KEY_IGNORE );     // wait ACK
-send_byte( PS2_led_lock );       // send data from internal variable
-if( ( send_byte( PS2_KEY_IGNORE ) ) ) // wait ACK
-  send_next();              // if idle start transmission
+  send_byte(PS2_KC_LOCK);          // send command
+  send_byte(PS2_KEY_IGNORE);       // wait ACK
+  send_byte(PS2_led_lock);         // send data from internal variable
+  if ((send_byte(PS2_KEY_IGNORE))) // wait ACK
+    send_next();                   // if idle start transmission
 }
-
 
 /*  Send echo command to keyboard
     returned data in keyboard buffer read as keys */
-void PS2KeyAdvanced::echo( void )
+void PS2KeyAdvanced::echo(void)
 {
-send_byte( PS2_KC_ECHO );             // send command
-if( ( send_byte( PS2_KEY_IGNORE ) ) ) // wait data PS2_KC_ECHO
-  send_next();                   // if idle start transmission
+  send_byte(PS2_KC_ECHO);          // send command
+  if ((send_byte(PS2_KEY_IGNORE))) // wait data PS2_KC_ECHO
+    send_next();                   // if idle start transmission
 }
-
 
 /*  Get the ID used in keyboard
     returned data in keyboard buffer read as keys */
-void PS2KeyAdvanced::readID( void )
+void PS2KeyAdvanced::readID(void)
 {
-send_byte( PS2_KC_READID );           // send command
-send_byte( PS2_KEY_IGNORE );          // wait ACK
-send_byte( PS2_KEY_IGNORE );          // wait data
-if( ( send_byte( PS2_KEY_IGNORE ) ) ) // wait data
-  send_next();                   // if idle start transmission
+  send_byte(PS2_KC_READID);        // send command
+  send_byte(PS2_KEY_IGNORE);       // wait ACK
+  send_byte(PS2_KEY_IGNORE);       // wait data
+  if ((send_byte(PS2_KEY_IGNORE))) // wait data
+    send_next();                   // if idle start transmission
 }
-
 
 /*  Get the current Scancode Set used in keyboard
     returned data in keyboard buffer read as keys */
-void PS2KeyAdvanced::getScanCodeSet( void )
+void PS2KeyAdvanced::getScanCodeSet(void)
 {
-send_byte( PS2_KC_SCANCODE );         // send command
-send_byte( PS2_KEY_IGNORE );          // wait ACK
-send_byte( 0 );                       // send data 0 = read
-send_byte( PS2_KEY_IGNORE );          // wait ACK
-if( ( send_byte( PS2_KEY_IGNORE ) ) ) // wait data
-  send_next();                   // if idle start transmission
+  send_byte(PS2_KC_SCANCODE);      // send command
+  send_byte(PS2_KEY_IGNORE);       // wait ACK
+  send_byte(0);                    // send data 0 = read
+  send_byte(PS2_KEY_IGNORE);       // wait ACK
+  if ((send_byte(PS2_KEY_IGNORE))) // wait data
+    send_next();                   // if idle start transmission
 }
-
 
 /* Returns the current status of Locks */
 uint8_t PS2KeyAdvanced::getLock()
 {
-return( PS2_led_lock );
+  return (PS2_led_lock);
 }
-
 
 /* Sets the current status of Locks and LEDs */
-void PS2KeyAdvanced::setLock( uint8_t code )
+void PS2KeyAdvanced::setLock(uint8_t code)
 {
-code &= 0xF;                // To allow for rare keyboards with extra LED
-PS2_led_lock = code;        // update our lock copy
-PS2_keystatus &= ~_CAPS;    // Update copy of _CAPS lock as well
-PS2_keystatus |= ( code & PS2_LOCK_CAPS ) ? _CAPS : 0;
-set_lock( );
+  code &= 0xF;             // To allow for rare keyboards with extra LED
+  PS2_led_lock = code;     // update our lock copy
+  PS2_keystatus &= ~_CAPS; // Update copy of _CAPS lock as well
+  PS2_keystatus |= (code & PS2_LOCK_CAPS) ? _CAPS : 0;
+  set_lock();
 }
-
 
 /* Set library to not send break key codes
             1 = no break codes
             0 = send break codes  */
-void PS2KeyAdvanced::setNoBreak( uint8_t data )
+void PS2KeyAdvanced::setNoBreak(uint8_t data)
 {
-_mode &= ~_NO_BREAKS;
-_mode |= data ? _NO_BREAKS : 0;
+  _mode &= ~_NO_BREAKS;
+  _mode |= data ? _NO_BREAKS : 0;
 }
 
- /* Set library to not repeat make codes for _CTRL, _ALT, _GUI, _SHIFT
+/* Set library to not repeat make codes for _CTRL, _ALT, _GUI, _SHIFT
             1 = no repeat codes
             0 = send repeat codes  */
-void PS2KeyAdvanced::setNoRepeat( uint8_t data )
+void PS2KeyAdvanced::setNoRepeat(uint8_t data)
 {
-_mode &= ~_NO_REPEATS;
-_mode |= data ? _NO_REPEATS : 0;
+  _mode &= ~_NO_REPEATS;
+  _mode |= data ? _NO_REPEATS : 0;
 }
-
 
 /* Resets keyboard when reset has completed
    keyboard sends AA - Pass or FC for fail        */
 void PS2KeyAdvanced::resetKey()
 {
-send_byte( PS2_KC_RESET );            // send command
-send_byte( PS2_KEY_IGNORE );          // wait ACK
-if( ( send_byte( PS2_KEY_IGNORE ) ) ) // wait data PS2_KC_BAT or PS2_KC_ERROR
-  send_next();                   // if idle start transmission
+  send_byte(PS2_KC_RESET);         // send command
+  send_byte(PS2_KEY_IGNORE);       // wait ACK
+  if ((send_byte(PS2_KEY_IGNORE))) // wait data PS2_KC_BAT or PS2_KC_ERROR
+    send_next();                   // if idle start transmission
 }
-
 
 /*  Send Typematic rate/delay command to keyboard
     First Parameter  rate is 0 - 0x1F (31)
@@ -888,18 +865,17 @@ if( ( send_byte( PS2_KEY_IGNORE ) ) ) // wait data PS2_KC_BAT or PS2_KC_ERROR
     Error returns 0 ok
                 -5 parameter error
                 */
-int PS2KeyAdvanced::typematic( uint8_t rate, uint8_t delay )
+int PS2KeyAdvanced::typematic(uint8_t rate, uint8_t delay)
 {
-if( rate > 31 || delay > 3 )
-  return -5;
-send_byte( PS2_KC_RATE );             // send command
-send_byte( PS2_KEY_IGNORE );          // wait ACK
-send_byte( ( delay << 5 ) + rate );   // Send values
-if( ( send_byte( PS2_KEY_IGNORE ) ) ) // wait ACK
-  send_next();                   // if idle start transmission
-return 0;
+  if (rate > 31 || delay > 3)
+    return -5;
+  send_byte(PS2_KC_RATE);          // send command
+  send_byte(PS2_KEY_IGNORE);       // wait ACK
+  send_byte((delay << 5) + rate);  // Send values
+  if ((send_byte(PS2_KEY_IGNORE))) // wait ACK
+    send_next();                   // if idle start transmission
+  return 0;
 }
-
 
 /* Returns count of available processed key codes
 
@@ -916,78 +892,74 @@ return 0;
   buffer empty so cannot actually hold buffer size values  */
 uint8_t PS2KeyAdvanced::available()
 {
-int8_t  i, idx;
-uint16_t data;
+  int8_t i, idx;
+  uint16_t data;
 
-// check output queue
-i = _key_head - _key_tail;
-if( i < 0 )
-  i += _KEY_BUFF_SIZE;
-while( i < ( _KEY_BUFF_SIZE - 1 ) ) // process if not full
-  if( key_available() )         // not check for more keys to process
+  // check output queue
+  i = _key_head - _key_tail;
+  if (i < 0)
+    i += _KEY_BUFF_SIZE;
+  while (i < (_KEY_BUFF_SIZE - 1)) // process if not full
+    if (key_available())           // not check for more keys to process
     {
-    data = translate();         // get next translated key
-    if( data == 0 )             // unless in buffer is empty
-      break;
-    if( ( data & 0xFF ) != PS2_KEY_IGNORE
-            && ( data & 0xFF ) > 0 )
+      data = translate(); // get next translated key
+      if (data == 0)      // unless in buffer is empty
+        break;
+      if ((data & 0xFF) != PS2_KEY_IGNORE && (data & 0xFF) > 0)
       {
-      idx = _key_head + 1;         // point to next space
-      if( idx >= _KEY_BUFF_SIZE )  // loop to front if necessary
-        idx = 0;
-      _key_buffer[ idx ] = data; // save the data to out buffer
-      _key_head = idx;
-      i++;                      // update count
+        idx = _key_head + 1;       // point to next space
+        if (idx >= _KEY_BUFF_SIZE) // loop to front if necessary
+          idx = 0;
+        _key_buffer[idx] = data; // save the data to out buffer
+        _key_head = idx;
+        i++; // update count
       }
     }
-  else
-    break;                      // exit nothing coming in
-return uint8_t( i );
+    else
+      break; // exit nothing coming in
+  return uint8_t(i);
 }
-
 
 /* read a decoded key from the keyboard buffer
    returns 0 for empty buffer */
 uint16_t PS2KeyAdvanced::read()
 {
-uint16_t result;
-uint8_t idx;
+  uint16_t result;
+  uint8_t idx;
 
-if( ( result = available() ) )
+  if ((result = available()))
   {
-  idx = _key_tail;
-  // check for empty buffer
-  if( idx == _key_head )
-    return -2;
-  idx++;
-  if( idx >= _KEY_BUFF_SIZE )  // loop to front if necessary
-    idx = 0;
-  _key_tail = idx;
-  result = _key_buffer[ idx ];
+    idx = _key_tail;
+    // check for empty buffer
+    if (idx == _key_head)
+      return -2;
+    idx++;
+    if (idx >= _KEY_BUFF_SIZE) // loop to front if necessary
+      idx = 0;
+    _key_tail = idx;
+    result = _key_buffer[idx];
   }
-return result;
+  return result;
 }
-
 
 PS2KeyAdvanced::PS2KeyAdvanced()
 {
-// nothing to do here, begin() does it all
+  // nothing to do here, begin() does it all
 }
 
-
 /* instantiate class for keyboard  */
-void PS2KeyAdvanced::begin( uint8_t data_pin, uint8_t irq_pin )
+void PS2KeyAdvanced::begin(uint8_t data_pin, uint8_t irq_pin)
 {
-/* PS2 variables reset */
-ps2_reset( );
+  /* PS2 variables reset */
+  ps2_reset();
 
-PS2_DataPin = data_pin;
-PS2_IrqPin = irq_pin;
+  PS2_DataPin = data_pin;
+  PS2_IrqPin = irq_pin;
 
-// initialize the pins
-pininput( PS2_IrqPin );            /* Setup Clock pin */
-pininput( PS2_DataPin );           /* Setup Data pin */
+  // initialize the pins
+  pininput(PS2_IrqPin);  /* Setup Clock pin */
+  pininput(PS2_DataPin); /* Setup Data pin */
 
-// Start interrupt handler
-attachInterrupt( digitalPinToInterrupt( irq_pin ), ps2interrupt, FALLING );
+  // Start interrupt handler
+  attachInterrupt(digitalPinToInterrupt(irq_pin), ps2interrupt, FALLING);
 }
