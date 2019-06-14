@@ -1295,8 +1295,8 @@ ENDDEF
 #
 # Diode
 #
-DEF Diode CR 0 40 N Y 1 F N
-F0 "CR" 0 75 50 H V C CNN
+DEF Diode D 0 40 N Y 1 F N
+F0 "D" 0 75 50 H V C CNN
 F1 "Diode" 0 -75 50 H V C CNN
 F2 "" 50 0 60 H I C CNN
 F3 "" 50 0 60 H I C CNN
