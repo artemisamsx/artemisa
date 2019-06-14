@@ -1,8 +1,8 @@
-(module RN8 (layer F.Cu) (tedit 5CAB09EB)
+(module RN8 (layer F.Cu) (tedit 5D035A93)
   (descr "R-net, sil package, 9pin")
   (tags "CONN DEV")
   (fp_text reference RN8 (at 0 -2.159) (layer F.SilkS)
-    (effects (font (size 1.016 1.016) (thickness 0.2032)))
+    (effects (font (size 1 1) (thickness 0.15)))
   )
   (fp_text value RN*** (at 0.254 -3.556) (layer F.SilkS) hide
     (effects (font (size 1.016 0.889) (thickness 0.2032)))
