@@ -759,18 +759,16 @@ $EndComp
 $Comp
 L artemisa:R R?
 U 1 1 5AF3E1DF
-P 6650 4550
+P 6650 1850
 AR Path="/5AF3E1DF" Ref="R?"  Part="1" 
 AR Path="/5AED18CC/5AF3E1DF" Ref="R9"  Part="1" 
-F 0 "R9" H 6650 4650 50  0000 C CNN
-F 1 "10K" H 6650 4550 40  0000 C CNN
-F 2 "artemisa:Axial_resistor" V 6580 4550 50  0001 C CNN
-F 3 "" H 6650 4550 50  0001 C CNN
-	1    6650 4550
+F 0 "R9" H 6650 1950 50  0000 C CNN
+F 1 "10K" H 6650 1850 40  0000 C CNN
+F 2 "artemisa:Axial_resistor" V 6580 1850 50  0001 C CNN
+F 3 "" H 6650 1850 50  0001 C CNN
+	1    6650 1850
 	0    1    1    0   
 $EndComp
-Wire Wire Line
-	6650 2750 6650 4400
 Wire Wire Line
 	6400 3700 6400 4400
 $Comp
@@ -987,19 +985,6 @@ F 3 "" H 6400 4850 60  0001 C CNN
 	1    6400 4850
 	1    0    0    -1  
 $EndComp
-$Comp
-L artemisa:GND #PWR0105
-U 1 1 5D9DE24D
-P 6650 4850
-F 0 "#PWR0105" H 6650 4750 60  0001 C CNN
-F 1 "GND" H 6650 4950 60  0001 C CNN
-F 2 "" H 6650 4850 60  0001 C CNN
-F 3 "" H 6650 4850 60  0001 C CNN
-	1    6650 4850
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	6650 4850 6650 4700
 Wire Wire Line
 	6400 4700 6400 4850
 Wire Wire Line
@@ -1314,6 +1299,21 @@ Wire Wire Line
 	10650 2800 10650 2900
 Wire Wire Line
 	10650 2900 10550 2900
+Wire Wire Line
+	6650 2750 6650 2000
+$Comp
+L artemisa:VCC #PWR?
+U 1 1 5D343CA1
+P 6650 1550
+F 0 "#PWR?" H 6650 1500 60  0001 C CNN
+F 1 "VCC" H 6650 1800 60  0001 C CNN
+F 2 "" H 6650 1550 60  0001 C CNN
+F 3 "" H 6650 1550 60  0001 C CNN
+	1    6650 1550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6650 1550 6650 1700
 Wire Bus Line
 	11850 5250 11850 6150
 Wire Bus Line
