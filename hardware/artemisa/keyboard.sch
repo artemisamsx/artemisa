@@ -65,27 +65,27 @@ NoConn ~ 6550 4700
 NoConn ~ 6550 4600
 NoConn ~ 6550 4500
 NoConn ~ 6550 4400
-Text Label 7250 3300 2    60   ~ 0
+Text Label 7350 3300 2    60   ~ 0
 ~RSL0
-Text Label 7250 3400 2    60   ~ 0
+Text Label 7350 3400 2    60   ~ 0
 ~RSL1
-Text Label 7250 3500 2    60   ~ 0
+Text Label 7350 3500 2    60   ~ 0
 ~RSL2
-Text Label 7250 3600 2    60   ~ 0
+Text Label 7350 3600 2    60   ~ 0
 ~RSL3
-Text Label 7250 3700 2    60   ~ 0
+Text Label 7350 3700 2    60   ~ 0
 ~RSL4
-Text Label 7250 3800 2    60   ~ 0
+Text Label 7350 3800 2    60   ~ 0
 ~RSL5
-Text Label 7250 3900 2    60   ~ 0
+Text Label 7350 3900 2    60   ~ 0
 ~RSL6
-Text Label 7250 4000 2    60   ~ 0
+Text Label 7350 4000 2    60   ~ 0
 ~RSL7
-Text Label 7250 4100 2    60   ~ 0
+Text Label 7350 4100 2    60   ~ 0
 ~RSL8
-Text Label 7250 4200 2    60   ~ 0
+Text Label 7350 4200 2    60   ~ 0
 ~RSL9
-Text Label 7250 4300 2    60   ~ 0
+Text Label 7400 4300 2    60   ~ 0
 ~RSL10
 Wire Wire Line
 	5100 3900 5100 4000
@@ -323,10 +323,10 @@ Wire Wire Line
 Wire Wire Line
 	6900 4400 7700 4400
 Wire Wire Line
-	7000 4600 7700 4600
-Text Label 7250 4400 2    60   ~ 0
+	7100 4600 7700 4600
+Text Label 7400 4400 2    60   ~ 0
 ~CAPSL
-Text Label 7250 4600 2    60   ~ 0
+Text Label 7400 4600 2    60   ~ 0
 ~RESET
 $Comp
 L artemisa:VCC #PWR067
@@ -362,18 +362,11 @@ Connection ~ 7600 4900
 Wire Wire Line
 	7600 4900 7600 5000
 Wire Wire Line
-	7000 5500 7000 4600
+	7100 6150 7100 4600
 Wire Wire Line
-	3500 5500 7000 5500
-Text HLabel 3500 5500 0    60   Input ~ 0
+	3500 6150 7100 6150
+Text HLabel 3500 6150 0    60   Input ~ 0
 ~RESET
-Wire Wire Line
-	7600 2350 7600 4500
-Wire Wire Line
-	7700 4500 7600 4500
-Connection ~ 7600 4500
-Wire Wire Line
-	7600 4500 7600 4700
 $Comp
 L artemisa:74LS07 U?
 U 5 1 5D09A220
@@ -387,11 +380,37 @@ F 3 "" H 4550 5200 50  0001 C CNN
 	5    4550 5200
 	1    0    0    -1  
 $EndComp
-NoConn ~ 5300 6250
 Wire Wire Line
 	3500 5200 4250 5200
 Wire Wire Line
 	4850 5200 6900 5200
+Text HLabel 3500 5650 0    60   Input ~ 0
+~KANALOCK
+Wire Wire Line
+	7600 2350 7600 4700
+Wire Wire Line
+	7700 4500 7000 4500
+Wire Wire Line
+	7000 4500 7000 5650
+Text Label 7400 4500 2    60   ~ 0
+~KANAL
+$Comp
+L artemisa:74LS07 U?
+U 6 1 5D2B1C31
+P 4550 5650
+AR Path="/5AED18CC/5D2B1C31" Ref="U?"  Part="5" 
+AR Path="/5AE5DD12/5D2B1C31" Ref="U16"  Part="6" 
+F 0 "U16" H 4350 5800 50  0000 C CNN
+F 1 "74LS07" H 4650 5800 50  0000 C CNN
+F 2 "artemisa:DIP-14_300" H 4550 5650 50  0001 C CNN
+F 3 "" H 4550 5650 50  0001 C CNN
+	6    4550 5650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3500 5650 4250 5650
+Wire Wire Line
+	4850 5650 7000 5650
 Wire Bus Line
 	4750 3300 4750 4500
 Wire Bus Line
