@@ -1,4 +1,4 @@
-15877063227635550
+15878625479476550
 artemisa
 Axial_diode
 Diode, DO-35 package
@@ -146,6 +146,13 @@ D-SUB 9 pin plug, Tyco P/N 4-338168-2
 0
 11
 9
+artemisa
+Jumper
+Through hole straight pin header, 1x03, 2.54mm pitch, single row
+Through hole pin header THT 1x03 2.54mm single row
+0
+3
+3
 artemisa
 LED
 3mm green led
