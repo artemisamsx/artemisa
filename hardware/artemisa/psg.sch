@@ -770,19 +770,7 @@ F 3 "" H 6650 1850 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	6400 3700 6400 4400
-$Comp
-L artemisa:74LS07 U16
-U 6 1 5B0E9B52
-P 8950 7000
-F 0 "U16" H 8750 7150 50  0000 C CNN
-F 1 "74LS07" H 9050 7150 50  0000 C CNN
-F 2 "artemisa:DIP-14_300" H 8950 7000 50  0001 C CNN
-F 3 "" H 8950 7000 50  0001 C CNN
-	6    8950 7000
-	1    0    0    -1  
-$EndComp
-NoConn ~ 9250 7000
+	6400 3700 6400 4300
 Text HLabel 3900 8050 0    60   Input ~ 0
 CASIN
 Wire Wire Line
@@ -819,8 +807,6 @@ Wire Wire Line
 	5700 7450 6000 7450
 Wire Wire Line
 	5700 7450 5700 7650
-Wire Wire Line
-	8400 7000 8650 7000
 $Comp
 L artemisa:74HC08 U14
 U 4 2 5BF0839B
@@ -1024,19 +1010,6 @@ F 3 "" H 4200 3600 60  0001 C CNN
 $EndComp
 Wire Wire Line
 	4200 3600 4200 3700
-Wire Wire Line
-	8400 6900 8400 7000
-$Comp
-L artemisa:VCC #PWR0109
-U 1 1 5DA32BB5
-P 8400 6900
-F 0 "#PWR0109" H 8400 6850 60  0001 C CNN
-F 1 "VCC" H 8400 7150 60  0001 C CNN
-F 2 "" H 8400 6900 60  0001 C CNN
-F 3 "" H 8400 6900 60  0001 C CNN
-	1    8400 6900
-	1    0    0    -1  
-$EndComp
 $Comp
 L artemisa:VCC #PWR088
 U 1 1 5DA54EEF
@@ -1314,6 +1287,17 @@ F 3 "" H 6650 1550 60  0001 C CNN
 $EndComp
 Wire Wire Line
 	6650 1550 6650 1700
+Text HLabel 3900 7800 0    60   Output ~ 0
+~KANALOCK
+Wire Wire Line
+	6400 4300 6550 4300
+Wire Wire Line
+	6550 4300 6550 7800
+Wire Wire Line
+	6550 7800 3900 7800
+Connection ~ 6400 4300
+Wire Wire Line
+	6400 4300 6400 4400
 Wire Bus Line
 	11850 5250 11850 6150
 Wire Bus Line
