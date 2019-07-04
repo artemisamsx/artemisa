@@ -1,4 +1,4 @@
-15878625479476550
+15880187743353550
 artemisa
 Axial_diode
 Diode, DO-35 package
@@ -188,6 +188,13 @@ PS2_conn
 0
 9
 6
+artemisa
+Push_button_angled
+tactile switch SPST right angle, PTS645VL58-2 LFS
+tactile switch SPST angled PTS645VL58-2 LFS C&K Button
+0
+4
+2
 artemisa
 Radial_capacitor
 CP, Radial series, Radial, pin pitch=2.00mm, , diameter=5mm, Electrolytic Capacitor
