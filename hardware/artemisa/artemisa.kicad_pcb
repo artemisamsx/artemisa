@@ -2,7 +2,7 @@
 
   (general
     (thickness 1.6)
-    (drawings 25)
+    (drawings 26)
     (tracks 5020)
     (zones 0)
     (modules 122)
@@ -7640,6 +7640,9 @@
     )
   )
 
+  (gr_text RESET (at 260.096 224.79 90) (layer F.SilkS)
+    (effects (font (size 1.5 1.5) (thickness 0.3)))
+  )
   (gr_line (start 267.716 101.6) (end 267.716 99.06) (layer F.SilkS) (width 0.15) (tstamp 5D1ED87C))
   (gr_line (start 267.716 99.06) (end 271.526 99.06) (layer F.SilkS) (width 0.15) (tstamp 5D1ED876))
   (gr_line (start 271.526 101.6) (end 267.716 101.6) (layer F.SilkS) (width 0.15) (tstamp 5D1ED879))
