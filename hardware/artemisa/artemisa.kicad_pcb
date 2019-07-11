@@ -7675,7 +7675,7 @@
   (gr_text "Graphics card connector" (at 59.69 200.025 90) (layer F.SilkS)
     (effects (font (size 1 1) (thickness 0.15)) (justify right))
   )
-  (gr_text "Artemisa MSX Computer System\nMotherboard Mk I - Rev02\nCopyright (c) 2018, 2019 Alvaro Polo" (at 266.446 219.71 90) (layer F.SilkS)
+  (gr_text "Artemisa MSX Computer System\nMotherboard Mk I - Rev03\nCopyright (c) 2018, 2019 Alvaro Polo" (at 266.446 219.71 90) (layer F.SilkS)
     (effects (font (size 1.5 1.5) (thickness 0.3)) (justify left))
   )
 
