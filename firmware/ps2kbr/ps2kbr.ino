@@ -40,6 +40,9 @@
 #define MATRIX_PIN_SHCP  4 // ATmega328 pin #6 (PD4)
 
 // The Arduino pin where CAPSLOCK line is connected.
+#define KANALOCK_PIN     6 // ATmega328 pin #12 (PD6)
+
+// The Arduino pin where CAPSLOCK line is connected.
 #define CAPSLOCK_PIN     13 // ATmega328 pin #19 (PB5/SCLK)
 
 // How many rows of MSX matrix we will emulate
@@ -88,8 +91,9 @@ void init_iopins() {
     digitalWrite(outputs[i], LOW);
   }
 
-  // The pin used to read CAPSLOCK signal
-  pinMode(CAPSLOCK_PIN, INPUT);
+  // The pins used to read CAPSLOCK and KANALOCK signals
+  pinMode(CAPSLOCK_PIN, INPUT_PULLUP);
+  pinMode(KANALOCK_PIN, INPUT_PULLUP);
 }
 
 // Initialize the matrix
@@ -167,18 +171,28 @@ void handle_code(int16_t c) {
 }
 
 // Handle capslock state changes
-void handle_capslock() {
-  static int before = -1;
-  int after = digitalRead(CAPSLOCK_PIN);
-  if (before != after) {
-    byte flags = keyboard.getLock();
+void handle_locks() {
+  static int caps_before = -1;
+  static int kana_before = -1;
 
+  int caps_after = digitalRead(CAPSLOCK_PIN);
+  int kana_after = digitalRead(KANALOCK_PIN);
+  byte flags_before = keyboard.getLock();
+  byte flags_after = flags_before;
+  if (caps_before != caps_after) {
     // CAPSLOCK is inverse logic, HIGH means disabled
-    if (after) { flags &= ~PS2_LOCK_CAPS; } // Clear the LOCK_CAPS bit
-    else { flags |= PS2_LOCK_CAPS; } // Set the LOCK_CAPS bit
-
-    keyboard.setLock(flags);
-    before = after;
+    if (caps_after) { flags_after &= ~PS2_LOCK_CAPS; } // Clear the LOCK_CAPS bit
+    else { flags_after |= PS2_LOCK_CAPS; } // Set the LOCK_CAPS bit
+    caps_before = caps_after;
+  }
+  if (kana_before != kana_after) {
+    // KANALOCK is inverse logic, HIGH means disabled
+    if (kana_after) { flags_after &= ~PS2_LOCK_SCROLL; } // Clear the LOCK_CAPS bit
+    else { flags_after |= PS2_LOCK_SCROLL; } // Set the LOCK_CAPS bit
+    kana_before = kana_after;
+  }
+  if (flags_before != flags_after) {
+    keyboard.setLock(flags_after);
   }
 }
 
@@ -207,6 +221,6 @@ void loop() {
     }
   }
 
-  // Process capslock state change
-  handle_capslock();
+  // Process capslock and kanalock state changes
+  handle_locks();
 }
