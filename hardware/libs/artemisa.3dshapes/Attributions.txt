@@ -1,5 +1,6 @@
 The following 3D models are authored by W. Lain - kcswalter@member.fsf.org:
 
+- Axial_diode
 - Axial_resistor
 - Crystal
 - DB25F
@@ -28,6 +29,7 @@ The following 3D models are authored by W. Lain - kcswalter@member.fsf.org:
 - RN4
 - RN6
 - RN8
+- Relay
 - TO92
 
 They can be obtained from his website http://www.smisioto.eu/elettronica/kicad/kicad-en.htm
