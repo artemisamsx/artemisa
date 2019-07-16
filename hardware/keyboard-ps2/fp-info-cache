@@ -1,4 +1,4 @@
-15873895697345550
+15873882245763550
 artemisa
 Axial_resistor
 Resistor, Axial_DIN0207 series, Axial, Horizontal, pin pitch=10.16mm, 0.25W = 1/4W, length*diameter=6.3*2.5mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf
@@ -18,14 +18,14 @@ DB25F
 D-SUB 25 pin socket, Tyco P/N 4-106507-2
 
 0
-27
+52
 25
 artemisa
 DB25M
 D-SUB 25 pin plug, Tyco P/N 5747842-5
 
 0
-27
+52
 25
 artemisa
 DIN8
