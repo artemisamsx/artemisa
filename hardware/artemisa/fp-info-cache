@@ -1,4 +1,11 @@
-15873882245763550
+15880209053783550
+artemisa
+Axial_diode
+Diode, DO-35 package
+
+0
+2
+2
 artemisa
 Axial_resistor
 Resistor, Axial_DIN0207 series, Axial, Horizontal, pin pitch=10.16mm, 0.25W = 1/4W, length*diameter=6.3*2.5mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf
@@ -18,14 +25,14 @@ DB25F
 D-SUB 25 pin socket, Tyco P/N 4-106507-2
 
 0
-52
+27
 25
 artemisa
 DB25M
 D-SUB 25 pin plug, Tyco P/N 5747842-5
 
 0
-52
+27
 25
 artemisa
 DIN8
@@ -140,6 +147,13 @@ D-SUB 9 pin plug, Tyco P/N 4-338168-2
 11
 9
 artemisa
+Jumper
+Through hole straight pin header, 1x03, 2.54mm pitch, single row
+Through hole pin header THT 1x03 2.54mm single row
+0
+3
+3
+artemisa
 LED
 3mm green led
 led
@@ -175,6 +189,13 @@ PS2_conn
 9
 6
 artemisa
+Push_button_angled
+tactile switch SPST right angle, PTS645VL58-2 LFS
+tactile switch SPST angled PTS645VL58-2 LFS C&K Button
+0
+4
+2
+artemisa
 Radial_capacitor
 CP, Radial series, Radial, pin pitch=2.00mm, , diameter=5mm, Electrolytic Capacitor
 CP Radial series Radial pin pitch 2.00mm  diameter 5mm Electrolytic Capacitor
@@ -202,6 +223,13 @@ rca, audio
 0
 3
 2
+artemisa
+Relay
+
+
+0
+5
+5
 artemisa
 RN4
 R-net, sil package, 5pin
