@@ -42,6 +42,10 @@ else
 	bundle install --gemfile burner/Gemfile
 	ruby burner/burner.rb eraseall $(SERIAL_PORT)
 	ruby burner/burner.rb burn $(SERIAL_PORT) artemisa.rom
+	export OUT=`mktemp`; \
+		ruby burner/burner.rb dump $(SERIAL_PORT) $$OUT 0 8 && \
+		cmp $$OUT msx-system/msx-int.rom && \
+		echo 'Sanity check successful, ROM burned OK'
 endif
 
 .PHONY: clean
