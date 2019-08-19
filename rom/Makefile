@@ -1,5 +1,3 @@
-ROM_BURNER=$(if $(ROM_BURNER),$(ROM_BURNER),)
-
 SUBROMS=\
 	msx-system/msx-int.rom \
 	msx-system/msx-us.rom \
@@ -42,10 +40,10 @@ ifeq ($(origin SERIAL_PORT),undefined)
 	$(error You must indicate the ROM burner serial port with env var SERIAL_PORT)
 else
 	bundle install --gemfile burner/Gemfile
-	ruby burner/burner.rb erase $(SERIAL_PORT)
+	ruby burner/burner.rb eraseall $(SERIAL_PORT)
 	ruby burner/burner.rb burn $(SERIAL_PORT) artemisa.rom
 endif
 
 .PHONY: clean
 clean:
-	rm
+	rm -f artemisa.rom

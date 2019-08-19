@@ -26,6 +26,12 @@ def erase_sector(serial, sector)
   serial.read(1).unpack("C")[0]
 end
 
+def erase_all_sectors(serial)
+  cmd = [3].pack("C")
+  serial.write(cmd)
+  serial.read(1).unpack("C")[0]
+end
+
 def write_sector(serial, sector, data)
   cmd = [2, sector].pack("CC")
   serial.write(cmd)
@@ -72,6 +78,20 @@ def erase_sectors(serial_port, sectors)
   }
 end
 
+def erase_all(serial_port)
+  print "Erasing whole ROM from device #{serial_port}... \n"
+  SerialPort.open(serial_port, SERIAL_BAUDRATE) do |serial|
+    read_handshake(serial)
+    print "\tErasing all sectors... "
+    errors = erase_all_sectors(serial)
+    if errors == 0
+      print "Done\n"
+    else
+      print "Error (#{errors} bytes failed in sector 0)\n"
+    end
+  end
+end
+
 def burn_rom(serial_port, input_file, initial_sector)
   print "Burning ROM image to device #{serial_port}... \n"
   SerialPort.open(serial_port, SERIAL_BAUDRATE) { |serial|
@@ -96,9 +116,10 @@ end
 
 def report_error(error)
   abort "Error: #{error}\n" +
-    "Usage: rbc dump  <serial port> <output file> [<initial sector>] [<sector count>]\n" +
-    "       rbc erase <serial port> [<initial sector>] [<sector count>]\n" +
-    "       rbc burn  <serial port> <input file> [<initial sector>]\n" + 
+    "Usage: rbc dump     <serial port> <output file> [<initial sector>] [<sector count>]\n" +
+    "       rbc erase    <serial port> [<initial sector>] [<sector count>]\n" +
+    "       rbc eraseall <serial port>\n" +
+    "       rbc burn     <serial port> <input file> [<initial sector>]\n" +
     "\n" +
     "Parameters:\n" +
     "   <serial port>     The serial port where Arduino is connected to\n" +
@@ -139,6 +160,8 @@ elsif action == 'erase'
   left = MAX_SECTORS - initial_sector
   sector_count = get_arg_in_range(3, 1..left, left)
   erase_sectors(port, initial_sector..(initial_sector + sector_count - 1))
+elsif action == 'eraseall'
+  erase_all(port)
 elsif action == 'burn'
   input_file = get_arg(2)
   initial_sector = get_arg_in_range(3, 0..MAX_SECTORS - 1, 0)
