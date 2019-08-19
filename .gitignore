@@ -1,1 +1,2 @@
 *.rom
+!rom/msx-system/*.rom
