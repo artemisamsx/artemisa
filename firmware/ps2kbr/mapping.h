@@ -167,7 +167,7 @@ const mapping international_mapping[] = {
   MATRIX_INT_7,         // 0x37: PS2_KEY_7
   MATRIX_INT_8,         // 0x38: PS2_KEY_8
   MATRIX_INT_9,         // 0x39: PS2_KEY_9
-  MATRIX_NULL,          // 0x3a:
+  MATRIX_INT_QUOTE,     // 0x3a: PS2_KEY_APOS
   MATRIX_INT_COMMA,     // 0x3b: PS2_KEY_COMMA
   MATRIX_INT_MINUS,     // 0x3c: PS2_KEY_MINUS
   MATRIX_INT_DOT,       // 0x3d: PS2_KEY_DOT
@@ -201,7 +201,7 @@ const mapping international_mapping[] = {
   MATRIX_INT_Y,         // 0x59: PS2_KEY_Y
   MATRIX_INT_Z,         // 0x5a: PS2_KEY_Z
   MATRIX_INT_SEMICOLON, // 0x5b: PS2_KEY_SEMI
-  MATRIX_INT_QUOTE,     // 0x5c: PS2_KEY_BACK
+  MATRIX_INT_BACKSLASH, // 0x5c: PS2_KEY_BACK
   MATRIX_INT_SQBRACKL,  // 0x5d: PS2_KEY_OPEN_SQ
   MATRIX_INT_SQBRACKR,  // 0x5e: PS2_KEY_CLOSE_SQ
   MATRIX_INT_EQUAL,     // 0x5f: PS2_KEY_EQUAL
@@ -248,7 +248,7 @@ const mapping international_mapping[] = {
   MATRIX_NULL,          // 0x88:
   MATRIX_NULL,          // 0x89:
   MATRIX_NULL,          // 0x8a:
-  MATRIX_INT_BACKSLASH, // 0x8b: PS2_KEY_EUROPE2
+  MATRIX_NULL,          // 0x8b:
   MATRIX_NULL,          // 0x8c:
   MATRIX_NULL,          // 0x8d:
   MATRIX_NULL,          // 0x8e:
