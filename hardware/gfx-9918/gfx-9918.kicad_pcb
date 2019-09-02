@@ -1976,7 +1976,7 @@
       (xy -5.472572 -2.546406)) (layer F.SilkS) (width 0.01))
   )
 
-  (gr_text "Artemisa Computer System\nGFX9918 Rev02\nCopyright (C) 2018 Alvaro Polo" (at 90.355 80.05 90) (layer F.SilkS)
+  (gr_text "Artemisa Computer System\nGFX9918 Rev 3\nCopyright (C) 2018 Alvaro Polo" (at 90.355 80.05 90) (layer F.SilkS)
     (effects (font (size 1.2 1.2) (thickness 0.2)) (justify left))
   )
   (gr_line (start 44 188) (end 44 38) (layer Edge.Cuts) (width 0.2) (tstamp 5BD2F8FF))
