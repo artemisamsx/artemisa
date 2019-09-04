@@ -866,6 +866,8 @@ Text Label 1200 8150 0    60   ~ 0
 ~KANALOCK
 Wire Wire Line
 	1200 8150 1650 8150
+Text Label 3050 4800 0    60   ~ 0
+ADDR[0..15]
 Wire Bus Line
 	4400 5150 4400 6150
 Wire Bus Line
@@ -878,6 +880,4 @@ Wire Bus Line
 	7150 1250 7150 8450
 Wire Bus Line
 	1100 1250 1100 9550
-Text Label 3050 4800 0    60   ~ 0
-ADDR[0..15]
 $EndSCHEMATC
