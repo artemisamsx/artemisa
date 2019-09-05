@@ -2312,7 +2312,7 @@
   (gr_line (start 180.75 64.85) (end 180.75 133.35) (layer Edge.Cuts) (width 0.1) (tstamp 5CBBD9F5))
   (gr_line (start 95.25 64.85) (end 180.75 64.85) (layer Edge.Cuts) (width 0.1) (tstamp 5CB58D49))
   (gr_line (start 95.25 133.35) (end 180.75 133.35) (layer Edge.Cuts) (width 0.1))
-  (gr_text "Artemisa Computer System\nPS2 Keyboard Adapter Rev2\nCopyright (C) 2019 Alvaro Polo" (at 121.285 127.635) (layer F.SilkS) (tstamp 5D6D243C)
+  (gr_text "Artemisa Computer System\nPS2 Keyboard Adapter Rev3\nCopyright (C) 2019 Alvaro Polo" (at 121.285 127.635) (layer F.SilkS) (tstamp 5D6D243C)
     (effects (font (size 0.8 0.8) (thickness 0.12)) (justify left))
   )
   (gr_line (start 95.25 130.81) (end 95.25 133.35) (layer Edge.Cuts) (width 0.1) (tstamp 5CB556E9))
