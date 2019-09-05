@@ -1,5 +1,9 @@
 # Artemisa GFX9918 Changelog
 
+## Rev 4
+
+- Fix via sizes to conform JLCPCB design rules
+
 ## Rev 3
 
 - VCC power traces improved
