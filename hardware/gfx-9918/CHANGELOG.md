@@ -1,6 +1,6 @@
 # Artemisa GFX9918 Changelog
 
-## Rev 4
+## Rev 4 (Unreleased)
 
 - Fix via sizes to conform JLCPCB design rules
 

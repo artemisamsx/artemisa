@@ -1,6 +1,6 @@
 # Artemisa PS2 Keyboard Adapter Changelog
 
-## Rev3
+## Rev3 (Unreleased)
 
 - Fix via sizes to conform JLCPCB design rules
 
