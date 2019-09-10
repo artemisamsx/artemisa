@@ -3,6 +3,7 @@
 ## Rev3 (Unreleased)
 
 - Fix via sizes to conform JLCPCB design rules
+- Fix wrong dimensions of cartridge slot connectors
 
 ## Rev2
 
