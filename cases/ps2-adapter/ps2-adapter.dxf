@@ -33,7 +33,7 @@ $EXTMAX
  10
 85
  20
-69
+138
  30
 0
   9
@@ -801,6 +801,10 @@ $PEXTMAX
  30
 0
   9
+$GRIDMODE
+ 70
+    1
+  9
 $SNAPSTYLE
  70
     0
@@ -1111,9 +1115,9 @@ AcDbViewportTableRecord
  21
 1
  12
-54.31021897810219
+86.63523573200992
  22
-31.39416058394161
+69.8560794044665
  13
 0
  23
@@ -1139,9 +1143,9 @@ AcDbViewportTableRecord
  37
 0
  40
-70.67883211678833
+141.424317617866
  41
-1.812351543942993
+1.847457627118644
  42
 50
  43
@@ -2385,7 +2389,7 @@ Standard
  70
     0
  40
-1
+2.5
  41
 2.5
  42
@@ -2409,7 +2413,7 @@ Standard
 141
 0.09
 142
-2.5
+0
 143
 25.4
 144
@@ -2437,7 +2441,7 @@ Standard
  77
     0
  78
-    1
+    8
  79
     0
 170
@@ -2475,7 +2479,7 @@ Standard
 277
     2
 278
-    0
+   44
 279
     0
 280
@@ -2497,7 +2501,7 @@ Standard
 289
     3
 340
-standard
+STANDARD
 341
 
 371
@@ -2966,6 +2970,330 @@ AcDbCircle
 81.5
  20
 4
+ 40
+1.6
+  0
+ARC
+  5
+5A
+100
+AcDbEntity
+  8
+0
+  6
+ByLayer
+ 62
+  256
+370
+   -1
+100
+AcDbCircle
+ 10
+0
+ 20
+69
+ 40
+0
+100
+AcDbArc
+ 50
+0
+ 51
+0
+  0
+ARC
+  5
+5B
+100
+AcDbEntity
+  8
+0
+  6
+ByLayer
+ 62
+  256
+370
+   -1
+100
+AcDbCircle
+ 10
+1
+ 20
+70
+ 40
+1
+100
+AcDbArc
+ 50
+180
+ 51
+270
+  0
+ARC
+  5
+5C
+100
+AcDbEntity
+  8
+0
+  6
+ByLayer
+ 62
+  256
+370
+   -1
+100
+AcDbCircle
+ 10
+1
+ 20
+137
+ 40
+1
+100
+AcDbArc
+ 50
+90
+ 51
+180
+  0
+ARC
+  5
+5D
+100
+AcDbEntity
+  8
+0
+  6
+ByLayer
+ 62
+  256
+370
+   -1
+100
+AcDbCircle
+ 10
+84
+ 20
+137
+ 40
+1
+100
+AcDbArc
+ 50
+0
+ 51
+90
+  0
+ARC
+  5
+5E
+100
+AcDbEntity
+  8
+0
+  6
+ByLayer
+ 62
+  256
+370
+   -1
+100
+AcDbCircle
+ 10
+84
+ 20
+70
+ 40
+1
+100
+AcDbArc
+ 50
+270
+ 51
+0
+  0
+LINE
+  5
+5F
+100
+AcDbEntity
+  8
+0
+  6
+ByLayer
+ 62
+  256
+370
+   -1
+100
+AcDbLine
+ 10
+0
+ 20
+70
+ 11
+0
+ 21
+137
+  0
+LINE
+  5
+60
+100
+AcDbEntity
+  8
+0
+  6
+ByLayer
+ 62
+  256
+370
+   -1
+100
+AcDbLine
+ 10
+1
+ 20
+138
+ 11
+84
+ 21
+138
+  0
+LINE
+  5
+61
+100
+AcDbEntity
+  8
+0
+  6
+ByLayer
+ 62
+  256
+370
+   -1
+100
+AcDbLine
+ 10
+85
+ 20
+137
+ 11
+85
+ 21
+70
+  0
+LINE
+  5
+62
+100
+AcDbEntity
+  8
+0
+  6
+ByLayer
+ 62
+  256
+370
+   -1
+100
+AcDbLine
+ 10
+84
+ 20
+69
+ 11
+1
+ 21
+69
+  0
+CIRCLE
+  5
+63
+100
+AcDbEntity
+  8
+0
+  6
+ByLayer
+ 62
+  256
+370
+   -1
+100
+AcDbCircle
+ 10
+4
+ 20
+73
+ 40
+1.6
+  0
+CIRCLE
+  5
+64
+100
+AcDbEntity
+  8
+0
+  6
+ByLayer
+ 62
+  256
+370
+   -1
+100
+AcDbCircle
+ 10
+4
+ 20
+133.5
+ 40
+1.6
+  0
+CIRCLE
+  5
+65
+100
+AcDbEntity
+  8
+0
+  6
+ByLayer
+ 62
+  256
+370
+   -1
+100
+AcDbCircle
+ 10
+81.5
+ 20
+133.5
+ 40
+1.6
+  0
+CIRCLE
+  5
+66
+100
+AcDbEntity
+  8
+0
+  6
+ByLayer
+ 62
+  256
+370
+   -1
+100
+AcDbCircle
+ 10
+81.5
+ 20
+73
  40
 1.6
   0
