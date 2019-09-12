@@ -5,6 +5,7 @@
 - Fix via sizes to conform JLCPCB design rules
 - Fix wrong dimensions of cartridge slot connectors
 - Fix wrong annular ring size of cartridge slot connectors
+- Make corners rounded
 
 ## Rev2
 
