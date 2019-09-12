@@ -2,7 +2,7 @@
 
   (general
     (thickness 1.6)
-    (drawings 8)
+    (drawings 12)
     (tracks 1094)
     (zones 0)
     (modules 37)
@@ -2309,15 +2309,19 @@
     )
   )
 
-  (gr_line (start 180.75 64.85) (end 180.75 133.35) (layer Edge.Cuts) (width 0.1) (tstamp 5CBBD9F5))
-  (gr_line (start 95.25 64.85) (end 180.75 64.85) (layer Edge.Cuts) (width 0.1) (tstamp 5CB58D49))
-  (gr_line (start 95.25 133.35) (end 180.75 133.35) (layer Edge.Cuts) (width 0.1))
+  (gr_arc (start 96.25 132.35) (end 95.25 132.35) (angle -90) (layer Edge.Cuts) (width 0.1))
+  (gr_arc (start 179.75 132.35) (end 179.75 133.35) (angle -90) (layer Edge.Cuts) (width 0.1))
+  (gr_arc (start 179.75 65.85) (end 180.75 65.85) (angle -90) (layer Edge.Cuts) (width 0.1))
+  (gr_arc (start 96.25 65.85) (end 96.25 64.85) (angle -90) (layer Edge.Cuts) (width 0.1))
+  (gr_line (start 180.75 65.85) (end 180.75 132.35) (layer Edge.Cuts) (width 0.1) (tstamp 5CBBD9F5))
+  (gr_line (start 96.25 64.85) (end 179.75 64.85) (layer Edge.Cuts) (width 0.1) (tstamp 5CB58D49))
+  (gr_line (start 96.25 133.35) (end 179.75 133.35) (layer Edge.Cuts) (width 0.1))
   (gr_text "Artemisa Computer System\nPS2 Keyboard Adapter Rev3\nCopyright (C) 2019 Alvaro Polo" (at 121.285 127.635) (layer F.SilkS) (tstamp 5D6D243C)
     (effects (font (size 0.8 0.8) (thickness 0.12)) (justify left))
   )
-  (gr_line (start 95.25 130.81) (end 95.25 133.35) (layer Edge.Cuts) (width 0.1) (tstamp 5CB556E9))
+  (gr_line (start 95.25 130.81) (end 95.25 132.35) (layer Edge.Cuts) (width 0.1) (tstamp 5CB556E9))
   (gr_line (start 95.25 125.73) (end 95.25 130.81) (layer Edge.Cuts) (width 0.1) (tstamp 5CB58D2D))
-  (gr_line (start 95.25 64.85) (end 95.25 72.39) (layer Edge.Cuts) (width 0.1) (tstamp 5CB58D33))
+  (gr_line (start 95.25 65.85) (end 95.25 72.39) (layer Edge.Cuts) (width 0.1) (tstamp 5CB58D33))
   (gr_line (start 95.25 125.73) (end 95.25 72.39) (layer Edge.Cuts) (width 0.1) (tstamp 5CB58D30))
 
   (via (at 139.065 89.535) (size 1) (drill 0.5) (layers F.Cu B.Cu) (net 1))
