@@ -1,10 +1,11 @@
 # Artemisa Motherboard Mk.I Changelog
 
-## Rev 3
+## Rev 3 (Unreleased)
 
 - Replace 74HCT11 by 74HCT32
 - Replace 74HC154 by a pair of 74HC138
 - Fix via sizes to conform JLCPCB design rules
+- Make the right PCB corners rounded
 
 ## Rev 2
 
