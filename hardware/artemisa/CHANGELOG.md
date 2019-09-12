@@ -1,6 +1,6 @@
 # Artemisa Motherboard Mk.I Changelog
 
-## Rev 3 (Unreleased)
+## Rev 3
 
 - Replace 74HCT11 by 74HCT32
 - Replace 74HC154 by a pair of 74HC138
