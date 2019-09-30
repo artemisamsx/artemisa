@@ -1,2 +1,5 @@
 *.rom
+*.bin
+*.hex
+*.elf
 !rom/msx-system/*.rom
