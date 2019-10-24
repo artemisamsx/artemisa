@@ -1,5 +1,0 @@
-source "https://rubygems.org"
-
-ruby '~> 2.2'
-
-gem 'serialport', '~>1.3'
