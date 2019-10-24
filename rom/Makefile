@@ -12,8 +12,12 @@ SUBROMS=\
 	msx-system/msx-ru.rom \
 	adt/adt.rom
 
+ROM_IMAGE=artemisa.rom
+
+DEVICE=SST39SF040
+
 .PHONY:all
-all: artemisa.rom
+all: ${ROM_IMAGE}
 
 adt/adt.rom:
 	$(MAKE) -C adt/
@@ -35,18 +39,8 @@ artemisa.rom: ${SUBROMS}
 		> artemisa.rom
 
 .PHONY: burn
-burn: artemisa.rom
-ifeq ($(origin SERIAL_PORT),undefined)
-	$(error You must indicate the ROM burner serial port with env var SERIAL_PORT)
-else
-	bundle install --gemfile burner/Gemfile
-	ruby burner/burner.rb eraseall $(SERIAL_PORT)
-	ruby burner/burner.rb burn $(SERIAL_PORT) artemisa.rom
-	export OUT=`mktemp`; \
-		ruby burner/burner.rb dump $(SERIAL_PORT) $$OUT 0 8 && \
-		cmp $$OUT msx-system/msx-int.rom && \
-		echo 'Sanity check successful, ROM burned OK'
-endif
+burn: ${ROM_IMAGE}
+	minipro -p ${DEVICE} -w ${ROM_IMAGE} -S
 
 .PHONY: clean
 clean:
