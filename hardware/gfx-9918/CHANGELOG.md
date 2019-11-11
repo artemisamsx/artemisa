@@ -3,6 +3,7 @@
 ## Rev 4 (Unreleased)
 
 - Fix via sizes to conform JLCPCB design rules
+- Fix background color issues by unconnecting EXTVDP pin
 
 ## Rev 3
 

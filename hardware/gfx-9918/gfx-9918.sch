@@ -943,8 +943,6 @@ F 3 "http://www.colecovision.dk/PDF/TMS9918.a.pdf" H 6550 6150 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 NoConn ~ 7200 6600
-Wire Wire Line
-	7200 6500 7400 6500
 NoConn ~ 5900 5900
 Wire Wire Line
 	5350 5650 5900 5650
@@ -1222,8 +1220,6 @@ F 3 "" H 4100 6750 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	6550 6850 6550 6900
-Wire Wire Line
-	7400 6500 7400 6600
 Wire Wire Line
 	7200 3800 6850 3800
 Wire Wire Line
@@ -1610,17 +1606,6 @@ F 3 "" H 3800 6600 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemisa:GND #PWR0118
-U 1 1 5D002CF2
-P 7400 6600
-F 0 "#PWR0118" H 7400 6500 60  0001 C CNN
-F 1 "GND" H 7400 6700 60  0001 C CNN
-F 2 "" H 7400 6600 60  0001 C CNN
-F 3 "" H 7400 6600 60  0001 C CNN
-	1    7400 6600
-	1    0    0    -1  
-$EndComp
-$Comp
 L artemisa:GND #PWR0119
 U 1 1 5D025876
 P 6550 6900
@@ -1779,6 +1764,7 @@ F 3 "" H 4800 6600 60  0001 C CNN
 	1    4800 6600
 	1    0    0    -1  
 $EndComp
+NoConn ~ 7200 6500
 Wire Bus Line
 	13850 2950 13850 8400
 Wire Bus Line
