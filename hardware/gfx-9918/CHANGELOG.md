@@ -1,6 +1,6 @@
 # Artemisa GFX9918 Changelog
 
-## Rev 4 (Unreleased)
+## Rev 4
 
 - Fix via sizes to conform JLCPCB design rules
 - Fix background color issues by unconnecting EXTVDP pin
