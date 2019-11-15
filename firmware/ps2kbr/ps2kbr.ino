@@ -17,14 +17,23 @@
 // matrix.
 //
 
-// This library is used to interact with the PS2 keyboard.
-// More info in https://github.com/techpaul/PS2KeyAdvanced
-#include "PS2KeyAdvanced.h"
+// Uncomment this to debug the firmware using serial port
+#define DEBUG 1
+
+// This constant indicates whether custom PS2 scanner is used or not
+// When custom scanner is not used, the imfamous PSKeyAdvanced library is used instead.
+// #define CUSTOM_PS2_SCANNER 1
+
+#ifdef CUSTOM_PS2_SCANNER
+  #include "scanner.h"
+#else
+  // This library is used to interact with the PS2 keyboard. The custom PS2 scanner
+  // uses the same API to make it compatible with the sketch code.
+  // More info in https://github.com/techpaul/PS2KeyAdvanced
+  #include "PS2KeyAdvanced.h"
+#endif
 
 #include "mapping.h"
-
-// Uncomment this to debug the firmware using serial port
-// #define DEBUG 1
 
 // The Arduino pin where PS2 DATA is connected.
 #define PS2_PIN_DATA     3 // ATmega328 pin #5 (PD3/INT1)
@@ -71,9 +80,6 @@ const int outputs[MATRIX_NROWS] = {
 // Each item represents the n-th row of the matrix. Each row has 8 columns,
 // each one represented by one bit in each entry of this array.
 byte matrix[MATRIX_NROWS];
-
-// The object that will manage the PS2 keyboard.
-PS2KeyAdvanced keyboard;
 
 // Initialize the IO pins
 void init_iopins() {
@@ -136,8 +142,28 @@ void write_all_rows(byte value) {
   }
 }
 
+#ifdef CUSTOM_PS2_SCANNER
+
+void setup_ps2_keyboard() {
+
+}
+
+void process_ps2_keyboard_events() {
+
+}
+
+#else
+
+// The object that will manage the PS2 keyboard.
+PS2KeyAdvanced keyboard;
+
 // Handle the given scan code.
 void handle_code(int16_t c) {
+#ifdef DEBUG
+    Serial.print(F("Scan code is "));
+    Serial.println(c, HEX);
+#endif
+
   // The actual key is in the lower nibble transmitted by the keyboard.
   byte key = c & 0x00ff;
   if (key >= KEYCODE_MAX) {
@@ -196,12 +222,30 @@ void handle_locks() {
   }
 }
 
-// Setup the microcontroller
-void setup() {
+void setup_ps2_keyboard() {
   // Configure the keyboard library
   keyboard.begin(PS2_PIN_DATA, PS2_PIN_CLK);
   keyboard.resetKey();
+}
 
+void process_ps2_keyboard_events() {
+  // Process a PS2 keyboard event if available
+  if (keyboard.available()) {
+    uint16_t c = keyboard.read();
+    if (c > 0) {
+      handle_code(c);
+    }
+  }
+
+  // Process capslock and kanalock state changes
+  handle_locks();
+}
+
+#endif
+
+// Setup the microcontroller
+void setup() {
+  setup_ps2_keyboard();
   init_iopins();
   init_matrix();
 
@@ -213,14 +257,5 @@ void setup() {
 
 // Main loop of the microcontroller
 void loop() {
-  // Process a PS2 keyboard event if available
-  if (keyboard.available()) {
-    uint16_t c = keyboard.read();
-    if (c > 0) {
-      handle_code(c);
-    }
-  }
-
-  // Process capslock and kanalock state changes
-  handle_locks();
+  process_ps2_keyboard_events();
 }
