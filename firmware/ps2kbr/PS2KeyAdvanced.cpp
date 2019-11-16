@@ -124,6 +124,12 @@
   License along with this library; if not, write to the Free Software
   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
+
+// Load the compile settings from config.h
+#include "config.h"
+
+#ifndef CUSTOM_PS2_LIB
+
 // Internal headers for library defines/codes/etc
 #include "PS2KeyAdvanced.h"
 #include "PS2KeyCode.h"
@@ -882,3 +888,5 @@ void PS2KeyAdvanced::begin(uint8_t data_pin, uint8_t irq_pin)
   // Start interrupt handler
   attachInterrupt(digitalPinToInterrupt(irq_pin), ps2interrupt, FALLING);
 }
+
+#endif

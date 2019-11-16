@@ -17,15 +17,11 @@
 // matrix.
 //
 
-// Uncomment this to debug the firmware using serial port
-#define DEBUG 1
+// Load the compile settings from config.h
+#include "config.h"
 
-// This constant indicates whether custom PS2 scanner is used or not
-// When custom scanner is not used, the imfamous PSKeyAdvanced library is used instead.
-// #define CUSTOM_PS2_SCANNER 1
-
-#ifdef CUSTOM_PS2_SCANNER
-  #include "scanner.h"
+#ifdef CUSTOM_PS2_LIB
+  #include "ps2.h"
 #else
   // This library is used to interact with the PS2 keyboard. The custom PS2 scanner
   // uses the same API to make it compatible with the sketch code.
@@ -142,14 +138,75 @@ void write_all_rows(byte value) {
   }
 }
 
-#ifdef CUSTOM_PS2_SCANNER
+#ifdef CUSTOM_PS2_LIB
 
 void setup_ps2_keyboard() {
+  ps2_begin(PS2_PIN_DATA, PS2_PIN_CLK);
 
+  if (ps2_cmd_reset()) {
+#ifdef DEBUG
+    Serial.println(F("Error: reset command failed"));
+#endif
+  }
+}
+
+void handle_scancode(uint8_t (&scancode)[3]) {
+  mapping m = map_scancodes(scancode);
+  if (m.row == -1) {
+    // There is no mapping defined for that scancode. Skip it.
+    return;
+  }
+
+  byte r = matrix[m.row];
+  if (ps2_scancode_is_break(scancode)) {
+    bitSet(r, m.offset);
+  } else {
+    bitClear(r, m.offset);
+  }
+
+  if (r != matrix[m.row]) {
+    // We detected a change in the row. Something was pressed or released!
+#ifdef DEBUG
+    Serial.print(F("Row changed: "));
+    Serial.print(m.row);
+    Serial.print(F("="));
+    Serial.println(r, BIN);
+#endif
+    matrix[m.row] = r;
+    write_row(m.row, r);
+  }
+}
+
+void handle_locks() {
+  static uint8_t locks = 0;
+
+  uint8_t prev = locks;
+  if (digitalRead(CAPSLOCK_PIN)) locks &= ~PS2_LED_CAPSLOCK;
+  else locks |= PS2_LED_CAPSLOCK;
+
+  if (digitalRead(KANALOCK_PIN)) locks &= ~PS2_LED_KANALOCK;
+  else locks |= PS2_LED_KANALOCK;
+
+  if (prev != locks) {
+    ps2_cmd_leds(locks);
+  }
 }
 
 void process_ps2_keyboard_events() {
+  uint8_t scancode[3];
+  if (!ps2_receive(scancode)) {
+#ifdef DEBUG
+    Serial.print(F("Scanned: "));
+    Serial.print(scancode[0], HEX);
+    if (scancode[1] > 0) Serial.print(scancode[1], HEX);
+    if (scancode[2] > 0) Serial.print(scancode[2], HEX);
+    Serial.println();
+#endif
 
+    handle_scancode(scancode);
+  }
+
+  handle_locks();
 }
 
 #else
@@ -159,11 +216,6 @@ PS2KeyAdvanced keyboard;
 
 // Handle the given scan code.
 void handle_code(int16_t c) {
-#ifdef DEBUG
-    Serial.print(F("Scan code is "));
-    Serial.println(c, HEX);
-#endif
-
   // The actual key is in the lower nibble transmitted by the keyboard.
   byte key = c & 0x00ff;
   if (key >= KEYCODE_MAX) {
@@ -186,9 +238,9 @@ void handle_code(int16_t c) {
   if (r != matrix[m.row]) {
     // We detected a change in the row. Something was pressed or released!
 #ifdef DEBUG
-    Serial.print(F("Row "));
+    Serial.print(F("Row change:"));
     Serial.print(m.row);
-    Serial.print(F(" has changed to "));
+    Serial.print(F("="));
     Serial.println(r, BIN);
 #endif
     matrix[m.row] = r;
@@ -245,14 +297,14 @@ void process_ps2_keyboard_events() {
 
 // Setup the microcontroller
 void setup() {
-  setup_ps2_keyboard();
-  init_iopins();
-  init_matrix();
-
 #ifdef DEBUG
   Serial.begin(9600);
   Serial.println( F( "PS2 Keyboard Adapter board" ) );
 #endif
+
+  setup_ps2_keyboard();
+  init_iopins();
+  init_matrix();
 }
 
 // Main loop of the microcontroller

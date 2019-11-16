@@ -1,6 +1,8 @@
 #ifndef MAPPING_H
 #define MAPPING_H
 
+#include "ps2.h"
+
 // A struct that describes the mapping between some scancode of the PS2
 // keyboard and a key in the MSX keyboard.
 struct mapping {
@@ -271,5 +273,7 @@ const mapping international_mapping[] = {
   MATRIX_NULL,          // 0x9f:
   MATRIX_NULL,          // 0xa0:
 };
+
+mapping map_scancodes(uint8_t (&scancode)[3]);
 
 #endif
