@@ -3,6 +3,8 @@ HEX_IMAGE = ps2kbr.hex
 BIN_IMAGE = ps2kbr.bin
 ELF_IMAGE = ps2kbr.elf
 
+SOURCES = ${wildcard *.cpp} ${wildcard *.h} ps2kbr.ino
+
 .PHONY: all
 all: compile
 
@@ -10,12 +12,12 @@ all: compile
 compile: ${BIN_IMAGE}
 
 .PHONY: burn
-burn: erase burn-fuses burn-image
+burn: compile erase burn-fuses burn-image
 
 ${BIN_IMAGE}: ${HEX_IMAGE}
 	srec_cat ${HEX_IMAGE} -intel -fill 0x00 0x000 0x8000 -o ${BIN_IMAGE} -binary
 
-${HEX_IMAGE}:
+${HEX_IMAGE}: ${SOURCES}
 	arduino-cli compile -b arduino:avr:uno -o ${HEX_IMAGE} .
 
 .PHONY: config
