@@ -136,9 +136,11 @@ void write_all_rows(byte value) {
 }
 
 void reset_keyboard() {
-  if (ps2_cmd_reset()) {
+  uint8_t err;
+  if (err = ps2_cmd_reset()) {
 #ifdef DEBUG
-    Serial.println(F("Error: reset command failed"));
+    Serial.print(F("Error: reset command failed with code "));
+    Serial.println(err, HEX);
 #endif
   }
 }
@@ -205,7 +207,7 @@ void handle_scancode(uint8_t (&scancode)[3]) {
 
 void process_scancodes() {
   uint8_t scancode[3];
-  if (!ps2_receive(scancode)) {
+  if (!ps2_receive(scancode, 100)) {
 #ifdef DEBUG
     Serial.print(F("Scanned: "));
     Serial.print(scancode[0], HEX);
@@ -220,7 +222,7 @@ void process_scancodes() {
 // Setup the microcontroller
 void setup() {
 #ifdef DEBUG
-  Serial.begin(115200);
+  Serial.begin(2000000);
   Serial.println( F( "PS2 Keyboard Adapter board" ) );
 #endif
 
