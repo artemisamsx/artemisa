@@ -102,6 +102,7 @@ mapping map_scancodes_ext(uint8_t key) {
     case 0x72: return MATRIX_INT_DARROW;
     case 0x74: return MATRIX_INT_RARROW;
     case 0x4A: return MATRIX_INT_NUMDIV;
+    case 0x5A: return MATRIX_INT_RET;
     default: return MATRIX_NULL;
   }
 }
