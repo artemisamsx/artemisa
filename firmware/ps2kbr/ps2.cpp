@@ -5,41 +5,45 @@ volatile uint8_t _ps2_status;
 
 // Masks for _ps2_status variable
 #define _STATUS_PARITYERR 0x80 // bit 7, parity error detected
-#define _STATUS_TXREQ     0x04 // bit 2, indicates whether a transmission is requested
-#define _STATUS_DIR       0x02 // bit 1, indicates TX (HIGH) or RX (LOW) when not idle
+#define _STATUS_AVAIL     0x04 // bit 2, a scancode is available at the port
+#define _STATUS_DIR       0x02 // bit 1, indicates TX (HIGH) or RX (LOW) when busy
 #define _STATUS_BUSY      0x01 // bit 0, indicates whether the port is busy (HIGH) or idle (LOW)
+
+// Utility functions get and set port status
+inline bool ps2_status(uint8_t flag) { return _ps2_status & flag; }
+inline void ps2_set_status(uint8_t flag) { _ps2_status |= flag; }
+inline void ps2_reset_status(uint8_t flag) { _ps2_status &= ~flag; }
 
 // The pins used for data and IRQ
 uint8_t _ps2_data_pin;
 uint8_t _ps2_clk_pin;
 
 // Some counters for data transmission over PS2
-volatile uint8_t _ps2_bitcount; // Main state variable and bit count for ints
-volatile uint8_t _ps2_shiftdata;
-volatile uint8_t _ps2_parity;
+volatile uint8_t _ps2_bitcount;  // The number of bits sent or received over the port
+volatile uint8_t _ps2_parity;    // The parity of the bits sent or received over the port
+volatile uint8_t _ps2_shiftdata; // The bits that are being shifted in or out over the port
 
-// Some variables for the RX buffer
-volatile uint8_t _ps2_rx_buffer[PS2_RX_BUFFER_SIZE]; // buffer for data from keyboard
-volatile uint8_t _ps2_rx_head;                       // _rx_head = last byte written
-volatile uint8_t _ps2_rx_tail;                       // _rx_tail = last byte read (not modified in IRQ ever)
-
-// Some variables for the TX buffer
-volatile uint8_t _ps2_tx_buff[PS2_TX_BUFFER_SIZE];  // buffer for keyboard commans
-volatile uint8_t _ps2_tx_head;                      // buffer write pointer
-volatile uint8_t _ps2_tx_tail;                      // buffer read pointer
+// The buffers
+volatile uint8_t _ps2_tx_buff;      // buffer for keyboard commans
+volatile uint8_t _ps2_rx_buffer[3]; // buffer for data from keyboard
+volatile uint8_t _ps2_rx_bufsize;   // the size of _ps2_rx_buffer
 
 // Pre-declare the private functions of this module
-void ps2_reset(void);
-void ps2_send_next(void);
-void ps2_send_now(uint8_t command);
+uint8_t ps2_cmd_reset(uint8_t retries);
+uint8_t ps2_receive_resp(uint8_t resp, unsigned long timeout);
+uint8_t ps2_send(uint8_t cmd, unsigned long timeout);
+void ps2_prepare_send(uint8_t cmd);
+void ps2_inhibit(unsigned long wait = 0);
+void ps2_idle();
 void ps2_request_to_send();
+void ps2_reset(bool cleanBuffers = true);
 void ps2_interrupt(void);
 void ps2_send_bit(void);
 void ps2_receive_bit();
-uint8_t ps2_decode_key(uint8_t value);
+bool ps2_is_extended(uint8_t code);
 
 void ps2_begin(uint8_t data_pin, uint8_t clk_pin) {
-  ps2_reset();
+  ps2_reset(false);
 
   _ps2_data_pin = data_pin;
   _ps2_clk_pin = clk_pin;
@@ -51,153 +55,138 @@ void ps2_begin(uint8_t data_pin, uint8_t clk_pin) {
 }
 
 uint8_t ps2_cmd_reset() {
-  if (ps2_available()) {
-    // If there are pending bytes to read, we cannot do this
-    return -1;
-  }
-  ps2_write(PS2_COMMAND_RESET);
-  uint8_t scancode = ps2_wait(100);
-  if (scancode != PS2_SCANCODE_ACKNOWLEDGE) {
-    return -1;
-  }
-  scancode = ps2_wait(1000);
-  return (scancode != PS2_SCANCODE_SELFTEST_PASSED);
+  uint8_t scancode[3];
+  uint8_t err;
+
+  err = ps2_send(PS2_COMMAND_RESET, 1000);
+  if (err) { return err; }
+
+  err = ps2_receive_resp(PS2_SCANCODE_ACKNOWLEDGE, 5000);
+  if (err) { return err; }
+
+  err = ps2_receive_resp(PS2_SCANCODE_SELFTEST_PASSED, 5000);
+  if (err) { return err; }
+
+  return PS2_ERROR_OK;
 }
 
 uint8_t ps2_cmd_leds(uint8_t leds) {
-  ps2_write(PS2_COMMAND_LED_STATE);
-  uint8_t scancode = ps2_wait(100);
-  if (scancode != PS2_SCANCODE_ACKNOWLEDGE) {
-    return -1;
-  }
-  ps2_write(leds);
-  if (scancode != PS2_SCANCODE_ACKNOWLEDGE) {
-    return -1;
-  }
+  uint8_t err = ps2_send(PS2_COMMAND_LED_STATE, 500);
+  if (err) { return err; }
+
+  err = ps2_receive_resp(PS2_SCANCODE_ACKNOWLEDGE, 100);
+  if (err) { return err; }
+
+  err = ps2_send(leds, 500);
+  if (err) { return err; }
+
+  return ps2_receive_resp(PS2_SCANCODE_ACKNOWLEDGE, 100);
 }
 
-uint8_t ps2_receive(uint8_t (&scancodes)[3]) {
-  if (!ps2_available()) {
-    return -1;
-  }
-  scancodes[1] = scancodes[2] = 0;
-  scancodes[0] = ps2_read();
-  if (scancodes[0] == PS2_SCANCODE_EXTENDED) {
-    scancodes[1] = ps2_wait(100);
-    if (scancodes[1] == PS2_SCANCODE_BREAK) {
-      scancodes[2] = ps2_wait(100);
-    }
-  } else if (scancodes[0] == PS2_SCANCODE_BREAK) {
-    scancodes[1] = ps2_wait(100);
-  }
-  return 0;
+uint8_t ps2_cmd_resend() {
+  ps2_reset();
+  uint8_t err = ps2_send(PS2_COMMAND_RESEND, 500);
+  if (err) { return err; }
 }
 
-uint8_t ps2_available() {
-  int8_t i;
-
-  i = _ps2_rx_head - _ps2_rx_tail;
-  if (i < 0) {
-    i += PS2_RX_BUFFER_SIZE;
-  }
-
-  return uint8_t(i);
-}
-
-uint8_t ps2_read() {
-  uint8_t index;
-
-  // get next character
-  // Check first something to fetch
-  index = _ps2_rx_tail;
-  // check for empty buffer
-  if (index == _ps2_rx_head)
-    return 0;
-  index++;
-  if (index >= PS2_RX_BUFFER_SIZE)
-    index = 0;
-  _ps2_rx_tail = index;
-
-  uint8_t scancode = _ps2_rx_buffer[index];
-#ifdef PS2_DEBUG
-    Serial.print(F("ps2_read: "));
-    Serial.println(scancode, HEX);
-#endif
-  return scancode;
-}
-
-uint8_t ps2_wait(unsigned long timeout) {
+uint8_t ps2_receive(uint8_t (&scancodes)[3], unsigned long timeout) {
   unsigned long t0 = millis();
-  unsigned long t1;
-  uint8_t scancode = PS2_SCANCODE_ERR;
-  do {
-    if (ps2_available()) {
-      scancode = ps2_read();
-      break;
+  for (;;) {
+    if (ps2_status(_STATUS_PARITYERR)) {
+      return PS2_ERROR_PARITY;
     }
-    t1 = millis();
-  } while (t1 - t0 < timeout);
+    if (ps2_status(_STATUS_AVAIL)) {
+
+      scancodes[0] = _ps2_rx_buffer[0];
+      scancodes[1] = _ps2_rx_buffer[1];
+      scancodes[2] = _ps2_rx_buffer[2];
+
 #ifdef PS2_DEBUG
-    Serial.print(F("ps2_wait: "));
-    Serial.println(scancode, HEX);
+  Serial.print(F("ps2_receive: "));
+  Serial.print(scancodes[0], HEX);
+  Serial.print(F(":"));
+  Serial.print(scancodes[1], HEX);
+  Serial.print(F(":"));
+  Serial.println(scancodes[2], HEX);
 #endif
-  return scancode;
+
+      ps2_reset();
+      ps2_idle();
+
+      return PS2_ERROR_OK;
+    }
+    unsigned long t1 = millis();
+    unsigned long elapsed = t1 - t0;
+    if (elapsed > timeout) {
+      ps2_reset();
+      return PS2_ERROR_TIMEOUT;
+    }
+  }
 }
 
-uint8_t ps2_write(uint8_t cmd) {
-  uint8_t index = _ps2_tx_head + 1;
-  if (index >= PS2_TX_BUFFER_SIZE) {
-    index = 0;
+uint8_t ps2_receive_resp(uint8_t resp, unsigned long timeout) {
+  uint8_t scancode[3];
+  uint8_t err = ps2_receive(scancode, timeout);
+  if (err) { return err; }
+  if (scancode[0] != resp) {
+    return PS2_ERROR_BADRESPONSE;
   }
-  if (index != _ps2_tx_tail) {
+  return PS2_ERROR_OK;
+}
+
+uint8_t ps2_send(uint8_t cmd, unsigned long timeout) {
+  cli();
+  if (ps2_status(_STATUS_BUSY)) {
+    sei();
+    return PS2_ERROR_BUSY;
+  }
+  ps2_inhibit(100);
+  ps2_prepare_send(cmd);
+  ps2_set_status(_STATUS_DIR + _STATUS_BUSY);
+
 #ifdef PS2_DEBUG
-    Serial.print(F("ps2_write: "));
-    Serial.println(cmd, HEX);
+  Serial.print(F("ps2_send: "));
+  Serial.println(cmd, HEX);
 #endif
-    _ps2_tx_buff[index] = cmd;
-    _ps2_tx_head = index;
-    ps2_send_next();
-    return 1;
-  }
-  return 0;
-}
-
-void ps2_reset(void) {
-  _ps2_tx_head = 0;
-  _ps2_tx_tail = 0;
-  _ps2_rx_head = 0;
-  _ps2_rx_tail = 0;
-  _ps2_bitcount = 0;
-  _ps2_status = 0;
-}
-
-void ps2_send_next(void) {
-  // Check buffer not empty
-  if (_ps2_tx_head == _ps2_tx_tail) {
-    return;
-  }
-
-  // If busy, mark it as TX requested
-  if (_ps2_status & _STATUS_BUSY) {
-    _ps2_status |= _STATUS_TXREQ;
-    return;
-  }
-
-  _ps2_tx_tail++;
-  _ps2_shiftdata = _ps2_tx_buff[_ps2_tx_tail];;
-  _ps2_bitcount = 0;
-  _ps2_status &= ~_STATUS_TXREQ;
-  _ps2_status |= _STATUS_DIR | _STATUS_BUSY;
 
   ps2_request_to_send();
+  sei();
+
+  // Wait until command is sent or timeout
+  unsigned long t0 = millis();
+  for (;;) {
+    if (!ps2_status(_STATUS_BUSY | _STATUS_DIR)) {
+      return PS2_ERROR_OK;
+    }
+    unsigned long t1 = millis();
+    unsigned long elapsed = t1 - t0;
+    if (elapsed > timeout) {
+      return PS2_ERROR_TIMEOUT;
+    }
+  }
+}
+
+void ps2_prepare_send(uint8_t cmd) {
+  _ps2_tx_buff = cmd;
+  _ps2_bitcount = 0;
+  _ps2_shiftdata = cmd;
+}
+
+void ps2_inhibit(unsigned long wait = 0) {
+  // Inhibit communication by pulling down the CLK signal
+  pinMode(_ps2_clk_pin, OUTPUT);
+  digitalWrite(_ps2_clk_pin, LOW);
+  if (wait > 0) {
+    delay(wait);
+  }
+}
+
+void ps2_idle() {
+  digitalWrite(_ps2_clk_pin, HIGH);
+  pinMode(_ps2_clk_pin, INPUT);
 }
 
 void ps2_request_to_send() {
-  // Inhibit communication by pulling down CLK signal
-  pinMode(_ps2_clk_pin, OUTPUT);
-  digitalWrite(_ps2_clk_pin, LOW);
-  delayMicroseconds(100);
-
   // Request to send by pulling the DATA signal LOW and the giving back control of CLK signal
   pinMode(_ps2_data_pin, OUTPUT);
   digitalWrite(_ps2_data_pin, LOW);
@@ -206,9 +195,20 @@ void ps2_request_to_send() {
 }
 
 
+void ps2_reset(bool cleanBuffers = true) {
+  cli();
+  _ps2_bitcount = 0;
+  _ps2_status = 0;
+  if (cleanBuffers) {
+    _ps2_rx_bufsize = 0;
+    _ps2_rx_buffer[0] = _ps2_rx_buffer[1] = _ps2_rx_buffer[2] = 0;
+  }
+  sei();
+}
+
 // The ISR for the external interrupt
 void ps2_interrupt(void) {
-  if (_ps2_status & _STATUS_DIR) {
+  if (ps2_status(_STATUS_DIR)) {
     ps2_send_bit();
   } else {
     ps2_receive_bit();
@@ -234,8 +234,8 @@ void ps2_send_bit(void) {
       // Data bits
       bit = _ps2_shiftdata & 0x01;
       digitalWrite(_ps2_data_pin, bit);
-      _ps2_parity += bit;                 // another one received ?
-      _ps2_shiftdata >>= 1;               // right _SHIFT one place for next bit
+      _ps2_parity += bit;
+      _ps2_shiftdata >>= 1;
       break;
     case 10:
       // Parity: even is HIGH, odd is LOW
@@ -253,22 +253,24 @@ void ps2_send_bit(void) {
     default: // in case of weird error and end of byte reception re-sync
       // Clear state
       _ps2_bitcount = 0;
-      _ps2_status &= ~_STATUS_DIR;
-      _ps2_status &= ~_STATUS_BUSY;
+      ps2_reset_status(_STATUS_DIR | _STATUS_BUSY);
   }
 }
 
 void ps2_receive_bit() {
   // Check whether last bit was received long ago
   // If so, we consider this a new transmission
-  static uint32_t last_bit_rcv_at = 0;
-  uint32_t now = millis();
-  if (_ps2_bitcount && (now - last_bit_rcv_at > PS2_RX_TIMEOUT)) {
+  static unsigned long t0 = 0;
+  unsigned long t1 = millis();
+  unsigned long elapsed = t1 - t0;
+  t0 = t1;
+  if (_ps2_bitcount && (elapsed > PS2_RX_TIMEOUT)) {
+#ifdef PS2_DEBUG
     Serial.println(F("rx timeout"));
+#endif
     _ps2_bitcount = 0;
     _ps2_shiftdata = 0;
   }
-  last_bit_rcv_at = now;
 
   uint8_t bit = digitalRead(_ps2_data_pin);
   _ps2_bitcount++; // Now point to next bit
@@ -276,7 +278,8 @@ void ps2_receive_bit() {
     case 1: // Start bit
       _ps2_parity = 0;
       _ps2_shiftdata = 0;
-      _ps2_status |= _STATUS_BUSY;
+      ps2_set_status(_STATUS_BUSY);
+      ps2_reset_status(_STATUS_DIR);
       break;
     case 2:
     case 3:
@@ -295,29 +298,35 @@ void ps2_receive_bit() {
         // Received bit is even if HIGH, odd if LOW
         // Stored parity LSB is odd if HIGH, even if LOW
         // Same value means parity error
-        _ps2_status |= _STATUS_PARITYERR;
+        ps2_set_status(_STATUS_PARITYERR);
       }
       break;
     case 11: // Stop bit lots of spare time now
       uint16_t scancode = _ps2_shiftdata;
-      if (_ps2_status & _STATUS_PARITYERR) {
-        scancode = PS2_SCANCODE_ERR;
-      }
-      uint8_t index = _ps2_rx_head + 1;
-      if (index >= PS2_RX_BUFFER_SIZE) {
-        index = 0;
-      }
-      if (index != _ps2_rx_tail) {
-        _ps2_rx_buffer[index] = scancode;
-        _ps2_rx_head = index;
+      // If there is a parity error, do nothing. The error will be propagated to the app code.
+      // There we can submit a resend command to continue from the last received byte.
+      if (!ps2_status(_STATUS_PARITYERR)) {
+        _ps2_rx_buffer[_ps2_rx_bufsize] = _ps2_shiftdata;
+        if (_ps2_rx_bufsize < 3 && ps2_is_extended(_ps2_shiftdata)) {
+          // Extended, wait for the next element
+          _ps2_rx_bufsize++;
+        } else {
+          ps2_set_status(_STATUS_AVAIL);
+          ps2_inhibit();
+        }
       }
       // fall through to default
     default: // in case of weird error and end of byte reception resync
       _ps2_bitcount = 0;
-      _ps2_status &= ~_STATUS_BUSY;
-      _ps2_status &= ~_STATUS_PARITYERR;
-      if (_ps2_status & _STATUS_TXREQ) {
-        ps2_send_next();
-      }
+  }
+}
+
+bool ps2_is_extended(uint8_t code) {
+  switch (code) {
+    case PS2_SCANCODE_EXTENDED:
+    case PS2_SCANCODE_BREAK:
+      return true;
+    default:
+      return false;
   }
 }
