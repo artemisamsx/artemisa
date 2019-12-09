@@ -27,8 +27,10 @@
 #define PS2_SCANCODE_ERR              0x00
 #define PS2_SCANCODE_SELFTEST_PASSED  0xAA
 #define PS2_SCANCODE_EXTENDED         0xE0
+#define PS2_SCANCODE_ECHO             0xEE
 #define PS2_SCANCODE_BREAK            0xF0
 #define PS2_SCANCODE_ACKNOWLEDGE      0xFA
+#define PS2_SCANCODE_RESEND           0xFE
 
 ///////////
 // Commands
@@ -38,6 +40,7 @@
 #define PS2_COMMAND_ECHO                0xEE
 #define PS2_COMMAND_SCANCODE_SETTING    0xF0
 #define PS2_COMMAND_KEYMODE_MAKERELEASE 0xF8
+#define PS2_COMMAND_RESEND              0xFE
 #define PS2_COMMAND_RESET               0xFF
 
 #define PS2_SCANCODE_GET  0x00
@@ -64,6 +67,10 @@ uint8_t ps2_cmd_reset();
 
 // Set the status of the CAPSLOCK led
 uint8_t ps2_cmd_leds(uint8_t leds);
+
+// Send a echo command to they keyboard.
+// Returns 0 on success.
+uint8_t ps2_cmd_echo();
 
 // Receive a scancode from the keyboard.
 // Returns 0 on success

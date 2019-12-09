@@ -56,11 +56,11 @@ uint8_t ps2_cmd_reset() {
     return -1;
   }
   ps2_write(PS2_COMMAND_RESET);
-  uint8_t scancode = ps2_wait(100);
+  uint8_t scancode = ps2_wait(5000);
   if (scancode != PS2_SCANCODE_ACKNOWLEDGE) {
     return -1;
   }
-  scancode = ps2_wait(1000);
+  scancode = ps2_wait(5000);
   return (scancode != PS2_SCANCODE_SELFTEST_PASSED);
 }
 
@@ -70,9 +70,23 @@ uint8_t ps2_cmd_leds(uint8_t leds) {
   if (scancode != PS2_SCANCODE_ACKNOWLEDGE) {
     return -1;
   }
+
   ps2_write(leds);
+  scancode = ps2_wait(100);
   if (scancode != PS2_SCANCODE_ACKNOWLEDGE) {
     return -1;
+  }
+}
+
+uint8_t ps2_cmd_echo() {
+  ps2_write(PS2_COMMAND_ECHO);
+  uint8_t scancode = ps2_wait(200);
+  switch (scancode) {
+    case PS2_SCANCODE_ECHO: return false;
+    case PS2_SCANCODE_RESEND:
+      delay(100);
+      return ps2_cmd_echo();
+    default: return true;
   }
 }
 
@@ -128,20 +142,24 @@ uint8_t ps2_read() {
 
 uint8_t ps2_wait(unsigned long timeout) {
   unsigned long t0 = millis();
-  unsigned long t1;
-  uint8_t scancode = PS2_SCANCODE_ERR;
-  do {
+  for (;;) {
     if (ps2_available()) {
-      scancode = ps2_read();
-      break;
-    }
-    t1 = millis();
-  } while (t1 - t0 < timeout);
+      uint8_t scancode = ps2_read();
 #ifdef PS2_DEBUG
-    Serial.print(F("ps2_wait: "));
-    Serial.println(scancode, HEX);
+      Serial.print(F("ps2_wait: "));
+      Serial.println(scancode, HEX);
 #endif
-  return scancode;
+      return scancode;
+    }
+    unsigned long t1 = millis();
+    unsigned long elapsed = t1 - t0;
+    if (elapsed > timeout) {
+#ifdef PS2_DEBUG
+      Serial.println(F("ps2_wait: timeout"));
+#endif
+      return PS2_SCANCODE_ERR;
+    }
+  };
 }
 
 uint8_t ps2_write(uint8_t cmd) {
@@ -189,6 +207,10 @@ void ps2_send_next(void) {
   _ps2_status &= ~_STATUS_TXREQ;
   _ps2_status |= _STATUS_DIR | _STATUS_BUSY;
 
+#ifdef PS2_DEBUG
+    Serial.print(F("ps2_send_next:"));
+    Serial.println(_ps2_shiftdata, HEX);
+#endif
   ps2_request_to_send();
 }
 
@@ -264,9 +286,14 @@ void ps2_receive_bit() {
   static uint32_t last_bit_rcv_at = 0;
   uint32_t now = millis();
   if (_ps2_bitcount && (now - last_bit_rcv_at > PS2_RX_TIMEOUT)) {
+#ifdef PS2_DEBUG
     Serial.println(F("rx timeout"));
+#endif
     _ps2_bitcount = 0;
     _ps2_shiftdata = 0;
+    _ps2_status &= ~_STATUS_BUSY;
+    ps2_write(PS2_COMMAND_RESEND);
+    return;
   }
   last_bit_rcv_at = now;
 
@@ -301,7 +328,15 @@ void ps2_receive_bit() {
     case 11: // Stop bit lots of spare time now
       uint16_t scancode = _ps2_shiftdata;
       if (_ps2_status & _STATUS_PARITYERR) {
-        scancode = PS2_SCANCODE_ERR;
+    #ifdef PS2_DEBUG
+        Serial.println(F("rx parity err"));
+    #endif
+        _ps2_bitcount = 0;
+        _ps2_status &= ~_STATUS_PARITYERR;
+        _ps2_status &= ~_STATUS_BUSY;
+        ps2_write(PS2_COMMAND_RESEND);
+        return;
+        // scancode = PS2_SCANCODE_ERR;
       }
       uint8_t index = _ps2_rx_head + 1;
       if (index >= PS2_RX_BUFFER_SIZE) {

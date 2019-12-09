@@ -135,9 +135,7 @@ void write_all_rows(byte value) {
   }
 }
 
-void setup_ps2_keyboard() {
-  ps2_begin(PS2_PIN_DATA, PS2_PIN_CLK);
-
+void reset_keyboard() {
   if (ps2_cmd_reset()) {
 #ifdef DEBUG
     Serial.println(F("Error: reset command failed"));
@@ -145,7 +143,40 @@ void setup_ps2_keyboard() {
   }
 }
 
+void setup_ps2_keyboard() {
+  ps2_begin(PS2_PIN_DATA, PS2_PIN_CLK);
+  reset_keyboard();
+}
+
+void process_locks(bool force = false) {
+  static uint8_t locks = 0;
+
+  uint8_t prev = locks;
+  if (digitalRead(CAPSLOCK_PIN)) locks &= ~PS2_LED_CAPSLOCK;
+  else locks |= PS2_LED_CAPSLOCK;
+
+  if (digitalRead(KANALOCK_PIN)) locks &= ~PS2_LED_KANALOCK;
+  else locks |= PS2_LED_KANALOCK;
+
+  if (force || (prev != locks)) {
+    ps2_cmd_leds(locks);
+  }
+}
+
+bool handle_special_scancode(uint8_t (&scancode)[3]) {
+  switch (scancode[0]) {
+    case PS2_SCANCODE_SELFTEST_PASSED:
+      process_locks(true);
+      return true;
+  }
+  return false;
+}
+
 void handle_scancode(uint8_t (&scancode)[3]) {
+  if (handle_special_scancode(scancode)) {
+    return;
+  }
+
   mapping m = map_scancodes(scancode);
   if (m.row == -1) {
     // There is no mapping defined for that scancode. Skip it.
@@ -172,22 +203,7 @@ void handle_scancode(uint8_t (&scancode)[3]) {
   }
 }
 
-void handle_locks() {
-  static uint8_t locks = 0;
-
-  uint8_t prev = locks;
-  if (digitalRead(CAPSLOCK_PIN)) locks &= ~PS2_LED_CAPSLOCK;
-  else locks |= PS2_LED_CAPSLOCK;
-
-  if (digitalRead(KANALOCK_PIN)) locks &= ~PS2_LED_KANALOCK;
-  else locks |= PS2_LED_KANALOCK;
-
-  if (prev != locks) {
-    ps2_cmd_leds(locks);
-  }
-}
-
-void process_ps2_keyboard_events() {
+void process_scancodes() {
   uint8_t scancode[3];
   if (!ps2_receive(scancode)) {
 #ifdef DEBUG
@@ -197,17 +213,14 @@ void process_ps2_keyboard_events() {
     if (scancode[2] > 0) Serial.print(scancode[2], HEX);
     Serial.println();
 #endif
-
     handle_scancode(scancode);
   }
-
-  handle_locks();
 }
 
 // Setup the microcontroller
 void setup() {
 #ifdef DEBUG
-  Serial.begin(9600);
+  Serial.begin(115200);
   Serial.println( F( "PS2 Keyboard Adapter board" ) );
 #endif
 
@@ -218,5 +231,6 @@ void setup() {
 
 // Main loop of the microcontroller
 void loop() {
-  process_ps2_keyboard_events();
+  process_scancodes();
+  process_locks();
 }
