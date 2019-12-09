@@ -90,6 +90,9 @@ uint8_t ps2_cmd_reset();
 // Set the status of the CAPSLOCK led
 uint8_t ps2_cmd_leds(uint8_t leds);
 
+// A command to request to resend the last code.
+uint8_t ps2_cmd_resend();
+
 // Receive a scancode from the keyboard.
 uint8_t ps2_receive(uint8_t (&scancodes)[3], unsigned long timeout);
 

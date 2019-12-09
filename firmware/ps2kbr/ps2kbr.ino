@@ -207,15 +207,23 @@ void handle_scancode(uint8_t (&scancode)[3]) {
 
 void process_scancodes() {
   uint8_t scancode[3];
-  if (!ps2_receive(scancode, 100)) {
+  switch (ps2_receive(scancode, 100)) {
+    case PS2_ERROR_OK:
 #ifdef DEBUG
-    Serial.print(F("Scanned: "));
-    Serial.print(scancode[0], HEX);
-    if (scancode[1] > 0) Serial.print(scancode[1], HEX);
-    if (scancode[2] > 0) Serial.print(scancode[2], HEX);
-    Serial.println();
+      Serial.print(F("Scanned: "));
+      Serial.print(scancode[0], HEX);
+      if (scancode[1] > 0) Serial.print(scancode[1], HEX);
+      if (scancode[2] > 0) Serial.print(scancode[2], HEX);
+      Serial.println();
 #endif
-    handle_scancode(scancode);
+      handle_scancode(scancode);
+      break;
+    case PS2_ERROR_PARITY:
+#ifdef DEBUG
+      Serial.println(F("Scanned with parity error"));
+#endif
+      ps2_cmd_resend();
+      break;
   }
 }
 

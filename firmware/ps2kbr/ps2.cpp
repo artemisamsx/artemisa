@@ -36,14 +36,14 @@ void ps2_prepare_send(uint8_t cmd);
 void ps2_inhibit(unsigned long wait = 0);
 void ps2_idle();
 void ps2_request_to_send();
-void ps2_reset(void);
+void ps2_reset(bool cleanBuffers = true);
 void ps2_interrupt(void);
 void ps2_send_bit(void);
 void ps2_receive_bit();
 bool ps2_is_extended(uint8_t code);
 
 void ps2_begin(uint8_t data_pin, uint8_t clk_pin) {
-  ps2_reset();
+  ps2_reset(false);
 
   _ps2_data_pin = data_pin;
   _ps2_clk_pin = clk_pin;
@@ -83,13 +83,19 @@ uint8_t ps2_cmd_leds(uint8_t leds) {
   return ps2_receive_resp(PS2_SCANCODE_ACKNOWLEDGE, 100);
 }
 
+uint8_t ps2_cmd_resend() {
+  ps2_reset();
+  uint8_t err = ps2_send(PS2_COMMAND_RESEND, 500);
+  if (err) { return err; }
+}
+
 uint8_t ps2_receive(uint8_t (&scancodes)[3], unsigned long timeout) {
   unsigned long t0 = millis();
   for (;;) {
+    if (ps2_status(_STATUS_PARITYERR)) {
+      return PS2_ERROR_PARITY;
+    }
     if (ps2_status(_STATUS_AVAIL)) {
-      if (ps2_status(_STATUS_PARITYERR)) {
-        return PS2_ERROR_PARITY;
-      }
 
       scancodes[0] = _ps2_rx_buffer[0];
       scancodes[1] = _ps2_rx_buffer[1];
@@ -189,12 +195,14 @@ void ps2_request_to_send() {
 }
 
 
-void ps2_reset(void) {
+void ps2_reset(bool cleanBuffers = true) {
   cli();
   _ps2_bitcount = 0;
   _ps2_status = 0;
-  _ps2_rx_bufsize = 0;
-  _ps2_rx_buffer[0] = _ps2_rx_buffer[1] = _ps2_rx_buffer[2] = 0;
+  if (cleanBuffers) {
+    _ps2_rx_bufsize = 0;
+    _ps2_rx_buffer[0] = _ps2_rx_buffer[1] = _ps2_rx_buffer[2] = 0;
+  }
   sei();
 }
 
@@ -295,6 +303,8 @@ void ps2_receive_bit() {
       break;
     case 11: // Stop bit lots of spare time now
       uint16_t scancode = _ps2_shiftdata;
+      // If there is a parity error, do nothing. The error will be propagated to the app code.
+      // There we can submit a resend command to continue from the last received byte.
       if (!ps2_status(_STATUS_PARITYERR)) {
         _ps2_rx_buffer[_ps2_rx_bufsize] = _ps2_shiftdata;
         if (_ps2_rx_bufsize < 3 && ps2_is_extended(_ps2_shiftdata)) {
@@ -304,10 +314,6 @@ void ps2_receive_bit() {
           ps2_set_status(_STATUS_AVAIL);
           ps2_inhibit();
         }
-      } else {
-  #ifdef PS2_DEBUG
-        Serial.println(F("rx parity err"));
-  #endif
       }
       // fall through to default
     default: // in case of weird error and end of byte reception resync
