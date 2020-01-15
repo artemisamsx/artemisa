@@ -170,6 +170,10 @@ bool handle_special_scancode(uint8_t (&scancode)[3]) {
     case PS2_SCANCODE_SELFTEST_PASSED:
       process_locks(true);
       return true;
+    case PS2_SCANCODE_ERR0:
+    case PS2_SCANCODE_ERR1:
+      reset_keyboard();
+      return true;
   }
   return false;
 }

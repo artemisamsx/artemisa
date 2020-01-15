@@ -24,13 +24,14 @@
 // Scancodes
 ////////////
 
-#define PS2_SCANCODE_ERR              0x00
+#define PS2_SCANCODE_ERR0             0x00
 #define PS2_SCANCODE_SELFTEST_PASSED  0xAA
 #define PS2_SCANCODE_EXTENDED         0xE0
 #define PS2_SCANCODE_ECHO             0xEE
 #define PS2_SCANCODE_BREAK            0xF0
 #define PS2_SCANCODE_ACKNOWLEDGE      0xFA
 #define PS2_SCANCODE_RESEND           0xFE
+#define PS2_SCANCODE_ERR1             0xFF
 
 ///////////
 // Commands
