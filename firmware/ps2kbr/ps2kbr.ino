@@ -230,7 +230,7 @@ void process_scancodes() {
 // Setup the microcontroller
 void setup() {
 #ifdef DEBUG
-  Serial.begin(2000000);
+  Serial.begin(57600);
   Serial.println( F( "PS2 Keyboard Adapter board" ) );
 #endif
 
