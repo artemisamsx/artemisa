@@ -74,6 +74,9 @@ const int outputs[MATRIX_NROWS] = {
 // each one represented by one bit in each entry of this array.
 byte matrix[MATRIX_NROWS];
 
+// The PS2 port
+PS2Port ps2;
+
 // Initialize the IO pins
 void init_iopins() {
   // The pin used to transmit the serial data
@@ -136,8 +139,8 @@ void write_all_rows(byte value) {
 }
 
 void reset_keyboard() {
-  uint8_t err;
-  if (err = ps2_cmd_reset()) {
+  PS2Result err = ps2.send_cmd_reset();
+  if (err != PS2Result::OK) {
 #ifdef DEBUG
     Serial.print(F("Error: reset command failed with code "));
     Serial.println(err, HEX);
@@ -146,7 +149,7 @@ void reset_keyboard() {
 }
 
 void setup_ps2_keyboard() {
-  ps2_begin(PS2_PIN_DATA, PS2_PIN_CLK);
+  ps2.begin(PS2_PIN_DATA, PS2_PIN_CLK);
   reset_keyboard();
 }
 
@@ -161,36 +164,32 @@ void process_locks(bool force = false) {
   else locks |= PS2_LED_KANALOCK;
 
   if (force || (prev != locks)) {
-    ps2_cmd_leds(locks);
+    ps2.send_cmd_leds(locks);
   }
 }
 
-bool handle_special_scancode(uint8_t (&scancode)[3]) {
-  switch (scancode[0]) {
-    case PS2_SCANCODE_SELFTEST_PASSED:
+bool handle_special_scancode(const PS2Scancode &sc) {
+  switch (sc.keycode()) {
+    case PS2_KEYCODE_SELFTEST_PASSED:
       process_locks(true);
-      return true;
-    case PS2_SCANCODE_ERR0:
-    case PS2_SCANCODE_ERR1:
-      reset_keyboard();
       return true;
   }
   return false;
 }
 
-void handle_scancode(uint8_t (&scancode)[3]) {
-  if (handle_special_scancode(scancode)) {
+void handle_scancode(const PS2Scancode &sc) {
+  if (handle_special_scancode(sc)) {
     return;
   }
 
-  mapping m = map_scancodes(scancode);
+  mapping m = map_scancodes(sc);
   if (m.row == -1) {
     // There is no mapping defined for that scancode. Skip it.
     return;
   }
 
   byte r = matrix[m.row];
-  if (ps2_scancode_is_break(scancode)) {
+  if (sc.is_break()) {
     bitSet(r, m.offset);
   } else {
     bitClear(r, m.offset);
@@ -210,24 +209,22 @@ void handle_scancode(uint8_t (&scancode)[3]) {
 }
 
 void process_scancodes() {
-  uint8_t scancode[3];
-  switch (ps2_receive(scancode, 100)) {
-    case PS2_ERROR_OK:
+  PS2Scancode sc;
+  PS2Result res = ps2.receive_scancode(sc);
+  if (res != PS2Result::OK) {
 #ifdef DEBUG
-      Serial.print(F("Scanned: "));
-      Serial.print(scancode[0], HEX);
-      if (scancode[1] > 0) Serial.print(scancode[1], HEX);
-      if (scancode[2] > 0) Serial.print(scancode[2], HEX);
-      Serial.println();
+    Serial.print(F("+RCVERR:"));
+    Serial.println(res, HEX);
+    return;
 #endif
-      handle_scancode(scancode);
-      break;
-    case PS2_ERROR_PARITY:
+  }
+  if (!sc.is_null()) {
 #ifdef DEBUG
-      Serial.println(F("Scanned with parity error"));
+    Serial.print(F("+RCV: "));
+    Serial.print(sc.code, HEX);
+    Serial.println();
 #endif
-      ps2_cmd_resend();
-      break;
+    handle_scancode(sc);
   }
 }
 

@@ -105,6 +105,6 @@ struct mapping {
 #define MATRIX_INT_NUMDOT     { 10,  7 }
 
 // Returns the mapping for the given scancodes
-mapping map_scancodes(uint8_t (&scancode)[3]);
+mapping map_scancodes(const PS2Scancode &sc);
 
 #endif
