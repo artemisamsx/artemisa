@@ -131,7 +131,7 @@ void PS2Port::send_bit() volatile {
       digitalWrite(_data_pin, bit);
       break;
     case 11: // Stop bit write change to input pull up for high stop bit
-      pinMode(_data_pin, INPUT_PULLUP);
+      comm_acksend();
       break;
     case 12: // Acknowledge bit low we cannot do anything if high instead of low
       bit = digitalRead(_data_pin);
@@ -184,6 +184,9 @@ void PS2Port::receive_bit() volatile {
     case 11: // Stop bit
       _rx_bitcount = 0;
       if (_state == PS2State::RX_PARITYERR) {
+#ifdef PS2_DEBUG
+        Serial.println(F("+PARITYERR"));
+#endif
         send(PS2_COMMAND_RESEND);
       } else {
         receive(_rx_bits);
@@ -203,6 +206,14 @@ void PS2Port::try_send() volatile {
 void PS2Port::send(uint8_t data) volatile {
   _tx_bits = data;
   _state = PS2State::TX_SENDREQ;
+  // The following request to send may interrupt a incoming transmission. The PS2 protocol
+  // states that, if that occurs, the device will try to retransmit all the bytes that
+  // comprise the transmission. For example, if it fails to transmit the second byte of a 
+  // breaking code, it will retransmit again both bytes. Because of that, we clean up
+  // all the rx state to be prepared for this situation.
+  _rx_scancode = 0;
+  _rx_bitcount = 0;
+  _rx_bits = 0;
   comm_reqsend();
 }
 
@@ -265,8 +276,10 @@ void PS2Port::receive_scancode(uint8_t data) volatile {
 void PS2Port::panic(PS2Error err) volatile {
   _state = PS2State::PANIC;
   _error = err;
+#ifdef PS2_DEBUG
   Serial.print(F("panic:"));
   Serial.println(err);
+#endif
 }
 
 PS2Result PS2Port::state_result() const {
@@ -285,15 +298,22 @@ PS2Result PS2Port::state_result() const {
 }
 
 void PS2Port::comm_reqsend() volatile {
+  comm_inhibit();
   pinMode(_data_pin, OUTPUT);
   digitalWrite(_data_pin, LOW);
   digitalWrite(_clk_pin, HIGH);
   pinMode(_clk_pin, INPUT_PULLUP);
 }
 
+void PS2Port::comm_acksend() volatile {
+  digitalWrite(_data_pin, HIGH);
+  pinMode(_data_pin, INPUT_PULLUP);
+}
+
 void PS2Port::comm_inhibit() {
   pinMode(_clk_pin, OUTPUT);
   digitalWrite(_clk_pin, LOW);
+  delayMicroseconds(100);
 }
 
 void PS2Port::comm_allow() {

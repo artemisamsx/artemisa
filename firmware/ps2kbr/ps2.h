@@ -21,7 +21,7 @@
 #define PS2_TX_BUFFER_SIZE  64
 
 // The timeout of reception in milliseconds
-#define PS2_RX_TIMEOUT 500
+#define PS2_RX_TIMEOUT 250
 
 // PS2 protocol codes
 #define PS2_CODE_ERR0             0x00
@@ -127,6 +127,7 @@ private:
   void panic(PS2Error err) volatile;
   PS2Result state_result() const;
   void comm_reqsend() volatile;
+  void comm_acksend() volatile;
   void comm_inhibit();
   void comm_allow();
 
