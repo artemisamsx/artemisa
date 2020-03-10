@@ -25,7 +25,7 @@ public:
 
   // Read an element from the buffer.
   // Return true if succesful, false if buffer was empty.
-  bool read(T &val) volatile {
+  bool read(volatile T &val) volatile {
     if (_ravail == 0) {
       return false;
     }

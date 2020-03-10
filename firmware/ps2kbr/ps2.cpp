@@ -1,5 +1,24 @@
 #include "ps2.h"
 
+const char* _PS2_STATE_NAME[] = {
+  "CREATED",
+  "IDLE",
+  "TX_SENDREQ",
+  "TX_TRANSFER",
+  "TX_WAITACK",
+  "TX_WAITRESP",
+  "RX_TRANSFER",
+  "RX_PARITYERR",
+  "PANIC",
+};
+
+const char* _PS2_ERROR_NAME[] = {
+  "TX_BUFFER_OVERFLOW",
+  "RX_BUFFER_OVERFLOW",
+  "DEVICE_PROTOERR",
+  "TIMEOUT",
+};
+
 volatile PS2Port* _ps2_interrupt_ports[2] {
   NULL,
   NULL,
@@ -31,40 +50,17 @@ PS2Result PS2Port::begin(uint8_t data_pin, uint8_t clk_pin) {
   pinMode(clk_pin, INPUT_PULLUP);  /* Setup Clock pin */
   pinMode(data_pin, INPUT_PULLUP); /* Setup Data pin */
 
-  // Configure the clock signal interruption
-  int interrupt = digitalPinToInterrupt(clk_pin);
-  _ps2_interrupt_ports[interrupt] = this;
-  void (*int_handler)() = _ps2_interrupt_handlers[interrupt];
-  attachInterrupt(interrupt, int_handler, FALLING);
-
-  // Configure internal state
+  int_attach();
   _state = PS2State::IDLE;
   return PS2Result::OK;
 }
 
 PS2Result PS2Port::send_cmd_reset() {
-  PS2Result res = state_result();
-  if (res != PS2Result::OK) {
-    return res;
-  }
-  if (!_tx_buffer.write(PS2_COMMAND_RESET)) {
-    return PS2Result::ERR_BUFFER_OVERFLOW;
-  }
-  return PS2Result::OK;
+  return send_cmd(ps2_command::reset());
 }
 
 PS2Result PS2Port::send_cmd_leds(uint8_t leds) {
-  PS2Result res = state_result();
-  if (res != PS2Result::OK) {
-    return res;
-  }
-  if (!_tx_buffer.write(PS2_COMMAND_LED_STATE)) {
-    return PS2Result::ERR_BUFFER_OVERFLOW;
-  }
-  if (!_tx_buffer.write(leds)) {
-    return PS2Result::ERR_BUFFER_OVERFLOW;
-  }
-  return PS2Result::OK;
+  return send_cmd(ps2_command::led_state(leds));
 }
 
 PS2Result PS2Port::receive_scancode(PS2Scancode &sc) {
@@ -88,6 +84,8 @@ void PS2Port::clock_interrupt() volatile {
       [[fallthrough]];
     case PS2State::RX_TRANSFER:
     case PS2State::RX_PARITYERR:
+    case PS2State::TX_WAITACK:
+    case PS2State::TX_WAITRESP:
       receive_bit();
       break;
     case PS2State::TX_SENDREQ:
@@ -101,6 +99,32 @@ void PS2Port::clock_interrupt() volatile {
       // Not ready to transfer bits.
       break;
   }
+}
+
+PS2Result PS2Port::send_cmd(ps2_command cmd) volatile {
+  PS2Result res = state_result();
+  if (res != PS2Result::OK) {
+    return res;
+  }
+
+  _tx_last = cmd;
+  _tx_resp = 0;
+  send(cmd);
+
+  PS2Timer timer;
+  timer.reset(PS2_COMMAND_TIMEOUT);
+  while (_state != PS2State::IDLE && _state != PS2State::PANIC) {
+    if (timer.triggered()) {
+      panic(PS2Error::TIMEOUT);
+      break;
+    }
+  }
+
+  res = state_result();
+  if (_state == PS2State::PANIC) {
+    _state = PS2State::IDLE;
+  }
+  return res;
 }
 
 void PS2Port::send_bit() volatile {
@@ -139,7 +163,12 @@ void PS2Port::send_bit() volatile {
         // TODO: send again?
       }
       _tx_bitcount = 0;
-      _state = PS2State::IDLE;
+      if (_tx_last.type == PS2_COMMAND_RESEND) {
+        // Special case: resend command does not require acknowledge
+        _state = PS2State::IDLE;
+      } else {
+        _state = PS2State::TX_WAITACK;
+      }
   }
 }
 
@@ -148,9 +177,6 @@ void PS2Port::receive_bit() volatile {
   // If so, we consider this a new transmission
   if (_rx_timer.triggered()) {
     _rx_bitcount = 0;
-#ifdef PS2_DEBUG
-    Serial.println(F("+rxto"));
-#endif
   }
   _rx_timer.reset(PS2_RX_TIMEOUT);
 
@@ -183,29 +209,34 @@ void PS2Port::receive_bit() volatile {
       break;
     case 11: // Stop bit
       _rx_bitcount = 0;
-      if (_state == PS2State::RX_PARITYERR) {
-#ifdef PS2_DEBUG
-        Serial.println(F("+PARITYERR"));
-#endif
-        send(PS2_COMMAND_RESEND);
-      } else {
-        receive(_rx_bits);
-      }
+      receive(_rx_bits);
       break;
   }
 }
 
-void PS2Port::try_send() volatile {
-  uint8_t data;
-  if (_state != PS2State::IDLE && _tx_buffer.read(data)) {
-    _tx_last = data;
-    send(data);
-  }
+void PS2Port::send(const volatile ps2_command& cmd) volatile {
+#ifdef PS2_DEBUG
+    Serial.print(F("+SND: "));
+    Serial.print(cmd.data, HEX);
+    Serial.print(F("+"));
+    Serial.print(cmd.len);
+    Serial.println();
+#endif
+
+  _tx_current = cmd;
+  send_byte(_tx_current.curr());
 }
 
-void PS2Port::send(uint8_t data) volatile {
+void PS2Port::send_byte(uint8_t data) volatile {
   _tx_bits = data;
   _state = PS2State::TX_SENDREQ;
+
+#ifdef PS2_DEBUG
+      Serial.print(F("+TX: "));
+      Serial.print(_tx_bits, HEX);
+      Serial.println();
+#endif
+
   // The following request to send may interrupt a incoming transmission. The PS2 protocol
   // states that, if that occurs, the device will try to retransmit all the bytes that
   // comprise the transmission. For example, if it fails to transmit the second byte of a 
@@ -214,27 +245,72 @@ void PS2Port::send(uint8_t data) volatile {
   _rx_scancode = 0;
   _rx_bitcount = 0;
   _rx_bits = 0;
+
   comm_reqsend();
 }
 
 void PS2Port::receive(uint8_t data) volatile {
-  // By default, assume we are now idle. If reception ends up in another state,
-  // it will be set after this.
-  _state = PS2State::IDLE;
-  switch (data) {
-    case PS2_CODE_ACKNOWLEDGE:
-      try_send();
-      break;
-    case PS2_CODE_RESEND:
-      send(_tx_last);
-      break;
-    case PS2_CODE_ECHO:
-      if (_tx_last != PS2_COMMAND_ECHO) {
-        // Unexpected echo response
+#ifdef PS2_DEBUG
+    Serial.print(F("+RCV: "));
+    Serial.print(data, HEX);
+    Serial.println();
+#endif
+  if (data == PS2_CODE_RESEND) {
+    send_byte(_tx_current.curr());
+    return;
+  }
+
+  switch (_state) {
+    case PS2State::TX_WAITACK:
+      if (data != PS2_CODE_ACKNOWLEDGE) {
         panic(PS2Error::DEVICE_PROTOERR);
+        return;
       }
-      try_send();
+      receive_ack();
       break;
+    case PS2State::TX_WAITRESP:
+      _tx_resp = data;
+      _state = PS2State::IDLE;
+      break;
+    case PS2State::RX_TRANSFER:
+      receive_scancode(data);
+      break;
+    case PS2State::RX_PARITYERR:
+#ifdef PS2_DEBUG
+      Serial.println(F("+PARITYERR"));
+#endif       
+      send_byte(PS2_COMMAND_RESEND);
+      break;
+  }
+}
+
+void PS2Port::receive_ack() volatile {  
+  if (!_tx_current.completed()) {
+    // The acknowledge of non-last byte. Let's transmit the next one.
+    send_byte(_tx_current.next());
+    return;
+  }
+
+  switch (_tx_last.type) {
+    case PS2_COMMAND_LED_STATE:
+      // Commands that does not require any response
+      _state = PS2State::IDLE;
+      break;
+    case PS2_COMMAND_RESET:
+      // Commands that require a response
+      _state = PS2State::TX_WAITRESP;
+      break;
+    default:
+      Serial.print(F("+ERR: unknown last command: "));
+      Serial.println(_tx_last.type);
+      break;
+  }
+}
+
+void PS2Port::receive_scancode(uint8_t data) volatile {  
+  _rx_scancode <<= 8;
+  _rx_scancode |= data;
+  switch (data) {
     case PS2_CODE_ERR0:
     case PS2_CODE_ERR1:
       // These are either a general error detected by the keybord or a buffer overrun in its side.
@@ -246,17 +322,8 @@ void PS2Port::receive(uint8_t data) volatile {
       // Considering the situations, when this error raised what we do is just to reset the RX
       // scancode and wait for the keyboard to recover from the situation.
       _rx_scancode = 0;
+      _state = PS2State::IDLE;
       break;
-    default:
-      receive_scancode(data);
-      break;
-  }
-}
-
-void PS2Port::receive_scancode(uint8_t data) volatile {  
-  _rx_scancode <<= 8;
-  _rx_scancode |= data;
-  switch (data) {
     case PS2_CODE_EXTENDED:
     case PS2_CODE_BREAK:
       // Special code, collect it and wait for next bytes
@@ -265,7 +332,7 @@ void PS2Port::receive_scancode(uint8_t data) volatile {
       // Regular code, collect it and save into the buffer
       if (_rx_buffer.write(_rx_scancode)) {
         _rx_scancode = 0;
-        try_send();        
+        _state = PS2State::IDLE;
       } else {
         panic(PS2Error::RX_BUFFER_OVERFLOW);
       }
@@ -277,8 +344,8 @@ void PS2Port::panic(PS2Error err) volatile {
   _state = PS2State::PANIC;
   _error = err;
 #ifdef PS2_DEBUG
-  Serial.print(F("panic:"));
-  Serial.println(err);
+  Serial.print(F("+panic:"));
+  Serial.println(_PS2_ERROR_NAME[err]);
 #endif
 }
 
@@ -292,17 +359,21 @@ PS2Result PS2Port::state_result() const {
       return PS2Result::ERR_BUFFER_OVERFLOW;
     case DEVICE_PROTOERR:
       return PS2Result::ERR_DEVICE_FAILED;
+    case TIMEOUT:
+      return PS2Result::ERR_TIMEOUT;
     default:
       return PS2Result::ERR_UNKNOWN;
   }
 }
 
 void PS2Port::comm_reqsend() volatile {
+  int_detach();
   comm_inhibit();
   pinMode(_data_pin, OUTPUT);
   digitalWrite(_data_pin, LOW);
   digitalWrite(_clk_pin, HIGH);
   pinMode(_clk_pin, INPUT_PULLUP);
+  int_attach();
 }
 
 void PS2Port::comm_acksend() volatile {
@@ -319,4 +390,17 @@ void PS2Port::comm_inhibit() {
 void PS2Port::comm_allow() {
   digitalWrite(_clk_pin, HIGH);
   pinMode(_clk_pin, INPUT);
+}
+
+void PS2Port::int_attach() {
+  int interrupt = digitalPinToInterrupt(_clk_pin);
+  _ps2_interrupt_ports[interrupt] = this;
+  void (*int_handler)() = _ps2_interrupt_handlers[interrupt];
+  attachInterrupt(interrupt, int_handler, FALLING);
+}
+
+void PS2Port::int_detach() {
+  int interrupt = digitalPinToInterrupt(_clk_pin);
+  detachInterrupt(interrupt);
+  _ps2_interrupt_ports[interrupt] = NULL;
 }

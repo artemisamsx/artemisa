@@ -20,7 +20,7 @@
 // This macro, when declared, activates the debug mode using the serial port of the Arduino board.
 // There is another PS2_DEBUG macro that controls the low level debugging in the PS2 library.
 // You can comment and uncomment this to disable and enable debug, respectively.
-// #define DEBUG 1
+#define DEBUG 1
 
 // The custom PS2 library made by Artemisa project.
 #include "ps2.h"
@@ -160,8 +160,9 @@ void process_locks(bool force = false) {
   if (digitalRead(CAPSLOCK_PIN)) locks &= ~PS2_LED_CAPSLOCK;
   else locks |= PS2_LED_CAPSLOCK;
 
-  if (digitalRead(KANALOCK_PIN)) locks &= ~PS2_LED_KANALOCK;
-  else locks |= PS2_LED_KANALOCK;
+  // TODO: not all keyboards support Kana Lock LED and refuse this bit.
+  // if (digitalRead(KANALOCK_PIN)) locks &= ~PS2_LED_KANALOCK;
+  // else locks |= PS2_LED_KANALOCK;
 
   if (force || (prev != locks)) {
     ps2.send_cmd_leds(locks);
@@ -198,10 +199,10 @@ void handle_scancode(const PS2Scancode &sc) {
   if (r != matrix[m.row]) {
     // We detected a change in the row. Something was pressed or released!
 #ifdef DEBUG
-    Serial.print(F("Row changed: "));
-    Serial.print(m.row);
-    Serial.print(F("="));
-    Serial.println(r, BIN);
+    //Serial.print(F("Row changed: "));
+    //Serial.print(m.row);
+    //Serial.print(F("="));
+    //Serial.println(r, BIN);
 #endif
     matrix[m.row] = r;
     write_row(m.row, r);
@@ -219,11 +220,6 @@ void process_scancodes() {
 #endif
   }
   if (!sc.is_null()) {
-#ifdef DEBUG
-    Serial.print(F("+RCV: "));
-    Serial.print(sc.code, HEX);
-    Serial.println();
-#endif
     handle_scancode(sc);
   }
 }
