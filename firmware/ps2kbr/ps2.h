@@ -147,6 +147,7 @@ private:
 
   ps2_command              _tx_current;
   ps2_command              _tx_last;
+  bool                     _tx_resend;
   uint8_t                  _tx_bitcount;
   uint8_t                  _tx_bits;
   uint8_t                  _tx_parity;

@@ -163,7 +163,7 @@ void PS2Port::send_bit() volatile {
         // TODO: send again?
       }
       _tx_bitcount = 0;
-      if (_tx_last.type == PS2_COMMAND_RESEND) {
+      if (_tx_resend) {
         // Special case: resend command does not require acknowledge
         _state = PS2State::IDLE;
       } else {
@@ -224,18 +224,6 @@ void PS2Port::send(const volatile ps2_command& cmd) volatile {
 #endif
 
   _tx_current = cmd;
-  send_byte(_tx_current.curr());
-}
-
-void PS2Port::send_byte(uint8_t data) volatile {
-  _tx_bits = data;
-  _state = PS2State::TX_SENDREQ;
-
-#ifdef PS2_DEBUG
-      Serial.print(F("+TX: "));
-      Serial.print(_tx_bits, HEX);
-      Serial.println();
-#endif
 
   // The following request to send may interrupt a incoming transmission. The PS2 protocol
   // states that, if that occurs, the device will try to retransmit all the bytes that
@@ -245,6 +233,20 @@ void PS2Port::send_byte(uint8_t data) volatile {
   _rx_scancode = 0;
   _rx_bitcount = 0;
   _rx_bits = 0;
+
+  send_byte(_tx_current.curr());
+}
+
+void PS2Port::send_byte(uint8_t data) volatile {
+  _tx_bits = data;
+  _tx_resend = (data == PS2_COMMAND_RESEND);
+  _state = PS2State::TX_SENDREQ;
+
+#ifdef PS2_DEBUG
+      Serial.print(F("+TX: "));
+      Serial.print(_tx_bits, HEX);
+      Serial.println();
+#endif
 
   comm_reqsend();
 }
