@@ -23,6 +23,18 @@ public:
     return true;
   }
 
+  // Write len elements from val into the buffer.
+  // Return true if succesful, false if buffer cannot allocate len elements.
+  bool write(T *val, uint8_t len) volatile {
+    if (_wavail < len) {
+      return false;
+    }
+    for (int i = 0; i < len; i++) {
+      write(val[i]);
+    }
+    return true;
+  }
+
   // Read an element from the buffer.
   // Return true if succesful, false if buffer was empty.
   bool read(volatile T &val) volatile {
@@ -37,6 +49,23 @@ public:
       _read = 0;
     }
     return true;
+  }
+
+  // Peek the next element to be read, without consuming it. 
+  // Return true if succesful, false if buffer was empty.
+  bool peek(volatile T& val) const volatile {
+    if (_ravail == 0) {
+      return false;
+    }
+    val = _data[_read];
+    return true;
+  }
+
+  // Consume the current element and peek the next one. 
+  // Return true if succesful, false if current element was the last remaining.
+  bool peek_next(volatile T& val) volatile {
+    read(val);
+    return peek(val);
   }
 
   // Get the element at the given offset. This do not alter the state of the buffer.

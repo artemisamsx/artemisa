@@ -3,7 +3,6 @@
 
 #include <Arduino.h>
 
-#include "ps2/command.h"
 #include "ps2/buffer.h"
 #include "ps2/timer.h"
 
@@ -13,7 +12,7 @@
 
 // This macro, when declared, activates the debug mode using the serial port of the Arduino board.
 // You can comment and uncomment this to disable and enable debug, respectively.
-#define PS2_DEBUG 1
+// #define PS2_DEBUG 1
 
 // The size of the reception buffer (min 8)
 #define PS2_RX_BUFFER_SIZE  64
@@ -26,6 +25,11 @@
 
 // The timeout of command processing in milliseconds
 #define PS2_COMMAND_TIMEOUT 3000
+
+// PS2 protocol commands
+#define PS2_COMMAND_LED_STATE           0xED
+#define PS2_COMMAND_RESEND              0xFE
+#define PS2_COMMAND_RESET               0xFF
 
 // PS2 protocol codes
 #define PS2_CODE_ERR0             0x00
@@ -119,11 +123,9 @@ private:
     TIMEOUT,
   };
 
-  PS2Result send_cmd(ps2_command cmd) volatile;
+  PS2Result send_cmd(uint8_t *cmd, uint8_t len) volatile;
   void send_bit() volatile;
   void receive_bit() volatile;
-  void try_send() volatile;
-  void send(const volatile ps2_command& cmd) volatile;
   void send_byte(uint8_t data) volatile;
   void receive(uint8_t data) volatile;
   void receive_ack() volatile;
@@ -145,8 +147,8 @@ private:
   uint8_t _data_pin;
   uint8_t _clk_pin;
 
-  ps2_command              _tx_current;
-  ps2_command              _tx_last;
+  uint8_t                  _tx_cmd;
+  ps2_buffer<uint8_t, 16>  _tx_buffer;
   bool                     _tx_resend;
   uint8_t                  _tx_bitcount;
   uint8_t                  _tx_bits;

@@ -56,11 +56,13 @@ PS2Result PS2Port::begin(uint8_t data_pin, uint8_t clk_pin) {
 }
 
 PS2Result PS2Port::send_cmd_reset() {
-  return send_cmd(ps2_command::reset());
+  uint8_t cmd[] = { PS2_COMMAND_RESET };
+  return send_cmd(cmd, 1);
 }
 
 PS2Result PS2Port::send_cmd_leds(uint8_t leds) {
-  return send_cmd(ps2_command::led_state(leds));
+  uint8_t cmd[] = { PS2_COMMAND_LED_STATE, leds };
+  return send_cmd(cmd, 2);
 }
 
 PS2Result PS2Port::receive_scancode(PS2Scancode &sc) {
@@ -101,15 +103,28 @@ void PS2Port::clock_interrupt() volatile {
   }
 }
 
-PS2Result PS2Port::send_cmd(ps2_command cmd) volatile {
+PS2Result PS2Port::send_cmd(uint8_t *cmd, uint8_t len) volatile {
   PS2Result res = state_result();
   if (res != PS2Result::OK) {
     return res;
   }
 
-  _tx_last = cmd;
+  _tx_cmd = cmd[0];
   _tx_resp = 0;
-  send(cmd);
+  if (!_tx_buffer.write(cmd, len)) {
+    return PS2Result::ERR_BUFFER_OVERFLOW;
+  }
+
+  // The following request to send may interrupt a incoming transmission. The PS2 protocol
+  // states that, if that occurs, the device will try to retransmit all the bytes that
+  // comprise the transmission. For example, if it fails to transmit the second byte of a 
+  // breaking code, it will retransmit again both bytes. Because of that, we clean up
+  // all the rx state to be prepared for this situation.
+  _rx_scancode = 0;
+  _rx_bitcount = 0;
+  _rx_bits = 0;
+
+  send_byte(cmd[0]);
 
   PS2Timer timer;
   timer.reset(PS2_COMMAND_TIMEOUT);
@@ -214,29 +229,6 @@ void PS2Port::receive_bit() volatile {
   }
 }
 
-void PS2Port::send(const volatile ps2_command& cmd) volatile {
-#ifdef PS2_DEBUG
-    Serial.print(F("+SND: "));
-    Serial.print(cmd.data, HEX);
-    Serial.print(F("+"));
-    Serial.print(cmd.len);
-    Serial.println();
-#endif
-
-  _tx_current = cmd;
-
-  // The following request to send may interrupt a incoming transmission. The PS2 protocol
-  // states that, if that occurs, the device will try to retransmit all the bytes that
-  // comprise the transmission. For example, if it fails to transmit the second byte of a 
-  // breaking code, it will retransmit again both bytes. Because of that, we clean up
-  // all the rx state to be prepared for this situation.
-  _rx_scancode = 0;
-  _rx_bitcount = 0;
-  _rx_bits = 0;
-
-  send_byte(_tx_current.curr());
-}
-
 void PS2Port::send_byte(uint8_t data) volatile {
   _tx_bits = data;
   _tx_resend = (data == PS2_COMMAND_RESEND);
@@ -258,7 +250,10 @@ void PS2Port::receive(uint8_t data) volatile {
     Serial.println();
 #endif
   if (data == PS2_CODE_RESEND) {
-    send_byte(_tx_current.curr());
+    uint8_t byte;
+    if (_tx_buffer.peek(byte)) {
+      send_byte(byte);
+    }
     return;
   }
 
@@ -287,13 +282,14 @@ void PS2Port::receive(uint8_t data) volatile {
 }
 
 void PS2Port::receive_ack() volatile {  
-  if (!_tx_current.completed()) {
+  uint8_t next;
+  if (_tx_buffer.peek_next(next)) {
     // The acknowledge of non-last byte. Let's transmit the next one.
-    send_byte(_tx_current.next());
+    send_byte(next);
     return;
   }
 
-  switch (_tx_last.type) {
+  switch (_tx_cmd) {
     case PS2_COMMAND_LED_STATE:
       // Commands that does not require any response
       _state = PS2State::IDLE;
@@ -304,7 +300,7 @@ void PS2Port::receive_ack() volatile {
       break;
     default:
       Serial.print(F("+ERR: unknown last command: "));
-      Serial.println(_tx_last.type);
+      Serial.println(_tx_cmd, HEX);
       break;
   }
 }

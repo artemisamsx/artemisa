@@ -20,7 +20,7 @@
 // This macro, when declared, activates the debug mode using the serial port of the Arduino board.
 // There is another PS2_DEBUG macro that controls the low level debugging in the PS2 library.
 // You can comment and uncomment this to disable and enable debug, respectively.
-#define DEBUG 1
+// #define DEBUG 1
 
 // The custom PS2 library made by Artemisa project.
 #include "ps2.h"
