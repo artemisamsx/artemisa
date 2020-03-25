@@ -3,7 +3,7 @@ HEX_IMAGE = ps2kbr.hex
 BIN_IMAGE = ps2kbr.bin
 ELF_IMAGE = ps2kbr.elf
 
-SOURCES = ${wildcard *.cpp} ${wildcard *.h} ps2kbr.ino
+SOURCES = ${wildcard *.cpp} ${wildcard *.h} ${wildcard ps2/*.h} ps2kbr.ino
 
 .PHONY: all
 all: compile

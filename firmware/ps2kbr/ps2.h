@@ -3,6 +3,9 @@
 
 #include <Arduino.h>
 
+#include "ps2/buffer.h"
+#include "ps2/timer.h"
+
 /////////////////////////
 // Configuration settings
 /////////////////////////
@@ -18,35 +21,25 @@
 #define PS2_TX_BUFFER_SIZE  64
 
 // The timeout of reception in milliseconds
-#define PS2_RX_TIMEOUT 500
+#define PS2_RX_TIMEOUT 250
 
-////////////
-// Scancodes
-////////////
+// The timeout of command processing in milliseconds
+#define PS2_COMMAND_TIMEOUT 3000
 
-#define PS2_SCANCODE_ERR              0x00
-#define PS2_SCANCODE_SELFTEST_PASSED  0xAA
-#define PS2_SCANCODE_EXTENDED         0xE0
-#define PS2_SCANCODE_ECHO             0xEE
-#define PS2_SCANCODE_BREAK            0xF0
-#define PS2_SCANCODE_ACKNOWLEDGE      0xFA
-#define PS2_SCANCODE_RESEND           0xFE
-
-///////////
-// Commands
-///////////
-
+// PS2 protocol commands
 #define PS2_COMMAND_LED_STATE           0xED
-#define PS2_COMMAND_ECHO                0xEE
-#define PS2_COMMAND_SCANCODE_SETTING    0xF0
-#define PS2_COMMAND_KEYMODE_MAKERELEASE 0xF8
 #define PS2_COMMAND_RESEND              0xFE
 #define PS2_COMMAND_RESET               0xFF
 
-#define PS2_SCANCODE_GET  0x00
-#define PS2_SCANCODE_SET1 0x01
-#define PS2_SCANCODE_SET2 0x02
-#define PS2_SCANCODE_SET3 0x03
+// PS2 protocol codes
+#define PS2_CODE_ERR0             0x00
+#define PS2_CODE_SELFTESTPASS     0xAA
+#define PS2_CODE_EXTENDED         0xE0
+#define PS2_CODE_ECHO             0xEE
+#define PS2_CODE_BREAK            0xF0
+#define PS2_CODE_ACKNOWLEDGE      0xFA
+#define PS2_CODE_RESEND           0xFE
+#define PS2_CODE_ERR1             0xFF
 
 // LED status flag masks
 #define PS2_LED_KANALOCK   0x08
@@ -54,85 +47,120 @@
 #define PS2_LED_NUMBERLOCK 0x02
 #define PS2_LED_SCROLLLOCK 0x01
 
+// Special key codes
+#define PS2_KEYCODE_SELFTEST_PASSED  0xAA
 
-//////////////
-// Error codes
-//////////////
+// The result of an operation invoked on the PS2 device
+enum PS2Result {
+  OK                    = 0x00, // The operation was completed successfully
+  ERR_ALREADY_INIT      = 0x01, // The resource is already initialized
+  ERR_DEVICE_FAILED     = 0x02, // The device is not working properly
+  ERR_BUFFER_OVERFLOW   = 0x03, // An overflow in one of the internal buffers
+  ERR_TIMEOUT           = 0x04, // The operation timed out
+  ERR_UNKNOWN           = 0xff, // An unknown error
+};
 
-// No error, the operation was completed successfully
-#define PS2_ERROR_OK 0x00
+// The internal state of the PS2 device
+enum PS2State {
+  CREATED,
+  IDLE,
+  TX_SENDREQ,
+  TX_TRANSFER,
+  TX_WAITACK,
+  TX_WAITRESP,
+  RX_TRANSFER,
+  RX_PARITYERR,
+  PANIC,
+};
 
-// The operation cannot be completed because the PS2 port was busy
-#define PS2_ERROR_BUSY 0x01
+// A scancode representing an event over the PS2 keyboard.
+struct PS2Scancode {
+  uint32_t code;
 
-// The operation timed out
-#define PS2_ERROR_TIMEOUT 0x02
-
-// There is no available scancode in the port
-#define PS2_ERROR_NOTAVAIL 0x03
-
-// The operation failed due to a parity error
-#define PS2_ERROR_PARITY 0x04
-
-// A bad response was received from the PS2 device
-#define PS2_ERROR_BADRESPONSE 0x05
-
-///////////////////////////////////////////
-// Public functions exported by this module
-///////////////////////////////////////////
-
-// Initializes the PS2 module for use the given pins
-void ps2_begin(uint8_t data_pin, uint8_t irq_pin);
-
-// Request the keyboard to reset and make the self-test
-uint8_t ps2_cmd_reset();
-
-// Set the status of the CAPSLOCK led
-uint8_t ps2_cmd_leds(uint8_t leds);
-
-// A command to request to resend the last code.
-uint8_t ps2_cmd_resend();
-
-// Receive a scancode from the keyboard.
-uint8_t ps2_receive(uint8_t (&scancodes)[3], unsigned long timeout);
-
-// Check whether the given scancodes represent a key break
-inline bool ps2_scancode_is_break(uint8_t (&scancode)[3]) {
-  return scancode[0] == PS2_SCANCODE_BREAK || scancode[1] == PS2_SCANCODE_BREAK;
-}
-
-// Check whether the given scancodes represent a key break
-inline bool ps2_scancode_is_extended(uint8_t (&scancode)[3]) {
-  return scancode[0] == PS2_SCANCODE_EXTENDED;
-}
-
-// Check whether the given scancodes represent a key break
-inline uint8_t ps2_scancode_key(uint8_t (&scancode)[3]) {
-  if (ps2_scancode_is_extended(scancode)) {
-    if (ps2_scancode_is_break(scancode)) {
-      return scancode[2];
-    }
-    return scancode[1];
-  } else if (ps2_scancode_is_break(scancode)) {
-    return scancode[1];
+  uint8_t keycode() const {
+    return code & 0xff;
   }
-  return scancode[0];
-}
+
+  bool is_extended() const {
+    return ((code >> 8) == PS2_CODE_EXTENDED) || ((code >> 16) == PS2_CODE_EXTENDED);
+  }
+
+  bool is_break() const {
+    return ((code >> 8) & 0xff) == PS2_CODE_BREAK;
+  }
+
+  bool is_null() const {
+    return code == 0;
+  }
+};
+
+// The PS2 port
+class PS2Port {
+public:
+  PS2Port() : _state(PS2State::CREATED) {}
+
+  // Begin the PS2 port at the given pins.
+  PS2Result begin(uint8_t data_pin, uint8_t clk_pin);
+
+  // Send a reset command to the device.
+  PS2Result send_cmd_reset();
+
+  // Send a LEDs state set command to the device
+  PS2Result send_cmd_leds(uint8_t leds);
+
+  // Receive a scancode, or 0 if none is available
+  PS2Result receive_scancode(PS2Scancode &code);
+
+  // The clock interrupt handler. Do not ever call it.
+  void clock_interrupt() volatile;
+
+private:
+
+  enum PS2Error {
+    TX_BUFFER_OVERFLOW,
+    RX_BUFFER_OVERFLOW,
+    DEVICE_PROTOERR,
+    TIMEOUT,
+  };
+
+  PS2Result send_cmd(uint8_t *cmd, uint8_t len) volatile;
+  void send_bit() volatile;
+  void receive_bit() volatile;
+  void send_byte(uint8_t data) volatile;
+  void receive(uint8_t data) volatile;
+  void receive_ack() volatile;
+  void receive_scancode(uint8_t data) volatile;
+  void panic(PS2Error err) volatile;
+  PS2Result state_result() const;
+  void comm_reqsend() volatile;
+  void comm_acksend() volatile;
+  void comm_inhibit();
+  void comm_allow();
+
+  void int_attach();
+  void int_detach();
 
 
-// Indicates the number of available bytes in the reception buffer
-uint8_t ps2_available();
+  PS2State _state;
+  PS2Error _error;
 
-// Read a scancode from the PS2 keyboard.
-// This will work only if `ps2_available() > 0`. Otherwise, `PS2_SCANCODE_ERR` is returned.
-uint8_t ps2_read();
+  uint8_t _data_pin;
+  uint8_t _clk_pin;
 
-// Wait for a scancode from the PS2 keyboard for a max of `timeout` milliseconds.
-// If timeout is exceeded, `PS2_SCANCODE_ERR` is returned.
-uint8_t ps2_wait(unsigned long timeout);
+  uint8_t                  _tx_cmd;
+  ps2_buffer<uint8_t, 16>  _tx_buffer;
+  bool                     _tx_resend;
+  uint8_t                  _tx_bitcount;
+  uint8_t                  _tx_bits;
+  uint8_t                  _tx_parity;
+  uint8_t                  _tx_resp;
 
-// Write a command to the PS2 keyboard.
-// Returns the number of bytes accepted for transmission, or 0 if none.
-uint8_t ps2_write(uint8_t cmd);
+  ps2_buffer<uint32_t, 256> _rx_buffer;
+  uint32_t                  _rx_scancode;
+  PS2Timer                  _rx_timer;
+  uint8_t                   _rx_bitcount;
+  uint8_t                   _rx_bits;
+  uint8_t                   _rx_parity;
+};
 
 #endif

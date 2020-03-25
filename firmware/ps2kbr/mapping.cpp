@@ -2,12 +2,11 @@
 
 mapping map_scancodes_ext(uint8_t key);
 
-mapping map_scancodes(uint8_t (&scancode)[3]) {
-  uint8_t kc = ps2_scancode_key(scancode);
-  if (ps2_scancode_is_extended(scancode)) {
-    return map_scancodes_ext(kc);
+mapping map_scancodes(const PS2Scancode &sc) {
+  if (sc.is_extended()) {
+    return map_scancodes_ext(sc.keycode());
   }
-  switch (kc) {
+  switch (sc.keycode()) {
     case 0x1C: return MATRIX_INT_A;
     case 0x32: return MATRIX_INT_B;
     case 0x21: return MATRIX_INT_C;
