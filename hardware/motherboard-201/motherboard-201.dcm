@@ -1,0 +1,190 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP 1N4448
+D Diode
+$ENDCMP
+#
+$CMP 4069
+D CMOS hex inverter
+F http://www.ti.com/lit/ds/symlink/cd4069ub.pdf
+$ENDCMP
+#
+$CMP 4558
+D Dual general-purpose operational amplifier
+F http://www.ti.com/lit/ds/symlink/rc4558.pdf
+$ENDCMP
+#
+$CMP 74HC04
+D Hex Inverter
+F https://assets.nexperia.com/documents/data-sheet/74HC_HCT04.pdf
+$ENDCMP
+#
+$CMP 74HC07
+D High speed CMOS hex open drain buffer
+F http://pdf.datasheetcatalog.com/datasheets/228/446266_DS.pdf
+$ENDCMP
+#
+$CMP 74HC08
+D Quad 2-input AND gate
+F https://assets.nexperia.com/documents/data-sheet/74HC_HCT08.pdf
+$ENDCMP
+#
+$CMP 74HC138
+D 3-to-8 line decoder/demultiplexer; inverting
+F https://assets.nexperia.com/documents/data-sheet/74HC_HCT138.pdf
+$ENDCMP
+#
+$CMP 74HC139
+D Dual 2-to-4 line decoder/demultiplexer
+F https://assets.nexperia.com/documents/data-sheet/74HC_HCT139.pdf
+$ENDCMP
+#
+$CMP 74HC153
+D Dual 4-input multiplexer
+F https://assets.nexperia.com/documents/data-sheet/74HC_HCT153.pdf
+$ENDCMP
+#
+$CMP 74HC154
+D 4-to-16 line decoder/demultiplexer
+F https://assets.nexperia.com/documents/data-sheet/74HC_HCT154.pdf
+$ENDCMP
+#
+$CMP 74HC157
+D Quad 2-input multiplexers
+F https://assets.nexperia.com/documents/data-sheet/74HC_HCT157.pdf
+$ENDCMP
+#
+$CMP 74HC244
+D Octal buffer/line driver; 3-state
+F https://assets.nexperia.com/documents/data-sheet/74HC_HCT244.pdf
+$ENDCMP
+#
+$CMP 74HC32
+D Quad 2-input OR gate
+F https://assets.nexperia.com/documents/data-sheet/74HC_HCT32.pdf
+$ENDCMP
+#
+$CMP 74HC595
+D 8-bit serial-in, serial or parallel-out shift register
+F https://assets.nexperia.com/documents/data-sheet/74HC_HCT595.pdf
+$ENDCMP
+#
+$CMP 74HC74
+D Dual D-type flip-flop with set and reset; positive edge-trigger
+F https://assets.nexperia.com/documents/data-sheet/74HC_HCT74.pdf
+$ENDCMP
+#
+$CMP 74HCT04
+D Hex inverter
+F https://assets.nexperia.com/documents/data-sheet/74HC_HCT04.pdf
+$ENDCMP
+#
+$CMP 74HCT244
+D Octal buffer/line driver; 3-state
+F https://assets.nexperia.com/documents/data-sheet/74HC_HCT244.pdf
+$ENDCMP
+#
+$CMP 74HCT245
+D Octal bus transceiver; 3-state
+F https://assets.nexperia.com/documents/data-sheet/74HC_HCT245.pdf
+$ENDCMP
+#
+$CMP 74HCT574
+D Octal D-type flip-flop; positive edge-trigger; 3-state
+F https://assets.nexperia.com/documents/data-sheet/74HC_HCT574.pdf
+$ENDCMP
+#
+$CMP 82C55
+D CMOS Programmable Peripheral Interface
+F https://www.intersil.com/content/dam/Intersil/documents/82c5/82c55a.pdf
+$ENDCMP
+#
+$CMP 82C55A
+D CMOS Programmable Peripheral Interface
+F https://www.intersil.com/content/dam/Intersil/documents/82c5/82c55a.pdf
+$ENDCMP
+#
+$CMP ATMEGA328P
+D Low-power CMOS 8-bit microcontroller
+F http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-42735-8-bit-AVR-Microcontroller-ATmega328-328P_Datasheet.pdf
+$ENDCMP
+#
+$CMP AY-3-8910
+D Programmable sound generator
+F http://map.grauw.nl/resources/sound/generalinstrument_ay-3-8910.pdf
+$ENDCMP
+#
+$CMP CD4066
+D CMOS Quad bilateral switch
+F http://www.ti.com/lit/ds/symlink/cd4066b.pdf
+$ENDCMP
+#
+$CMP CONN_JOY
+D MSX joystick connector
+F http://synpro.heimat.eu/docs/msx_mouse_principle.pdf
+$ENDCMP
+#
+$CMP CP
+D Polarised capacitor
+K cap capacitor
+$ENDCMP
+#
+$CMP CXA1645
+D RGB Encoder
+F https://gamesx.com/rgbadd/cxa1645.pdf
+$ENDCMP
+#
+$CMP Cap
+D Ceramic capacitor
+$ENDCMP
+#
+$CMP Crystal
+D Two pin crystal, small symbol
+K quartz ceramic resonator oscillator
+$ENDCMP
+#
+$CMP HM62256ALP-10
+D 32,768-word × 8-bit High Speed CMOS Static RAM
+F https://www.futurlec.com/Datasheet/Memory/62256ALP.pdf
+$ENDCMP
+#
+$CMP LM1881
+D Video Sync Separator
+F http://www.ti.com/lit/ds/symlink/lm1881.pdf
+$ENDCMP
+#
+$CMP MSX_Slot
+D MSX cartridge slot connector
+F https://www.msx.org/wiki/MSX_Cartridge_slot
+$ENDCMP
+#
+$CMP PS2_CONN
+D PS2 keyboard connector
+F https://en.wikipedia.org/wiki/PS/2
+$ENDCMP
+#
+$CMP Pot
+D Potentiometer
+$ENDCMP
+#
+$CMP SST39SF0x0
+D 1 Mbit / 2 Mbit / 4 Mbit (x8) Multi-Purpose Flash
+F https://cdn.sos.sk/productdata/e8/3d/e6946b0f/sst39sf010a-70-4i-nhe.pdf
+$ENDCMP
+#
+$CMP TMS9918
+D Video Display Processor
+F http://www.colecovision.dk/PDF/TMS9918.a.pdf
+$ENDCMP
+#
+$CMP TMS9928
+D Video Display Processor
+F http://www.colecovision.dk/PDF/TMS9918.a.pdf
+$ENDCMP
+#
+$CMP Z84C00
+D 8-bits Microprocessor
+F http://213.114.131.21/_pdf/Z/Z84C00_Z80-CPU_zilog.pdf
+$ENDCMP
+#
+#End Doc Library
