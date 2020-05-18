@@ -1,4 +1,4 @@
-15880213956899550
+15883393633227550
 artemisa
 Axial_diode
 Diode, DO-35 package
@@ -181,6 +181,20 @@ MSX_logo_small
 0
 0
 0
+artemisa
+PLCC32
+
+
+0
+32
+32
+artemisa
+PLCC44
+
+
+0
+44
+44
 artemisa
 PS2_conn
 
