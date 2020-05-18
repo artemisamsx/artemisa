@@ -1,5 +1,5 @@
 EESchema Schematic File Version 4
-LIBS:artemisa-cache
+LIBS:motherboard-201-cache
 EELAYER 29 0
 EELAYER END
 $Descr A3 11693 16535 portrait

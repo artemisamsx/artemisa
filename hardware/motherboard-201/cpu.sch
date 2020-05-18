@@ -1,5 +1,5 @@
 EESchema Schematic File Version 4
-LIBS:artemisa-cache
+LIBS:motherboard-201-cache
 EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
@@ -25,254 +25,74 @@ F 3 "" H 5850 3550 60  0001 C CNN
 	1    5850 3700
 	1    0    0    -1  
 $EndComp
-$Comp
-L artemisa:74HCT244 U3
-U 1 1 5ADBD2B3
-P 8300 1000
-F 0 "U3" H 8550 1300 60  0000 C CNN
-F 1 "74HCT244" H 8600 650 60  0000 C CNN
-F 2 "artemisa:DIP-20_300" H 8300 600 60  0001 C CNN
-F 3 "" H 8300 600 60  0001 C CNN
-	1    8300 1000
-	1    0    0    -1  
-$EndComp
-$Comp
-L artemisa:74HCT244 U3
-U 2 1 5ADBD2DE
-P 8300 1950
-F 0 "U3" H 8550 2250 60  0000 C CNN
-F 1 "74HCT244" H 8600 1600 60  0000 C CNN
-F 2 "artemisa:DIP-20_300" H 8300 1550 60  0001 C CNN
-F 3 "" H 8300 1550 60  0001 C CNN
-	2    8300 1950
-	1    0    0    -1  
-$EndComp
-$Comp
-L artemisa:74HCT244 U5
-U 1 1 5ADBD3DF
-P 8300 2900
-F 0 "U5" H 8550 3200 60  0000 C CNN
-F 1 "74HCT244" H 8600 2550 60  0000 C CNN
-F 2 "artemisa:DIP-20_300" H 8300 2500 60  0001 C CNN
-F 3 "" H 8300 2500 60  0001 C CNN
-	1    8300 2900
-	1    0    0    -1  
-$EndComp
-$Comp
-L artemisa:74HCT244 U5
-U 2 1 5ADBD3E5
-P 8300 3850
-F 0 "U5" H 8550 4150 60  0000 C CNN
-F 1 "74HCT244" H 8600 3500 60  0000 C CNN
-F 2 "artemisa:DIP-20_300" H 8300 3450 60  0001 C CNN
-F 3 "" H 8300 3450 60  0001 C CNN
-	2    8300 3850
-	1    0    0    -1  
-$EndComp
-Text HLabel 9550 2450 2    60   Output ~ 0
+Text HLabel 7700 2200 2    60   Output ~ 0
 ADDR[0..15]
 Entry Wire Line
-	9100 1150 9200 1250
+	7250 2900 7350 2800
 Entry Wire Line
-	9100 1050 9200 1150
+	7250 3000 7350 2900
 Entry Wire Line
-	9100 950  9200 1050
+	7250 3100 7350 3000
 Entry Wire Line
-	9100 850  9200 950 
-Text Label 9100 850  2    60   ~ 0
+	7250 3200 7350 3100
+Text Label 6800 2500 2    60   ~ 0
 ADDR0
-Text Label 9100 950  2    60   ~ 0
+Text Label 6800 2600 2    60   ~ 0
 ADDR1
-Text Label 9100 1050 2    60   ~ 0
+Text Label 6800 2700 2    60   ~ 0
 ADDR2
-Text Label 9100 1150 2    60   ~ 0
+Text Label 6800 2800 2    60   ~ 0
 ADDR3
 Entry Wire Line
-	9100 2100 9200 2200
+	7250 2500 7350 2400
 Entry Wire Line
-	9100 2000 9200 2100
+	7250 2600 7350 2500
 Entry Wire Line
-	9100 1900 9200 2000
+	7250 2700 7350 2600
 Entry Wire Line
-	9100 1800 9200 1900
-Text Label 9100 1800 2    60   ~ 0
+	7250 2800 7350 2700
+Text Label 6800 2900 2    60   ~ 0
 ADDR4
-Text Label 9100 1900 2    60   ~ 0
+Text Label 6800 3000 2    60   ~ 0
 ADDR5
-Text Label 9100 2000 2    60   ~ 0
+Text Label 6800 3100 2    60   ~ 0
 ADDR6
-Text Label 9100 2100 2    60   ~ 0
+Text Label 6800 3200 2    60   ~ 0
 ADDR7
 Entry Wire Line
-	9100 2750 9200 2650
+	7250 3300 7350 3200
 Entry Wire Line
-	9100 2850 9200 2750
+	7250 3400 7350 3300
 Entry Wire Line
-	9100 2950 9200 2850
+	7250 3500 7350 3400
 Entry Wire Line
-	9100 3050 9200 2950
-Text Label 9100 2750 2    60   ~ 0
+	7250 3600 7350 3500
+Text Label 6800 3300 2    60   ~ 0
 ADDR8
-Text Label 9100 2850 2    60   ~ 0
+Text Label 6800 3400 2    60   ~ 0
 ADDR9
-Text Label 9100 2950 2    60   ~ 0
+Text Label 6800 3500 2    60   ~ 0
 ADDR10
-Text Label 9100 3050 2    60   ~ 0
+Text Label 6800 3600 2    60   ~ 0
 ADDR11
 Entry Wire Line
-	9100 3700 9200 3600
+	7250 3700 7350 3600
 Entry Wire Line
-	9100 3800 9200 3700
+	7250 3800 7350 3700
 Entry Wire Line
-	9100 3900 9200 3800
+	7250 3900 7350 3800
 Entry Wire Line
-	9100 4000 9200 3900
-Text Label 9100 3700 2    60   ~ 0
+	7250 4000 7350 3900
+Text Label 6800 3700 2    60   ~ 0
 ADDR12
-Text Label 9100 3800 2    60   ~ 0
+Text Label 6800 3800 2    60   ~ 0
 ADDR13
-Text Label 9100 3900 2    60   ~ 0
+Text Label 6800 3900 2    60   ~ 0
 ADDR14
-Text Label 9100 4000 2    60   ~ 0
+Text Label 6800 4000 2    60   ~ 0
 ADDR15
 Entry Bus Bus
-	9200 2350 9300 2450
-Entry Bus Bus
-	9200 2550 9300 2450
-Entry Wire Line
-	7500 1150 7400 1250
-Entry Wire Line
-	7500 1050 7400 1150
-Entry Wire Line
-	7500 950  7400 1050
-Entry Wire Line
-	7500 850  7400 950 
-Text Label 7500 850  0    60   ~ 0
-A0
-Text Label 7500 950  0    60   ~ 0
-A1
-Text Label 7500 1050 0    60   ~ 0
-A2
-Text Label 7500 1150 0    60   ~ 0
-A3
-Entry Wire Line
-	7500 2100 7400 2200
-Entry Wire Line
-	7500 2000 7400 2100
-Entry Wire Line
-	7500 1900 7400 2000
-Entry Wire Line
-	7500 1800 7400 1900
-Text Label 7500 1800 0    60   ~ 0
-A4
-Text Label 7500 1900 0    60   ~ 0
-A5
-Text Label 7500 2000 0    60   ~ 0
-A6
-Text Label 7500 2100 0    60   ~ 0
-A7
-Entry Wire Line
-	7500 2750 7400 2650
-Entry Wire Line
-	7500 2850 7400 2750
-Entry Wire Line
-	7500 2950 7400 2850
-Entry Wire Line
-	7500 3050 7400 2950
-Text Label 7500 2750 0    60   ~ 0
-A8
-Text Label 7500 2850 0    60   ~ 0
-A9
-Text Label 7500 2950 0    60   ~ 0
-A10
-Text Label 7500 3050 0    60   ~ 0
-A11
-Entry Wire Line
-	7500 3700 7400 3600
-Entry Wire Line
-	7500 3800 7400 3700
-Entry Wire Line
-	7500 3900 7400 3800
-Entry Wire Line
-	7500 4000 7400 3900
-Text Label 7500 3700 0    60   ~ 0
-A12
-Text Label 7500 3800 0    60   ~ 0
-A13
-Text Label 7500 3900 0    60   ~ 0
-A14
-Text Label 7500 4000 0    60   ~ 0
-A15
-Entry Bus Bus
-	7400 1400 7300 1500
-Entry Bus Bus
-	7400 1600 7300 1500
-Entry Wire Line
-	6800 3700 6900 3600
-Entry Wire Line
-	6800 3800 6900 3700
-Entry Wire Line
-	6800 3900 6900 3800
-Entry Wire Line
-	6800 4000 6900 3900
-Text Label 6800 2500 2    60   ~ 0
-A0
-Text Label 6800 2600 2    60   ~ 0
-A1
-Text Label 6800 2700 2    60   ~ 0
-A2
-Text Label 6800 2800 2    60   ~ 0
-A3
-Entry Wire Line
-	6800 3300 6900 3200
-Entry Wire Line
-	6800 3400 6900 3300
-Entry Wire Line
-	6800 3500 6900 3400
-Entry Wire Line
-	6800 3600 6900 3500
-Text Label 6800 2900 2    60   ~ 0
-A4
-Text Label 6800 3000 2    60   ~ 0
-A5
-Text Label 6800 3100 2    60   ~ 0
-A6
-Text Label 6800 3200 2    60   ~ 0
-A7
-Entry Wire Line
-	6800 2900 6900 2800
-Entry Wire Line
-	6800 3000 6900 2900
-Entry Wire Line
-	6800 3100 6900 3000
-Entry Wire Line
-	6800 3200 6900 3100
-Text Label 6800 3300 2    60   ~ 0
-A8
-Text Label 6800 3400 2    60   ~ 0
-A9
-Text Label 6800 3500 2    60   ~ 0
-A10
-Text Label 6800 3600 2    60   ~ 0
-A11
-Entry Wire Line
-	6800 2500 6900 2400
-Entry Wire Line
-	6800 2600 6900 2500
-Entry Wire Line
-	6800 2700 6900 2600
-Entry Wire Line
-	6800 2800 6900 2700
-Text Label 6800 3700 2    60   ~ 0
-A12
-Text Label 6800 3800 2    60   ~ 0
-A13
-Text Label 6800 3900 2    60   ~ 0
-A14
-Text Label 6800 4000 2    60   ~ 0
-A15
-Entry Bus Bus
-	7000 1500 6900 1600
+	7350 2300 7450 2200
 $Comp
 L artemisa:74HCT245 U8
 U 1 1 5ADE24A9
@@ -316,128 +136,40 @@ Entry Wire Line
 	9150 5700 9250 5800
 Text Label 9150 5700 2    60   ~ 0
 DATA7
-$Comp
-L artemisa:74HCT244 U4
-U 1 1 5ADE2CBE
-P 2950 2000
-F 0 "U4" H 2800 2300 60  0000 C CNN
-F 1 "74HCT244" H 2650 1700 60  0000 C CNN
-F 2 "artemisa:DIP-20_300" H 2950 1600 60  0001 C CNN
-F 3 "" H 2950 1600 60  0001 C CNN
-	1    2950 2000
-	-1   0    0    -1  
-$EndComp
-$Comp
-L artemisa:74HCT244 U4
-U 2 1 5ADE2D35
-P 2950 3150
-F 0 "U4" H 2800 3450 60  0000 C CNN
-F 1 "74HCT244" H 2650 2800 60  0000 C CNN
-F 2 "artemisa:DIP-20_300" H 2950 2750 60  0001 C CNN
-F 3 "" H 2950 2750 60  0001 C CNN
-	2    2950 3150
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
-	8750 850  9100 850 
+	6450 2500 7250 2500
 Wire Wire Line
-	9100 950  8750 950 
+	7250 2600 6450 2600
 Wire Wire Line
-	8750 1050 9100 1050
+	6450 2700 7250 2700
 Wire Wire Line
-	9100 1150 8750 1150
+	7250 2800 6450 2800
 Wire Wire Line
-	8750 1800 9100 1800
+	6450 2900 7250 2900
 Wire Wire Line
-	9100 1900 8750 1900
+	7250 3000 6450 3000
 Wire Wire Line
-	8750 2000 9100 2000
+	6450 3100 7250 3100
 Wire Wire Line
-	9100 2100 8750 2100
+	7250 3200 6450 3200
 Wire Wire Line
-	8750 2750 9100 2750
+	6450 3300 7250 3300
 Wire Wire Line
-	9100 2850 8750 2850
+	7250 3400 6450 3400
 Wire Wire Line
-	8750 2950 9100 2950
+	6450 3500 7250 3500
 Wire Wire Line
-	9100 3050 8750 3050
+	7250 3600 6450 3600
 Wire Wire Line
-	8750 3700 9100 3700
+	6450 3700 7250 3700
 Wire Wire Line
-	9100 3800 8750 3800
+	7250 3800 6450 3800
 Wire Wire Line
-	8750 3900 9100 3900
+	6450 3900 7250 3900
 Wire Wire Line
-	9100 4000 8750 4000
+	7250 4000 6450 4000
 Wire Bus Line
-	9300 2450 9550 2450
-Wire Wire Line
-	7850 850  7500 850 
-Wire Wire Line
-	7500 950  7850 950 
-Wire Wire Line
-	7850 1050 7500 1050
-Wire Wire Line
-	7500 1150 7850 1150
-Wire Wire Line
-	7850 1800 7500 1800
-Wire Wire Line
-	7500 1900 7850 1900
-Wire Wire Line
-	7850 2000 7500 2000
-Wire Wire Line
-	7500 2100 7850 2100
-Wire Wire Line
-	7850 2750 7500 2750
-Wire Wire Line
-	7500 2850 7850 2850
-Wire Wire Line
-	7850 2950 7500 2950
-Wire Wire Line
-	7500 3050 7850 3050
-Wire Wire Line
-	7850 3700 7500 3700
-Wire Wire Line
-	7500 3800 7850 3800
-Wire Wire Line
-	7850 3900 7500 3900
-Wire Wire Line
-	7500 4000 7850 4000
-Wire Bus Line
-	7000 1500 7300 1500
-Wire Wire Line
-	6450 2500 6800 2500
-Wire Wire Line
-	6800 2600 6450 2600
-Wire Wire Line
-	6450 2700 6800 2700
-Wire Wire Line
-	6800 2800 6450 2800
-Wire Wire Line
-	6450 2900 6800 2900
-Wire Wire Line
-	6800 3000 6450 3000
-Wire Wire Line
-	6450 3100 6800 3100
-Wire Wire Line
-	6800 3200 6450 3200
-Wire Wire Line
-	6450 3300 6800 3300
-Wire Wire Line
-	6800 3400 6450 3400
-Wire Wire Line
-	6450 3500 6800 3500
-Wire Wire Line
-	6800 3600 6450 3600
-Wire Wire Line
-	6450 3700 6800 3700
-Wire Wire Line
-	6800 3800 6450 3800
-Wire Wire Line
-	6450 3900 6800 3900
-Wire Wire Line
-	6800 4000 6450 4000
+	7450 2200 7700 2200
 Wire Wire Line
 	9150 5000 8850 5000
 Wire Wire Line
@@ -452,56 +184,18 @@ Wire Wire Line
 	9150 5600 8850 5600
 Wire Wire Line
 	9150 5700 8850 5700
-Wire Wire Line
-	3900 2500 5250 2500
-Wire Wire Line
-	3900 1850 3400 1850
-Wire Wire Line
-	3800 2700 5250 2700
-Wire Wire Line
-	3800 1950 3400 1950
-Wire Wire Line
-	3700 2800 5250 2800
-Wire Wire Line
-	5250 2900 3700 2900
-Wire Wire Line
-	3700 3000 3400 3000
-Wire Wire Line
-	5250 3000 3800 3000
-Wire Wire Line
-	3800 3100 3400 3100
-Wire Wire Line
-	3400 2150 3600 2150
-Wire Wire Line
-	3600 2150 3600 2500
-Wire Wire Line
-	2950 2450 2950 2500
-Wire Wire Line
-	3600 2500 2950 2500
-Connection ~ 2950 2500
-Wire Wire Line
-	2950 3600 2950 3650
-Wire Wire Line
-	2950 3650 3600 3650
-Wire Wire Line
-	3600 3650 3600 3300
-Wire Wire Line
-	3600 3300 3400 3300
-Connection ~ 2950 3650
 Text HLabel 1100 3050 0    60   Output ~ 0
 ~M1
 Text HLabel 1100 3150 0    60   Output ~ 0
 ~MREQ
 Text HLabel 1100 3250 0    60   Output ~ 0
 ~IORQ
-NoConn ~ 2500 2150
 Wire Wire Line
-	1800 3000 2500 3000
+	1800 2900 5250 2900
 Wire Wire Line
-	2500 3100 1800 3100
+	5250 3000 1800 3000
 Wire Wire Line
-	2500 3200 1800 3200
-NoConn ~ 2500 3300
+	5250 3200 1800 3200
 Text HLabel 1100 3350 0    60   Output ~ 0
 ~RD
 Text HLabel 1100 3450 0    60   Output ~ 0
@@ -713,20 +407,20 @@ Entry Wire Line
 Text Label 1800 4150 0    60   ~ 0
 ~EXTINT
 Entry Wire Line
-	1700 1750 1800 1850
+	1700 2400 1800 2500
 Entry Wire Line
-	1700 1850 1800 1950
+	1700 2600 1800 2700
 Entry Wire Line
-	1700 1950 1800 2050
-Text Label 1800 1850 0    60   ~ 0
+	1700 2700 1800 2800
+Text Label 1800 2500 0    60   ~ 0
 ~M1
-Text Label 1800 1950 0    60   ~ 0
+Text Label 1800 2700 0    60   ~ 0
 ~MREQ
-Text Label 1800 2050 0    60   ~ 0
+Text Label 1800 2800 0    60   ~ 0
 ~IORQ
-Text Label 1800 3000 0    60   ~ 0
+Text Label 1800 2900 0    60   ~ 0
 ~RD
-Text Label 1800 3100 0    60   ~ 0
+Text Label 1800 3000 0    60   ~ 0
 ~WR
 Text Label 1800 3200 0    60   ~ 0
 ~RFSH
@@ -737,9 +431,9 @@ Text Label 1800 4050 0    60   ~ 0
 Text Label 1800 5900 0    60   ~ 0
 ~EXTWAIT
 Entry Wire Line
-	1700 2900 1800 3000
+	1700 2800 1800 2900
 Entry Wire Line
-	1700 3000 1800 3100
+	1700 2900 1800 3000
 Entry Wire Line
 	1700 3100 1800 3200
 Entry Wire Line
@@ -823,27 +517,11 @@ Wire Wire Line
 Text Label 1600 3550 2    60   ~ 0
 ~RFSH
 Wire Wire Line
-	3400 2050 3700 2050
+	1800 2500 5250 2500
 Wire Wire Line
-	3700 2050 3700 2800
+	1800 2800 5250 2800
 Wire Wire Line
-	3800 2700 3800 1950
-Wire Wire Line
-	3900 1850 3900 2500
-Wire Wire Line
-	1800 1850 2500 1850
-Wire Wire Line
-	1800 2050 2500 2050
-Wire Wire Line
-	3700 2900 3700 3000
-Wire Wire Line
-	3800 3000 3800 3100
-Wire Wire Line
-	1800 1950 2500 1950
-Wire Wire Line
-	2950 2500 2950 2550
-Wire Wire Line
-	2950 3650 2950 3700
+	1800 2700 5250 2700
 Wire Wire Line
 	3150 5200 3450 5200
 Wire Wire Line
@@ -852,8 +530,6 @@ Wire Wire Line
 	2650 5900 1800 5900
 Wire Wire Line
 	4100 3850 4100 4250
-Wire Wire Line
-	3400 3200 5250 3200
 Wire Wire Line
 	1800 4150 4200 4150
 Wire Wire Line
@@ -966,61 +642,6 @@ F 3 "" H 8300 4300 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemisa:GND #PWR012
-U 1 1 5CC0FF1F
-P 8300 3350
-F 0 "#PWR012" H 8300 3250 60  0001 C CNN
-F 1 "GND" H 8300 3450 60  0001 C CNN
-F 2 "" H 8300 3350 60  0001 C CNN
-F 3 "" H 8300 3350 60  0001 C CNN
-	1    8300 3350
-	1    0    0    -1  
-$EndComp
-$Comp
-L artemisa:GND #PWR010
-U 1 1 5CC10312
-P 8300 2400
-F 0 "#PWR010" H 8300 2300 60  0001 C CNN
-F 1 "GND" H 8300 2500 60  0001 C CNN
-F 2 "" H 8300 2400 60  0001 C CNN
-F 3 "" H 8300 2400 60  0001 C CNN
-	1    8300 2400
-	1    0    0    -1  
-$EndComp
-$Comp
-L artemisa:GND #PWR07
-U 1 1 5CC10716
-P 8300 1450
-F 0 "#PWR07" H 8300 1350 60  0001 C CNN
-F 1 "GND" H 8300 1550 60  0001 C CNN
-F 2 "" H 8300 1450 60  0001 C CNN
-F 3 "" H 8300 1450 60  0001 C CNN
-	1    8300 1450
-	1    0    0    -1  
-$EndComp
-$Comp
-L artemisa:GND #PWR014
-U 1 1 5CC10A3C
-P 2950 3700
-F 0 "#PWR014" H 2950 3600 60  0001 C CNN
-F 1 "GND" H 2950 3800 60  0001 C CNN
-F 2 "" H 2950 3700 60  0001 C CNN
-F 3 "" H 2950 3700 60  0001 C CNN
-	1    2950 3700
-	1    0    0    -1  
-$EndComp
-$Comp
-L artemisa:GND #PWR011
-U 1 1 5CC114AE
-P 2950 2550
-F 0 "#PWR011" H 2950 2450 60  0001 C CNN
-F 1 "GND" H 2950 2650 60  0001 C CNN
-F 2 "" H 2950 2550 60  0001 C CNN
-F 3 "" H 2950 2550 60  0001 C CNN
-	1    2950 2550
-	1    0    0    -1  
-$EndComp
-$Comp
 L artemisa:VCC #PWR013
 U 1 1 5CC117F5
 P 4100 3450
@@ -1106,21 +727,13 @@ Wire Wire Line
 Wire Wire Line
 	7150 5950 7750 5950
 Wire Bus Line
-	7400 900  7400 1400
-Wire Bus Line
 	7400 5000 7400 5950
 Wire Bus Line
 	6900 4200 6900 5950
 Wire Bus Line
 	9250 5000 9250 5950
 Wire Bus Line
-	9200 2550 9200 3950
-Wire Bus Line
-	9200 900  9200 2350
-Wire Bus Line
-	7400 1600 7400 3950
-Wire Bus Line
-	6900 1600 6900 3950
+	7350 2300 7350 3950
 Wire Bus Line
 	1700 1700 1700 6200
 $EndSCHEMATC

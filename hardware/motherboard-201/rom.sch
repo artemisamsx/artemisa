@@ -1,5 +1,5 @@
 EESchema Schematic File Version 4
-LIBS:artemisa-cache
+LIBS:motherboard-201-cache
 EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
@@ -458,11 +458,11 @@ Wire Wire Line
 	4950 6600 5250 6600
 Wire Wire Line
 	5250 6500 5250 6600
+Connection ~ 5250 6600
+Wire Wire Line
+	5250 6600 5750 6600
 Wire Bus Line
 	6550 1500 6550 2900
 Wire Bus Line
 	4450 2100 4450 3600
-Connection ~ 5250 6600
-Wire Wire Line
-	5250 6600 5750 6600
 $EndSCHEMATC
