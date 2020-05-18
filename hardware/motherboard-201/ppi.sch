@@ -15,12 +15,12 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L artemisa:82C55A U28
+L artemisa:CS82C55A U28
 U 1 1 5AE22077
 P 4500 5000
 F 0 "U28" H 4850 6450 60  0000 C CNN
 F 1 "82C55A" H 4800 3700 60  0000 C CNN
-F 2 "artemisa:DIP-40_600" H 4700 5550 60  0001 C CNN
+F 2 "artemisa:PLCC44" H 4700 5550 60  0001 C CNN
 F 3 "" H 4700 5550 60  0001 C CNN
 	1    4500 5000
 	1    0    0    -1  
