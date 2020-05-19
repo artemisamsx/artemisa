@@ -1,4 +1,4 @@
-15884983540473550
+15886573451324550
 artemisa
 Axial_diode
 Diode, DO-35 package
@@ -265,6 +265,13 @@ CONN DEV
 0
 9
 9
+artemisa
+SG7050
+SMD Crystal Oscillator Seiko Epson SG-8002CA https://support.epson.biz/td/api/doc_check.php?mode=dl&lang=en&Parts=SG-8002DC, 7.0x5.0mm^2 package
+SMD SMT crystal oscillator
+0
+4
+4
 artemisa
 Slot_conn
 

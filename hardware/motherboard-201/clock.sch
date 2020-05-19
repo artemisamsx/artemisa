@@ -14,153 +14,6 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Comp
-L artemisa:Crystal Y?
-U 1 1 5BF8884A
-P 3350 3450
-AR Path="/5ADBC286/5BF8884A" Ref="Y?"  Part="1" 
-AR Path="/5BF74A85/5BF8884A" Ref="Y1"  Part="1" 
-F 0 "Y1" H 3350 3550 50  0000 C CNN
-F 1 "3.58Mhz" H 3350 3350 50  0000 C CNN
-F 2 "artemisa:Crystal" H 3350 3450 50  0001 C CNN
-F 3 "" H 3350 3450 50  0001 C CNN
-	1    3350 3450
-	1    0    0    -1  
-$EndComp
-$Comp
-L artemisa:CP C?
-U 1 1 5BF88851
-P 2900 3750
-AR Path="/5ADBC286/5BF88851" Ref="C?"  Part="1" 
-AR Path="/5BF74A85/5BF88851" Ref="C36"  Part="1" 
-F 0 "C36" H 2910 3820 50  0000 L CNN
-F 1 "33pF" H 2910 3670 50  0000 L CNN
-F 2 "artemisa:Disc_capacitor" H 2900 3750 50  0001 C CNN
-F 3 "" H 2900 3750 50  0001 C CNN
-	1    2900 3750
-	1    0    0    -1  
-$EndComp
-$Comp
-L artemisa:CP C?
-U 1 1 5BF88858
-P 3800 3750
-AR Path="/5ADBC286/5BF88858" Ref="C?"  Part="1" 
-AR Path="/5BF74A85/5BF88858" Ref="C37"  Part="1" 
-F 0 "C37" H 3810 3820 50  0000 L CNN
-F 1 "33pF" H 3810 3670 50  0000 L CNN
-F 2 "artemisa:Disc_capacitor" H 3800 3750 50  0001 C CNN
-F 3 "" H 3800 3750 50  0001 C CNN
-	1    3800 3750
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2900 3950 2900 3850
-Wire Wire Line
-	3800 3950 3800 3850
-Wire Wire Line
-	3450 3450 3800 3450
-Wire Wire Line
-	3800 3350 3800 3450
-Wire Wire Line
-	2900 3450 3250 3450
-Wire Wire Line
-	2900 2600 2900 2950
-$Comp
-L artemisa:74HCU04 U?
-U 4 1 5BF8886E
-P 3350 2950
-AR Path="/5ADBC286/5BF8886E" Ref="U?"  Part="4" 
-AR Path="/5BF74A85/5BF8886E" Ref="U9"  Part="4" 
-AR Path="/5BF8886E" Ref="U?"  Part="4" 
-F 0 "U9" H 3350 3100 50  0000 C CNN
-F 1 "74HCU04" H 3350 2800 50  0000 C CNN
-F 2 "artemisa:DIP-14_300" H 3350 2950 50  0001 C CNN
-F 3 "" H 3350 2950 50  0001 C CNN
-	4    3350 2950
-	1    0    0    -1  
-$EndComp
-$Comp
-L artemisa:74HCU04 U?
-U 5 1 5BF88875
-P 4400 2950
-AR Path="/5ADBC286/5BF88875" Ref="U?"  Part="5" 
-AR Path="/5BF74A85/5BF88875" Ref="U9"  Part="5" 
-AR Path="/5BF88875" Ref="U?"  Part="5" 
-F 0 "U9" H 4400 3100 50  0000 C CNN
-F 1 "74HCU04" H 4400 2800 50  0000 C CNN
-F 2 "artemisa:DIP-14_300" H 4400 2950 50  0001 C CNN
-F 3 "" H 4400 2950 50  0001 C CNN
-	5    4400 2950
-	1    0    0    -1  
-$EndComp
-$Comp
-L artemisa:R R?
-U 1 1 5BF8887C
-P 3800 3200
-AR Path="/5BF8887C" Ref="R?"  Part="1" 
-AR Path="/5ADBC286/5BF8887C" Ref="R?"  Part="1" 
-AR Path="/5BF74A85/5BF8887C" Ref="R24"  Part="1" 
-F 0 "R24" V 3850 3300 50  0000 C CNN
-F 1 "1K" H 3800 3200 39  0000 C CNN
-F 2 "artemisa:Axial_resistor" V 3730 3200 50  0001 C CNN
-F 3 "" H 3800 3200 50  0001 C CNN
-	1    3800 3200
-	0    -1   -1   0   
-$EndComp
-Connection ~ 3800 3450
-Wire Wire Line
-	3800 2600 3800 2950
-Connection ~ 3800 2950
-Wire Wire Line
-	3050 2950 2900 2950
-Connection ~ 2900 3450
-$Comp
-L artemisa:R R?
-U 1 1 5BF88889
-P 3350 2600
-AR Path="/5BF88889" Ref="R?"  Part="1" 
-AR Path="/5ADBC286/5BF88889" Ref="R?"  Part="1" 
-AR Path="/5BF74A85/5BF88889" Ref="R23"  Part="1" 
-F 0 "R23" H 3350 2700 50  0000 C CNN
-F 1 "1M" H 3350 2600 39  0000 C CNN
-F 2 "artemisa:Axial_resistor" V 3280 2600 50  0001 C CNN
-F 3 "" H 3350 2600 50  0001 C CNN
-	1    3350 2600
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3800 2600 3500 2600
-Wire Wire Line
-	3200 2600 2900 2600
-Connection ~ 2900 2950
-Wire Wire Line
-	3800 3450 3800 3650
-Wire Wire Line
-	3800 2950 3800 3050
-Wire Wire Line
-	3800 2950 3650 2950
-Wire Wire Line
-	2900 3450 2900 3650
-Wire Wire Line
-	2900 2950 2900 3450
-$Comp
-L artemisa:74HCU04 U?
-U 6 1 5BF8889A
-P 5200 2950
-AR Path="/5ADBC286/5BF8889A" Ref="U?"  Part="6" 
-AR Path="/5BF74A85/5BF8889A" Ref="U9"  Part="6" 
-AR Path="/5BF8889A" Ref="U?"  Part="6" 
-F 0 "U9" H 5200 3100 50  0000 C CNN
-F 1 "74HCU04" H 5200 2800 50  0000 C CNN
-F 2 "artemisa:DIP-14_300" H 5200 2950 50  0001 C CNN
-F 3 "" H 5200 2950 50  0001 C CNN
-	6    5200 2950
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4900 2950 4700 2950
-Wire Wire Line
-	3800 2950 4100 2950
 Text HLabel 8250 2950 2    60   Output ~ 0
 CLK
 Wire Wire Line
@@ -230,25 +83,74 @@ Wire Wire Line
 Wire Wire Line
 	6400 4500 6400 4350
 $Comp
-L artemisa:GND #PWR0129
-U 1 1 5DB55AA4
-P 3800 3950
-F 0 "#PWR0129" H 3800 3850 60  0001 C CNN
-F 1 "GND" H 3800 4050 60  0001 C CNN
-F 2 "" H 3800 3950 60  0001 C CNN
-F 3 "" H 3800 3950 60  0001 C CNN
-	1    3800 3950
+L artemisa:SG7050 G1
+U 1 1 5EF4F553
+P 5000 3100
+F 0 "G1" H 5000 2769 60  0000 C CNN
+F 1 "SG7050" H 5000 2663 60  0000 C CNN
+F 2 "artemisa:SG7050" H 5000 3100 60  0001 C CNN
+F 3 "https://www5.epsondevice.com/en/products/crystal_oscillator/sg7050ccn.html" H 5000 3100 60  0001 C CNN
+	1    5000 3100
 	1    0    0    -1  
 $EndComp
 $Comp
-L artemisa:GND #PWR0128
-U 1 1 5DB56097
-P 2900 3950
-F 0 "#PWR0128" H 2900 3850 60  0001 C CNN
-F 1 "GND" H 2900 4050 60  0001 C CNN
-F 2 "" H 2900 3950 60  0001 C CNN
-F 3 "" H 2900 3950 60  0001 C CNN
-	1    2900 3950
+L artemisa:VCC #PWR06
+U 1 1 5EF50AF6
+P 5000 2550
+F 0 "#PWR06" H 5000 2500 60  0001 C CNN
+F 1 "VCC" H 5000 2800 60  0001 C CNN
+F 2 "" H 5000 2550 60  0001 C CNN
+F 3 "" H 5000 2550 60  0001 C CNN
+	1    5000 2550
 	1    0    0    -1  
 $EndComp
+$Comp
+L artemisa:VCC #PWR011
+U 1 1 5EF50D1C
+P 3950 2850
+F 0 "#PWR011" H 3950 2800 60  0001 C CNN
+F 1 "VCC" H 3950 3100 60  0001 C CNN
+F 2 "" H 3950 2850 60  0001 C CNN
+F 3 "" H 3950 2850 60  0001 C CNN
+	1    3950 2850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5000 2550 5000 2650
+Wire Wire Line
+	3950 2850 3950 2950
+Wire Wire Line
+	3950 2950 4500 2950
+$Comp
+L artemisa:GND #PWR012
+U 1 1 5EF513DC
+P 3950 3450
+F 0 "#PWR012" H 3950 3350 60  0001 C CNN
+F 1 "GND" H 3950 3550 60  0001 C CNN
+F 2 "" H 3950 3450 60  0001 C CNN
+F 3 "" H 3950 3450 60  0001 C CNN
+	1    3950 3450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4500 3250 3950 3250
+Wire Wire Line
+	3950 3250 3950 3450
+$Comp
+L artemisa:Cap C2
+U 1 1 5EF51A96
+P 3950 3100
+F 0 "C2" H 4042 3146 50  0000 L CNN
+F 1 "100nF" H 4042 3055 50  0000 L CNN
+F 2 "artemisa:Disc_capacitor" H 3950 3100 50  0001 C CNN
+F 3 "" H 3950 3100 50  0001 C CNN
+	1    3950 3100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3950 3200 3950 3250
+Connection ~ 3950 3250
+Wire Wire Line
+	3950 3000 3950 2950
+Connection ~ 3950 2950
 $EndSCHEMATC
