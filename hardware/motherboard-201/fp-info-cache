@@ -1,4 +1,4 @@
-15883393633758550
+15884983540473550
 artemisa
 Axial_diode
 Diode, DO-35 package
@@ -272,6 +272,13 @@ Slot_conn
 0
 50
 50
+artemisa
+SOP-32_450
+SSOP, 32 Pin (http://www.issi.com/WW/pdf/61-64C5128AL.pdf), generated with kicad-footprint-generator ipc_gullwing_generator.py
+SSOP SO
+0
+32
+32
 artemisa
 TO92
 TO92 flat pins

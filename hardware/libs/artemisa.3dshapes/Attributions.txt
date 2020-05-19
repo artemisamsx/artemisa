@@ -21,6 +21,8 @@ The following 3D models are authored by W. Lain - kcswalter@member.fsf.org:
 - jack_55_21
 - Joystick_conn
 - LED
+- PLCC32
+- PLCC44
 - PS2_conn
 - Radial_capacitor
 - RCA_red
