@@ -231,73 +231,6 @@ Wire Wire Line
 	8750 4750 6850 4750
 Text HLabel 8750 4750 2    60   Output ~ 0
 ~SLTSLEN
-Wire Wire Line
-	5750 6150 6000 6150
-Wire Wire Line
-	4850 6150 5150 6150
-Wire Wire Line
-	3350 5350 5200 5350
-Connection ~ 4850 5550
-Wire Wire Line
-	5200 5950 6000 5950
-Connection ~ 5200 5350
-Wire Wire Line
-	8750 5450 6850 5450
-Wire Wire Line
-	8750 6050 6850 6050
-Text HLabel 3350 5350 0    60   Input ~ 0
-~SLTSL1
-Wire Wire Line
-	5200 5350 5200 5950
-$Comp
-L artemisa:74HC32 U?
-U 1 2 5C194AA9
-P 6400 5450
-AR Path="/5AD4D0ED/5C194AA9" Ref="U?"  Part="1" 
-AR Path="/5C0244DD/5C194AA9" Ref="U11"  Part="1" 
-AR Path="/5C194AA9" Ref="U?"  Part="1" 
-F 0 "U11" H 6400 5650 50  0000 C CNN
-F 1 "74HC32" H 6400 5250 50  0000 C CNN
-F 2 "artemisa:DIP-14_300" H 6400 5450 50  0001 C CNN
-F 3 "" H 6400 5450 50  0001 C CNN
-	1    6400 5450
-	1    0    0    -1  
-$EndComp
-$Comp
-L artemisa:74HC32 U?
-U 2 2 5C194AB0
-P 6400 6050
-AR Path="/5AD4D0ED/5C194AB0" Ref="U?"  Part="2" 
-AR Path="/5C0244DD/5C194AB0" Ref="U11"  Part="2" 
-AR Path="/5C194AB0" Ref="U?"  Part="2" 
-F 0 "U11" H 6400 6250 50  0000 C CNN
-F 1 "74HC32" H 6400 5850 50  0000 C CNN
-F 2 "artemisa:DIP-14_300" H 6400 6050 50  0001 C CNN
-F 3 "" H 6400 6050 50  0001 C CNN
-	2    6400 6050
-	1    0    0    -1  
-$EndComp
-$Comp
-L artemisa:74HC04 U?
-U 1 1 5C194AB7
-P 5450 6150
-AR Path="/5AD4D0ED/5C194AB7" Ref="U?"  Part="1" 
-AR Path="/5C0244DD/5C194AB7" Ref="U10"  Part="1" 
-F 0 "U10" H 5450 6300 50  0000 C CNN
-F 1 "74HC04" H 5450 6000 50  0000 C CNN
-F 2 "artemisa:DIP-14_300" H 5450 6150 50  0001 C CNN
-F 3 "" H 5450 6150 50  0001 C CNN
-	1    5450 6150
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4850 5550 4850 6150
-Wire Wire Line
-	5200 5350 6000 5350
-Text HLabel 8750 5450 2    60   Output ~ 0
-~RAMSL0
-Text HLabel 8750 6050 2    60   Output ~ 0
-~RAMSL1
 $Comp
 L artemisa:74HC32 U?
 U 3 2 5BFDEFE2
@@ -577,14 +510,6 @@ Text Label 2800 3900 0    60   ~ 0
 ADDR14
 Text Label 2800 4000 0    60   ~ 0
 ADDR15
-Entry Wire Line
-	2700 5650 2800 5550
-Text Label 2800 5550 0    60   ~ 0
-ADDR15
-Wire Wire Line
-	2800 5550 4850 5550
-Wire Wire Line
-	4850 5550 6000 5550
 Entry Wire Line
 	2700 6800 2800 6700
 Text Label 2800 6700 0    60   ~ 0
