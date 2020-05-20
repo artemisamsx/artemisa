@@ -1,4 +1,4 @@
-15886573451324550
+15888163413763550
 artemisa
 Axial_diode
 Diode, DO-35 package
@@ -279,6 +279,13 @@ Slot_conn
 0
 50
 50
+artemisa
+SOIC-8_150
+8-Lead Plastic Small Outline (SN) - Narrow, 3.90 mm Body [SOIC], pin 7 removed (Microchip Packaging Specification 00000049BS.pdf, http://www.onsemi.com/pub/Collateral/NCP1207B.PDF)
+SOIC 1.27
+0
+8
+8
 artemisa
 SOP-32_450
 SSOP, 32 Pin (http://www.issi.com/WW/pdf/61-64C5128AL.pdf), generated with kicad-footprint-generator ipc_gullwing_generator.py
