@@ -936,12 +936,12 @@ Wire Wire Line
 Wire Wire Line
 	7500 1950 7350 1950
 $Comp
-L artemisa:CP C15
+L artemisa:Cap C15
 U 1 1 5F02416F
 P 8050 2150
 F 0 "C15" H 7800 2150 50  0000 L CNN
 F 1 "1uF" H 8150 2150 50  0000 L CNN
-F 2 "artemisa:Radial_capacitor" H 8050 2150 50  0001 C CNN
+F 2 "artemisa:C_1206" H 8050 2150 50  0001 C CNN
 F 3 "" H 8050 2150 50  0001 C CNN
 	1    8050 2150
 	1    0    0    -1  
