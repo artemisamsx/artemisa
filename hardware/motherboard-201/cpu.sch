@@ -582,7 +582,7 @@ AR Path="/5AE11EC9/5CBDAE69" Ref="C?"  Part="1"
 AR Path="/5ADBC286/5CBDAE69" Ref="C4"  Part="1" 
 F 0 "C4" V 8550 4650 50  0000 L CNN
 F 1 "100nF" V 8550 4300 50  0000 L CNN
-F 2 "artemisa:Disc_capacitor" H 8500 4600 50  0001 C CNN
+F 2 "artemisa:C_1206" H 8500 4600 50  0001 C CNN
 F 3 "" H 8500 4600 50  0001 C CNN
 	1    8500 4600
 	0    -1   -1   0   
@@ -672,7 +672,7 @@ AR Path="/5AE11EC9/5DB92C6B" Ref="C?"  Part="1"
 AR Path="/5ADBC286/5DB92C6B" Ref="C3"  Part="1" 
 F 0 "C3" V 6200 2150 50  0000 L CNN
 F 1 "100nF" V 6200 1800 50  0000 L CNN
-F 2 "artemisa:Disc_capacitor" H 6150 2100 50  0001 C CNN
+F 2 "artemisa:C_1206" H 6150 2100 50  0001 C CNN
 F 3 "" H 6150 2100 50  0001 C CNN
 	1    6150 2100
 	0    -1   -1   0   
