@@ -238,7 +238,7 @@ AR Path="/5AE11EC9/5DB2AB70" Ref="C?"  Part="1"
 AR Path="/5AE56078/5DB2AB70" Ref="C23"  Part="1" 
 F 0 "C23" V 5850 1800 50  0000 L CNN
 F 1 "100nF" V 5850 1450 50  0000 L CNN
-F 2 "artemisa:Disc_capacitor" H 5800 1750 50  0001 C CNN
+F 2 "artemisa:C_1206" H 5800 1750 50  0001 C CNN
 F 3 "" H 5800 1750 50  0001 C CNN
 	1    5800 1750
 	0    -1   -1   0   

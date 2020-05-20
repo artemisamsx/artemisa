@@ -41,7 +41,7 @@ AR Path="/5B11A1EA" Ref="R?"  Part="1"
 AR Path="/5B118A76/5B11A1EA" Ref="R14"  Part="1" 
 F 0 "R14" H 5150 2600 50  0000 C CNN
 F 1 "4k7" H 5100 2700 39  0000 L CNN
-F 2 "artemisa:Axial_resistor" H 5150 2700 50  0001 C CNN
+F 2 "artemisa:R_1206" H 5150 2700 50  0001 C CNN
 F 3 "" H 5150 2700 50  0001 C CNN
 	1    5150 2700
 	-1   0    0    1   
@@ -52,7 +52,7 @@ U 1 1 5B11A2B9
 P 5500 2900
 F 0 "C33" H 5510 2970 50  0000 L CNN
 F 1 "22nF" H 5510 2820 50  0000 L CNN
-F 2 "artemisa:Disc_capacitor" H 5500 2900 50  0001 C CNN
+F 2 "artemisa:C_1206" H 5500 2900 50  0001 C CNN
 F 3 "" H 5500 2900 50  0001 C CNN
 	1    5500 2900
 	1    0    0    -1  
@@ -71,7 +71,7 @@ AR Path="/5B11A382" Ref="R?"  Part="1"
 AR Path="/5B118A76/5B11A382" Ref="R15"  Part="1" 
 F 0 "R15" H 5850 2600 50  0000 C CNN
 F 1 "4k7" H 5800 2700 39  0000 L CNN
-F 2 "artemisa:Axial_resistor" H 5850 2700 50  0001 C CNN
+F 2 "artemisa:R_1206" H 5850 2700 50  0001 C CNN
 F 3 "" H 5850 2700 50  0001 C CNN
 	1    5850 2700
 	-1   0    0    1   
@@ -85,7 +85,7 @@ AR Path="/5B11A3CA" Ref="R?"  Part="1"
 AR Path="/5B118A76/5B11A3CA" Ref="R16"  Part="1" 
 F 0 "R16" V 6200 2750 50  0000 C CNN
 F 1 "100" H 6150 2900 39  0000 L CNN
-F 2 "artemisa:Axial_resistor" H 6200 2900 50  0001 C CNN
+F 2 "artemisa:R_1206" H 6200 2900 50  0001 C CNN
 F 3 "" H 6200 2900 50  0001 C CNN
 	1    6200 2900
 	0    -1   -1   0   
@@ -116,7 +116,7 @@ AR Path="/5B13BDD4" Ref="R?"  Part="1"
 AR Path="/5B118A76/5B13BDD4" Ref="R19"  Part="1" 
 F 0 "R19" V 4600 4200 50  0000 C CNN
 F 1 "1k" H 4600 4350 39  0000 C CNN
-F 2 "artemisa:Axial_resistor" H 4600 4350 50  0001 C CNN
+F 2 "artemisa:R_1206" H 4600 4350 50  0001 C CNN
 F 3 "" H 4600 4350 50  0001 C CNN
 	1    4600 4350
 	0    1    -1   0   
@@ -133,7 +133,7 @@ AR Path="/5B13C12F" Ref="R?"  Part="1"
 AR Path="/5B118A76/5B13C12F" Ref="R20"  Part="1" 
 F 0 "R20" V 7200 4950 50  0000 C CNN
 F 1 "10k" H 7200 4800 39  0000 C CNN
-F 2 "artemisa:Axial_resistor" H 7200 4800 50  0001 C CNN
+F 2 "artemisa:R_1206" H 7200 4800 50  0001 C CNN
 F 3 "" H 7200 4800 50  0001 C CNN
 	1    7200 4800
 	0    -1   1    0   
@@ -161,7 +161,7 @@ AR Path="/5B13C484" Ref="R?"  Part="1"
 AR Path="/5B118A76/5B13C484" Ref="R21"  Part="1" 
 F 0 "R21" V 7550 4950 50  0000 C CNN
 F 1 "2k7" H 7550 4800 39  0000 C CNN
-F 2 "artemisa:Axial_resistor" H 7550 4800 50  0001 C CNN
+F 2 "artemisa:R_1206" H 7550 4800 50  0001 C CNN
 F 3 "" H 7550 4800 50  0001 C CNN
 	1    7550 4800
 	0    1    -1   0   
@@ -174,7 +174,7 @@ AR Path="/5B13C501" Ref="R?"  Part="1"
 AR Path="/5B118A76/5B13C501" Ref="R22"  Part="1" 
 F 0 "R22" V 7550 5600 50  0000 C CNN
 F 1 "2k7" H 7550 5450 39  0000 C CNN
-F 2 "artemisa:Axial_resistor" H 7550 5450 50  0001 C CNN
+F 2 "artemisa:R_1206" H 7550 5450 50  0001 C CNN
 F 3 "" H 7550 5450 50  0001 C CNN
 	1    7550 5450
 	0    1    -1   0   
@@ -193,7 +193,7 @@ U 1 1 5B13C72E
 P 6750 3750
 F 0 "C34" V 6600 3700 50  0000 L CNN
 F 1 "22nF" V 6900 3650 50  0000 L CNN
-F 2 "artemisa:Disc_capacitor" H 6750 3750 50  0001 C CNN
+F 2 "artemisa:C_1206" H 6750 3750 50  0001 C CNN
 F 3 "" H 6750 3750 50  0001 C CNN
 	1    6750 3750
 	1    0    0    1   
@@ -206,7 +206,7 @@ AR Path="/5B13CBA2" Ref="R?"  Part="1"
 AR Path="/5B118A76/5B13CBA2" Ref="R17"  Part="1" 
 F 0 "R17" H 6750 4300 50  0000 C CNN
 F 1 "4k7" H 6750 4200 39  0000 C CNN
-F 2 "artemisa:Axial_resistor" H 6750 4200 50  0001 C CNN
+F 2 "artemisa:R_1206" H 6750 4200 50  0001 C CNN
 F 3 "" H 6750 4200 50  0001 C CNN
 	1    6750 4200
 	0    -1   1    0   
@@ -219,7 +219,7 @@ AR Path="/5B13CC4B" Ref="R?"  Part="1"
 AR Path="/5B118A76/5B13CC4B" Ref="R18"  Part="1" 
 F 0 "R18" V 7200 4050 50  0000 C CNN
 F 1 "220k" H 7200 4200 39  0000 C CNN
-F 2 "artemisa:Axial_resistor" H 7200 4200 50  0001 C CNN
+F 2 "artemisa:R_1206" H 7200 4200 50  0001 C CNN
 F 3 "" H 7200 4200 50  0001 C CNN
 	1    7200 4200
 	0    1    -1   0   
@@ -467,7 +467,7 @@ AR Path="/5D21A3E1" Ref="R?"  Part="1"
 AR Path="/5B118A76/5D21A3E1" Ref="R13"  Part="1" 
 F 0 "R13" H 5400 1750 50  0000 C CNN
 F 1 "2k2" H 5350 1850 39  0000 L CNN
-F 2 "artemisa:Axial_resistor" H 5400 1850 50  0001 C CNN
+F 2 "artemisa:R_1206" H 5400 1850 50  0001 C CNN
 F 3 "" H 5400 1850 50  0001 C CNN
 	1    5400 1850
 	-1   0    0    1   

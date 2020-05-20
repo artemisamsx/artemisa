@@ -1,4 +1,4 @@
-15888163413763550
+15891343421695550
 artemisa
 Axial_diode
 Diode, DO-35 package
@@ -17,6 +17,13 @@ artemisa
 Crystal
 
 
+0
+2
+2
+artemisa
+C_1206
+Capacitor SMD 1206 (3216 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
+capacitor
 0
 2
 2
@@ -265,6 +272,13 @@ CONN DEV
 0
 9
 9
+artemisa
+R_1206
+Resistor SMD 1206 (3216 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
+resistor
+0
+2
+2
 artemisa
 SG7050
 SMD Crystal Oscillator Seiko Epson SG-8002CA https://support.epson.biz/td/api/doc_check.php?mode=dl&lang=en&Parts=SG-8002DC, 7.0x5.0mm^2 package
