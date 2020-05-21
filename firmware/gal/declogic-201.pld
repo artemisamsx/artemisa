@@ -1,0 +1,76 @@
+GAL22V10        ; GAL type
+DECLOGIC201     ; Signature
+
+RD      WR      MREQ    IORQ    M1      RFSH    PPISL   PSGSL   A0      A1      A14     GND
+A15     BDIR    PPIRD   PPIWR   SLTSLEN PSGBDIR PSGBC1  IOSL    CS1     CS2     CS12    VCC
+
+;------------------------------------------------------------
+; CPU data bus direction signal
+;------------------------------------------------------------
+BDIR = /RD + /IORQ * /M1
+
+;------------------------------------------------------------
+; IO device selected
+;
+; This signal indicates an IO devices is selected for an
+; operation. This is essentially an /IORQ signal except for
+; interrupt vector or instruction writing cycle in modes 0
+; and 2.
+;------------------------------------------------------------
+/IOSL = /IORQ * M1
+
+;------------------------------------------------------------
+; Slot select enabled signal
+;
+; This signal is activated when a memory slot is accessed.
+; This is essentially an /MREQ signal except for refresh
+; cycles.
+;------------------------------------------------------------
+/SLTSLEN = /MREQ * RFSH
+
+;------------------------------------------------------------
+; PPI selection lines
+;------------------------------------------------------------
+/PPIRD  = /RD * /PPISL
+/PPIWR  = /WR * /PPISL
+
+;------------------------------------------------------------
+; PSG selection lines
+;
+; This table summarizes the meaning of the selection pins of the PSG:
+;
+;   | BC1 | BDIR | Meaning                        |
+;   | --- | ---- | ------------------------------ |
+;   | 0   | 0    | No operation                   |
+;   | 1   | 0    | Read from PSG                  |
+;   | 0   | 1    | Write data to PSG register     |
+;   | 1   | 1    | Write address to PSG register  |
+;
+; Please note BC2 is wired to VCC. The operation modes with BC2=0 are not relevant for MSX.
+;
+; This another table describe the least-significant bits of the IO addresses that selects the PSG:
+;
+;   | Bits | Access | Description       |
+;   | ---- | ------ | ----------------- |
+;   | 00   | Write  | Address port      |
+;   | 01   | Write  | Data write port   |
+;   | 10   | Read   | Data read port    |
+;   | 11   | None   | Not used          |
+;
+; From this, we can infer the following equations
+;------------------------------------------------------------
+PSGBDIR = /PSGSL * /WR * /A1
+PSGBC1  = /PSGSL * /RD * A1 * /A0 + /PSGSL * /WR * /A1 * /A0
+
+;------------------------------------------------------------
+; Slot CS lines
+;
+; The signals activated whenever the pages 1 and 2 of a
+; slot are read.
+;------------------------------------------------------------
+/CS1  = /RD * /A15 * A14
+/CS2  = /RD * A15 * /A14
+/CS12 = /CS1 + /CS2
+
+DESCRIPTION:
+Decoding logic of Artemisa Model 201.
