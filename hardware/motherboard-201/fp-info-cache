@@ -1,4 +1,4 @@
-15891343421695550
+15892933507115550
 artemisa
 Axial_diode
 Diode, DO-35 package
@@ -300,6 +300,13 @@ SOIC 1.27
 0
 8
 8
+artemisa
+SOIC-24
+24-Lead Plastic Small Outline (SO) - Wide, 7.50 mm Body [SOIC] (see Microchip Packaging Specification 00000049BS.pdf)
+SOIC 1.27
+0
+24
+24
 artemisa
 SOP-32_450
 SSOP, 32 Pin (http://www.issi.com/WW/pdf/61-64C5128AL.pdf), generated with kicad-footprint-generator ipc_gullwing_generator.py
