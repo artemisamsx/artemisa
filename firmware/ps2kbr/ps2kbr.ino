@@ -17,14 +17,16 @@
 // matrix.
 //
 
-// This library is used to interact with the PS2 keyboard.
-// More info in https://github.com/techpaul/PS2KeyAdvanced
-#include "PS2KeyAdvanced.h"
-
-#include "mapping.h"
-
-// Uncomment this to debug the firmware using serial port
+// This macro, when declared, activates the debug mode using the serial port of the Arduino board.
+// There is another PS2_DEBUG macro that controls the low level debugging in the PS2 library.
+// You can comment and uncomment this to disable and enable debug, respectively.
 // #define DEBUG 1
+
+// The custom PS2 library made by Artemisa project.
+#include "ps2.h"
+
+// The mappings between PS2 scancodes and MSX matrix positions
+#include "mapping.h"
 
 // The Arduino pin where PS2 DATA is connected.
 #define PS2_PIN_DATA     3 // ATmega328 pin #5 (PD3/INT1)
@@ -72,8 +74,8 @@ const int outputs[MATRIX_NROWS] = {
 // each one represented by one bit in each entry of this array.
 byte matrix[MATRIX_NROWS];
 
-// The object that will manage the PS2 keyboard.
-PS2KeyAdvanced keyboard;
+// The PS2 port
+PS2Port ps2;
 
 // Initialize the IO pins
 void init_iopins() {
@@ -136,22 +138,59 @@ void write_all_rows(byte value) {
   }
 }
 
-// Handle the given scan code.
-void handle_code(int16_t c) {
-  // The actual key is in the lower nibble transmitted by the keyboard.
-  byte key = c & 0x00ff;
-  if (key >= KEYCODE_MAX) {
+void reset_keyboard() {
+  PS2Result err = ps2.send_cmd_reset();
+  if (err != PS2Result::OK) {
+#ifdef DEBUG
+    Serial.print(F("Error: reset command failed with code "));
+    Serial.println(err, HEX);
+#endif
+  }
+}
+
+void setup_ps2_keyboard() {
+  ps2.begin(PS2_PIN_DATA, PS2_PIN_CLK);
+  reset_keyboard();
+}
+
+void process_locks(bool force = false) {
+  static uint8_t locks = 0;
+
+  uint8_t prev = locks;
+  if (digitalRead(CAPSLOCK_PIN)) locks &= ~PS2_LED_CAPSLOCK;
+  else locks |= PS2_LED_CAPSLOCK;
+
+  // TODO: not all keyboards support Kana Lock LED and refuse this bit.
+  // if (digitalRead(KANALOCK_PIN)) locks &= ~PS2_LED_KANALOCK;
+  // else locks |= PS2_LED_KANALOCK;
+
+  if (force || (prev != locks)) {
+    ps2.send_cmd_leds(locks);
+  }
+}
+
+bool handle_special_scancode(const PS2Scancode &sc) {
+  switch (sc.keycode()) {
+    case PS2_KEYCODE_SELFTEST_PASSED:
+      process_locks(true);
+      return true;
+  }
+  return false;
+}
+
+void handle_scancode(const PS2Scancode &sc) {
+  if (handle_special_scancode(sc)) {
     return;
   }
 
-  mapping m = international_mapping[key];
+  mapping m = map_scancodes(sc);
   if (m.row == -1) {
     // There is no mapping defined for that scancode. Skip it.
     return;
   }
 
   byte r = matrix[m.row];
-  if (c & PS2_BREAK) {
+  if (sc.is_break()) {
     bitSet(r, m.offset);
   } else {
     bitClear(r, m.offset);
@@ -160,67 +199,45 @@ void handle_code(int16_t c) {
   if (r != matrix[m.row]) {
     // We detected a change in the row. Something was pressed or released!
 #ifdef DEBUG
-    Serial.print(F("Row "));
-    Serial.print(m.row);
-    Serial.print(F(" has changed to "));
-    Serial.println(r, BIN);
+    //Serial.print(F("Row changed: "));
+    //Serial.print(m.row);
+    //Serial.print(F("="));
+    //Serial.println(r, BIN);
 #endif
     matrix[m.row] = r;
     write_row(m.row, r);
   }
 }
 
-// Handle capslock state changes
-void handle_locks() {
-  static int caps_before = -1;
-  static int kana_before = -1;
-
-  int caps_after = digitalRead(CAPSLOCK_PIN);
-  int kana_after = digitalRead(KANALOCK_PIN);
-  byte flags_before = keyboard.getLock();
-  byte flags_after = flags_before;
-  if (caps_before != caps_after) {
-    // CAPSLOCK is inverse logic, HIGH means disabled
-    if (caps_after) { flags_after &= ~PS2_LOCK_CAPS; } // Clear the LOCK_CAPS bit
-    else { flags_after |= PS2_LOCK_CAPS; } // Set the LOCK_CAPS bit
-    caps_before = caps_after;
+void process_scancodes() {
+  PS2Scancode sc;
+  PS2Result res = ps2.receive_scancode(sc);
+  if (res != PS2Result::OK) {
+#ifdef DEBUG
+    Serial.print(F("+RCVERR:"));
+    Serial.println(res, HEX);
+    return;
+#endif
   }
-  if (kana_before != kana_after) {
-    // KANALOCK is inverse logic, HIGH means disabled
-    if (kana_after) { flags_after &= ~PS2_LOCK_SCROLL; } // Clear the LOCK_CAPS bit
-    else { flags_after |= PS2_LOCK_SCROLL; } // Set the LOCK_CAPS bit
-    kana_before = kana_after;
-  }
-  if (flags_before != flags_after) {
-    keyboard.setLock(flags_after);
+  if (!sc.is_null()) {
+    handle_scancode(sc);
   }
 }
 
 // Setup the microcontroller
 void setup() {
-  // Configure the keyboard library
-  keyboard.begin(PS2_PIN_DATA, PS2_PIN_CLK);
-  keyboard.resetKey();
-
-  init_iopins();
-  init_matrix();
-
 #ifdef DEBUG
-  Serial.begin(9600);
+  Serial.begin(57600);
   Serial.println( F( "PS2 Keyboard Adapter board" ) );
 #endif
+
+  setup_ps2_keyboard();
+  init_iopins();
+  init_matrix();
 }
 
 // Main loop of the microcontroller
 void loop() {
-  // Process a PS2 keyboard event if available
-  if (keyboard.available()) {
-    uint16_t c = keyboard.read();
-    if (c > 0) {
-      handle_code(c);
-    }
-  }
-
-  // Process capslock and kanalock state changes
-  handle_locks();
+  process_scancodes();
+  process_locks();
 }

@@ -11,4 +11,8 @@ K connector
 F ~
 $ENDCMP
 #
+$CMP SG7050
+F https://www5.epsondevice.com/en/products/crystal_oscillator/sg7050ccn.html
+$ENDCMP
+#
 #End Doc Library

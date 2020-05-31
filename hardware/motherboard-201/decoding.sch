@@ -1,0 +1,358 @@
+EESchema Schematic File Version 4
+LIBS:motherboard-201-cache
+EELAYER 29 0
+EELAYER END
+$Descr A4 8268 11693 portrait
+encoding utf-8
+Sheet 11 12
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Text HLabel 6000 2300 2    60   Output ~ 0
+DATADIR
+Text HLabel 2150 2300 0    60   Input ~ 0
+~RD
+Text HLabel 2150 2600 0    60   Input ~ 0
+~IORQ
+Text HLabel 2150 2700 0    60   Input ~ 0
+~M1
+Text HLabel 2150 2400 0    60   Input ~ 0
+~WR
+Text HLabel 6000 2400 2    60   Output ~ 0
+~PPIRD
+Text HLabel 6000 2500 2    60   Output ~ 0
+~PPIWR
+Text HLabel 6000 3100 2    60   Output ~ 0
+~CS2
+Text HLabel 6000 3200 2    60   Output ~ 0
+~CS12
+Text HLabel 6000 3000 2    60   Output ~ 0
+~CS1
+Text HLabel 2150 2800 0    60   Input ~ 0
+~RFSH
+Text HLabel 2150 2500 0    60   Input ~ 0
+~MREQ
+Text HLabel 6000 2600 2    60   Output ~ 0
+~SLTSLEN
+Text HLabel 6000 2700 2    60   Output ~ 0
+PSGBDIR
+Wire Wire Line
+	5000 2700 6000 2700
+Text HLabel 6000 2800 2    60   Output ~ 0
+PSGBC1
+Wire Wire Line
+	5000 2800 6000 2800
+$Comp
+L artemisa:74HC138 U?
+U 1 1 5C0EE05E
+P 4350 5000
+AR Path="/5AE4BD32/5C0EE05E" Ref="U?"  Part="1" 
+AR Path="/5C0244DD/5C0EE05E" Ref="U26"  Part="1" 
+F 0 "U26" H 4550 5500 60  0000 C CNN
+F 1 "74HC138" H 4600 4500 60  0000 C CNN
+F 2 "artemisa:SOIC-16" V 3500 4900 60  0001 C CNN
+F 3 "" V 3500 4900 60  0001 C CNN
+	1    4350 5000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1800 4650 3500 4650
+Wire Wire Line
+	3500 4750 1800 4750
+Wire Wire Line
+	1800 4850 3500 4850
+NoConn ~ 4850 4650
+NoConn ~ 4850 4750
+NoConn ~ 4850 5250
+NoConn ~ 4850 5350
+Text HLabel 6000 4950 2    60   Output ~ 0
+~VDPSL
+Wire Wire Line
+	4850 4950 6000 4950
+Wire Wire Line
+	5500 5050 4850 5050
+NoConn ~ 4850 4850
+Text HLabel 1700 6250 3    60   Input ~ 0
+ADDR[0..15]
+Entry Wire Line
+	1700 3500 1800 3400
+Entry Wire Line
+	1700 3400 1800 3300
+Text Label 1800 3300 0    60   ~ 0
+ADDR14
+Text Label 1800 3400 0    60   ~ 0
+ADDR15
+Entry Wire Line
+	1700 3200 1800 3100
+Text Label 1800 3100 0    60   ~ 0
+ADDR0
+Entry Wire Line
+	1700 3300 1800 3200
+Text Label 1800 3200 0    60   ~ 0
+ADDR1
+Entry Wire Line
+	1700 4750 1800 4650
+Text Label 1800 4650 0    60   ~ 0
+ADDR3
+Entry Wire Line
+	1700 4850 1800 4750
+Text Label 1800 4750 0    60   ~ 0
+ADDR4
+Entry Wire Line
+	1700 4950 1800 4850
+Text Label 1800 4850 0    60   ~ 0
+ADDR5
+Entry Wire Line
+	1700 5400 1800 5300
+Text Label 1800 5300 0    60   ~ 0
+ADDR7
+Entry Wire Line
+	1700 5300 1800 5200
+Text Label 1800 5200 0    60   ~ 0
+ADDR6
+Text Label 5500 5050 0    60   ~ 0
+~PSGSL
+Text Label 5500 5150 0    60   ~ 0
+~PPISL
+Text Label 3000 3000 2    60   ~ 0
+~PSGSL
+Text Label 3000 2900 2    60   ~ 0
+~PPISL
+Wire Wire Line
+	4850 5150 5500 5150
+Text Label 3000 5850 2    60   ~ 0
+~PPISL
+$Comp
+L artemisa:74HC74 U?
+U 2 1 5C1DAAF5
+P 4350 6500
+AR Path="/5AE20302/5C1DAAF5" Ref="U?"  Part="2" 
+AR Path="/5C0244DD/5C1DAAF5" Ref="U17"  Part="2" 
+F 0 "U17" H 4500 6900 60  0000 C CNN
+F 1 "74HC74" H 4550 6100 60  0000 C CNN
+F 2 "artemisa:SOIC-14" H 4350 6300 60  0001 C CNN
+F 3 "" H 4350 6300 60  0001 C CNN
+	2    4350 6500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4750 6600 6000 6600
+NoConn ~ 4750 6400
+Wire Wire Line
+	4350 5850 4350 6000
+$Comp
+L power:GND #PWR?
+U 1 1 5C1DAAFF
+P 3800 6800
+AR Path="/5AE20302/5C1DAAFF" Ref="#PWR?"  Part="1" 
+AR Path="/5C0244DD/5C1DAAFF" Ref="#PWR0134"  Part="1" 
+F 0 "#PWR0134" H 3800 6550 50  0001 C CNN
+F 1 "GND" H 3800 6650 50  0000 C CNN
+F 2 "" H 3800 6800 50  0001 C CNN
+F 3 "" H 3800 6800 50  0001 C CNN
+	1    3800 6800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3800 6800 3800 6600
+Wire Wire Line
+	3800 6400 3950 6400
+Wire Wire Line
+	3950 6600 3800 6600
+Connection ~ 3800 6600
+Wire Wire Line
+	3800 6600 3800 6400
+Text HLabel 2150 7150 0    60   Input ~ 0
+~RESET
+Wire Wire Line
+	2150 7150 4350 7150
+Wire Wire Line
+	3000 5850 4350 5850
+Wire Wire Line
+	4350 7000 4350 7150
+Text HLabel 6000 6600 2    60   Output ~ 0
+~PPIRDY
+$Comp
+L artemisa:GND #PWR0133
+U 1 1 5CC89243
+P 4350 5550
+F 0 "#PWR0133" H 4350 5450 60  0001 C CNN
+F 1 "GND" H 4350 5650 60  0001 C CNN
+F 2 "" H 4350 5550 60  0001 C CNN
+F 3 "" H 4350 5550 60  0001 C CNN
+	1    4350 5550
+	1    0    0    -1  
+$EndComp
+$Comp
+L artemisa:VCC #PWR0131
+U 1 1 5CC8A1FF
+P 4350 4300
+F 0 "#PWR0131" H 4350 4250 60  0001 C CNN
+F 1 "VCC" H 4350 4550 60  0001 C CNN
+F 2 "" H 4350 4300 60  0001 C CNN
+F 3 "" H 4350 4300 60  0001 C CNN
+	1    4350 4300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4350 4300 4350 4350
+$Comp
+L artemisa:Cap C?
+U 1 1 5CCA1AF7
+P 4650 4350
+AR Path="/5AE11EC9/5CCA1AF7" Ref="C?"  Part="1" 
+AR Path="/5C0244DD/5CCA1AF7" Ref="C38"  Part="1" 
+F 0 "C38" V 4700 4400 50  0000 L CNN
+F 1 "100nF" V 4700 4050 50  0000 L CNN
+F 2 "artemisa:C_1206" H 4650 4350 50  0001 C CNN
+F 3 "" H 4650 4350 50  0001 C CNN
+	1    4650 4350
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	4550 4350 4350 4350
+Connection ~ 4350 4350
+Wire Wire Line
+	4350 4350 4350 4450
+$Comp
+L artemisa:GND #PWR0132
+U 1 1 5CCAE077
+P 4850 4450
+F 0 "#PWR0132" H 4850 4350 60  0001 C CNN
+F 1 "GND" H 4850 4550 60  0001 C CNN
+F 2 "" H 4850 4450 60  0001 C CNN
+F 3 "" H 4850 4450 60  0001 C CNN
+	1    4850 4450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4750 4350 4850 4350
+Wire Wire Line
+	4850 4350 4850 4450
+$Comp
+L artemisa:GAL_declogic-201 U3
+U 1 1 5ECDA474
+P 4350 2850
+F 0 "U3" H 3950 3550 60  0000 C CNN
+F 1 "GAL_declogic-201" H 4850 2100 60  0000 C CNN
+F 2 "artemisa:SOIC-24" H 4350 2750 60  0001 C CNN
+F 3 "" H 4350 2750 60  0001 C CNN
+	1    4350 2850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2150 2300 3650 2300
+Wire Wire Line
+	3650 2400 2150 2400
+Wire Wire Line
+	2150 2500 3650 2500
+Wire Wire Line
+	3650 2600 2150 2600
+Wire Wire Line
+	2150 2700 3650 2700
+Wire Wire Line
+	3650 2800 2150 2800
+Wire Wire Line
+	3000 2900 3650 2900
+Wire Wire Line
+	3650 3000 3000 3000
+Wire Wire Line
+	1800 3400 3650 3400
+Wire Wire Line
+	3650 3300 1800 3300
+Wire Wire Line
+	1800 3200 3650 3200
+Wire Wire Line
+	3650 3100 1800 3100
+Text Label 2950 5100 2    60   ~ 0
+~IOSL
+Wire Wire Line
+	2950 5100 3500 5100
+Wire Wire Line
+	1800 5200 3500 5200
+Wire Wire Line
+	1800 5300 3500 5300
+Wire Wire Line
+	5000 2500 6000 2500
+Wire Wire Line
+	5000 2600 6000 2600
+Wire Wire Line
+	5000 2300 6000 2300
+Wire Wire Line
+	5000 2400 6000 2400
+Wire Wire Line
+	5000 3100 6000 3100
+Wire Wire Line
+	5000 3200 6000 3200
+Wire Wire Line
+	5000 2900 5500 2900
+Wire Wire Line
+	5000 3000 6000 3000
+Text Label 5500 2900 0    60   ~ 0
+~IOSL
+$Comp
+L artemisa:GND #PWR0128
+U 1 1 5ED1397C
+P 4350 3700
+F 0 "#PWR0128" H 4350 3600 60  0001 C CNN
+F 1 "GND" H 4350 3800 60  0001 C CNN
+F 2 "" H 4350 3700 60  0001 C CNN
+F 3 "" H 4350 3700 60  0001 C CNN
+	1    4350 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L artemisa:VCC #PWR0129
+U 1 1 5ED14D7D
+P 4350 1850
+F 0 "#PWR0129" H 4350 1800 60  0001 C CNN
+F 1 "VCC" H 4350 2100 60  0001 C CNN
+F 2 "" H 4350 1850 60  0001 C CNN
+F 3 "" H 4350 1850 60  0001 C CNN
+	1    4350 1850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4350 1850 4350 1900
+$Comp
+L artemisa:Cap C?
+U 1 1 5ED14D84
+P 4650 1900
+AR Path="/5AE11EC9/5ED14D84" Ref="C?"  Part="1" 
+AR Path="/5C0244DD/5ED14D84" Ref="C9"  Part="1" 
+F 0 "C9" V 4700 1950 50  0000 L CNN
+F 1 "100nF" V 4700 1600 50  0000 L CNN
+F 2 "artemisa:C_1206" H 4650 1900 50  0001 C CNN
+F 3 "" H 4650 1900 50  0001 C CNN
+	1    4650 1900
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	4550 1900 4350 1900
+Connection ~ 4350 1900
+Wire Wire Line
+	4350 1900 4350 2000
+Wire Wire Line
+	4750 1900 4850 1900
+Wire Wire Line
+	4850 1900 4850 2000
+$Comp
+L artemisa:GND #PWR0142
+U 1 1 5ED15EC1
+P 4850 2000
+F 0 "#PWR0142" H 4850 1900 60  0001 C CNN
+F 1 "GND" H 4850 2100 60  0001 C CNN
+F 2 "" H 4850 2000 60  0001 C CNN
+F 3 "" H 4850 2000 60  0001 C CNN
+	1    4850 2000
+	1    0    0    -1  
+$EndComp
+Wire Bus Line
+	1700 3150 1700 6250
+$EndSCHEMATC

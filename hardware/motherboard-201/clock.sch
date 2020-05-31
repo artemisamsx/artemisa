@@ -1,0 +1,156 @@
+EESchema Schematic File Version 4
+LIBS:motherboard-201-cache
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 10 12
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Text HLabel 8250 2950 2    60   Output ~ 0
+CLK
+Wire Wire Line
+	5500 2950 5800 2950
+$Comp
+L artemisa:74HC74 U?
+U 1 1 5BFE5CC0
+P 6750 3900
+AR Path="/5AED18CC/5BFE5CC0" Ref="U?"  Part="1" 
+AR Path="/5BF74A85/5BFE5CC0" Ref="U17"  Part="1" 
+F 0 "U17" H 6900 4250 60  0000 C CNN
+F 1 "74HC74" H 6950 3500 60  0000 C CNN
+F 2 "artemisa:SOIC-14" H 6750 3700 60  0001 C CNN
+F 3 "" H 6750 3700 60  0001 C CNN
+	1    6750 3900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5800 4000 6350 4000
+Wire Wire Line
+	7150 4000 7350 4000
+Wire Wire Line
+	7350 4000 7350 4800
+Wire Wire Line
+	7350 4800 6150 4800
+Wire Wire Line
+	6150 4800 6150 3800
+Wire Wire Line
+	6150 3800 6350 3800
+Wire Wire Line
+	7150 3800 8250 3800
+Wire Wire Line
+	6750 3300 6750 3400
+Wire Wire Line
+	6750 4400 6750 4500
+Wire Wire Line
+	5800 4000 5800 2950
+Connection ~ 5800 2950
+Wire Wire Line
+	5800 2950 8250 2950
+Text HLabel 8250 3800 2    60   Output ~ 0
+PSGCLK
+$Comp
+L artemisa:VCC #PWR0127
+U 1 1 5DB548B1
+P 6750 3300
+F 0 "#PWR0127" H 6750 3250 60  0001 C CNN
+F 1 "VCC" H 6750 3550 60  0001 C CNN
+F 2 "" H 6750 3300 60  0001 C CNN
+F 3 "" H 6750 3300 60  0001 C CNN
+	1    6750 3300
+	1    0    0    -1  
+$EndComp
+$Comp
+L artemisa:VCC #PWR0130
+U 1 1 5DB54E87
+P 6400 4350
+F 0 "#PWR0130" H 6400 4300 60  0001 C CNN
+F 1 "VCC" H 6400 4600 60  0001 C CNN
+F 2 "" H 6400 4350 60  0001 C CNN
+F 3 "" H 6400 4350 60  0001 C CNN
+	1    6400 4350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6750 4500 6400 4500
+Wire Wire Line
+	6400 4500 6400 4350
+$Comp
+L artemisa:SG7050 G1
+U 1 1 5EF4F553
+P 5000 3100
+F 0 "G1" H 5000 2769 60  0000 C CNN
+F 1 "SG7050" H 5000 2663 60  0000 C CNN
+F 2 "artemisa:SG7050" H 5000 3100 60  0001 C CNN
+F 3 "https://www5.epsondevice.com/en/products/crystal_oscillator/sg7050ccn.html" H 5000 3100 60  0001 C CNN
+	1    5000 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L artemisa:VCC #PWR06
+U 1 1 5EF50AF6
+P 5000 2550
+F 0 "#PWR06" H 5000 2500 60  0001 C CNN
+F 1 "VCC" H 5000 2800 60  0001 C CNN
+F 2 "" H 5000 2550 60  0001 C CNN
+F 3 "" H 5000 2550 60  0001 C CNN
+	1    5000 2550
+	1    0    0    -1  
+$EndComp
+$Comp
+L artemisa:VCC #PWR011
+U 1 1 5EF50D1C
+P 3950 2850
+F 0 "#PWR011" H 3950 2800 60  0001 C CNN
+F 1 "VCC" H 3950 3100 60  0001 C CNN
+F 2 "" H 3950 2850 60  0001 C CNN
+F 3 "" H 3950 2850 60  0001 C CNN
+	1    3950 2850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5000 2550 5000 2650
+Wire Wire Line
+	3950 2850 3950 2950
+Wire Wire Line
+	3950 2950 4500 2950
+$Comp
+L artemisa:GND #PWR012
+U 1 1 5EF513DC
+P 3950 3450
+F 0 "#PWR012" H 3950 3350 60  0001 C CNN
+F 1 "GND" H 3950 3550 60  0001 C CNN
+F 2 "" H 3950 3450 60  0001 C CNN
+F 3 "" H 3950 3450 60  0001 C CNN
+	1    3950 3450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4500 3250 3950 3250
+Wire Wire Line
+	3950 3250 3950 3450
+$Comp
+L artemisa:Cap C2
+U 1 1 5EF51A96
+P 3950 3100
+F 0 "C2" H 4042 3146 50  0000 L CNN
+F 1 "100nF" H 4042 3055 50  0000 L CNN
+F 2 "artemisa:C_1206" H 3950 3100 50  0001 C CNN
+F 3 "" H 3950 3100 50  0001 C CNN
+	1    3950 3100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3950 3200 3950 3250
+Connection ~ 3950 3250
+Wire Wire Line
+	3950 3000 3950 2950
+Connection ~ 3950 2950
+$EndSCHEMATC
