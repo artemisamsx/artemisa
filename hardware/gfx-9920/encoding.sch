@@ -1,6 +1,5 @@
 EESchema Schematic File Version 4
-LIBS:gfx-9920-cache
-EELAYER 29 0
+EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -14,11 +13,11 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text HLabel 1500 1500 0    50   Input ~ 0
+Text HLabel 800  1500 0    50   Input ~ 0
 Y
-Text HLabel 1500 1600 0    50   Input ~ 0
+Text HLabel 800  1600 0    50   Input ~ 0
 Pb
-Text HLabel 1500 1700 0    50   Input ~ 0
+Text HLabel 800  1700 0    50   Input ~ 0
 Pr
 $Comp
 L artemisa:LM318 U?
@@ -577,7 +576,7 @@ F 3 "" H 4450 1100 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	1500 1500 1800 1500
+	800  1500 1600 1500
 Wire Wire Line
 	2250 3050 1800 3050
 Wire Wire Line
@@ -610,9 +609,9 @@ Wire Wire Line
 Wire Wire Line
 	1900 4100 1900 1600
 Wire Wire Line
-	1900 1600 1500 1600
+	1900 1600 1350 1600
 Wire Wire Line
-	1500 1700 2000 1700
+	800  1700 1100 1700
 Wire Wire Line
 	2000 1700 2000 2850
 Wire Wire Line
@@ -683,4 +682,104 @@ Connection ~ 1800 4300
 Wire Wire Line
 	1800 5600 1800 5500
 Connection ~ 1800 5500
+$Comp
+L artemisa:R R?
+U 1 1 5ED7C1F0
+P 1100 2300
+F 0 "R?" H 850 2250 60  0000 L CNN
+F 1 "470" H 1050 2300 40  0000 L CNN
+F 2 "" V 1100 2300 60  0001 C CNN
+F 3 "" V 1100 2300 60  0001 C CNN
+	1    1100 2300
+	0    -1   1    0   
+$EndComp
+$Comp
+L artemisa:GND #PWR?
+U 1 1 5ED7C1F7
+P 1100 2450
+F 0 "#PWR?" H 1100 2350 60  0001 C CNN
+F 1 "GND" H 1100 2550 60  0001 C CNN
+F 2 "" H 1100 2450 60  0001 C CNN
+F 3 "" H 1100 2450 60  0001 C CNN
+	1    1100 2450
+	-1   0    0    -1  
+$EndComp
+$Comp
+L artemisa:R R?
+U 1 1 5ED7C1FE
+P 1350 2300
+F 0 "R?" H 1100 2250 60  0000 L CNN
+F 1 "470" H 1300 2300 40  0000 L CNN
+F 2 "" V 1350 2300 60  0001 C CNN
+F 3 "" V 1350 2300 60  0001 C CNN
+	1    1350 2300
+	0    -1   1    0   
+$EndComp
+$Comp
+L artemisa:GND #PWR?
+U 1 1 5ED7C204
+P 1350 2450
+F 0 "#PWR?" H 1350 2350 60  0001 C CNN
+F 1 "GND" H 1350 2550 60  0001 C CNN
+F 2 "" H 1350 2450 60  0001 C CNN
+F 3 "" H 1350 2450 60  0001 C CNN
+	1    1350 2450
+	-1   0    0    -1  
+$EndComp
+$Comp
+L artemisa:R R?
+U 1 1 5ED7C20A
+P 1600 2300
+F 0 "R?" H 1350 2250 60  0000 L CNN
+F 1 "470" H 1550 2300 40  0000 L CNN
+F 2 "" V 1600 2300 60  0001 C CNN
+F 3 "" V 1600 2300 60  0001 C CNN
+	1    1600 2300
+	0    -1   1    0   
+$EndComp
+$Comp
+L artemisa:GND #PWR?
+U 1 1 5ED7C210
+P 1600 2450
+F 0 "#PWR?" H 1600 2350 60  0001 C CNN
+F 1 "GND" H 1600 2550 60  0001 C CNN
+F 2 "" H 1600 2450 60  0001 C CNN
+F 3 "" H 1600 2450 60  0001 C CNN
+	1    1600 2450
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	1100 1700 1100 2150
+Connection ~ 1100 1700
+Wire Wire Line
+	1100 1700 2000 1700
+Wire Wire Line
+	1350 1600 1350 2150
+Connection ~ 1350 1600
+Wire Wire Line
+	1350 1600 800  1600
+Wire Wire Line
+	1600 1500 1600 2150
+Connection ~ 1600 1500
+Wire Wire Line
+	1600 1500 1800 1500
+$Comp
+L artemisa:R R?
+U 1 1 5ED870ED
+P 4950 1500
+F 0 "R?" H 4700 1450 60  0000 L CNN
+F 1 "470" H 4900 1500 40  0000 L CNN
+F 2 "" V 4950 1500 60  0001 C CNN
+F 3 "" V 4950 1500 60  0001 C CNN
+	1    4950 1500
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	4400 1500 4800 1500
+Text Label 5700 1500 0    50   ~ 0
+~CSYNC
+Wire Wire Line
+	5700 1500 5100 1500
+NoConn ~ 4400 1600
+NoConn ~ 4400 1700
 $EndSCHEMATC
