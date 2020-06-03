@@ -1,5 +1,5 @@
 EESchema Schematic File Version 4
-EELAYER 29 0
+EELAYER 30 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
@@ -290,35 +290,35 @@ $EndComp
 $Comp
 L artemisa:R R?
 U 1 1 5E7666C8
-P 7650 8650
+P 7050 8650
 AR Path="/5E7666C8" Ref="R?"  Part="1" 
 AR Path="/5E74FCF0/5E7666C8" Ref="R?"  Part="1" 
 AR Path="/5ED467F3/5E7666C8" Ref="R22"  Part="1" 
-F 0 "R22" H 7600 8750 60  0000 L CNN
-F 1 "10K" H 7600 8650 40  0000 L CNN
-F 2 "" V 7650 8650 60  0001 C CNN
-F 3 "" V 7650 8650 60  0001 C CNN
-	1    7650 8650
+F 0 "R22" H 7050 8750 60  0000 C CNN
+F 1 "10K" H 7000 8650 40  0000 L CNN
+F 2 "" V 7050 8650 60  0001 C CNN
+F 3 "" V 7050 8650 60  0001 C CNN
+	1    7050 8650
 	-1   0    0    -1  
 $EndComp
 $Comp
 L artemisa:R R?
 U 1 1 5E7666CE
-P 7650 8850
+P 7050 8850
 AR Path="/5E7666CE" Ref="R?"  Part="1" 
 AR Path="/5E74FCF0/5E7666CE" Ref="R?"  Part="1" 
 AR Path="/5ED467F3/5E7666CE" Ref="R24"  Part="1" 
-F 0 "R24" H 7600 8750 60  0000 L CNN
-F 1 "14K" H 7600 8850 40  0000 L CNN
-F 2 "" V 7650 8850 60  0001 C CNN
-F 3 "" V 7650 8850 60  0001 C CNN
-	1    7650 8850
+F 0 "R24" H 7050 8950 60  0000 C CNN
+F 1 "14K" H 7000 8850 40  0000 L CNN
+F 2 "" V 7050 8850 60  0001 C CNN
+F 3 "" V 7050 8850 60  0001 C CNN
+	1    7050 8850
 	-1   0    0    -1  
 $EndComp
 Wire Wire Line
-	7800 8650 8100 8650
+	7200 8650 8100 8650
 Wire Wire Line
-	8100 8850 7800 8850
+	8100 8850 7200 8850
 Wire Wire Line
 	8100 8650 8100 8750
 Connection ~ 8100 8750
@@ -587,47 +587,47 @@ Wire Wire Line
 $Comp
 L artemisa:R R?
 U 1 1 5E88C31D
-P 3400 8200
+P 7050 8450
 AR Path="/5E88C31D" Ref="R?"  Part="1" 
 AR Path="/5E74FCF0/5E88C31D" Ref="R?"  Part="1" 
 AR Path="/5ED467F3/5E88C31D" Ref="R21"  Part="1" 
-F 0 "R21" H 3350 8100 60  0000 L CNN
-F 1 "10K" H 3350 8200 40  0000 L CNN
-F 2 "" V 3400 8200 60  0001 C CNN
-F 3 "" V 3400 8200 60  0001 C CNN
-	1    3400 8200
-	0    1    -1   0   
+F 0 "R21" H 7050 8350 60  0000 C CNN
+F 1 "10K" H 7000 8450 40  0000 L CNN
+F 2 "" V 7050 8450 60  0001 C CNN
+F 3 "" V 7050 8450 60  0001 C CNN
+	1    7050 8450
+	1    0    0    1   
 $EndComp
 $Comp
 L artemisa:R R?
 U 1 1 5E8906EA
-P 3400 8700
+P 7450 9250
 AR Path="/5E8906EA" Ref="R?"  Part="1" 
 AR Path="/5E74FCF0/5E8906EA" Ref="R?"  Part="1" 
 AR Path="/5ED467F3/5E8906EA" Ref="R23"  Part="1" 
-F 0 "R23" H 3350 8600 60  0000 L CNN
-F 1 "5K" H 3350 8700 40  0000 L CNN
-F 2 "" V 3400 8700 60  0001 C CNN
-F 3 "" V 3400 8700 60  0001 C CNN
-	1    3400 8700
+F 0 "R23" H 7400 9150 60  0000 L CNN
+F 1 "5K" H 7400 9250 40  0000 L CNN
+F 2 "" V 7450 9250 60  0001 C CNN
+F 3 "" V 7450 9250 60  0001 C CNN
+	1    7450 9250
 	0    1    -1   0   
 $EndComp
 $Comp
 L artemisa:GND #PWR?
 U 1 1 5E890978
-P 3400 8950
+P 7450 9500
 AR Path="/5E890978" Ref="#PWR?"  Part="1" 
 AR Path="/5E74FCF0/5E890978" Ref="#PWR?"  Part="1" 
 AR Path="/5ED467F3/5E890978" Ref="#PWR024"  Part="1" 
-F 0 "#PWR024" H 3400 8850 60  0001 C CNN
-F 1 "GND" H 3400 9050 60  0001 C CNN
-F 2 "" H 3400 8950 60  0001 C CNN
-F 3 "" H 3400 8950 60  0001 C CNN
-	1    3400 8950
+F 0 "#PWR024" H 7450 9400 60  0001 C CNN
+F 1 "GND" H 7450 9600 60  0001 C CNN
+F 2 "" H 7450 9500 60  0001 C CNN
+F 3 "" H 7450 9500 60  0001 C CNN
+	1    7450 9500
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3400 8950 3400 8850
+	7450 9500 7450 9400
 $Comp
 L artemisa:R R3
 U 1 1 5ED7C1F0
@@ -901,7 +901,7 @@ Text Label 7800 9650 1    50   ~ 0
 VREF
 Wire Wire Line
 	7800 9200 7800 9650
-Text Label 3400 5700 1    50   ~ 0
+Text Label 3400 5400 1    50   ~ 0
 Y
 Text Label 4800 5400 1    50   ~ 0
 B_Y
@@ -1082,14 +1082,14 @@ Text Label 7250 7050 0    50   ~ 0
 B_Y
 Text Label 7250 7250 0    50   ~ 0
 Y
-Text Label 7250 8650 0    50   ~ 0
+Text Label 6650 8650 0    50   ~ 0
 R_Y
-Text Label 7250 8850 0    50   ~ 0
+Text Label 6650 8850 0    50   ~ 0
 B_Y
-Text Label 7250 8450 0    50   ~ 0
+Text Label 6650 8450 0    50   ~ 0
 Y
 Wire Wire Line
-	3900 8650 7500 8650
+	3900 8650 6900 8650
 Wire Wire Line
 	3900 5800 7500 5800
 $Comp
@@ -1171,8 +1171,6 @@ Wire Wire Line
 Wire Wire Line
 	12400 6600 13650 6600
 Wire Wire Line
-	3400 8350 3400 8450
-Wire Wire Line
 	3400 4000 3400 6000
 Wire Wire Line
 	3400 6000 7500 6000
@@ -1183,14 +1181,7 @@ Wire Wire Line
 	3400 7250 7500 7250
 Connection ~ 3400 7250
 Wire Wire Line
-	3400 7250 3400 8050
-Wire Wire Line
-	3400 8450 8600 8450
-Connection ~ 3400 8450
-Wire Wire Line
-	3400 8450 3400 8550
-Wire Wire Line
-	4800 8850 7500 8850
+	4800 8850 6900 8850
 Text Label 12750 5600 1    50   ~ 0
 R
 Text Label 13100 5600 1    50   ~ 0
@@ -1292,4 +1283,15 @@ Wire Wire Line
 Connection ~ 4800 7050
 Wire Wire Line
 	4800 7050 4800 8850
+Wire Wire Line
+	8600 8450 7450 8450
+Wire Wire Line
+	3400 8450 6900 8450
+Wire Wire Line
+	3400 7250 3400 8450
+Wire Wire Line
+	7450 8450 7450 9100
+Connection ~ 7450 8450
+Wire Wire Line
+	7450 8450 7200 8450
 $EndSCHEMATC
