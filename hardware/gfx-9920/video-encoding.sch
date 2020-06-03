@@ -1294,4 +1294,6 @@ Wire Wire Line
 Connection ~ 7450 8450
 Wire Wire Line
 	7450 8450 7200 8450
+Text Notes 6150 8300 0    50   ~ 0
+Note: R21 should be close 5K1\n 
 $EndSCHEMATC
