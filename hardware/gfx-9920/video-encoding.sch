@@ -262,7 +262,7 @@ AR Path="/5E7666B2" Ref="R?"  Part="1"
 AR Path="/5E74FCF0/5E7666B2" Ref="R?"  Part="1" 
 AR Path="/5ED467F3/5E7666B2" Ref="R19"  Part="1" 
 F 0 "R19" H 8050 7550 60  0000 L CNN
-F 1 "5K1" H 8050 7450 40  0000 L CNN
+F 1 "2K4" H 8050 7450 40  0000 L CNN
 F 2 "" V 8100 7450 60  0001 C CNN
 F 3 "" V 8100 7450 60  0001 C CNN
 	1    8100 7450
@@ -295,7 +295,7 @@ AR Path="/5E7666C8" Ref="R?"  Part="1"
 AR Path="/5E74FCF0/5E7666C8" Ref="R?"  Part="1" 
 AR Path="/5ED467F3/5E7666C8" Ref="R22"  Part="1" 
 F 0 "R22" H 7050 8750 60  0000 C CNN
-F 1 "14K" H 7000 8650 40  0000 L CNN
+F 1 "6K" H 7000 8650 40  0000 L CNN
 F 2 "" V 7050 8650 60  0001 C CNN
 F 3 "" V 7050 8650 60  0001 C CNN
 	1    7050 8650
@@ -372,29 +372,20 @@ Wire Wire Line
 	9600 9200 9600 8600
 Wire Wire Line
 	9600 8600 9500 8600
-Wire Wire Line
-	8900 9200 8500 9200
-Wire Wire Line
-	8500 9200 8500 8750
-Wire Wire Line
-	8500 8750 8600 8750
 $Comp
 L artemisa:R R?
 U 1 1 5E7666F2
-P 8100 9200
+P 7800 8200
 AR Path="/5E7666F2" Ref="R?"  Part="1" 
 AR Path="/5E74FCF0/5E7666F2" Ref="R?"  Part="1" 
 AR Path="/5ED467F3/5E7666F2" Ref="R25"  Part="1" 
-F 0 "R25" H 8050 9300 60  0000 L CNN
-F 1 "5K1" H 8050 9200 40  0000 L CNN
-F 2 "" V 8100 9200 60  0001 C CNN
-F 3 "" V 8100 9200 60  0001 C CNN
-	1    8100 9200
-	1    0    0    1   
+F 0 "R25" H 7750 8300 60  0000 L CNN
+F 1 "5K1" H 7750 8200 40  0000 L CNN
+F 2 "" V 7800 8200 60  0001 C CNN
+F 3 "" V 7800 8200 60  0001 C CNN
+	1    7800 8200
+	0    -1   1    0   
 $EndComp
-Connection ~ 8500 8750
-Wire Wire Line
-	7800 9200 7950 9200
 $Comp
 L artemisa:LM1881 U?
 U 1 1 5E76BD34
@@ -579,11 +570,6 @@ Wire Wire Line
 	3900 4100 2050 4100
 Wire Wire Line
 	850  4200 1800 4200
-Wire Wire Line
-	8250 9200 8500 9200
-Connection ~ 8500 9200
-Wire Wire Line
-	8100 8750 8500 8750
 $Comp
 L artemisa:R R?
 U 1 1 5E88C31D
@@ -893,14 +879,10 @@ Text Label 8250 2400 0    50   ~ 0
 VREF
 Text Label 7800 6650 1    50   ~ 0
 VREF
-Text Label 7800 8100 1    50   ~ 0
+Text Label 7450 7900 2    50   ~ 0
 VREF
 Wire Wire Line
-	7800 7450 7800 8100
-Text Label 7800 9650 1    50   ~ 0
-VREF
-Wire Wire Line
-	7800 9200 7800 9650
+	7800 7450 7800 7900
 Text Label 3400 5400 1    50   ~ 0
 Y
 Text Label 4800 5400 1    50   ~ 0
@@ -1284,7 +1266,7 @@ Connection ~ 4800 7050
 Wire Wire Line
 	4800 7050 4800 8850
 Wire Wire Line
-	8600 8450 7450 8450
+	8600 8450 7800 8450
 Wire Wire Line
 	3400 8450 6900 8450
 Wire Wire Line
@@ -1296,4 +1278,25 @@ Wire Wire Line
 	7450 8450 7200 8450
 Text Notes 6150 8300 0    50   ~ 0
 Note: R21 should be close 5K1\n 
+Wire Wire Line
+	8100 8750 8500 8750
+Wire Wire Line
+	8500 9200 8500 8750
+Wire Wire Line
+	8500 9200 8900 9200
+Connection ~ 8500 8750
+Wire Wire Line
+	8500 8750 8600 8750
+Wire Wire Line
+	7450 7900 7800 7900
+Wire Wire Line
+	7800 7900 7800 8050
+Connection ~ 7800 7900
+Wire Wire Line
+	7800 8350 7800 8450
+Connection ~ 7800 8450
+Wire Wire Line
+	7800 8450 7450 8450
+Text Notes 6300 9100 0    50   ~ 0
+Note: R22 readjusted
 $EndSCHEMATC
