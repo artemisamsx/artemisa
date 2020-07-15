@@ -11,6 +11,12 @@ K connector
 F ~
 $ENDCMP
 #
+$CMP L
+D Inductor
+K inductor choke coil reactor magnetic
+F ~
+$ENDCMP
+#
 $CMP SG7050
 F https://www5.epsondevice.com/en/products/crystal_oscillator/sg7050ccn.html
 $ENDCMP
