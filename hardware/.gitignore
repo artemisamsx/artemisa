@@ -2,5 +2,5 @@ gerber/
 *-cache.lib
 *.bak
 *.bck
-*.kicad_pcb-bak
+*-bak
 *.net
