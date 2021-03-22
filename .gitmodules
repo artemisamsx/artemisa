@@ -1,0 +1,3 @@
+[submodule "hardware/libs"]
+	path = hardware/libs
+	url = git@github.com:artemisamsx/kicadlibs.git
